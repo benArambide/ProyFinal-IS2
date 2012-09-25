@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>UI_NEW_PRODUCT</class>
+ <widget class="QWidget" name="UI_NEW_PRODUCT">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>421</width>
+    <height>490</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Nuevo Producto</string>
+  </property>
+  <property name="windowIcon">
+   <iconset resource="Icons/Icons.qrc">
+    <normaloff>:/Icons/notification_done.png</normaloff>:/Icons/notification_done.png</iconset>
+  </property>
+ </widget>
+ <resources>
+  <include location="Icons/Icons.qrc"/>
+ </resources>
+ <connections/>
+</ui>
