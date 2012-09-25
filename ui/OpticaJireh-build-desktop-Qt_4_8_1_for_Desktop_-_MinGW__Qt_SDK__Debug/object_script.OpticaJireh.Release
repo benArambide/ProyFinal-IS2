@@ -1,0 +1,16 @@
+INPUT(
+./release\main.o
+./release\mainwindow.o
+./release\ui_login.o
+./release\ui_producto.o
+./release\ui_new_product.o
+./release\ui_user.o
+./release\ui_new_user.o
+./release\moc_mainwindow.o
+./release\moc_ui_login.o
+./release\moc_ui_producto.o
+./release\moc_ui_new_product.o
+./release\moc_ui_user.o
+./release\moc_ui_new_user.o
+./release\qrc_Icons.o
+);
