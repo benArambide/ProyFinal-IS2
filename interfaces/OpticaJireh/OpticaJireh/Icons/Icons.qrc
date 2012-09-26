@@ -1,0 +1,42 @@
+<RCC>
+    <qresource prefix="/Icons">
+        <file>1329798558_demographic.ico</file>
+        <file>1329798560_animation.png</file>
+        <file>1329798918_Text-Document.ico</file>
+        <file>abiword.png</file>
+        <file>add-group.png</file>
+        <file>add-user.png</file>
+        <file>autoship.png</file>
+        <file>clients.png</file>
+        <file>close-group.png</file>
+        <file>contact-new.png</file>
+        <file>delete-user.png</file>
+        <file>edit-group.png</file>
+        <file>edit-user.png</file>
+        <file>file-roller.png</file>
+        <file>internet-news-reader.png</file>
+        <file>inventory-maintenance.png</file>
+        <file>notification_done.png</file>
+        <file>notification_error.png</file>
+        <file>notification_warning.png</file>
+        <file>package_games_logic.png</file>
+        <file>photo.png</file>
+        <file>preferences-contact-list.png</file>
+        <file>product.png</file>
+        <file>Rank-History.png</file>
+        <file>Remove-Male-User.png</file>
+        <file>search-group.png</file>
+        <file>shopping-cart_basic_blue.png</file>
+        <file>stock_task-assigned-to.png</file>
+        <file>ticket.png</file>
+        <file>user.png</file>
+        <file>user_add.png</file>
+        <file>user_delete.png</file>
+        <file>user_manage.png</file>
+        <file>user_warning.png</file>
+        <file>user-group-new.png</file>
+        <file>users.png</file>
+        <file>1348112114_notification_add.png</file>
+        <file>1348112116_file_edit.png</file>
+    </qresource>
+</RCC>
