@@ -5,7 +5,7 @@
 #-------------------------------------------------
 
 QT       += core gui
-
+QT += sql
 TARGET = OpticalManager
 TEMPLATE = app
 
