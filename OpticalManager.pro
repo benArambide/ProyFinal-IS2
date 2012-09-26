@@ -11,8 +11,14 @@ TEMPLATE = app
 
 
 SOURCES += main.cpp\
-        mainwindow.cpp
+        mainwindow.cpp \
+    sesion.cpp \
+    usuario.cpp \
+    conexionbd.cpp
 
-HEADERS  += mainwindow.h
+HEADERS  += mainwindow.h \
+    sesion.h \
+    usuario.h \
+    conexionbd.h
 
 FORMS    += mainwindow.ui

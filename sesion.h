@@ -7,8 +7,8 @@
 class Sesion
 {
 public:
-    static Sesion* getSession();
-    static bool start(QString user,QString pass);
+    static Sesion* getSesion();
+    static bool Iniciar(QString user,QString pass);
 private:
     Sesion();
     static Sesion* mp_instance;
