@@ -1,22 +1,26 @@
 #include <QtGui/QApplication>
 //#include "mainwindow.h"
 #include "ui_login.h"
+#include "conexionbd.h"
+#include <QMessageBox>
 
 int main(int argc, char *argv[])
 {
     QApplication a(argc, argv);
 
-
-    /*if(!ok)
+    ConexionBD db;
+    db.setDriver("QMYSQL");
+    db.setHost("localhost");
+    db.setName("opticaldb");
+    db.setUser("root");
+    db.setPass("jose-123");
+    db.setOptions("UNIX_SOCKET=/opt/lampp/var/mysql/mysql.sock");
+    bool ok = db.connect();
+    if(!ok)
     {
-        QString a ;
-        QMessageBox::critical(0,"Error de conexion a la Base de Datos",db.lastError().text()+"\nError code: "+a.setNum(db.lastError().number()),0,0);
+        return 0;
     }
-    MainWindow w;
-    w.show();*/
-    
     UI_LOGIN login;
     login.show();
-
     return a.exec();
 }

@@ -1,5 +1,7 @@
 #include "ui_login.h"
 #include "ui_ui_login.h"
+#include "sesion.h"
+#include <QMessageBox>
 
 UI_LOGIN::UI_LOGIN(QWidget *parent) :
     QWidget(parent),
@@ -15,11 +17,14 @@ UI_LOGIN::~UI_LOGIN()
 
 void UI_LOGIN::on_pushButton_Aceptar_clicked()
 {
-
+    bool ok = Sesion::Iniciar(ui->lineEdit_Usuario->text(),ui->lineEdit_Password->text());
+    if(!ok)
+    {
+        QMessageBox::warning(0,"Inicio de Sesion","Usuaio o Contraseña incorrectos",0,0);
+        return;
+    }
     this->close();
-
     MainWindow *MAIN_WINDOW;
-
     MAIN_WINDOW = new MainWindow;
     MAIN_WINDOW->showMaximized();
 }

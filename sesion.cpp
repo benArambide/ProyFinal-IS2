@@ -1,4 +1,7 @@
 #include "sesion.h"
+#include <QSqlQuery>
+#include <QVariant>
+#include <QDebug>
 
 Sesion* Sesion::mp_instance = 0;
 
@@ -17,9 +20,16 @@ Sesion::Sesion(Usuario * usr)
 bool Sesion::Iniciar(QString user, QString pass)
 {
     //completar
-    mp_instance = new Sesion;
 
-    //mp_current
+    QSqlQuery q;
+    q.exec("call verify_usrpass('"+user+"','"+pass+"')");
+    //q.bindValue(0,QVariant(user));
+    //q.bindValue(1,QVariant(pass));
+    //q.exec();
+    if(!q.next())
+        return false;
+    mp_instance = new Sesion;
+    return true;
 }
 
 /**

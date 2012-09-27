@@ -18,6 +18,7 @@ public:
     void setPass(QString val){db_pass = val;}
     void setHost(QString val){db_host = val;}
     void setName(QString val){db_name = val;}
+    void setOptions(QString val){db_opciones = val;}
 /*TO DO: Clase de configuracion para obtener estos datos de un archivo
 */
 private:
@@ -26,6 +27,7 @@ private:
     QString db_user;    ///<Usuario de la bd
     QString db_pass;    ///<Contraseña de acceso
     QString db_driver;  ///<Nombre de el driver de conexion usado
+    QString db_opciones; ///<Opciones extra de conexion
 };
 
 #endif // CONEXIONBD_H

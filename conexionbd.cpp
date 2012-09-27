@@ -1,6 +1,8 @@
 #include "conexionbd.h"
 
 #include<QSqlDatabase>
+#include<QMessageBox>
+#include<QSqlError>
 
 /**
  * @brief Constructor
@@ -22,7 +24,13 @@ bool ConexionBD::connect()
     db.setDatabaseName(db_name);
     db.setUserName(db_user);
     db.setPassword(db_pass);
-
-    //db.setConnectOptions("UNIX_SOCKET=/opt/lampp/var/mysql/mysql.sock;CLIENT_SSL=1;");
-    return db.open();
+    if(db_opciones.size())
+        db.setConnectOptions(db_opciones);
+    bool ok = db.open();
+    if(!ok)
+    {
+        QString a ;
+        QMessageBox::critical(0,"Error de conexion a la Base de Datos",db.lastError().text()+"\nError code: "+a.setNum(db.lastError().number()),0,0);
+    }
+    return ok;
 }
