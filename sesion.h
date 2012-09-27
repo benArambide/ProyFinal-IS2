@@ -19,6 +19,7 @@ public:
 private:
     Sesion(Usuario * usr = 0);
     static Sesion* mp_instance; ///<instancia de la clase singletone
+    static int intentos;        ///<Numero de intentos de inicio de sesion
     QTime s_time;               ///<tiempo de inicio de sesion
     Usuario * s_user;           ///<referencia a un usuario
 };
