@@ -14,11 +14,18 @@ SOURCES += main.cpp\
         mainwindow.cpp \
     sesion.cpp \
     usuario.cpp \
-    conexionbd.cpp
+    conexionbd.cpp \
+    ui_login.cpp
 
 HEADERS  += mainwindow.h \
     sesion.h \
     usuario.h \
-    conexionbd.h
+    conexionbd.h \
+    ui_login.h
 
-FORMS    += mainwindow.ui
+FORMS    += mainwindow.ui \
+    ui_login.ui
+
+RESOURCES += \
+    Icons/Icons.qrc \
+    Icons/Icons.qrc

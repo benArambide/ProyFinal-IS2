@@ -2,9 +2,10 @@
 
 Sesion* Sesion::mp_instance = 0;
 
-Sesion::Sesion()
+Sesion::Sesion(Usuario * usr)
 {
-
+    s_user = usr;
+    s_time.start();
 }
 
 /**
@@ -17,11 +18,15 @@ bool Sesion::Iniciar(QString user, QString pass)
 {
     //completar
     mp_instance = new Sesion;
+
     //mp_current
 }
 
-
+/**
+ * @brief Obtiene la sesion iniciada
+ * @return Puntero a la session
+ */
 Sesion * Sesion::getSesion()
 {
-    return mp_instance = 0;
+    return mp_instance;
 }

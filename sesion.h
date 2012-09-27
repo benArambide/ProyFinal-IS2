@@ -13,8 +13,11 @@ class Sesion
 public:
     static Sesion* getSesion();
     static bool Iniciar(QString user,QString pass);
+    Usuario * get_Usuario(){return s_user;}
+    /// @return Retorna el tiempo en milisegundos desde que se inicio la sesion
+    int get_time(){return s_time.elapsed();}
 private:
-    Sesion();
+    Sesion(Usuario * usr = 0);
     static Sesion* mp_instance; ///<instancia de la clase singletone
     QTime s_time;               ///<tiempo de inicio de sesion
     Usuario * s_user;           ///<referencia a un usuario
