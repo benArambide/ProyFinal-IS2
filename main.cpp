@@ -4,16 +4,27 @@
 #include "conexionbd.h"
 #include <QMessageBox>
 #include <QTextCodec>
+#include <QSplashScreen>
+#include <QTimer>
 
-
-int main(int argc, char *argv[])
+int main(int argc,char *argv[])
 {
     QApplication a(argc, argv);
 
-    QTextCodec *linuxCodec = QTextCodec::codecForName("UTF-8");
+    //ToDo: Organizar este codigo spaguetti xD
+    QTextCodec* linuxCodec=QTextCodec::codecForName("UTF-8");
     QTextCodec::setCodecForTr(linuxCodec);
     QTextCodec::setCodecForCStrings(linuxCodec);
     QTextCodec::setCodecForLocale(linuxCodec);
+
+    QPixmap pix("splash-syllabus.png");
+    QSplashScreen* splash=new QSplashScreen(pix);
+    splash->show();
+    //ToDO: Cambiar el color de letra o posicion del texto de Cargando...
+    splash->showMessage("Cargando Modulos");
+    splash->showMessage("Cargando Procesos");
+    QTimer::singleShot(3000,splash,SLOT(close()));
+    //ToDo: Sincronizar el SplashScreen con la conexion a BD y la ventana de Login
 
     ConexionBD db;
     db.setDriver("QMYSQL");
@@ -34,7 +45,7 @@ int main(int argc, char *argv[])
         db.setPass("jose-123");
     }
 
-    bool ok = db.connect();
+    bool ok=db.connect();
     if(!ok)
     {
         return 0;
