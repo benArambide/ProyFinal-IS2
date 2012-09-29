@@ -17,11 +17,23 @@ int main(int argc, char *argv[])
 
     ConexionBD db;
     db.setDriver("QMYSQL");
-    db.setHost("localhost");
-    db.setName("opticaldb");
-    db.setUser("root");
-    db.setPass("jose-123");
     db.setOptions("UNIX_SOCKET=/opt/lampp/var/mysql/mysql.sock");
+
+    if(db.verificarConexionDB())
+    {
+        db.setHost("servercsunsa.sytes.net");
+        db.setName("opticaldb");
+        db.setUser("opticaldb");
+        db.setPass("optical123");
+    }
+    else
+    {
+        db.setHost("localhost");
+        db.setName("opticaldb");
+        db.setUser("root");
+        db.setPass("jose-123");
+    }
+
     bool ok = db.connect();
     if(!ok)
     {

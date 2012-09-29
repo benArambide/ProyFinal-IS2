@@ -2,6 +2,7 @@
 #define CONEXIONBD_H
 
 #include<QString>
+#include<QProcess>
 
 /**
  * @class ConexionBD
@@ -13,6 +14,8 @@ class ConexionBD
 public:
     ConexionBD();
     bool connect();
+    bool verificarConexionDB();
+
     void setDriver(QString val){db_driver = val;}
     void setUser(QString val){db_user = val;}
     void setPass(QString val){db_pass = val;}

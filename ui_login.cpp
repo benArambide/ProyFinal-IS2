@@ -2,12 +2,19 @@
 #include "ui_ui_login.h"
 #include "sesion.h"
 #include <QMessageBox>
+#include <QDesktopWidget>
 
-UI_LOGIN::UI_LOGIN(QWidget *parent) :
-    QWidget(parent),
-    ui(new Ui::UI_LOGIN)
+UI_LOGIN::UI_LOGIN(QWidget *parent):QWidget(parent),ui(new Ui::UI_LOGIN)
 {
     ui->setupUi(this);
+
+    //Auto Centrado de Ventana
+    //ToDO: Crear una Clase Ventana Padre que haga esto automático
+    QRect frect=this->frameGeometry();
+    frect.moveCenter(QDesktopWidget().availableGeometry().center());
+    this->move(frect.topLeft());
+    this->show();
+
 }
 
 UI_LOGIN::~UI_LOGIN()

@@ -26,11 +26,24 @@ bool ConexionBD::connect()
     db.setPassword(db_pass);
     if(db_opciones.size())
         db.setConnectOptions(db_opciones);
-    bool ok = db.open();
+    bool ok=db.open();
+
     if(!ok)
     {
         QString a ;
         QMessageBox::critical(0,"Error de conexion a la Base de Datos",db.lastError().text()+"\nError code: "+a.setNum(db.lastError().number()),0,0);
     }
     return ok;
+}
+
+/**
+ * @brief Verifica si el servidor de Vidal esta UP para conectarse a la BD
+ * @return Verdadero o Falso
+ */
+bool ConexionBD::verificarConexionDB()
+{
+    if(QProcess::execute("ping",QStringList()<<"-c1"<<"jiraserver.sytes.net")==0)
+        return true;
+    else
+        return false;
 }
