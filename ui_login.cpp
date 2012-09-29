@@ -17,11 +17,20 @@ UI_LOGIN::~UI_LOGIN()
 
 void UI_LOGIN::on_pushButton_Aceptar_clicked()
 {
-    bool ok = Sesion::Iniciar(ui->lineEdit_Usuario->text(),ui->lineEdit_Password->text());
-    if(!ok)
+    int status = Sesion::Iniciar(ui->lineEdit_Usuario->text(),ui->lineEdit_Password->text());
+    switch(status)
     {
-        QMessageBox::warning(0,pr("Inicio de Sesion","Usuaio o Contraseña incorrectos"),0,0);
+        case Sesion::PassUsrWrong :
+        {
+            QMessageBox::warning(0,"Inicio de Sesion",tr("Usuario o contraseña INCORRECTOS"),0,0);
+            return;
+        }
+    case Sesion::UsuarioDeshabilitado :
+    {
+        QMessageBox::warning(0,"Inicio de Sesion",tr("El usuario esta DESHABILITADO"),0,0);
         return;
+    }
+    //case Sesion::
     }
     this->close();
     MainWindow *MAIN_WINDOW;

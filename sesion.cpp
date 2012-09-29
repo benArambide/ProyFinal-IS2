@@ -2,8 +2,10 @@
 #include <QSqlQuery>
 #include <QVariant>
 #include <QDebug>
+#include <QSqlRecord>
 
 Sesion* Sesion::mp_instance = 0;
+int Sesion::intentos = 0;
 
 Sesion::Sesion(Usuario * usr)
 {
@@ -17,19 +19,25 @@ Sesion::Sesion(Usuario * usr)
  * @param pass Contraseña de usuario
  * @return true si el inicio de sesion se completo correctamente si no retorna false
  */
-bool Sesion::Iniciar(QString user, QString pass)
+int Sesion::Iniciar(QString user, QString pass)
 {
     //completar
 
     QSqlQuery q;
     q.exec("call verify_usrpass('"+user+"','"+pass+"')");
-    //q.bindValue(0,QVariant(user));
-    //q.bindValue(1,QVariant(pass));
-    //q.exec();
     if(!q.next())
-        return false;
+    {
+        intentos ++;
+        if(intentos == 10)
+        {
+
+        }
+        return Sesion::PassUsrWrong;
+    }
+    if(!q.record().value("habilitado").toBool())
+        return Sesion::UsuarioDeshabilitado;
     mp_instance = new Sesion;
-    return true;
+    return Sesion::ok;
 }
 
 /**

@@ -3,10 +3,17 @@
 #include "ui_login.h"
 #include "conexionbd.h"
 #include <QMessageBox>
+#include <QTextCodec>
+
 
 int main(int argc, char *argv[])
 {
     QApplication a(argc, argv);
+
+    QTextCodec *linuxCodec = QTextCodec::codecForName("UTF-8");
+    QTextCodec::setCodecForTr(linuxCodec);
+    QTextCodec::setCodecForCStrings(linuxCodec);
+    QTextCodec::setCodecForLocale(linuxCodec);
 
     ConexionBD db;
     db.setDriver("QMYSQL");
