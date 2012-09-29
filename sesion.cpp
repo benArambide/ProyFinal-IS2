@@ -4,6 +4,9 @@
 #include <QDebug>
 #include <QSqlRecord>
 
+#define numMinIntentos 3
+#define numMaxIntentos 10
+
 Sesion* Sesion::mp_instance = 0;
 int Sesion::intentos = 0;
 
@@ -28,7 +31,11 @@ int Sesion::Iniciar(QString user, QString pass)
     if(!q.next())
     {
         intentos ++;
-        if(intentos == 10)
+        if(intentos == numMaxIntentos)
+        {
+
+        }
+        else if(intentos%numMinIntentos)
         {
 
         }
