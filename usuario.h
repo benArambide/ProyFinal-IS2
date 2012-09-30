@@ -20,12 +20,12 @@ public:
     QString get_sApellido(){return m_sApellido;}
     int get_tipoUsuario(){return m_tipoUsuario;}
 private:
-    int m_idUsuario;           ///<id de usuario de la dase de datos
+    int m_idUsuario;        ///<id de usuario de la dase de datos
+    int m_tipoUsuario;      ///<id del tipo de usuario
     QString m_nombreUsuario;///<Nombre corto o alias
     QString m_nombre;       ///<Nombre de el usuario
     QString m_pApellido;    ///<Primer apellido
     QString m_sApellido;    ///<Segundo apellido
-    int m_tipoUsuario;      ///<id del tipo de usuario
 };
 
 #endif // USUARIO_H

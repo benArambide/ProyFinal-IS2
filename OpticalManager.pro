@@ -15,16 +15,19 @@ SOURCES += main.cpp\
     sesion.cpp \
     usuario.cpp \
     conexionbd.cpp \
-    ui_login.cpp
+    ui_login.cpp \
+    ui_cambiarpassdialog.cpp
 
 HEADERS  += mainwindow.h \
     sesion.h \
     usuario.h \
     conexionbd.h \
-    ui_login.h
+    ui_login.h \
+    ui_cambiarpassdialog.h
 
 FORMS    += mainwindow.ui \
-    ui_login.ui
+    ui_login.ui \
+    ui_cambiarpassdialog.ui
 
 RESOURCES += \
     Icons/Icons.qrc \

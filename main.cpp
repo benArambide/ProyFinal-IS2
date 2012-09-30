@@ -6,6 +6,7 @@
 #include <QTextCodec>
 #include <QSplashScreen>
 #include <QTimer>
+#include "sesion.h"
 
 int main(int argc,char *argv[])
 {
@@ -17,39 +18,40 @@ int main(int argc,char *argv[])
     QTextCodec::setCodecForCStrings(linuxCodec);
     QTextCodec::setCodecForLocale(linuxCodec);
 
+
     QPixmap pix("splash-syllabus.png");
     QSplashScreen* splash=new QSplashScreen(pix);
-    splash->show();
     //ToDO: Cambiar el color de letra o posicion del texto de Cargando...
     splash->showMessage("Cargando Modulos");
     splash->showMessage("Cargando Procesos");
-    QTimer::singleShot(3000,splash,SLOT(close()));
+    splash->show();
+    QTimer::singleShot(10000,splash,SLOT(close()));
     //ToDo: Sincronizar el SplashScreen con la conexion a BD y la ventana de Login
 
     ConexionBD db;
     db.setDriver("QMYSQL");
-    db.setOptions("UNIX_SOCKET=/opt/lampp/var/mysql/mysql.sock");
-
+    db.setName("opticaldb");
     if(db.verificarConexionDB())
     {
         db.setHost("servercsunsa.sytes.net");
-        db.setName("opticaldb");
         db.setUser("opticaldb");
         db.setPass("optical123");
     }
     else
     {
+        db.setOptions("UNIX_SOCKET=/opt/lampp/var/mysql/mysql.sock");
         db.setHost("localhost");
-        db.setName("opticaldb");
         db.setUser("root");
         db.setPass("jose-123");
     }
-
     bool ok=db.connect();
     if(!ok)
     {
-        return 0;
+        return 1;
     }
+
+    Sesion::Configurar(3,10,6000);
+
     UI_LOGIN login;
     login.show();
     return a.exec();
