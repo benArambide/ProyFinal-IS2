@@ -29,3 +29,6 @@ FORMS    += mainwindow.ui \
 RESOURCES += \
     Icons/Icons.qrc \
     Icons/Icons.qrc
+
+OTHER_FILES += \
+    splash-syllabus.png
