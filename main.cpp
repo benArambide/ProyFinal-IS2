@@ -19,11 +19,11 @@ int main(int argc,char *argv[])
     QTextCodec::setCodecForLocale(linuxCodec);
 
 
-    QPixmap pix("splash-syllabus.png");
-    QSplashScreen* splash=new QSplashScreen(pix);
+    QPixmap pix(":/Icons/splash-syllabus.png");
+    QSplashScreen splash(pix);
     //ToDO: Cambiar el color de letra o posicion del texto de Cargando...
-    splash->show();
-    splash->showMessage("Cargando Modulos",Qt::AlignLeft,Qt::white);
+    splash.show();
+    splash.showMessage("Cargando Modulos",Qt::AlignLeft,Qt::white);
     //QTimer::singleShot(10000,splash,SLOT(close()));
     //ToDo: Sincronizar el SplashScreen con la conexion a BD y la ventana de Login
 
@@ -52,7 +52,7 @@ int main(int argc,char *argv[])
     Sesion::Configurar(3,10,6000);
 
     UI_LOGIN login;
-    splash->close();
+    splash.close();
     login.show();
     return a.exec();
 }

@@ -35,7 +35,6 @@ void Sesion::Configurar(int nminI,int nmaxI,int tEspera)
     tiempoEspera = tEspera;
 }
 
-
 /**
  * @brief Verifica si el usuario y el pass son correctos en la base de datos para iniciar sesion si no retorna false
  * @param user Nombre de usuario
