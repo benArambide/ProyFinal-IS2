@@ -16,7 +16,7 @@ bool confConexionDB()
     db.setDriver("QMYSQL");
     db.setName("opticaldb");
 
-    db.setHost("servercsunsa.sytes.net");
+    db.setHost("servercsunsa1.sytes.net");
     db.setUser("opticaldb");
     db.setPass("optical123");
 
@@ -59,7 +59,7 @@ int main(int argc,char *argv[])
     //ToDo: Sincronizar el SplashScreen con la conexion a BD y la ventana de Login
 
     if(!confConexionDB())
-        return 1;
+        return -1;
     Sesion::Configurar(3,10,6000);
 
     UI_LOGIN login;

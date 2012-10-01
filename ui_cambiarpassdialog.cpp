@@ -31,7 +31,9 @@ void ui_cambiarPassDialog::on_buttonBox_accepted()
     }
     QString a;
     QSqlQuery q;
-    q.exec("call set_pass("+a.setNum(id_usr)+",'"+pass1+"')");
+    bool sta = q.exec("call set_pass("+a.setNum(id_usr)+",'"+pass1+"')");
+    if(!sta)
+        QMessageBox::warning(0,"ds","asda",0,0);
 }
 
 void ui_cambiarPassDialog::on_buttonBox_rejected()
