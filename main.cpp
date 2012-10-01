@@ -6,7 +6,38 @@
 #include <QTextCodec>
 #include <QSplashScreen>
 #include <QTimer>
+#include <QSqlError>
 #include "sesion.h"
+
+//ToDo: Meter esta funcion en un clase que configure el sistema a partir de un archivo de configuracion
+bool confConexionDB()
+{
+    ConexionBD db;
+    db.setDriver("QMYSQL");
+    db.setName("opticaldb");
+
+    db.setHost("servercsunsa.sytes.net");
+    db.setUser("opticaldb");
+    db.setPass("optical123");
+
+    if(db.connect()) return true;
+    QSqlError err = db.getConError();
+    if(err.type() == QSqlError::ConnectionError)
+    {
+        QSqlDatabase::removeDatabase("qt_sql_default_connection");
+        db.setOptions("UNIX_SOCKET=/opt/lampp/var/mysql/mysql.sock");
+        db.setHost("localhost");
+        db.setUser("root");
+        db.setPass("jose-123");
+        if(db.connect()) return true;
+    }
+    err = db.getConError();
+    QString num2str;
+    QMessageBox::critical(0,"Error de conexion a la Base de Datos"
+                          ,err.text()+"\nError code: "+num2str.setNum(err.number())
+                          ,0,0);
+    return false;
+}
 
 int main(int argc,char *argv[])
 {
@@ -27,28 +58,8 @@ int main(int argc,char *argv[])
     //QTimer::singleShot(10000,splash,SLOT(close()));
     //ToDo: Sincronizar el SplashScreen con la conexion a BD y la ventana de Login
 
-    ConexionBD db;
-    db.setDriver("QMYSQL");
-    db.setName("opticaldb");
-    if(db.verificarConexionDB())
-    {
-        db.setHost("servercsunsa.sytes.net");
-        db.setUser("opticaldb");
-        db.setPass("optical123");
-    }
-    else
-    {
-        db.setOptions("UNIX_SOCKET=/opt/lampp/var/mysql/mysql.sock");
-        db.setHost("localhost");
-        db.setUser("root");
-        db.setPass("jose-123");
-    }
-    bool ok=db.connect();
-    if(!ok)
-    {
+    if(!confConexionDB())
         return 1;
-    }
-
     Sesion::Configurar(3,10,6000);
 
     UI_LOGIN login;

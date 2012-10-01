@@ -3,7 +3,6 @@
 #include <QCloseEvent>
 #include <QMessageBox>
 #include <QSqlQuery>
-#include <QDebug>
 #include <QPushButton>
 
 ui_cambiarPassDialog::ui_cambiarPassDialog(QWidget *parent) :
@@ -33,7 +32,6 @@ void ui_cambiarPassDialog::on_buttonBox_accepted()
     QString a;
     QSqlQuery q;
     q.exec("call set_pass("+a.setNum(id_usr)+",'"+pass1+"')");
-    qDebug()<<"cambiado";
 }
 
 void ui_cambiarPassDialog::on_buttonBox_rejected()

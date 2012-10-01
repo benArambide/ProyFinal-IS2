@@ -3,10 +3,6 @@
 #include <QVariant>
 #include <QSqlRecord>
 
-#include <QDebug>
-
-
-
 Sesion* Sesion::mp_instance = 0;
 int Sesion::intentos = 0;
 bool Sesion::sleep = false;

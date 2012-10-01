@@ -2,7 +2,10 @@
 #define CONEXIONBD_H
 
 #include<QString>
-#include<QProcess>
+#include<QSqlError>
+#include<QSqlDatabase>
+#include<QMessageBox>
+#include<QSqlError>
 
 /**
  * @class ConexionBD
@@ -14,7 +17,6 @@ class ConexionBD
 public:
     ConexionBD();
     bool connect();
-    bool verificarConexionDB();
 
     void setDriver(QString val){db_driver = val;}
     void setUser(QString val){db_user = val;}
@@ -22,6 +24,7 @@ public:
     void setHost(QString val){db_host = val;}
     void setName(QString val){db_name = val;}
     void setOptions(QString val){db_opciones = val;}
+    QSqlError & getConError(){return conErr;}
 /*TO DO: Clase de configuracion para obtener estos datos de un archivo
 */
 private:
@@ -31,6 +34,7 @@ private:
     QString db_pass;    ///<Contraseña de acceso
     QString db_driver;  ///<Nombre de el driver de conexion usado
     QString db_opciones; ///<Opciones extra de conexion
+    QSqlError conErr;    ///<Registra error de conexion
 };
 
 #endif // CONEXIONBD_H
