@@ -15,6 +15,9 @@ public:
     explicit ui_ingNomObsCarac(QWidget *parent = 0);
     ~ui_ingNomObsCarac();
 
+private slots:
+    void on_Boton_IngNomObs_cancelar_clicked();
+
 private:
     Ui::ui_ingNomObsCarac *ui;
 };

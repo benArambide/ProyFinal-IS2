@@ -17,7 +17,10 @@ public:
     ~ui_configurarProducto();
 
 private slots:
-    void on_Marca_activated(int index);
+
+    void on_Boton_ConfPro_cancelar_clicked();
+
+    void on_ComBo_Marca_activated(int index);
 
 private:
     Ui::ui_configurarProducto *ui;

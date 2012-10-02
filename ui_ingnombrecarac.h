@@ -15,6 +15,9 @@ public:
     explicit ui_ingNombreCarac(QWidget *parent = 0);
     ~ui_ingNombreCarac();
 
+private slots:
+    void on_Boton_IngNom_cancelar_clicked();
+
 private:
     Ui::ui_ingNombreCarac *ui;
 };

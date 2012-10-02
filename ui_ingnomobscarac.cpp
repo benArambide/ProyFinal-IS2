@@ -12,3 +12,8 @@ ui_ingNomObsCarac::~ui_ingNomObsCarac()
 {
     delete ui;
 }
+
+void ui_ingNomObsCarac::on_Boton_IngNomObs_cancelar_clicked()
+{
+    this->close();
+}

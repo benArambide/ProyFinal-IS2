@@ -12,3 +12,8 @@ ui_ingNombreCarac::~ui_ingNombreCarac()
 {
     delete ui;
 }
+
+void ui_ingNombreCarac::on_Boton_IngNom_cancelar_clicked()
+{
+    this->close();
+}
