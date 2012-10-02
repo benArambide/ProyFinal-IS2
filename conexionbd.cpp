@@ -11,7 +11,7 @@ ConexionBD::ConexionBD()
 
 /**
  * @brief Inicia la conexion a la base de datos
- * @return Tipo de error segun QSqlError::ErrorType
+ * @return True si se realizo la conexion de lo contrario false
  */
 bool ConexionBD::connect()
 {

@@ -7,6 +7,7 @@
 #include <QSplashScreen>
 #include <QTimer>
 #include <QSqlError>
+#include <QDebug>
 #include "sesion.h"
 
 //ToDo: Meter esta funcion en un clase que configure el sistema a partir de un archivo de configuracion
@@ -16,11 +17,15 @@ bool confConexionDB()
     db.setDriver("QMYSQL");
     db.setName("opticaldb");
 
-    db.setHost("servercsunsa1.sytes.net");
+    db.setHost("servercsunsa.sytes.net");
     db.setUser("opticaldb");
     db.setPass("optical123");
 
-    if(db.connect()) return true;
+    if(db.connect())
+    {
+        qDebug()<<"Conectado a servercsunsa.sytes.net ...";
+        return true;
+    }
     QSqlError err = db.getConError();
     if(err.type() == QSqlError::ConnectionError)
     {
@@ -29,7 +34,11 @@ bool confConexionDB()
         db.setHost("localhost");
         db.setUser("root");
         db.setPass("jose-123");
-        if(db.connect()) return true;
+        if(db.connect())
+        {
+            qDebug()<<"Conectado a localhost ...";
+            return true;
+        }
     }
     err = db.getConError();
     QString num2str;

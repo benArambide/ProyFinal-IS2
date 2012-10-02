@@ -33,7 +33,7 @@ void ui_cambiarPassDialog::on_buttonBox_accepted()
     QSqlQuery q;
     bool sta = q.exec("call set_pass("+a.setNum(id_usr)+",'"+pass1+"')");
     if(!sta)
-        QMessageBox::warning(0,"ds","asda",0,0);
+        QMessageBox::warning(0,"Error de conexion","asda",0,0);
 }
 
 void ui_cambiarPassDialog::on_buttonBox_rejected()
