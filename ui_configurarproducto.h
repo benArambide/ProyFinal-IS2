@@ -1,6 +1,7 @@
 #ifndef UI_CONFIGURARPRODUCTO_H
 #define UI_CONFIGURARPRODUCTO_H
 #include <ui_ingnombrecarac.h>
+#include <ui_ingnomobscarac.h>
 
 #include <QDialog>
 
@@ -25,6 +26,7 @@ private slots:
 private:
     Ui::ui_configurarProducto *ui;
     ui_ingNombreCarac *ven_nombre;//ventana de para ingresar nombre
+    ui_ingNomObsCarac *ven_nombreObs;//ventana que recibe el nombre y la observacion
 };
 
 #endif // UI_CONFIGURARPRODUCTO_H

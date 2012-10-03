@@ -4,6 +4,7 @@
 
 class Marca_Datos:public Caracteristica_Datos
 {
+private:
 public:
 
     Marca_Datos();

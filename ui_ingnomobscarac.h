@@ -1,5 +1,7 @@
 #ifndef UI_INGNOMOBSCARAC_H
 #define UI_INGNOMOBSCARAC_H
+#include "caracteristica_datos.h"
+#include "marca_datos.h"
 
 #include <QDialog>
 
@@ -14,12 +16,16 @@ class ui_ingNomObsCarac : public QDialog
 public:
     explicit ui_ingNomObsCarac(QWidget *parent = 0);
     ~ui_ingNomObsCarac();
+    void resivir_Numero_Atributo(int numero);
 
 private slots:
     void on_Boton_IngNomObs_cancelar_clicked();
 
+    void on_Boton_IngNomObs_guardar_clicked();
+
 private:
     Ui::ui_ingNomObsCarac *ui;
+    int atrib_actual;
 };
 
 #endif // UI_INGNOMOBSCARAC_H

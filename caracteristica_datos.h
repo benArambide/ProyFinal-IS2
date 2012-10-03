@@ -9,6 +9,7 @@ public:
     Caracteristica_Datos(){}
     virtual bool insertar_Datos(QString nombre)=0;
     virtual bool insertar_Datos(QString nombre,QString observacion)=0;
+
 };
 
 #endif // CARACTERISTICA_DATOS_H

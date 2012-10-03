@@ -19,6 +19,7 @@ ui_configurarProducto::ui_configurarProducto(QWidget *parent) :
 {
     ui->setupUi(this);
     ven_nombre=new ui_ingNombreCarac();//Inicia puntero de ventana para ingresar el nombre
+    ven_nombreObs=new ui_ingNomObsCarac();//Inicia el puntero de ventana para ingresar el nombre y la observacion
 
     //Deshabilita los botones para eliminar
     ui->Marca_1_x->setDisabled(true);
@@ -58,8 +59,8 @@ void ui_configurarProducto::on_ComBo_Marca_activated(int index)
     if(index==0)
     {
         ui->Marca_1_x->setDisabled(true);
-        ven_nombre->resivir_Numero_Atributo(0);
-        ven_nombre->show();
+        ven_nombreObs->resivir_Numero_Atributo(0);
+        ven_nombreObs->show();
     }
     else
     {
