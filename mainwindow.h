@@ -1,7 +1,10 @@
 #ifndef MAINWINDOW_H
 #define MAINWINDOW_H
-#include <ui_configurarproducto.h>
+
 #include <QMainWindow>
+#include "ui_producto.h"
+//#include "ui_user.h"
+//#include "ui_client.h"
 
 namespace Ui {
 class MainWindow;
@@ -16,11 +19,14 @@ public:
     ~MainWindow();
     
 private slots:
-    void on_pushButton_clicked();
+    void on_actionProducto_triggered();
+
+    void on_actionUsuario_triggered();
+
+    void on_actionCliente_triggered();
 
 private:
     Ui::MainWindow *ui;
-    ui_configurarProducto* ventana_conf;
 };
 
 #endif // MAINWINDOW_H

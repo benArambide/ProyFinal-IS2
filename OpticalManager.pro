@@ -21,7 +21,9 @@ SOURCES += main.cpp\
     ui_ingnombrecarac.cpp \
     ui_configurarproducto.cpp \
     marca_datos.cpp \
-    caracteristica_datos.cpp
+    caracteristica_datos.cpp \
+    ui_data_product.cpp \
+    ui_producto.cpp
 
 HEADERS  += mainwindow.h \
     sesion.h \
@@ -33,14 +35,18 @@ HEADERS  += mainwindow.h \
     ui_ingnombrecarac.h \
     ui_configurarproducto.h \
     marca_datos.h \
-    caracteristica_datos.h
+    caracteristica_datos.h \
+    ui_data_product.h \
+    ui_producto.h
 
 FORMS    += mainwindow.ui \
     ui_login.ui \
     ui_cambiarpassdialog.ui \
     ui_ingnomobscarac.ui \
     ui_ingnombrecarac.ui \
-    ui_configurarproducto.ui
+    ui_configurarproducto.ui \
+    ui_data_product.ui \
+    ui_producto.ui
 
 RESOURCES += \
     Icons/Icons.qrc \

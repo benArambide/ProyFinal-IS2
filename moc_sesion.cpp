@@ -1,7 +1,7 @@
 /****************************************************************************
 ** Meta object code from reading C++ file 'sesion.h'
 **
-** Created: Sat Sep 29 22:34:27 2012
+** Created: Wed Oct 3 14:35:15 2012
 **      by: The Qt Meta Object Compiler version 63 (Qt 4.8.1)
 **
 ** WARNING! All changes made in this file will be lost!

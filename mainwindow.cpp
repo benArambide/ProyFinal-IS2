@@ -6,7 +6,8 @@ MainWindow::MainWindow(QWidget *parent) :
     ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
-    ventana_conf=new ui_configurarProducto();
+
+
 }
 
 MainWindow::~MainWindow()
@@ -14,7 +15,27 @@ MainWindow::~MainWindow()
     delete ui;
 }
 
-void MainWindow::on_pushButton_clicked()
+void MainWindow::on_actionProducto_triggered()
 {
-     ventana_conf->show();
+    UI_PRODUCTO *PRODUCT_FORM;
+    PRODUCT_FORM = new UI_PRODUCTO;
+    setCentralWidget(PRODUCT_FORM);
+    PRODUCT_FORM->showMaximized();
+}
+
+void MainWindow::on_actionUsuario_triggered()
+{
+    /*UI_USER *USER_FORM;
+    USER_FORM = new UI_USER;
+    setCentralWidget(USER_FORM);
+    USER_FORM->showMaximized();*/
+}
+
+void MainWindow::on_actionCliente_triggered()
+{
+    /*UI_CLIENT *CLIENT_FORM;
+    CLIENT_FORM = new UI_CLIENT;
+    setCentralWidget(CLIENT_FORM);
+    CLIENT_FORM->showMaximized();*/
+
 }
