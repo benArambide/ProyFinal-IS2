@@ -1,12 +1,14 @@
 #ifndef MARCA_DATOS_H
 #define MARCA_DATOS_H
-#include <QSqlQuery>
+#include "caracteristica_datos.h"
 
-class Marca_Datos
+class Marca_Datos:public Caracteristica_Datos
 {
 public:
-    Marca_Datos();
 
+    Marca_Datos();
+    bool insertar_Datos(QString nombre);
+    bool insertar_Datos(QString nombre,QString observacion);
 };
 
 #endif // MARCA_DATOS_H

@@ -31,7 +31,7 @@
      </widget>
     </item>
     <item row="2" column="0">
-     <widget class="QLineEdit" name="lineEdit"/>
+     <widget class="QLineEdit" name="lineaEdit_IngNom"/>
     </item>
     <item row="3" column="0">
      <spacer name="verticalSpacer">

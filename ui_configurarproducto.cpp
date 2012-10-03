@@ -3,6 +3,16 @@
 #include <iostream>
 using namespace std;
 
+/** Asignacion de numero a los atributos
+*
+* Marca - 0
+*
+*
+*
+*
+*/
+
+
 ui_configurarProducto::ui_configurarProducto(QWidget *parent) :
     QDialog(parent),
     ui(new Ui::ui_configurarProducto)
@@ -48,6 +58,7 @@ void ui_configurarProducto::on_ComBo_Marca_activated(int index)
     if(index==0)
     {
         ui->Marca_1_x->setDisabled(true);
+        ven_nombre->resivir_Numero_Atributo(0);
         ven_nombre->show();
     }
     else
