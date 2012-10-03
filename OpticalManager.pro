@@ -16,18 +16,27 @@ SOURCES += main.cpp\
     usuario.cpp \
     conexionbd.cpp \
     ui_login.cpp \
-    ui_cambiarpassdialog.cpp
+    ui_cambiarpassdialog.cpp \
+    ui_ingnomobscarac.cpp \
+    ui_ingnombrecarac.cpp \
+    ui_configurarproducto.cpp
 
 HEADERS  += mainwindow.h \
     sesion.h \
     usuario.h \
     conexionbd.h \
     ui_login.h \
-    ui_cambiarpassdialog.h
+    ui_cambiarpassdialog.h \
+    ui_ingnomobscarac.h \
+    ui_ingnombrecarac.h \
+    ui_configurarproducto.h
 
 FORMS    += mainwindow.ui \
     ui_login.ui \
-    ui_cambiarpassdialog.ui
+    ui_cambiarpassdialog.ui \
+    ui_ingnomobscarac.ui \
+    ui_ingnombrecarac.ui \
+    ui_configurarproducto.ui
 
 RESOURCES += \
     Icons/Icons.qrc \
