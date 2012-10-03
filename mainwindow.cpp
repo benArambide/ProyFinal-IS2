@@ -16,5 +16,5 @@ MainWindow::~MainWindow()
 
 void MainWindow::on_pushButton_clicked()
 {
-    ventana_conf->show();
+     ventana_conf->show();
 }
