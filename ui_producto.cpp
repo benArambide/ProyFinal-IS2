@@ -6,6 +6,7 @@ UI_PRODUCTO::UI_PRODUCTO(QWidget *parent) :
     ui(new Ui::UI_PRODUCTO)
 {
     ui->setupUi(this);
+    ventana_configurar_producto=new ui_configurarProducto();
 }
 
 UI_PRODUCTO::~UI_PRODUCTO()
@@ -33,4 +34,9 @@ void UI_PRODUCTO::on_pushButton_ModificarProducto_clicked()
     EDIT_PRODUCT_FORM->setTitleWindow("Editar Producto");
 
     EDIT_PRODUCT_FORM->show();
+}
+
+void UI_PRODUCTO::on_Configurar_producto_clicked()
+{
+    ventana_configurar_producto->show();
 }

@@ -6,6 +6,7 @@ ui_ingNomObsCarac::ui_ingNomObsCarac(QWidget *parent) :
     ui(new Ui::ui_ingNomObsCarac)
 {
     ui->setupUi(this);
+    estado=false;
 }
 
 ui_ingNomObsCarac::~ui_ingNomObsCarac()
@@ -36,5 +37,11 @@ void ui_ingNomObsCarac::on_Boton_IngNomObs_guardar_clicked()
     tipo_caracteristica->insertar_Datos(ui->lineaEdit_Nom->text(),ui->textEdit_Des->toPlainText()); //Manda ala clase datos a insertar el dato cogido por linea editable
     ui->lineaEdit_Nom->clear(); //Limpia la linea editable
     ui->textEdit_Des->clear();  //Limpia la zona del text edit
+
+    emit enviar_signal(atributo);
+
     this->close();              //cierra la ventana
+
+    //delete tipo_caracteristica;
 }
+

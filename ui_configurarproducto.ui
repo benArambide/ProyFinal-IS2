@@ -110,15 +110,18 @@
          </item>
          <item row="2" column="0">
           <widget class="QComboBox" name="ComBo_Marca">
-           <item>
-            <property name="text">
-             <string>... Crear Nuevo ...</string>
-            </property>
-            <property name="icon">
-             <iconset resource="Icons/Icons.qrc">
-              <normaloff>:/Icons/1348112114_notification_add.png</normaloff>:/Icons/1348112114_notification_add.png</iconset>
-            </property>
-           </item>
+           <property name="enabled">
+            <bool>true</bool>
+           </property>
+           <property name="acceptDrops">
+            <bool>false</bool>
+           </property>
+           <property name="inputMethodHints">
+            <set>Qt::ImhNone</set>
+           </property>
+           <property name="editable">
+            <bool>false</bool>
+           </property>
           </widget>
          </item>
          <item row="8" column="0">

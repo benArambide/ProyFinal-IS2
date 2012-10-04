@@ -73,6 +73,9 @@
       <property name="text">
        <string>Cancelar</string>
       </property>
+      <property name="shortcut">
+       <string>Esc</string>
+      </property>
      </widget>
     </item>
     <item row="1" column="0">

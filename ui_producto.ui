@@ -359,6 +359,13 @@
        </property>
       </widget>
      </item>
+     <item row="4" column="0">
+      <widget class="QPushButton" name="Configurar_producto">
+       <property name="text">
+        <string>Configurar Producto</string>
+       </property>
+      </widget>
+     </item>
     </layout>
    </item>
   </layout>
