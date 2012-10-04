@@ -1,8 +1,8 @@
 /********************************************************************************
 ** Form generated from reading UI file 'mainwindow.ui'
 **
-** Created: Wed Oct 3 23:52:45 2012
-**      by: Qt User Interface Compiler version 4.7.4
+** Created: Thu Oct 4 15:05:22 2012
+**      by: Qt User Interface Compiler version 4.8.1
 **
 ** WARNING! All changes made in this file will be lost when recompiling UI file!
 ********************************************************************************/
@@ -16,6 +16,7 @@
 #include <QtGui/QButtonGroup>
 #include <QtGui/QHeaderView>
 #include <QtGui/QMainWindow>
+#include <QtGui/QStatusBar>
 #include <QtGui/QToolBar>
 #include <QtGui/QWidget>
 
@@ -27,14 +28,18 @@ public:
     QAction *actionProducto;
     QAction *actionUsuario;
     QAction *actionCliente;
+    QAction *actionEditar;
+    QAction *actionNuevo;
     QWidget *centralWidget;
-    QToolBar *toolBar_Optica;
+    QToolBar *toolBar_modulos;
+    QStatusBar *statusBar;
+    QToolBar *toolBar;
 
     void setupUi(QMainWindow *MainWindow)
     {
         if (MainWindow->objectName().isEmpty())
             MainWindow->setObjectName(QString::fromUtf8("MainWindow"));
-        MainWindow->resize(295, 66);
+        MainWindow->resize(786, 197);
         QIcon icon;
         icon.addFile(QString::fromUtf8(":/Icons/internet-news-reader.png"), QSize(), QIcon::Normal, QIcon::Off);
         MainWindow->setWindowIcon(icon);
@@ -55,17 +60,40 @@ public:
         QIcon icon3;
         icon3.addFile(QString::fromUtf8(":/Icons/clients.png"), QSize(), QIcon::Normal, QIcon::Off);
         actionCliente->setIcon(icon3);
+        actionEditar = new QAction(MainWindow);
+        actionEditar->setObjectName(QString::fromUtf8("actionEditar"));
+        QIcon icon4;
+        icon4.addFile(QString::fromUtf8(":/Icons/1348112116_file_edit.png"), QSize(), QIcon::Normal, QIcon::Off);
+        actionEditar->setIcon(icon4);
+        actionNuevo = new QAction(MainWindow);
+        actionNuevo->setObjectName(QString::fromUtf8("actionNuevo"));
+        QIcon icon5;
+        icon5.addFile(QString::fromUtf8(":/Icons/1348112114_notification_add.png"), QSize(), QIcon::Normal, QIcon::Off);
+        actionNuevo->setIcon(icon5);
         centralWidget = new QWidget(MainWindow);
         centralWidget->setObjectName(QString::fromUtf8("centralWidget"));
         MainWindow->setCentralWidget(centralWidget);
-        toolBar_Optica = new QToolBar(MainWindow);
-        toolBar_Optica->setObjectName(QString::fromUtf8("toolBar_Optica"));
-        toolBar_Optica->setIconSize(QSize(40, 40));
-        MainWindow->addToolBar(Qt::TopToolBarArea, toolBar_Optica);
+        toolBar_modulos = new QToolBar(MainWindow);
+        toolBar_modulos->setObjectName(QString::fromUtf8("toolBar_modulos"));
+        toolBar_modulos->setIconSize(QSize(40, 40));
+        toolBar_modulos->setFloatable(true);
+        MainWindow->addToolBar(Qt::TopToolBarArea, toolBar_modulos);
+        MainWindow->insertToolBarBreak(toolBar_modulos);
+        statusBar = new QStatusBar(MainWindow);
+        statusBar->setObjectName(QString::fromUtf8("statusBar"));
+        statusBar->setCursor(QCursor(Qt::IBeamCursor));
+        MainWindow->setStatusBar(statusBar);
+        toolBar = new QToolBar(MainWindow);
+        toolBar->setObjectName(QString::fromUtf8("toolBar"));
+        toolBar->setIconSize(QSize(40, 40));
+        toolBar->setToolButtonStyle(Qt::ToolButtonTextBesideIcon);
+        MainWindow->addToolBar(Qt::TopToolBarArea, toolBar);
 
-        toolBar_Optica->addAction(actionProducto);
-        toolBar_Optica->addAction(actionUsuario);
-        toolBar_Optica->addAction(actionCliente);
+        toolBar_modulos->addAction(actionProducto);
+        toolBar_modulos->addAction(actionUsuario);
+        toolBar_modulos->addAction(actionCliente);
+        toolBar->addAction(actionNuevo);
+        toolBar->addAction(actionEditar);
 
         retranslateUi(MainWindow);
 
@@ -81,7 +109,18 @@ public:
         actionUsuario->setShortcut(QApplication::translate("MainWindow", "Ctrl+U", 0, QApplication::UnicodeUTF8));
         actionCliente->setText(QApplication::translate("MainWindow", "Cliente", 0, QApplication::UnicodeUTF8));
         actionCliente->setShortcut(QApplication::translate("MainWindow", "Ctrl+L", 0, QApplication::UnicodeUTF8));
-        toolBar_Optica->setWindowTitle(QApplication::translate("MainWindow", "toolBar", 0, QApplication::UnicodeUTF8));
+        actionEditar->setText(QApplication::translate("MainWindow", "Editar", 0, QApplication::UnicodeUTF8));
+#ifndef QT_NO_TOOLTIP
+        actionEditar->setToolTip(QApplication::translate("MainWindow", "Editar registro actual", 0, QApplication::UnicodeUTF8));
+#endif // QT_NO_TOOLTIP
+        actionEditar->setShortcut(QApplication::translate("MainWindow", "Ctrl+E", 0, QApplication::UnicodeUTF8));
+        actionNuevo->setText(QApplication::translate("MainWindow", "Nuevo", 0, QApplication::UnicodeUTF8));
+#ifndef QT_NO_TOOLTIP
+        actionNuevo->setToolTip(QApplication::translate("MainWindow", "Nuevo Registro", 0, QApplication::UnicodeUTF8));
+#endif // QT_NO_TOOLTIP
+        actionNuevo->setShortcut(QApplication::translate("MainWindow", "Ctrl+N", 0, QApplication::UnicodeUTF8));
+        toolBar_modulos->setWindowTitle(QApplication::translate("MainWindow", "toolBar", 0, QApplication::UnicodeUTF8));
+        toolBar->setWindowTitle(QApplication::translate("MainWindow", "toolBar", 0, QApplication::UnicodeUTF8));
     } // retranslateUi
 
 };

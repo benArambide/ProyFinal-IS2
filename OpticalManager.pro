@@ -23,7 +23,8 @@ SOURCES += main.cpp\
     marca_datos.cpp \
     caracteristica_datos.cpp \
     ui_data_product.cpp \
-    ui_producto.cpp
+    ui_producto.cpp \
+    ui_status_bar.cpp
 
 HEADERS  += mainwindow.h \
     sesion.h \
@@ -37,7 +38,8 @@ HEADERS  += mainwindow.h \
     marca_datos.h \
     caracteristica_datos.h \
     ui_data_product.h \
-    ui_producto.h
+    ui_producto.h \
+    ui_status_bar.h
 
 FORMS    += mainwindow.ui \
     ui_login.ui \
@@ -46,7 +48,8 @@ FORMS    += mainwindow.ui \
     ui_ingnombrecarac.ui \
     ui_configurarproducto.ui \
     ui_data_product.ui \
-    ui_producto.ui
+    ui_producto.ui \
+    ui_status_bar.ui
 
 RESOURCES += \
     Icons/Icons.qrc \

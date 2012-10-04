@@ -59,7 +59,9 @@ int main(int argc,char *argv[])
     QTextCodec::setCodecForLocale(linuxCodec);
 
 
-    QPixmap pix(":/Icons/splash-syllabus.png");
+    QPixmap pix(":/Icons/splash.png");
+    pix = pix.scaled(800,450);
+
     QSplashScreen splash(pix);
     //ToDO: Cambiar el color de letra o posicion del texto de Cargando...
     splash.show();

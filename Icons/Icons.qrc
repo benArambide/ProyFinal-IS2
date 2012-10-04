@@ -39,5 +39,6 @@
         <file>1348112114_notification_add.png</file>
         <file>1348112116_file_edit.png</file>
         <file>splash-syllabus.png</file>
+        <file>splash.png</file>
     </qresource>
 </RCC>
