@@ -1,0 +1,39 @@
+<RCC>
+    <qresource prefix="/new/Icons">
+        <file>1349716356_save.png</file>
+        <file>1349716373_monotone_close_exit_delete_small.png</file>
+        <file>1349716375_monotone_search_zoom.png</file>
+        <file>1349716376_monotone_close_exit_delete.png</file>
+        <file>1349716377_monotone_cog_settings_gear.png</file>
+        <file>1349716379_monotone_pen_write.png</file>
+        <file>1349716380_monotone_check_yes_ok.png</file>
+        <file>1349716381_monotone_pen_write_round.png</file>
+        <file>1349716383_monotone_plus_add_round.png</file>
+        <file>1349716384_monotone_alert_attention.png</file>
+        <file>1349716386_monotone_add_plus_round.png</file>
+        <file>1349716387_monotone_question.png</file>
+        <file>1349716388_monotone_plus_add.png</file>
+        <file>1349716390_monotone_check_yes.png</file>
+        <file>1349716391_monotone_printer_hardware.png</file>
+        <file>1349716392_monotone_wrench_settings.png</file>
+        <file>1349716393_monotone_add_plus.png</file>
+        <file>1349716394_monotone_minus_round.png</file>
+        <file>1349716396_monotone_disk.png</file>
+        <file>1349716397_monotone_close_exit_delete_small.png</file>
+        <file>1349716398_monotone_search_zoom.png</file>
+        <file>1349716423_sq_plus.png</file>
+        <file>1349716425_doc_edit.png</file>
+        <file>1349716426_print.png</file>
+        <file>1349716427_checkbox_checked.png</file>
+        <file>1349716428_trash.png</file>
+        <file>1349716429_doc_plus.png</file>
+        <file>1349716430_zoom.png</file>
+        <file>1349716431_round_checkmark.png</file>
+        <file>1349716432_round_minus.png</file>
+        <file>1349716433_doc_delete.png</file>
+        <file>1349716434_checkmark.png</file>
+        <file>1349716435_cog.png</file>
+        <file>1349716436_attention.png</file>
+        <file>1349716438_cancel.png</file>
+    </qresource>
+</RCC>
