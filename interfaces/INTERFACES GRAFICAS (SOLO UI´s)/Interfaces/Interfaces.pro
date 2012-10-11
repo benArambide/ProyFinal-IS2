@@ -13,7 +13,8 @@ TEMPLATE = app
 SOURCES += main.cpp\
         mainwindow.cpp
 
-HEADERS  += mainwindow.h
+HEADERS  += mainwindow.h \
+    ui_buscar_producto.h
 
 FORMS    += mainwindow.ui \
     ui_usuario.ui \
@@ -21,7 +22,10 @@ FORMS    += mainwindow.ui \
     ui_producto.ui \
     ui_producto_datos.ui \
     ui_cliente.ui \
-    ui_cliente_datos.ui
+    ui_cliente_datos.ui \
+    ui_buscar_producto.ui \
+    ui_buscar_cliente.ui \
+    ui_buscar_usuario.ui
 
 RESOURCES += \
     Icons/Icons.qrc
