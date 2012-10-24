@@ -2,9 +2,6 @@
 #define MAINWINDOW_H
 
 #include <QMainWindow>
-#include "ui_producto.h"
-//#include "ui_user.h"
-//#include "ui_client.h"
 
 namespace Ui {
 class MainWindow;

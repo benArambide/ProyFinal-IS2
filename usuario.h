@@ -11,7 +11,7 @@
 class Usuario
 {
 public:
-    Usuario(){}
+    Usuario();
     Usuario(int id, int utype, QString m_uname,QString name , QString flname , QString slname);
     int get_id(){return m_idUsuario;}
     QString get_nUsuario(){return m_nombreUsuario;}

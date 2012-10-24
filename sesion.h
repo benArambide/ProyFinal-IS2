@@ -9,6 +9,8 @@
  * @class Sesion
  * @brief Clase singletone que representa el la sesion de el sistema
  */
+
+
 class Sesion:public QObject
 {
     Q_OBJECT

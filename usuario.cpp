@@ -6,3 +6,5 @@ Usuario::Usuario(int id, int utype, QString uname,QString name , QString flname 
      m_pApellido(flname),m_sApellido(slname)
 {
 }
+
+Usuario::Usuario(){}
