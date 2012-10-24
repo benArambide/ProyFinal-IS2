@@ -16,14 +16,20 @@ SOURCES += main.cpp\
     conexionbd.cpp \
     ui_login.cpp \
     ui_cambiarpassdialog.cpp \
-    usuario.cpp
+    usuario.cpp \
+    producto.cpp \
+    marca.cpp \
+    objetopersistente.cpp
 
 HEADERS  += mainwindow.h \
     sesion.h \
     conexionbd.h \
     ui_login.h \
     ui_cambiarpassdialog.h \
-    usuario.h
+    usuario.h \
+    producto.h \
+    marca.h \
+    objetopersistente.h
 
 FORMS    += mainwindow.ui \
     ui_login.ui \
