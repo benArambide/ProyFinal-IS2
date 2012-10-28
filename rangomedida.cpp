@@ -9,6 +9,16 @@ RangoMedida::RangoMedida(int _id,float _valorIni,float _valorFin, QString _descr
 
 }
 
+RangoMedida::RangoMedida(float _valorIni,float _valorFin, QString _descripsion)
+{
+    id=0;
+    valorini=_valorIni;
+    valorfin=_valorFin;
+    descripsion = _descripsion;
+
+}
+
+
 RangoMedida::RangoMedida()
 {
     id=0;
@@ -31,7 +41,20 @@ RangoMedida::RangoMedida()
  */
 QList<RangoMedida*> RangoMedida::listar()
 {
-
+    QSqlQuery query;
+    query.prepare("SELECT * FROM rango_medida");
+    query.exec();
+    QList<RangoMedida*> lista_resultado;
+    while(query.next())
+    {
+        int _id=query.value(0).toInt();
+        float _valorini=query.value(1).toFloat();
+        float _valorfin=query.value(2).toFloat();
+        QString _descripsion=query.value(3).toString();
+        RangoMedida* rangomedida=new RangoMedida(_id,_valorini,_valorfin, _descripsion);
+        lista_resultado.push_back(rangomedida);
+    }
+    return lista_resultado;
 }
 
 

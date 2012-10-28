@@ -18,6 +18,7 @@ private:
     QString nombre;
 public:
     Tamanio(int _id,QString _nombre);
+    Tamanio(QString _nombre);
     Tamanio();
     static QList<Tamanio*> listar();
 

@@ -1,4 +1,5 @@
 #include "calidad.h"
+#include <QDebug>
 
 Calidad::Calidad(int _id,QString _nombre)
 {
@@ -12,6 +13,11 @@ Calidad::Calidad()
     nombre="";
 }
 
+Calidad::Calidad(QString _nombre)
+{
+    id=0;
+    nombre=_nombre;
+}
 
 
 
@@ -26,12 +32,19 @@ Calidad::Calidad()
  */
 QList<Calidad*> Calidad::listar()
 {
-
+    QSqlQuery query;
+    query.prepare("SELECT * FROM calidad");
+    query.exec();
+    QList<Calidad*> lista_resultado;
+    while(query.next())
+    {
+        int _id=query.value(0).toInt();
+        QString _nombre=query.value(1).toString();
+        Calidad* calidad=new Calidad(_id,_nombre);
+        lista_resultado.push_back(calidad);
+    }
+    return lista_resultado;
 }
-
-
-
-
 
 
 
@@ -96,7 +109,23 @@ void Calidad::setNombre(QString _nombre)
  */
 bool Calidad::agregar()
 {
-    return true;
+    if(nombre!="")
+    {
+        QSqlQuery query;
+        query.prepare("INSERT INTO calidad (nombre) VALUES ('"+nombre+"')");
+
+        if(query.exec()==true)
+        {
+            query.prepare("SELECT idcalidad FROM calidad WHERE nombre='"+nombre+"'");
+            id=query.value(0).toInt();
+            return true;
+        }
+        else
+            return false;
+    }
+    else
+        return false;
+
 }
 
 
@@ -108,7 +137,13 @@ bool Calidad::agregar()
  */
 bool Calidad::actualizar()
 {
-    return true;
+    if(nombre!="")
+    {
+        QSqlQuery query;
+        query.prepare("UPDATE calidad SET nombre='"+nombre+"' WHERE idcalidad="+ QString::number(id));
+    }
+    else
+        return false;
 }
 
 
@@ -120,6 +155,12 @@ bool Calidad::actualizar()
  */
 bool Calidad::eliminar()
 {
-    return true;
+    if(nombre!="")
+    {
+        QSqlQuery query;
+        query.prepare("DELETE FROM calidad WHERE idcalidad="+ QString::number(id));
+    }
+    else
+        return false;
 }
 

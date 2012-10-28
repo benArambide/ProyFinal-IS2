@@ -19,6 +19,7 @@ private:
     QString nombre;
 public:
     Calidad(int _id,QString _nombre);
+    Calidad(QString _nombre);
     Calidad();
     static QList<Calidad*> listar();
 

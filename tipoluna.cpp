@@ -13,6 +13,11 @@ TipoLuna::TipoLuna()
 }
 
 
+TipoLuna::TipoLuna(QString _nombre)
+{
+    id=0;
+    nombre=_nombre;
+}
 
 
 
@@ -26,7 +31,18 @@ TipoLuna::TipoLuna()
  */
 QList<TipoLuna*> TipoLuna::listar()
 {
-
+    QSqlQuery query;
+    query.prepare("SELECT * FROM tipo_luna");
+    query.exec();
+    QList<TipoLuna*> lista_resultado;
+    while(query.next())
+    {
+        int _id=query.value(0).toInt();
+        QString _nombre=query.value(1).toString();
+        TipoLuna* tipoluna=new TipoLuna(_id,_nombre);
+        lista_resultado.push_back(tipoluna);
+    }
+    return lista_resultado;
 }
 
 

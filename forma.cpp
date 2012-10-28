@@ -12,6 +12,11 @@ Forma::Forma()
     nombre="";
 }
 
+Forma::Forma(QString _nombre)
+{
+    id=0;
+    nombre=_nombre;
+}
 
 
 
@@ -26,6 +31,18 @@ Forma::Forma()
  */
 QList<Forma*> Forma::listar()
 {
+    QSqlQuery query;
+    query.prepare("SELECT * FROM forma");
+    query.exec();
+    QList<Forma*> lista_resultado;
+    while(query.next())
+    {
+        int _id=query.value(0).toInt();
+        QString _nombre=query.value(1).toString();
+        Forma* forma=new Forma(_id,_nombre);
+        lista_resultado.push_back(forma);
+    }
+    return lista_resultado;
 
 }
 

@@ -12,6 +12,12 @@ Color::Color()
     nombre="";
 }
 
+Color::Color(QString _nombre)
+{
+    id=0;
+    nombre=_nombre;
+}
+
 
 
 
@@ -26,7 +32,18 @@ Color::Color()
  */
 QList<Color*> Color::listar()
 {
-
+    QSqlQuery query;
+    query.prepare("SELECT * FROM color");
+    query.exec();
+    QList<Color*> lista_resultado;
+    while(query.next())
+    {
+        int _id=query.value(0).toInt();
+        QString _nombre=query.value(1).toString();
+        Color* color=new Color(_id,_nombre);
+        lista_resultado.push_back(color);
+    }
+    return lista_resultado;
 }
 
 

@@ -19,6 +19,7 @@ private:
 public:
 public:
     Color(int _id,QString _nombre);
+    Color(QString _nombre);
     Color();
     static QList<Color*> listar();
 

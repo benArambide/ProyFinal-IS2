@@ -12,7 +12,11 @@ IndiceRefraccion::IndiceRefraccion()
     valor="";
 }
 
-
+IndiceRefraccion::IndiceRefraccion(QString _valor)
+{
+    id=0;
+    valor=_valor;
+}
 
 
 
@@ -26,7 +30,18 @@ IndiceRefraccion::IndiceRefraccion()
  */
 QList<IndiceRefraccion*> IndiceRefraccion::listar()
 {
-
+    QSqlQuery query;
+    query.prepare("SELECT * FROM indice_refraccion");
+    query.exec();
+    QList<IndiceRefraccion*> lista_resultado;
+    while(query.next())
+    {
+        int _id=query.value(0).toInt();
+        QString _valor=query.value(1).toString();
+        IndiceRefraccion* indicerefraccion=new IndiceRefraccion(_id,_valor);
+        lista_resultado.push_back(indicerefraccion);
+    }
+    return lista_resultado;
 }
 
 

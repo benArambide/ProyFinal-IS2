@@ -19,6 +19,7 @@ private:
     QString valor;
 public:
     IndiceRefraccion(int _id,QString _valor);
+    IndiceRefraccion(QString _valor);
     IndiceRefraccion();
     static QList<IndiceRefraccion*> listar();
 

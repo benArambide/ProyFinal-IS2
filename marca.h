@@ -20,8 +20,19 @@ private:
     QString nombre;
     QString descripsion;
 public:
+    Marca(int _id,QString _nombre, QString _descripsion );
+    Marca(QString _nombre, QString _descripsion );
     Marca();
-    static QList<Marca> listar();
+    static QList<Marca*> listar();
+
+    int getId();
+    QString getNombre();
+    QString getDescripsion();
+    void setId(int _id);
+    void setNombre(QString _nombre);
+    void setDescripsion(QString _descripsion);
+
+
     bool agregar();
     bool actualizar();
     bool eliminar();

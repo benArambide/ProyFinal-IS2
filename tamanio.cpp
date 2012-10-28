@@ -12,6 +12,11 @@ Tamanio::Tamanio()
     nombre="";
 }
 
+Tamanio::Tamanio(QString _nombre)
+{
+    id=0;
+    nombre=_nombre;
+}
 
 
 
@@ -26,7 +31,18 @@ Tamanio::Tamanio()
  */
 QList<Tamanio*> Tamanio::listar()
 {
-
+    QSqlQuery query;
+    query.prepare("SELECT * FROM tamanio");
+    query.exec();
+    QList<Tamanio*> lista_resultado;
+    while(query.next())
+    {
+        int _id=query.value(0).toInt();
+        QString _nombre=query.value(1).toString();
+        Tamanio* tamanio=new Tamanio(_id,_nombre);
+        lista_resultado.push_back(tamanio);
+    }
+    return lista_resultado;
 }
 
 

@@ -3,7 +3,7 @@
 #include <QString>
 #include <QSqlQuery>
 #include <QList>
-
+#include <QVariant>
 
 /**
  * @author Josue Benjamin Arambide Quispe

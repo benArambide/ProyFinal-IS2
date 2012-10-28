@@ -19,6 +19,7 @@ private:
 public:
     TipoLuna(int _id,QString _nombre);
     TipoLuna();
+    TipoLuna(QString _nombre);
     static QList<TipoLuna*> listar();
 
     int getId();

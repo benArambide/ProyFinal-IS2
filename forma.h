@@ -19,6 +19,7 @@ private:
     QString nombre;
 public:
     Forma(int _id,QString _nombre);
+    Forma(QString _nombre);
     Forma();
     static QList<Forma*> listar();
 
