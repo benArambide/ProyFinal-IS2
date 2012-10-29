@@ -1,24 +1,22 @@
-#include "marca.h"
+#include "tipoluna.h"
 
-Marca::Marca(int _id,QString _nombre, QString _descripcion )
+TipoLuna::TipoLuna(int _id,QString _nombre)
 {
     id=_id;
     nombre=_nombre;
-    descripcion=_descripcion;
 }
 
-Marca::Marca()
+TipoLuna::TipoLuna()
 {
     id=0;
     nombre="";
-    descripcion="";
 }
 
-Marca::Marca(QString _nombre, QString _descripcion )
+
+TipoLuna::TipoLuna(QString _nombre)
 {
     id=0;
     nombre=_nombre;
-    descripcion=_descripcion;
 }
 
 
@@ -28,22 +26,21 @@ Marca::Marca(QString _nombre, QString _descripcion )
 ---------------------------------------------------------------------*/
 
 /**
- * @brief Retorna un Qlist de las Marcas existentes
- * @return QList Marcas
+ * @brief Retorna un Qlist de las TipoLunas existentes
+ * @return QList TipoLunas
  */
-QList<Marca*> Marca::listar()
+QList<TipoLuna*> TipoLuna::listar()
 {
     QSqlQuery query;
-    query.prepare("SELECT * FROM marca");
+    query.prepare("SELECT * FROM tipo_luna");
     query.exec();
-    QList<Marca*> lista_resultado;
+    QList<TipoLuna*> lista_resultado;
     while(query.next())
     {
         int _id=query.value(0).toInt();
         QString _nombre=query.value(1).toString();
-        QString _descripcion=query.value(2).toString();
-        Marca* marca=new Marca(_id,_nombre,_descripcion);
-        lista_resultado.push_back(marca);
+        TipoLuna* tipoluna=new TipoLuna(_id,_nombre);
+        lista_resultado.push_back(tipoluna);
     }
     return lista_resultado;
 }
@@ -59,10 +56,10 @@ QList<Marca*> Marca::listar()
 ---------------------------------------------------------------------*/
 
 /**
- * @brief Entrega el id de la Marca
+ * @brief Entrega el id de la TipoLuna
  * @return Int id
  */
-int Marca::getId()
+int TipoLuna::getId()
 {
     return id;
 }
@@ -70,23 +67,12 @@ int Marca::getId()
 
 
 /**
- * @brief Entrega el nombre de la Marca
+ * @brief Entrega el nombre de la TipoLuna
  * @return QString nombre
  */
-QString Marca::getNombre()
+QString TipoLuna::getNombre()
 {
     return nombre;
-}
-
-
-
-/**
- * @brief Entrega la descripcion de la Marca
- * @return QString descripcion
- */
-QString Marca::getdescripcion()
-{
-    return descripcion;
 }
 
 
@@ -95,7 +81,7 @@ QString Marca::getdescripcion()
  * @brief Permitar cambiar el dato del id
  * @param Int _id que representa al nuevo id
  */
-void Marca::setId(int _id)
+void TipoLuna::setId(int _id)
 {
     id=_id;
 }
@@ -103,25 +89,13 @@ void Marca::setId(int _id)
 
 
 /**
- * @brief Permite cambiar el nombre de la Marca
+ * @brief Permite cambiar el nombre de la TipoLuna
  * @param QString _nombre que representa el nuevo nombre
  */
-void Marca::setNombre(QString _nombre)
+void TipoLuna::setNombre(QString _nombre)
 {
     nombre=_nombre;
 }
-
-
-
-/**
- * @brief Permite cambiar la edscripsion de la Marca
- * @param QSrtring _descripcion, que representa la nueva descripcion
- */
-void Marca::setdescripcion(QString _descripcion)
-{
-    descripcion=_descripcion;
-}
-
 
 
 
@@ -132,20 +106,20 @@ void Marca::setdescripcion(QString _descripcion)
 ---------------------------------------------------------------------*/
 
 /**
- * @brief Esta funcion ejecuta el agregar una nueva Marca a la base de datos
+ * @brief Esta funcion ejecuta el agregar un nuevo Tipo de Luna a la base de datos
  * @return Bool, el cual pede ser true o false dependiendo si la operacion
  * se concluyo exitosamente.
  */
-bool Marca::agregar()
+bool TipoLuna::agregar()
 {
     if(nombre!="")
     {
         QSqlQuery query;
-        query.prepare("INSERT INTO marca (nombre,descripcion) VALUES ('"+nombre+"','"+descripcion+"')");
+        query.prepare("INSERT INTO tipo_luna (nombre) VALUES ('"+nombre+"')");
 
         if(query.exec()==true)
         {
-            query.prepare("SELECT idmarca FROM marca WHERE nombre='"+nombre+"'");
+            query.prepare("SELECT idtipo_luna FROM tipo_luna WHERE nombre='"+nombre+"'");
             query.exec();
             id=query.value(0).toInt();
             return true;
@@ -160,16 +134,16 @@ bool Marca::agregar()
 
 
 /**
- * @brief Esta funcion ejecuta el actualizar una Marca a la base de datos
+ * @brief Esta funcion ejecuta el actualizar un Tipo de Luna a la base de datos
  * @return Bool, el cual pede ser true o false dependiendo si la operacion
  * se concluyo exitosamente.
  */
-bool Marca::actualizar()
+bool TipoLuna::actualizar()
 {
     if(nombre!="")
     {
         QSqlQuery query;
-        query.prepare("UPDATE marca SET nombre='"+nombre+"', descripcion='"+descripcion+"' WHERE idmarca="+ QString::number(id));
+        query.prepare("UPDATE tipo_luna SET nombre='"+nombre+"' WHERE idtipo_luna="+ QString::number(id));
         return query.exec();
     }
     else
@@ -179,16 +153,16 @@ bool Marca::actualizar()
 
 
 /**
- * @brief Esta funcion ejecuta el eliminar una Marca a la base de datos
+ * @brief Esta funcion ejecuta el eliminar un Tipo deLuna a la base de datos
  * @return Bool, el cual pede ser true o false dependiendo si la operacion
  * se concluyo exitosamente.
  */
-bool Marca::eliminar()
+bool TipoLuna::eliminar()
 {
     if(nombre!="")
     {
         QSqlQuery query;
-        query.prepare("DELETE FROM marca WHERE idmarca="+ QString::number(id));
+        query.prepare("DELETE FROM tipo_luna WHERE idtipo_luna="+ QString::number(id));
         return query.exec();
     }
     else

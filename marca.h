@@ -9,7 +9,7 @@
  * @file marca.h
  * @class Marca
  * @brief Es la clase que representa la La Marca de los productos en la optica
- *  Esta clase cuenta con caracteristicas como id, nombre y descripsion las
+ *  Esta clase cuenta con caracteristicas como id, nombre y descripcion las
  * cuales estan almacenadas en la base de datos como la tabla "Marca"
  */
 
@@ -18,10 +18,21 @@ class Marca: public ObjetoPersistente
 private:
     int id;
     QString nombre;
-    QString descripsion;
+    QString descripcion;
 public:
+    Marca(int _id,QString _nombre, QString _descripcion );
+    Marca(QString _nombre, QString _descripcion );
     Marca();
-    static QList<Marca> listar();
+    static QList<Marca*> listar();
+
+    int getId();
+    QString getNombre();
+    QString getdescripcion();
+    void setId(int _id);
+    void setNombre(QString _nombre);
+    void setdescripcion(QString _descripcion);
+
+
     bool agregar();
     bool actualizar();
     bool eliminar();

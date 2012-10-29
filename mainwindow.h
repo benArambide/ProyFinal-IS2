@@ -1,7 +1,9 @@
 #ifndef MAINWINDOW_H
 #define MAINWINDOW_H
-
+#include <calidad.h>
+#include <QDebug>
 #include <QMainWindow>
+#include <color.h>
 
 namespace Ui {
 class MainWindow;

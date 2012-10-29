@@ -1,25 +1,23 @@
-#include "marca.h"
+#include "forma.h"
 
-Marca::Marca(int _id,QString _nombre, QString _descripcion )
+Forma::Forma(int _id,QString _nombre)
 {
     id=_id;
     nombre=_nombre;
-    descripcion=_descripcion;
 }
 
-Marca::Marca()
+Forma::Forma()
 {
     id=0;
     nombre="";
-    descripcion="";
 }
 
-Marca::Marca(QString _nombre, QString _descripcion )
+Forma::Forma(QString _nombre)
 {
     id=0;
     nombre=_nombre;
-    descripcion=_descripcion;
 }
+
 
 
 
@@ -28,24 +26,24 @@ Marca::Marca(QString _nombre, QString _descripcion )
 ---------------------------------------------------------------------*/
 
 /**
- * @brief Retorna un Qlist de las Marcas existentes
- * @return QList Marcas
+ * @brief Retorna un Qlist de las Formas existentes
+ * @return QList Formas
  */
-QList<Marca*> Marca::listar()
+QList<Forma*> Forma::listar()
 {
     QSqlQuery query;
-    query.prepare("SELECT * FROM marca");
+    query.prepare("SELECT * FROM forma");
     query.exec();
-    QList<Marca*> lista_resultado;
+    QList<Forma*> lista_resultado;
     while(query.next())
     {
         int _id=query.value(0).toInt();
         QString _nombre=query.value(1).toString();
-        QString _descripcion=query.value(2).toString();
-        Marca* marca=new Marca(_id,_nombre,_descripcion);
-        lista_resultado.push_back(marca);
+        Forma* forma=new Forma(_id,_nombre);
+        lista_resultado.push_back(forma);
     }
     return lista_resultado;
+
 }
 
 
@@ -59,10 +57,10 @@ QList<Marca*> Marca::listar()
 ---------------------------------------------------------------------*/
 
 /**
- * @brief Entrega el id de la Marca
+ * @brief Entrega el id de la Forma
  * @return Int id
  */
-int Marca::getId()
+int Forma::getId()
 {
     return id;
 }
@@ -70,23 +68,12 @@ int Marca::getId()
 
 
 /**
- * @brief Entrega el nombre de la Marca
+ * @brief Entrega el nombre de la Forma
  * @return QString nombre
  */
-QString Marca::getNombre()
+QString Forma::getNombre()
 {
     return nombre;
-}
-
-
-
-/**
- * @brief Entrega la descripcion de la Marca
- * @return QString descripcion
- */
-QString Marca::getdescripcion()
-{
-    return descripcion;
 }
 
 
@@ -95,7 +82,7 @@ QString Marca::getdescripcion()
  * @brief Permitar cambiar el dato del id
  * @param Int _id que representa al nuevo id
  */
-void Marca::setId(int _id)
+void Forma::setId(int _id)
 {
     id=_id;
 }
@@ -103,25 +90,13 @@ void Marca::setId(int _id)
 
 
 /**
- * @brief Permite cambiar el nombre de la Marca
+ * @brief Permite cambiar el nombre de la Forma
  * @param QString _nombre que representa el nuevo nombre
  */
-void Marca::setNombre(QString _nombre)
+void Forma::setNombre(QString _nombre)
 {
     nombre=_nombre;
 }
-
-
-
-/**
- * @brief Permite cambiar la edscripsion de la Marca
- * @param QSrtring _descripcion, que representa la nueva descripcion
- */
-void Marca::setdescripcion(QString _descripcion)
-{
-    descripcion=_descripcion;
-}
-
 
 
 
@@ -132,20 +107,20 @@ void Marca::setdescripcion(QString _descripcion)
 ---------------------------------------------------------------------*/
 
 /**
- * @brief Esta funcion ejecuta el agregar una nueva Marca a la base de datos
+ * @brief Esta funcion ejecuta el agregar una nueva Forma a la base de datos
  * @return Bool, el cual pede ser true o false dependiendo si la operacion
  * se concluyo exitosamente.
  */
-bool Marca::agregar()
+bool Forma::agregar()
 {
     if(nombre!="")
     {
         QSqlQuery query;
-        query.prepare("INSERT INTO marca (nombre,descripcion) VALUES ('"+nombre+"','"+descripcion+"')");
+        query.prepare("INSERT INTO forma (nombre) VALUES ('"+nombre+"')");
 
         if(query.exec()==true)
         {
-            query.prepare("SELECT idmarca FROM marca WHERE nombre='"+nombre+"'");
+            query.prepare("SELECT idforma FROM forma WHERE nombre='"+nombre+"'");
             query.exec();
             id=query.value(0).toInt();
             return true;
@@ -160,16 +135,16 @@ bool Marca::agregar()
 
 
 /**
- * @brief Esta funcion ejecuta el actualizar una Marca a la base de datos
+ * @brief Esta funcion ejecuta el actualizar una Forma a la base de datos
  * @return Bool, el cual pede ser true o false dependiendo si la operacion
  * se concluyo exitosamente.
  */
-bool Marca::actualizar()
+bool Forma::actualizar()
 {
     if(nombre!="")
     {
         QSqlQuery query;
-        query.prepare("UPDATE marca SET nombre='"+nombre+"', descripcion='"+descripcion+"' WHERE idmarca="+ QString::number(id));
+        query.prepare("UPDATE forma SET nombre='"+nombre+"' WHERE idforma="+ QString::number(id));
         return query.exec();
     }
     else
@@ -179,16 +154,16 @@ bool Marca::actualizar()
 
 
 /**
- * @brief Esta funcion ejecuta el eliminar una Marca a la base de datos
+ * @brief Esta funcion ejecuta el eliminar una Forma a la base de datos
  * @return Bool, el cual pede ser true o false dependiendo si la operacion
  * se concluyo exitosamente.
  */
-bool Marca::eliminar()
+bool Forma::eliminar()
 {
     if(nombre!="")
     {
         QSqlQuery query;
-        query.prepare("DELETE FROM marca WHERE idmarca="+ QString::number(id));
+        query.prepare("DELETE FROM forma WHERE idforma="+ QString::number(id));
         return query.exec();
     }
     else

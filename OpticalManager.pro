@@ -19,7 +19,14 @@ SOURCES += main.cpp\
     usuario.cpp \
     producto.cpp \
     marca.cpp \
-    objetopersistente.cpp
+    objetopersistente.cpp \
+    calidad.cpp \
+    tamanio.cpp \
+    forma.cpp \
+    color.cpp \
+    tipoluna.cpp \
+    indicerefraccion.cpp \
+    rangomedida.cpp
 
 HEADERS  += mainwindow.h \
     sesion.h \
@@ -29,7 +36,14 @@ HEADERS  += mainwindow.h \
     usuario.h \
     producto.h \
     marca.h \
-    objetopersistente.h
+    objetopersistente.h \
+    calidad.h \
+    tamanio.h \
+    forma.h \
+    color.h \
+    tipoluna.h \
+    indicerefraccion.h \
+    rangomedida.h
 
 FORMS    += mainwindow.ui \
     ui_login.ui \

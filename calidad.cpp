@@ -1,25 +1,24 @@
-#include "marca.h"
+#include "calidad.h"
+#include <QDebug>
 
-Marca::Marca(int _id,QString _nombre, QString _descripcion )
+Calidad::Calidad(int _id,QString _nombre)
 {
     id=_id;
     nombre=_nombre;
-    descripcion=_descripcion;
 }
 
-Marca::Marca()
+Calidad::Calidad()
 {
     id=0;
     nombre="";
-    descripcion="";
 }
 
-Marca::Marca(QString _nombre, QString _descripcion )
+Calidad::Calidad(QString _nombre)
 {
     id=0;
     nombre=_nombre;
-    descripcion=_descripcion;
 }
+
 
 
 
@@ -28,29 +27,24 @@ Marca::Marca(QString _nombre, QString _descripcion )
 ---------------------------------------------------------------------*/
 
 /**
- * @brief Retorna un Qlist de las Marcas existentes
- * @return QList Marcas
+ * @brief Retorna un Qlist de las Calidades existentes
+ * @return QList Calidades
  */
-QList<Marca*> Marca::listar()
+QList<Calidad*> Calidad::listar()
 {
     QSqlQuery query;
-    query.prepare("SELECT * FROM marca");
+    query.prepare("SELECT * FROM calidad");
     query.exec();
-    QList<Marca*> lista_resultado;
+    QList<Calidad*> lista_resultado;
     while(query.next())
     {
         int _id=query.value(0).toInt();
         QString _nombre=query.value(1).toString();
-        QString _descripcion=query.value(2).toString();
-        Marca* marca=new Marca(_id,_nombre,_descripcion);
-        lista_resultado.push_back(marca);
+        Calidad* calidad=new Calidad(_id,_nombre);
+        lista_resultado.push_back(calidad);
     }
     return lista_resultado;
 }
-
-
-
-
 
 
 
@@ -59,10 +53,10 @@ QList<Marca*> Marca::listar()
 ---------------------------------------------------------------------*/
 
 /**
- * @brief Entrega el id de la Marca
+ * @brief Entrega el id de la Calidad
  * @return Int id
  */
-int Marca::getId()
+int Calidad::getId()
 {
     return id;
 }
@@ -70,23 +64,12 @@ int Marca::getId()
 
 
 /**
- * @brief Entrega el nombre de la Marca
+ * @brief Entrega el nombre de la Calidad
  * @return QString nombre
  */
-QString Marca::getNombre()
+QString Calidad::getNombre()
 {
     return nombre;
-}
-
-
-
-/**
- * @brief Entrega la descripcion de la Marca
- * @return QString descripcion
- */
-QString Marca::getdescripcion()
-{
-    return descripcion;
 }
 
 
@@ -95,7 +78,7 @@ QString Marca::getdescripcion()
  * @brief Permitar cambiar el dato del id
  * @param Int _id que representa al nuevo id
  */
-void Marca::setId(int _id)
+void Calidad::setId(int _id)
 {
     id=_id;
 }
@@ -103,25 +86,13 @@ void Marca::setId(int _id)
 
 
 /**
- * @brief Permite cambiar el nombre de la Marca
+ * @brief Permite cambiar el nombre de la Calidad
  * @param QString _nombre que representa el nuevo nombre
  */
-void Marca::setNombre(QString _nombre)
+void Calidad::setNombre(QString _nombre)
 {
     nombre=_nombre;
 }
-
-
-
-/**
- * @brief Permite cambiar la edscripsion de la Marca
- * @param QSrtring _descripcion, que representa la nueva descripcion
- */
-void Marca::setdescripcion(QString _descripcion)
-{
-    descripcion=_descripcion;
-}
-
 
 
 
@@ -132,21 +103,21 @@ void Marca::setdescripcion(QString _descripcion)
 ---------------------------------------------------------------------*/
 
 /**
- * @brief Esta funcion ejecuta el agregar una nueva Marca a la base de datos
+ * @brief Esta funcion ejecuta el agregar una nueva Calidad a la base de datos
  * @return Bool, el cual pede ser true o false dependiendo si la operacion
  * se concluyo exitosamente.
  */
-bool Marca::agregar()
+bool Calidad::agregar()
 {
     if(nombre!="")
     {
         QSqlQuery query;
-        query.prepare("INSERT INTO marca (nombre,descripcion) VALUES ('"+nombre+"','"+descripcion+"')");
+        query.prepare("INSERT INTO calidad (nombre) VALUES ('"+nombre+"')");
 
         if(query.exec()==true)
         {
-            query.prepare("SELECT idmarca FROM marca WHERE nombre='"+nombre+"'");
-            query.exec();
+            query.prepare("SELECT idcalidad FROM calidad WHERE nombre='"+nombre+"'"); 
+           query.exec();
             id=query.value(0).toInt();
             return true;
         }
@@ -155,21 +126,22 @@ bool Marca::agregar()
     }
     else
         return false;
+
 }
 
 
 
 /**
- * @brief Esta funcion ejecuta el actualizar una Marca a la base de datos
+ * @brief Esta funcion ejecuta el actualizar una Calidad a la base de datos
  * @return Bool, el cual pede ser true o false dependiendo si la operacion
  * se concluyo exitosamente.
  */
-bool Marca::actualizar()
+bool Calidad::actualizar()
 {
     if(nombre!="")
     {
         QSqlQuery query;
-        query.prepare("UPDATE marca SET nombre='"+nombre+"', descripcion='"+descripcion+"' WHERE idmarca="+ QString::number(id));
+        query.prepare("UPDATE calidad SET nombre='"+nombre+"' WHERE idcalidad="+ QString::number(id));
         return query.exec();
     }
     else
@@ -179,18 +151,19 @@ bool Marca::actualizar()
 
 
 /**
- * @brief Esta funcion ejecuta el eliminar una Marca a la base de datos
+ * @brief Esta funcion ejecuta el eliminar una Calidad a la base de datos
  * @return Bool, el cual pede ser true o false dependiendo si la operacion
  * se concluyo exitosamente.
  */
-bool Marca::eliminar()
+bool Calidad::eliminar()
 {
     if(nombre!="")
     {
         QSqlQuery query;
-        query.prepare("DELETE FROM marca WHERE idmarca="+ QString::number(id));
+        query.prepare("DELETE FROM calidad WHERE idcalidad="+ QString::number(id));
         return query.exec();
     }
     else
         return false;
 }
+
