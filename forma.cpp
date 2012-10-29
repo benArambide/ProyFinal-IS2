@@ -113,7 +113,23 @@ void Forma::setNombre(QString _nombre)
  */
 bool Forma::agregar()
 {
-    return true;
+    if(nombre!="")
+    {
+        QSqlQuery query;
+        query.prepare("INSERT INTO forma (nombre) VALUES ('"+nombre+"')");
+
+        if(query.exec()==true)
+        {
+            query.prepare("SELECT idforma FROM forma WHERE nombre='"+nombre+"'");
+            query.exec();
+            id=query.value(0).toInt();
+            return true;
+        }
+        else
+            return false;
+    }
+    else
+        return false;
 }
 
 
@@ -125,7 +141,14 @@ bool Forma::agregar()
  */
 bool Forma::actualizar()
 {
-    return true;
+    if(nombre!="")
+    {
+        QSqlQuery query;
+        query.prepare("UPDATE forma SET nombre='"+nombre+"' WHERE idforma="+ QString::number(id));
+        return query.exec();
+    }
+    else
+        return false;
 }
 
 
@@ -137,5 +160,12 @@ bool Forma::actualizar()
  */
 bool Forma::eliminar()
 {
-    return true;
+    if(nombre!="")
+    {
+        QSqlQuery query;
+        query.prepare("DELETE FROM forma WHERE idforma="+ QString::number(id));
+        return query.exec();
+    }
+    else
+        return false;
 }

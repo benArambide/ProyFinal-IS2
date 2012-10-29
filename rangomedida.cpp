@@ -1,20 +1,20 @@
 #include "rangomedida.h"
 
-RangoMedida::RangoMedida(int _id,float _valorIni,float _valorFin, QString _descripsion)
+RangoMedida::RangoMedida(int _id,float _valorIni,float _valorFin, QString _descripcion)
 {
     id=_id;
     valorini=_valorIni;
     valorfin=_valorFin;
-    descripsion = _descripsion;
+    descripcion = _descripcion;
 
 }
 
-RangoMedida::RangoMedida(float _valorIni,float _valorFin, QString _descripsion)
+RangoMedida::RangoMedida(float _valorIni,float _valorFin, QString _descripcion)
 {
     id=0;
     valorini=_valorIni;
     valorfin=_valorFin;
-    descripsion = _descripsion;
+    descripcion = _descripcion;
 
 }
 
@@ -24,7 +24,7 @@ RangoMedida::RangoMedida()
     id=0;
     valorini=0;
     valorfin=0;
-    descripsion="";
+    descripcion="";
 }
 
 
@@ -50,8 +50,8 @@ QList<RangoMedida*> RangoMedida::listar()
         int _id=query.value(0).toInt();
         float _valorini=query.value(1).toFloat();
         float _valorfin=query.value(2).toFloat();
-        QString _descripsion=query.value(3).toString();
-        RangoMedida* rangomedida=new RangoMedida(_id,_valorini,_valorfin, _descripsion);
+        QString _descripcion=query.value(3).toString();
+        RangoMedida* rangomedida=new RangoMedida(_id,_valorini,_valorfin, _descripcion);
         lista_resultado.push_back(rangomedida);
     }
     return lista_resultado;
@@ -82,9 +82,9 @@ int RangoMedida::getId()
  * @brief Entrega el nombre de la RangoMedida
  * @return QString nombre
  */
-QString RangoMedida::getDescripsion()
+QString RangoMedida::getdescripcion()
 {
-    return descripsion;
+    return descripcion;
 }
 
 
@@ -125,9 +125,9 @@ void RangoMedida::setId(int _id)
  * @brief Permite cambiar el nombre de la RangoMedida
  * @param QString _nombre que representa el nuevo nombre
  */
-void RangoMedida::setDescripsion(QString _descripsion)
+void RangoMedida::setdescripcion(QString _descripcion)
 {
-    descripsion=_descripsion;
+    descripcion=_descripcion;
 }
 
 
@@ -165,7 +165,23 @@ void RangoMedida::setValorFinal(float _valorFin)
  */
 bool RangoMedida::agregar()
 {
-    return true;
+    if(descripcion!="")
+    {
+        QSqlQuery query;
+        query.prepare("INSERT INTO rango_medida (val_ini,val_fin,obs) VALUES ("+QString::number(valorini)+","+QString::number(valorfin)+",'"+descripcion+"'");
+
+        if(query.exec()==true)
+        {
+            query.prepare("SELECT idrango_medida FROM rango_medida WHERE val_ini="+QString::number(valorini)+" and "+QString::number(valorfin));
+            query.exec();
+            id=query.value(0).toInt();
+            return true;
+        }
+        else
+            return false;
+    }
+    else
+        return false;
 }
 
 
@@ -177,7 +193,14 @@ bool RangoMedida::agregar()
  */
 bool RangoMedida::actualizar()
 {
-    return true;
+    if(descripcion!="")
+    {
+        QSqlQuery query;
+        query.prepare("UPDATE rango_medida SET obs='"+descripcion+"' , val_ini="+QString::number(valorini)+" , "+QString::number(valorfin)+" WHERE idrango_medida="+ QString::number(id));
+        return query.exec();
+    }
+    else
+        return false;
 }
 
 
@@ -189,5 +212,12 @@ bool RangoMedida::actualizar()
  */
 bool RangoMedida::eliminar()
 {
-    return true;
+    if(descripcion!="")
+    {
+        QSqlQuery query;
+        query.prepare("DELETE FROM rango_medida WHERE idrango_medida="+ QString::number(id));
+        return query.exec();
+    }
+    else
+        return false;
 }

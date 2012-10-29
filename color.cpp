@@ -1,4 +1,5 @@
 #include "color.h"
+#include <QDebug>
 
 Color::Color(int _id,QString _nombre)
 {
@@ -39,7 +40,9 @@ QList<Color*> Color::listar()
     while(query.next())
     {
         int _id=query.value(0).toInt();
+        qDebug()<<_id;
         QString _nombre=query.value(1).toString();
+        qDebug()<<_nombre;
         Color* color=new Color(_id,_nombre);
         lista_resultado.push_back(color);
     }
@@ -113,7 +116,24 @@ void Color::setNombre(QString _nombre)
  */
 bool Color::agregar()
 {
-    return true;
+    if(nombre!="")
+    {
+        QSqlQuery query;
+        query.prepare("INSERT INTO color (color) VALUES ('"+nombre+"')");
+        if(query.exec()==true)
+        {
+            query.prepare("SELECT idcolor FROM color WHERE color='"+nombre+"'");
+            query.exec();
+            query.next();
+            id=query.value(0).toInt();
+            qDebug()<<"esto es la sentencia resul"<<id;
+            return true;
+        }
+        else
+            return false;
+    }
+    else
+        return false;
 }
 
 
@@ -125,7 +145,14 @@ bool Color::agregar()
  */
 bool Color::actualizar()
 {
-    return true;
+    if(nombre!="")
+    {
+        QSqlQuery query;
+        query.prepare("UPDATE color SET color='"+nombre+"' WHERE idcolor="+ QString::number(id));
+        return query.exec();
+    }
+    else
+        return false;
 }
 
 
@@ -137,5 +164,12 @@ bool Color::actualizar()
  */
 bool Color::eliminar()
 {
-    return true;
+    if(nombre!="")
+    {
+        QSqlQuery query;
+        query.prepare("DELETE FROM color WHERE idcolor="+ QString::number(id));
+        return query.exec();
+    }
+    else
+        return false;
 }

@@ -111,7 +111,23 @@ void IndiceRefraccion::setValor(QString _valor)
  */
 bool IndiceRefraccion::agregar()
 {
-    return true;
+    if(valor!="")
+    {
+        QSqlQuery query;
+        query.prepare("INSERT INTO indice_refraccion (valor) VALUES ('"+valor+"')");
+
+        if(query.exec()==true)
+        {
+            query.prepare("SELECT idindice_refraccion FROM indice_refraccion WHERE valor='"+valor+"'");
+            query.exec();
+            id=query.value(0).toInt();
+            return true;
+        }
+        else
+            return false;
+    }
+    else
+        return false;
 }
 
 
@@ -123,7 +139,14 @@ bool IndiceRefraccion::agregar()
  */
 bool IndiceRefraccion::actualizar()
 {
-    return true;
+    if(valor!="")
+    {
+        QSqlQuery query;
+        query.prepare("UPDATE indice_refraccion SET valor='"+valor+"' WHERE idindice_refraccion="+ QString::number(id));
+        return query.exec();
+    }
+    else
+        return false;
 }
 
 
@@ -135,5 +158,12 @@ bool IndiceRefraccion::actualizar()
  */
 bool IndiceRefraccion::eliminar()
 {
-    return true;
+    if(valor!="")
+    {
+        QSqlQuery query;
+        query.prepare("DELETE FROM indice_refraccion WHERE idindice_refraccion="+ QString::number(id));
+        return query.exec();
+    }
+    else
+        return false;
 }

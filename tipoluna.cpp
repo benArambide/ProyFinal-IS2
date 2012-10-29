@@ -112,7 +112,23 @@ void TipoLuna::setNombre(QString _nombre)
  */
 bool TipoLuna::agregar()
 {
-    return true;
+    if(nombre!="")
+    {
+        QSqlQuery query;
+        query.prepare("INSERT INTO tipo_luna (nombre) VALUES ('"+nombre+"')");
+
+        if(query.exec()==true)
+        {
+            query.prepare("SELECT idtipo_luna FROM tipo_luna WHERE nombre='"+nombre+"'");
+            query.exec();
+            id=query.value(0).toInt();
+            return true;
+        }
+        else
+            return false;
+    }
+    else
+        return false;
 }
 
 
@@ -124,7 +140,14 @@ bool TipoLuna::agregar()
  */
 bool TipoLuna::actualizar()
 {
-    return true;
+    if(nombre!="")
+    {
+        QSqlQuery query;
+        query.prepare("UPDATE tipo_luna SET nombre='"+nombre+"' WHERE idtipo_luna="+ QString::number(id));
+        return query.exec();
+    }
+    else
+        return false;
 }
 
 
@@ -136,5 +159,12 @@ bool TipoLuna::actualizar()
  */
 bool TipoLuna::eliminar()
 {
-    return true;
+    if(nombre!="")
+    {
+        QSqlQuery query;
+        query.prepare("DELETE FROM tipo_luna WHERE idtipo_luna="+ QString::number(id));
+        return query.exec();
+    }
+    else
+        return false;
 }

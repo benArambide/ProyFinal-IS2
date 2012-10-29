@@ -112,7 +112,23 @@ void Tamanio::setNombre(QString _nombre)
  */
 bool Tamanio::agregar()
 {
-    return true;
+    if(nombre!="")
+    {
+        QSqlQuery query;
+        query.prepare("INSERT INTO tamanio (nombre) VALUES ('"+nombre+"')");
+
+        if(query.exec()==true)
+        {
+            query.prepare("SELECT idtamanio FROM tamanio WHERE nombre='"+nombre+"'");
+            query.exec();
+            id=query.value(0).toInt();
+            return true;
+        }
+        else
+            return false;
+    }
+    else
+        return false;
 }
 
 
@@ -124,7 +140,14 @@ bool Tamanio::agregar()
  */
 bool Tamanio::actualizar()
 {
-    return true;
+    if(nombre!="")
+    {
+        QSqlQuery query;
+        query.prepare("UPDATE tamanio SET nombre='"+nombre+"' WHERE idtamanio="+ QString::number(id));
+        return query.exec();
+    }
+    else
+        return false;
 }
 
 
@@ -136,5 +159,12 @@ bool Tamanio::actualizar()
  */
 bool Tamanio::eliminar()
 {
-    return true;
+    if(nombre!="")
+    {
+        QSqlQuery query;
+        query.prepare("DELETE FROM tamanio WHERE idtamanio="+ QString::number(id));
+        return query.exec();
+    }
+    else
+        return false;
 }

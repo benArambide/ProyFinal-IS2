@@ -1,24 +1,24 @@
 #include "marca.h"
 
-Marca::Marca(int _id,QString _nombre, QString _descripsion )
+Marca::Marca(int _id,QString _nombre, QString _descripcion )
 {
     id=_id;
     nombre=_nombre;
-    descripsion=_descripsion;
+    descripcion=_descripcion;
 }
 
 Marca::Marca()
 {
     id=0;
     nombre="";
-    descripsion="";
+    descripcion="";
 }
 
-Marca::Marca(QString _nombre, QString _descripsion )
+Marca::Marca(QString _nombre, QString _descripcion )
 {
     id=0;
     nombre=_nombre;
-    descripsion=_descripsion;
+    descripcion=_descripcion;
 }
 
 
@@ -41,8 +41,8 @@ QList<Marca*> Marca::listar()
     {
         int _id=query.value(0).toInt();
         QString _nombre=query.value(1).toString();
-        QString _descripsion=query.value(2).toString();
-        Marca* marca=new Marca(_id,_nombre,_descripsion);
+        QString _descripcion=query.value(2).toString();
+        Marca* marca=new Marca(_id,_nombre,_descripcion);
         lista_resultado.push_back(marca);
     }
     return lista_resultado;
@@ -81,12 +81,12 @@ QString Marca::getNombre()
 
 
 /**
- * @brief Entrega la descripsion de la Marca
- * @return QString descripsion
+ * @brief Entrega la descripcion de la Marca
+ * @return QString descripcion
  */
-QString Marca::getDescripsion()
+QString Marca::getdescripcion()
 {
-    return descripsion;
+    return descripcion;
 }
 
 
@@ -115,11 +115,11 @@ void Marca::setNombre(QString _nombre)
 
 /**
  * @brief Permite cambiar la edscripsion de la Marca
- * @param QSrtring _descripsion, que representa la nueva descripsion
+ * @param QSrtring _descripcion, que representa la nueva descripcion
  */
-void Marca::setDescripsion(QString _descripsion)
+void Marca::setdescripcion(QString _descripcion)
 {
-    descripsion=_descripsion;
+    descripcion=_descripcion;
 }
 
 
@@ -138,7 +138,23 @@ void Marca::setDescripsion(QString _descripsion)
  */
 bool Marca::agregar()
 {
-    return true;
+    if(nombre!="")
+    {
+        QSqlQuery query;
+        query.prepare("INSERT INTO marca (nombre,descripcion) VALUES ('"+nombre+"','"+descripcion+"')");
+
+        if(query.exec()==true)
+        {
+            query.prepare("SELECT idmarca FROM marca WHERE nombre='"+nombre+"'");
+            query.exec();
+            id=query.value(0).toInt();
+            return true;
+        }
+        else
+            return false;
+    }
+    else
+        return false;
 }
 
 
@@ -150,7 +166,14 @@ bool Marca::agregar()
  */
 bool Marca::actualizar()
 {
-    return true;
+    if(nombre!="")
+    {
+        QSqlQuery query;
+        query.prepare("UPDATE marca SET nombre='"+nombre+"', descripcion='"+descripcion+"' WHERE idmarca="+ QString::number(id));
+        return query.exec();
+    }
+    else
+        return false;
 }
 
 
@@ -162,5 +185,12 @@ bool Marca::actualizar()
  */
 bool Marca::eliminar()
 {
-    return true;
+    if(nombre!="")
+    {
+        QSqlQuery query;
+        query.prepare("DELETE FROM marca WHERE idmarca="+ QString::number(id));
+        return query.exec();
+    }
+    else
+        return false;
 }

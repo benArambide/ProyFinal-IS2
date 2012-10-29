@@ -116,7 +116,8 @@ bool Calidad::agregar()
 
         if(query.exec()==true)
         {
-            query.prepare("SELECT idcalidad FROM calidad WHERE nombre='"+nombre+"'");
+            query.prepare("SELECT idcalidad FROM calidad WHERE nombre='"+nombre+"'"); 
+           query.exec();
             id=query.value(0).toInt();
             return true;
         }
@@ -141,6 +142,7 @@ bool Calidad::actualizar()
     {
         QSqlQuery query;
         query.prepare("UPDATE calidad SET nombre='"+nombre+"' WHERE idcalidad="+ QString::number(id));
+        return query.exec();
     }
     else
         return false;
@@ -159,6 +161,7 @@ bool Calidad::eliminar()
     {
         QSqlQuery query;
         query.prepare("DELETE FROM calidad WHERE idcalidad="+ QString::number(id));
+        return query.exec();
     }
     else
         return false;
