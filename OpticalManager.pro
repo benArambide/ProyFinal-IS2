@@ -26,7 +26,13 @@ SOURCES += main.cpp\
     color.cpp \
     tipoluna.cpp \
     indicerefraccion.cpp \
-    rangomedida.cpp
+    rangomedida.cpp \
+    ui_cliente.cpp \
+    ui_producto.cpp \
+    ui_usuario.cpp \
+    ui_producto_datos.cpp \
+    ui_cliente_datos.cpp \
+    ui_usuario_datos.cpp
 
 HEADERS  += mainwindow.h \
     sesion.h \
@@ -43,11 +49,23 @@ HEADERS  += mainwindow.h \
     color.h \
     tipoluna.h \
     indicerefraccion.h \
-    rangomedida.h
+    rangomedida.h \
+    ui_cliente.h \
+    ui_producto.h \
+    ui_usuario.h \
+    ui_producto_datos.h \
+    ui_cliente_datos.h \
+    ui_usuario_datos.h
 
 FORMS    += mainwindow.ui \
     ui_login.ui \
-    ui_cambiarpassdialog.ui
+    ui_cambiarpassdialog.ui \
+    ui_cliente.ui \
+    ui_producto.ui \
+    ui_usuario.ui \
+    ui_producto_datos.ui \
+    ui_cliente_datos.ui \
+    ui_usuario_datos.ui
 
 RESOURCES += \
     Icons/Icons.qrc \
