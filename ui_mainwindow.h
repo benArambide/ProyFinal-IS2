@@ -1,7 +1,7 @@
 /********************************************************************************
 ** Form generated from reading UI file 'mainwindow.ui'
 **
-** Created: Wed Oct 24 05:44:58 2012
+** Created: Tue Oct 30 23:38:55 2012
 **      by: Qt User Interface Compiler version 4.7.4
 **
 ** WARNING! All changes made in this file will be lost when recompiling UI file!
@@ -33,13 +33,12 @@ public:
     QWidget *centralWidget;
     QToolBar *toolBar_modulos;
     QStatusBar *statusBar;
-    QToolBar *toolBar;
 
     void setupUi(QMainWindow *MainWindow)
     {
         if (MainWindow->objectName().isEmpty())
             MainWindow->setObjectName(QString::fromUtf8("MainWindow"));
-        MainWindow->resize(786, 197);
+        MainWindow->resize(854, 86);
         QIcon icon;
         icon.addFile(QString::fromUtf8(":/Icons/internet-news-reader.png"), QSize(), QIcon::Normal, QIcon::Off);
         MainWindow->setWindowIcon(icon);
@@ -78,22 +77,14 @@ public:
         toolBar_modulos->setIconSize(QSize(40, 40));
         toolBar_modulos->setFloatable(true);
         MainWindow->addToolBar(Qt::TopToolBarArea, toolBar_modulos);
-        MainWindow->insertToolBarBreak(toolBar_modulos);
         statusBar = new QStatusBar(MainWindow);
         statusBar->setObjectName(QString::fromUtf8("statusBar"));
         statusBar->setCursor(QCursor(Qt::IBeamCursor));
         MainWindow->setStatusBar(statusBar);
-        toolBar = new QToolBar(MainWindow);
-        toolBar->setObjectName(QString::fromUtf8("toolBar"));
-        toolBar->setIconSize(QSize(40, 40));
-        toolBar->setToolButtonStyle(Qt::ToolButtonTextBesideIcon);
-        MainWindow->addToolBar(Qt::TopToolBarArea, toolBar);
 
         toolBar_modulos->addAction(actionProducto);
         toolBar_modulos->addAction(actionUsuario);
         toolBar_modulos->addAction(actionCliente);
-        toolBar->addAction(actionNuevo);
-        toolBar->addAction(actionEditar);
 
         retranslateUi(MainWindow);
 
@@ -120,7 +111,6 @@ public:
 #endif // QT_NO_TOOLTIP
         actionNuevo->setShortcut(QApplication::translate("MainWindow", "Ctrl+N", 0, QApplication::UnicodeUTF8));
         toolBar_modulos->setWindowTitle(QApplication::translate("MainWindow", "toolBar", 0, QApplication::UnicodeUTF8));
-        toolBar->setWindowTitle(QApplication::translate("MainWindow", "toolBar", 0, QApplication::UnicodeUTF8));
     } // retranslateUi
 
 };

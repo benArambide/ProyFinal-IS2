@@ -120,6 +120,7 @@ bool IndiceRefraccion::agregar()
         {
             query.prepare("SELECT idindice_refraccion FROM indice_refraccion WHERE valor='"+valor+"'");
             query.exec();
+            query.next();
             id=query.value(0).toInt();
             return true;
         }

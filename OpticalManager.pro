@@ -32,7 +32,8 @@ SOURCES += main.cpp\
     ui_usuario.cpp \
     ui_producto_datos.cpp \
     ui_cliente_datos.cpp \
-    ui_usuario_datos.cpp
+    ui_usuario_datos.cpp \
+    montura.cpp
 
 HEADERS  += mainwindow.h \
     sesion.h \
@@ -55,7 +56,8 @@ HEADERS  += mainwindow.h \
     ui_usuario.h \
     ui_producto_datos.h \
     ui_cliente_datos.h \
-    ui_usuario_datos.h
+    ui_usuario_datos.h \
+    montura.h
 
 FORMS    += mainwindow.ui \
     ui_login.ui \

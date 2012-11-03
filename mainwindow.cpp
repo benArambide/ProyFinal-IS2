@@ -1,20 +1,12 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
 #include <QDebug>
+#include <montura.h>
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
     ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
-    Color color("black");
-    color.agregar();
-    qDebug()<< color.getNombre();
-    qDebug()<< color.getId();
-    color.setNombre("white");
-    color.actualizar();
-    qDebug()<< color.getId();
-    qDebug()<< color.getNombre();
-    qDebug()<< "si se elimino" << color.eliminar();
 
 }
 

@@ -126,7 +126,6 @@ bool Color::agregar()
             query.exec();
             query.next();
             id=query.value(0).toInt();
-            qDebug()<<"esto es la sentencia resul"<<id;
             return true;
         }
         else

@@ -121,6 +121,7 @@ bool TipoLuna::agregar()
         {
             query.prepare("SELECT idtipo_luna FROM tipo_luna WHERE nombre='"+nombre+"'");
             query.exec();
+            query.next();
             id=query.value(0).toInt();
             return true;
         }

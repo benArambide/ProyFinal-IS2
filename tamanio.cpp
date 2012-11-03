@@ -121,6 +121,7 @@ bool Tamanio::agregar()
         {
             query.prepare("SELECT idtamanio FROM tamanio WHERE nombre='"+nombre+"'");
             query.exec();
+            query.next();
             id=query.value(0).toInt();
             return true;
         }
