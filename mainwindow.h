@@ -4,6 +4,7 @@
 #include <QDebug>
 #include <QMainWindow>
 #include <color.h>
+#include <objetopersistente.h>
 
 namespace Ui {
 class MainWindow;
