@@ -1,10 +1,6 @@
 #include "montura.h"
 
-<<<<<<< HEAD
-Montura::Montura(int _id ,QString _codigo,QString _descripcion, QString _nombre, Marca _marca,Color _color,Forma _forma, Calidad _calidad, Tamanio _tamanio):Producto(_id ,_codigo,_descripcion,_nombre,_marca)
-=======
 Montura::Montura(int _id, QString _codigo, QString _descripcion, QString _nombre, Marca _marca, int _stock, float _precio, QString _accesorios, float _p_descuento, bool _habilitado, Color _color, Forma _forma, Calidad _calidad, Tamanio _tamanio):Producto(_id ,_codigo,_descripcion,_nombre,_marca,_stock,_precio, _accesorios,_p_descuento,_habilitado)
->>>>>>> clientes agregado al proyecto principal
 {
     color=_color;
     calidad=_calidad;
@@ -12,11 +8,7 @@ Montura::Montura(int _id, QString _codigo, QString _descripcion, QString _nombre
     tamanio=_tamanio;
 }
 
-<<<<<<< HEAD
-Montura::Montura(QString _codigo,QString _descripcion, QString _nombre, Marca _marca,Color _color,Forma _forma, Calidad _calidad, Tamanio _tamanio):Producto(_codigo,_descripcion,_nombre,_marca)
-=======
 Montura::Montura(QString _codigo, QString _descripcion, QString _nombre, Marca _marca, int _stock, float _precio, QString _accesorios, float _p_descuento, bool _habilitado, Color _color, Forma _forma, Calidad _calidad, Tamanio _tamanio):Producto(_codigo,_descripcion,_nombre,_marca,_stock,_precio, _accesorios,_p_descuento,_habilitado)
->>>>>>> clientes agregado al proyecto principal
 {
     color=_color;
     calidad=_calidad;
