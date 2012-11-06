@@ -174,6 +174,7 @@ bool RangoMedida::agregar()
         {
             query.prepare("SELECT idrango_medida FROM rango_medida WHERE val_ini="+QString::number(valorini)+" and "+QString::number(valorfin));
             query.exec();
+            query.next();
             id=query.value(0).toInt();
             return true;
         }

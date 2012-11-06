@@ -1,21 +1,28 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
 #include <QDebug>
+#include <montura.h>
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
     ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
-    Color color("black");
-    color.agregar();
-    qDebug()<< color.getNombre();
-    qDebug()<< color.getId();
-    color.setNombre("white");
-    color.actualizar();
-    qDebug()<< color.getId();
-    qDebug()<< color.getNombre();
-    qDebug()<< "si se elimino" << color.eliminar();
 
+
+    Marca marc("marca6","esta es una marca inventada");
+    marc.agregar();
+    Forma form("forma6");
+    form.agregar();
+    Tamanio tam("tamano6");
+    tam.agregar();
+    Color col("color6");
+    col.agregar();
+    Calidad cal("calidad6");
+    cal.agregar();
+
+    Montura mon("ab126","este asases una montura mala","belu",marc,338,12.12,"4estuche",12.12,true,col,form,cal,tam);
+    mon.agregar();
+    qDebug()<<mon.eliminar();
 }
 
 MainWindow::~MainWindow()
@@ -37,9 +44,8 @@ void MainWindow::on_actionUsuario_triggered()
 
 void MainWindow::on_actionCliente_triggered()
 {
-    /*UI_CLIENT *CLIENT_FORM;
+    UI_CLIENT *CLIENT_FORM;
     CLIENT_FORM = new UI_CLIENT;
     setCentralWidget(CLIENT_FORM);
-    CLIENT_FORM->showMaximized();*/
-
+    CLIENT_FORM->showMaximized();
 }

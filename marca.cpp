@@ -147,6 +147,7 @@ bool Marca::agregar()
         {
             query.prepare("SELECT idmarca FROM marca WHERE nombre='"+nombre+"'");
             query.exec();
+            query.next();
             id=query.value(0).toInt();
             return true;
         }

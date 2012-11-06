@@ -122,6 +122,7 @@ bool Forma::agregar()
         {
             query.prepare("SELECT idforma FROM forma WHERE nombre='"+nombre+"'");
             query.exec();
+            query.next();
             id=query.value(0).toInt();
             return true;
         }

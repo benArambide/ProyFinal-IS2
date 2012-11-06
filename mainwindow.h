@@ -4,6 +4,11 @@
 #include <QDebug>
 #include <QMainWindow>
 #include <color.h>
+#include <objetopersistente.h>
+<<<<<<< HEAD
+=======
+#include "ui_client.h"
+>>>>>>> clientes agregado al proyecto principal
 
 namespace Ui {
 class MainWindow;
