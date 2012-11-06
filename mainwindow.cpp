@@ -44,9 +44,8 @@ void MainWindow::on_actionUsuario_triggered()
 
 void MainWindow::on_actionCliente_triggered()
 {
-    /*UI_CLIENT *CLIENT_FORM;
+    UI_CLIENT *CLIENT_FORM;
     CLIENT_FORM = new UI_CLIENT;
     setCentralWidget(CLIENT_FORM);
-    CLIENT_FORM->showMaximized();*/
-
+    CLIENT_FORM->showMaximized();
 }
