@@ -202,6 +202,7 @@ bool Montura::eliminar()
 
 
 
+<<<<<<< HEAD
 QSqlQueryModel* Montura::entregarMonturas()
 {
 
@@ -225,3 +226,5 @@ QSqlQueryModel* Montura::entregarMonturas()
 
     return model;
 }
+=======
+>>>>>>> e3c7b55f6778ec4a388c97ecd21fdff8ec60cffb
