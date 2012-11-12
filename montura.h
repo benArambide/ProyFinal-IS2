@@ -1,7 +1,7 @@
 #ifndef MONTURA_H
 #define MONTURA_H
 #include <producto.h>
-
+#include <QSqlQueryModel>
 
 /**
  * @author Josue Benjamin Arambide Quispe

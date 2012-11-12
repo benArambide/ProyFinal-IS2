@@ -174,7 +174,7 @@ bool Montura::agregar()
  */
 bool Montura::actualizar()
 {
-
+  return false;
 }
 
 
@@ -204,8 +204,8 @@ QSqlQueryModel* Montura::entregarMonturas()
 {
 
     QSqlQueryModel *model = new QSqlQueryModel;
-         model->setQuery("select codigo, \
-                         c.nombre as calidad, \
+         model->setQuery("select codigo,"
+                         "c.nombre as calidad, \
                          f.nombre as forma, \
                          t.nombre as tamanio, \
                          color,descripcion,stock,accesorios,p_descuento,precio \
