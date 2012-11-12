@@ -202,11 +202,3 @@ bool Montura::eliminar()
 
 
 
-QSqlQueryModel* Montura::entregarMonturas()
-{
-    //aun falta procesar y elaborar mejor la consulta
-    QSqlQueryModel *model = new QSqlQueryModel;
-         //model->setQuery("SELECT name, salary FROM employee");
-
-    return 0;
-}

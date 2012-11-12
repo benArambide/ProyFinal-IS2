@@ -68,8 +68,8 @@
             <string/>
            </property>
            <property name="icon">
-            <iconset>
-             <normaloff>:/new/Icons/1349716430_zoom.png</normaloff>:/new/Icons/1349716430_zoom.png</iconset>
+            <iconset resource="Icons/Icons.qrc">
+             <normaloff>:/Icons/1349716430_zoom.png</normaloff>:/Icons/1349716430_zoom.png</iconset>
            </property>
            <property name="flat">
             <bool>true</bool>
@@ -82,8 +82,8 @@
             <string/>
            </property>
            <property name="icon">
-            <iconset>
-             <normaloff>:/new/Icons/1349716435_cog.png</normaloff>:/new/Icons/1349716435_cog.png</iconset>
+            <iconset resource="Icons/Icons.qrc">
+             <normaloff>:/Icons/1349716435_cog.png</normaloff>:/Icons/1349716435_cog.png</iconset>
            </property>
            <property name="flat">
             <bool>true</bool>
@@ -185,8 +185,8 @@
                 <string>Opciones</string>
                </property>
                <property name="icon">
-                <iconset>
-                 <normaloff>:/new/Icons/1349716393_monotone_add_plus.png</normaloff>:/new/Icons/1349716393_monotone_add_plus.png</iconset>
+                <iconset resource="Icons/Icons.qrc">
+                 <normaloff>:/Icons/1349716393_monotone_add_plus.png</normaloff>:/Icons/1349716393_monotone_add_plus.png</iconset>
                </property>
                <property name="flat">
                 <bool>true</bool>
@@ -287,8 +287,8 @@
                 <string>Añadir</string>
                </property>
                <property name="icon">
-                <iconset>
-                 <normaloff>:/new/Icons/1349716423_sq_plus.png</normaloff>:/new/Icons/1349716423_sq_plus.png</iconset>
+                <iconset resource="Icons/Icons.qrc">
+                 <normaloff>:/Icons/1349716423_sq_plus.png</normaloff>:/Icons/1349716423_sq_plus.png</iconset>
                </property>
                <property name="flat">
                 <bool>true</bool>
@@ -307,8 +307,8 @@
                 <string>Editar</string>
                </property>
                <property name="icon">
-                <iconset>
-                 <normaloff>:/new/Icons/1349716425_doc_edit.png</normaloff>:/new/Icons/1349716425_doc_edit.png</iconset>
+                <iconset resource="Icons/Icons.qrc">
+                 <normaloff>:/Icons/1349716425_doc_edit.png</normaloff>:/Icons/1349716425_doc_edit.png</iconset>
                </property>
                <property name="flat">
                 <bool>true</bool>
@@ -327,8 +327,8 @@
                 <string>Deshabilitar</string>
                </property>
                <property name="icon">
-                <iconset>
-                 <normaloff>:/new/Icons/1349716432_round_minus.png</normaloff>:/new/Icons/1349716432_round_minus.png</iconset>
+                <iconset resource="Icons/Icons.qrc">
+                 <normaloff>:/Icons/1349716432_round_minus.png</normaloff>:/Icons/1349716432_round_minus.png</iconset>
                </property>
                <property name="flat">
                 <bool>true</bool>
@@ -360,6 +360,8 @@
    </item>
   </layout>
  </widget>
- <resources/>
+ <resources>
+  <include location="Icons/Icons.qrc"/>
+ </resources>
  <connections/>
 </ui>
