@@ -204,9 +204,24 @@ bool Montura::eliminar()
 
 QSqlQueryModel* Montura::entregarMonturas()
 {
-    //aun falta procesar y elaborar mejor la consulta
-    QSqlQueryModel *model = new QSqlQueryModel;
-         //model->setQuery("SELECT name, salary FROM employee");
 
-    return 0;
+    QSqlQueryModel *model = new QSqlQueryModel;
+         model->setQuery("select codigo, \
+                         c.nombre as calidad, \
+                         f.nombre as forma, \
+                         t.nombre as tamanio, \
+                         color,descripcion,stock,accesorios,p_descuento,precio \
+                         from montura m \
+                         inner join producto p \
+                         on m.idproducto=p.idproducto \
+                         inner join calidad c \
+                         on m.idcalidad=c.idcalidad \
+                         inner join forma f \
+                         on m.idforma=f.idforma \
+                         inner join color co \
+                         on m.idcolor=co.idcolor \
+                         inner join tamanio t \
+                         on m.idtamanio=t.idtamanio");
+
+    return model;
 }

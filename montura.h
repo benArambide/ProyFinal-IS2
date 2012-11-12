@@ -34,6 +34,7 @@ public:
     void setForma(Forma _forma);
     void setCalidad(Calidad _calidad);
     void setTamanio(Tamanio _tamanio);
+    QSqlQueryModel* entregarMonturas();
 
     bool agregar();
     bool actualizar();
