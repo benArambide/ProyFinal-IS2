@@ -33,7 +33,8 @@ SOURCES += main.cpp\
     ui_producto_datos.cpp \
     ui_cliente_datos.cpp \
     ui_usuario_datos.cpp \
-    montura.cpp
+    montura.cpp \
+    ui_statur_bar.cpp
 
 HEADERS  += mainwindow.h \
     sesion.h \
@@ -57,7 +58,8 @@ HEADERS  += mainwindow.h \
     ui_producto_datos.h \
     ui_cliente_datos.h \
     ui_usuario_datos.h \
-    montura.h
+    montura.h \
+    ui_statur_bar.h
 
 FORMS    += mainwindow.ui \
     ui_login.ui \
@@ -67,7 +69,8 @@ FORMS    += mainwindow.ui \
     ui_usuario.ui \
     ui_producto_datos.ui \
     ui_cliente_datos.ui \
-    ui_usuario_datos.ui
+    ui_usuario_datos.ui \
+    ui_statur_bar.ui
 
 RESOURCES += \
     Icons/Icons.qrc \
