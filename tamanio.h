@@ -27,6 +27,8 @@ public:
     void setId(int _id);
     void setNombre(QString _nombre);
 
+    bool existente(QString _nombre);
+
     bool agregar();
     bool actualizar();
     bool eliminar();

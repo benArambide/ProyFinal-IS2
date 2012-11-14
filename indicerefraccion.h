@@ -28,6 +28,8 @@ public:
     void setId(int _id);
     void setValor(QString _valor);
 
+    bool existente(QString _valor);
+
     bool agregar();
     bool actualizar();
     bool eliminar();

@@ -48,6 +48,32 @@ QList<Tamanio*> Tamanio::listar()
 
 
 
+/**
+ * @brief Ingresando el nombre de la Tamanio, puede verificar si esta en la base de datos
+ *        o no, en caso de que si este llena el objeto Tamanio con los datos de la tabla
+ * @return Bool si es exite return true, y si no exite return false
+ */
+bool Tamanio::existente(QString _nombre)
+{
+    //Se realiza la consulta con el nombre de la Tamanio a buscar
+    QSqlQuery query;
+    query.prepare("select * from tamanio where nombre='"+_nombre+"'");
+    query.exec();
+
+    //se verifica si el resultado de la consulta esta vacia
+    if(query.size()>0)
+   {
+       //si tiene contenido el resultado de la consulta se comienza a llenar
+       //los datos del objeto Tamanio y retorna true
+
+       nombre=_nombre;
+       query.next();
+       id=query.value(0).toInt();
+        return true;
+   }
+   else
+       return false;
+}
 
 
 

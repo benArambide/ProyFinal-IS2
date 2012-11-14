@@ -51,6 +51,32 @@ QList<Color*> Color::listar()
 
 
 
+/**
+ * @brief Ingresando el nombre de la Color, puede verificar si esta en la base de datos
+ *        o no, en caso de que si este llena el objeto Color con los datos de la tabla
+ * @return Bool si es exite return true, y si no exite return false
+ */
+bool Color::existente(QString _nombre)
+{
+    //Se realiza la consulta con el nombre de la Color a buscar
+    QSqlQuery query;
+    query.prepare("select * from color where color='"+_nombre+"'");
+    query.exec();
+
+    //se verifica si el resultado de la consulta esta vacia
+    if(query.size()>0)
+   {
+       //si tiene contenido el resultado de la consulta se comienza a llenar
+       //los datos del objeto Color y retorna true
+
+       nombre=_nombre;
+       query.next();
+       id=query.value(0).toInt();
+        return true;
+   }
+   else
+       return false;
+}
 
 
 

@@ -33,6 +33,8 @@ public:
     void setdescripcion(QString _descripcion);
 
 
+    bool existente(QString _nombre);
+
     bool agregar();
     bool actualizar();
     bool eliminar();

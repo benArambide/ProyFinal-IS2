@@ -47,6 +47,32 @@ QList<IndiceRefraccion*> IndiceRefraccion::listar()
 
 
 
+/**
+ * @brief Ingresando el nombre de la IndiceRefraccion, puede verificar si esta en la base de datos
+ *        o no, en caso de que si este llena el objeto IndiceRefraccion con los datos de la tabla
+ * @return Bool si es exite return true, y si no exite return false
+ */
+bool IndiceRefraccion::existente(QString _valor)
+{
+    //Se realiza la consulta con el nombre de la IndiceRefraccion a buscar
+    QSqlQuery query;
+    query.prepare("select * from indice_refraccion where valor='"+_valor+"'");
+    query.exec();
+
+    //se verifica si el resultado de la consulta esta vacia
+    if(query.size()>0)
+   {
+       //si tiene contenido el resultado de la consulta se comienza a llenar
+       //los datos del objeto IndiceRefraccion y retorna true
+
+       valor=_valor;
+       query.next();
+       id=query.value(0).toInt();
+       return true;
+   }
+   else
+       return false;
+}
 
 
 
