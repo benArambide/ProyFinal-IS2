@@ -19,6 +19,10 @@ MainWindow::~MainWindow()
 
 void MainWindow::on_actionProducto_triggered()
 {
+    ui_producto* produc_fom;
+    produc_fom = new ui_producto;
+    setCentralWidget(produc_fom);
+    produc_fom->showMaximized();
 }
 
 void MainWindow::on_actionUsuario_triggered()
@@ -37,11 +41,4 @@ void MainWindow::on_actionCliente_triggered()
     setCentralWidget(CLIENT_FORM);
     CLIENT_FORM->showMaximized();*/
 
-}
-
-void MainWindow::on_pushButton_clicked()
-{
-    QSqlQueryModel* resultado= Luna::buscar(ui->lineEdit->text());
-    ui->tableView->setModel(resultado);
-    ui->lineEdit->clear();
 }

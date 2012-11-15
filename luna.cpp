@@ -249,7 +249,5 @@ QSqlQueryModel* Luna::buscar(QString _item)
                          precio like '%"+_item+"%' or \
                          accesorios like '%"+_item+"%' or \
                          p_descuento like '%"+_item+"%'");
-
-                         qDebug()<<"numoer de "<<model->rowCount();
          return model;
 }

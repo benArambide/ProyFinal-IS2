@@ -5,6 +5,7 @@
 #include <QMainWindow>
 #include <color.h>
 #include <objetopersistente.h>
+#include <ui_producto.h>
 
 namespace Ui {
 class MainWindow;
@@ -25,7 +26,6 @@ private slots:
 
     void on_actionCliente_triggered();
 
-    void on_pushButton_clicked();
 
 private:
     Ui::MainWindow *ui;
