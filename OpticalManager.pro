@@ -34,7 +34,8 @@ SOURCES += main.cpp\
     ui_cliente_datos.cpp \
     ui_usuario_datos.cpp \
     montura.cpp \
-    ui_statur_bar.cpp
+    ui_statur_bar.cpp \
+    luna.cpp
 
 HEADERS  += mainwindow.h \
     sesion.h \
@@ -59,7 +60,8 @@ HEADERS  += mainwindow.h \
     ui_cliente_datos.h \
     ui_usuario_datos.h \
     montura.h \
-    ui_statur_bar.h
+    ui_statur_bar.h \
+    luna.h
 
 FORMS    += mainwindow.ui \
     ui_login.ui \

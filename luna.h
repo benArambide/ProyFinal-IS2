@@ -2,7 +2,7 @@
 #define LUNA_H
 #include <QSqlQueryModel>
 #include <producto.h>
-
+#include <QDebug>
 
 /**
  * @author Josue Benjamin Arambide Quispe

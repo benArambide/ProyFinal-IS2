@@ -192,10 +192,17 @@ bool RangoMedida::agregar()
     if(descripcion!="")
     {
         QSqlQuery query;
-        query.prepare("INSERT INTO rango_medida (val_ini,val_fin,obs) VALUES ("+QString::number(valorini)+","+QString::number(valorfin)+",'"+descripcion+"'");
+        qDebug()<<"insertando"<<QString::number(valorini);
+        qDebug()<<"insertando"<<QString::number(valorfin);
+        query.prepare("INSERT INTO rango_medida (val_ini,val_fin,obs)"
+                      "VALUES (?,?,?)");
+        query.bindValue(0,valorini);
+        query.bindValue(1,valorfin);
+        query.bindValue(2,descripcion);
 
         if(query.exec()==true)
         {
+            qDebug()<<"se realizo bien el query";
             query.prepare("SELECT idrango_medida FROM rango_medida WHERE val_ini="+QString::number(valorini)+" and "+QString::number(valorfin));
             query.exec();
             query.next();

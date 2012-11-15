@@ -1,7 +1,7 @@
 /********************************************************************************
 ** Form generated from reading UI file 'mainwindow.ui'
 **
-** Created: Tue Oct 30 23:38:55 2012
+** Created: Wed Nov 14 20:45:08 2012
 **      by: Qt User Interface Compiler version 4.7.4
 **
 ** WARNING! All changes made in this file will be lost when recompiling UI file!
@@ -14,6 +14,7 @@
 #include <QtGui/QAction>
 #include <QtGui/QApplication>
 #include <QtGui/QButtonGroup>
+#include <QtGui/QGridLayout>
 #include <QtGui/QHeaderView>
 #include <QtGui/QMainWindow>
 #include <QtGui/QStatusBar>
@@ -30,7 +31,9 @@ public:
     QAction *actionCliente;
     QAction *actionEditar;
     QAction *actionNuevo;
+    QAction *actionBuscar;
     QWidget *centralWidget;
+    QGridLayout *gridLayout;
     QToolBar *toolBar_modulos;
     QStatusBar *statusBar;
 
@@ -38,7 +41,7 @@ public:
     {
         if (MainWindow->objectName().isEmpty())
             MainWindow->setObjectName(QString::fromUtf8("MainWindow"));
-        MainWindow->resize(854, 86);
+        MainWindow->resize(295, 88);
         QIcon icon;
         icon.addFile(QString::fromUtf8(":/Icons/internet-news-reader.png"), QSize(), QIcon::Normal, QIcon::Off);
         MainWindow->setWindowIcon(icon);
@@ -69,8 +72,17 @@ public:
         QIcon icon5;
         icon5.addFile(QString::fromUtf8(":/Icons/1348112114_notification_add.png"), QSize(), QIcon::Normal, QIcon::Off);
         actionNuevo->setIcon(icon5);
+        actionBuscar = new QAction(MainWindow);
+        actionBuscar->setObjectName(QString::fromUtf8("actionBuscar"));
+        QIcon icon6;
+        icon6.addFile(QString::fromUtf8(":/Icons/1349716430_zoom.png"), QSize(), QIcon::Normal, QIcon::Off);
+        actionBuscar->setIcon(icon6);
         centralWidget = new QWidget(MainWindow);
         centralWidget->setObjectName(QString::fromUtf8("centralWidget"));
+        gridLayout = new QGridLayout(centralWidget);
+        gridLayout->setSpacing(6);
+        gridLayout->setContentsMargins(11, 11, 11, 11);
+        gridLayout->setObjectName(QString::fromUtf8("gridLayout"));
         MainWindow->setCentralWidget(centralWidget);
         toolBar_modulos = new QToolBar(MainWindow);
         toolBar_modulos->setObjectName(QString::fromUtf8("toolBar_modulos"));
@@ -110,6 +122,8 @@ public:
         actionNuevo->setToolTip(QApplication::translate("MainWindow", "Nuevo Registro", 0, QApplication::UnicodeUTF8));
 #endif // QT_NO_TOOLTIP
         actionNuevo->setShortcut(QApplication::translate("MainWindow", "Ctrl+N", 0, QApplication::UnicodeUTF8));
+        actionBuscar->setText(QApplication::translate("MainWindow", "Buscar", 0, QApplication::UnicodeUTF8));
+        actionBuscar->setShortcut(QApplication::translate("MainWindow", "Ctrl+B", 0, QApplication::UnicodeUTF8));
         toolBar_modulos->setWindowTitle(QApplication::translate("MainWindow", "toolBar", 0, QApplication::UnicodeUTF8));
     } // retranslateUi
 
