@@ -7,22 +7,6 @@ MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
     ui(new Ui::MainWindow)
 {
-    Marca marca;
-    qDebug()<<"rango marca "<<marca.existente("marca1");
-    RangoMedida rango;
-    qDebug()<<"rango medida"<<rango.existente(0.20,0.40);
-
-    IndiceRefraccion indice("nose");
-    qDebug()<<"rango indice "<<indice.agregar();
-
-    TipoLuna tipo("nose");
-    qDebug()<<"rango tipo "<<tipo.agregar();
-
-    Calidad cali;
-    qDebug()<<"rango calidad "<<cali.existente("calidad2");
-
-    //Luna lu("02abc","esta es uana luna","lunaa nombre",marca,21,2.2,"medias",20.32,1,rango,indice,tipo,cali);
-    //qDebug()<<"resultado de luba "<<lu.agregar();
 
     ui->setupUi(this);
 
@@ -53,4 +37,11 @@ void MainWindow::on_actionCliente_triggered()
     setCentralWidget(CLIENT_FORM);
     CLIENT_FORM->showMaximized();*/
 
+}
+
+void MainWindow::on_pushButton_clicked()
+{
+    QSqlQueryModel* resultado= Luna::buscar(ui->lineEdit->text());
+    ui->tableView->setModel(resultado);
+    ui->lineEdit->clear();
 }

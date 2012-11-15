@@ -34,7 +34,10 @@ public:
     void setIndiceRefraccion(IndiceRefraccion _forma);
     void setCalidad(Calidad _calidad);
     void setTipoLuna(TipoLuna _tipoluna);
+
     QSqlQueryModel* entregarLunas();
+
+    static QSqlQueryModel* buscar(QString _item);
 
     bool agregar();
     bool actualizar();

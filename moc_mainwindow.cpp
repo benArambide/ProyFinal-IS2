@@ -1,7 +1,7 @@
 /****************************************************************************
 ** Meta object code from reading C++ file 'mainwindow.h'
 **
-** Created: Wed Nov 14 20:47:22 2012
+** Created: Thu Nov 15 12:19:29 2012
 **      by: The Qt Meta Object Compiler version 62 (Qt 4.7.4)
 **
 ** WARNING! All changes made in this file will be lost!
@@ -23,7 +23,7 @@ static const uint qt_meta_data_MainWindow[] = {
        5,       // revision
        0,       // classname
        0,    0, // classinfo
-       3,   14, // methods
+       4,   14, // methods
        0,    0, // properties
        0,    0, // enums/sets
        0,    0, // constructors
@@ -34,6 +34,7 @@ static const uint qt_meta_data_MainWindow[] = {
       12,   11,   11,   11, 0x08,
       42,   11,   11,   11, 0x08,
       71,   11,   11,   11, 0x08,
+     100,   11,   11,   11, 0x08,
 
        0        // eod
 };
@@ -42,6 +43,7 @@ static const char qt_meta_stringdata_MainWindow[] = {
     "MainWindow\0\0on_actionProducto_triggered()\0"
     "on_actionUsuario_triggered()\0"
     "on_actionCliente_triggered()\0"
+    "on_pushButton_clicked()\0"
 };
 
 const QMetaObject MainWindow::staticMetaObject = {
@@ -76,9 +78,10 @@ int MainWindow::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
         case 0: on_actionProducto_triggered(); break;
         case 1: on_actionUsuario_triggered(); break;
         case 2: on_actionCliente_triggered(); break;
+        case 3: on_pushButton_clicked(); break;
         default: ;
         }
-        _id -= 3;
+        _id -= 4;
     }
     return _id;
 }

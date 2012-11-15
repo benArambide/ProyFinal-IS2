@@ -211,3 +211,45 @@ QSqlQueryModel* Luna::entregarLunas()
 
     return model;
 }
+
+
+
+
+
+
+QSqlQueryModel* Luna::buscar(QString _item)
+{
+    QSqlQueryModel *model = new QSqlQueryModel;
+         model->setQuery("select codigo, \
+                         c.nombre as calidad,\
+                         rm.val_ini as Valor_Inicial,\
+                         rm.val_fin as Valor_Final, \
+                         ir.valor as indice_Refraccion,\
+                         tl.nombre as Tipo_luna,\
+                         descripcion,stock,precio,accesorios,p_descuento \
+                         from luna l \
+                         inner join producto p \
+                         on l.idproducto=p.idproducto \
+                         inner join calidad c \
+                         on l.idcalidad=c.idcalidad \
+                         inner join rango_medida rm \
+                         on l.idrango_medida=rm.idrango_medida \
+                         inner join indice_refraccion ir \
+                         on l.idindice_refraccion=ir.idindice_refraccion \
+                         inner join tipo_luna tl \
+                         on l.idtipo_luna=tl.idtipo_luna \
+                         where codigo like '%"+_item+"%' or \
+                         c.nombre like '%"+_item+"%' or \
+                         rm.val_ini like '%"+_item+"%' or \
+                         rm.val_fin like '%"+_item+"%' or \
+                         ir.valor like '%"+_item+"%' or \
+                         tl.nombre like '%"+_item+"%' or \
+                         descripcion like '%"+_item+"%' or \
+                         stock like '%"+_item+"%' or \
+                         precio like '%"+_item+"%' or \
+                         accesorios like '%"+_item+"%' or \
+                         p_descuento like '%"+_item+"%'");
+
+                         qDebug()<<"numoer de "<<model->rowCount();
+         return model;
+}
