@@ -85,8 +85,6 @@ void MyComboBox::Eliminar_Item()
     this->Actualizar_Items();
 }
 
-
-
  void MyComboBox::Show_Agregar()
  {
      ui_agregar_nombre* ventana_agregar=new ui_agregar_nombre;

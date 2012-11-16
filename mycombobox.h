@@ -16,6 +16,7 @@
 
 class MyComboBox:public QComboBox
 {
+    Q_OBJECT
 private:
     QString tipo;
     QMap<QString,QSqlQueryModel* (*) ()> map_funciones;
