@@ -47,6 +47,15 @@ QList<Tamanio*> Tamanio::listar()
 
 
 
+QSqlQueryModel* Tamanio::listarNombres()
+{
+    QSqlQueryModel* model=new QSqlQueryModel;
+    model->setQuery("select nombre from tamanio");
+    return model;
+}
+
+
+
 
 /**
  * @brief Ingresando el nombre de la Tamanio, puede verificar si esta en la base de datos

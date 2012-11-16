@@ -68,6 +68,8 @@ QList<RangoMedida*> RangoMedida::listar()
  *        o no, en caso de que si este llena el objeto RangoMedida con los datos de la tabla
  * @return Bool si es exite return true, y si no exite return false
  */
+
+/*
 bool RangoMedida::existente(float _valorini,float _valorfin)
 {
     //USE UN QSQLQUERYMODEL porque me salia un error con el query
@@ -84,7 +86,7 @@ bool RangoMedida::existente(float _valorini,float _valorfin)
         return false;
 }
 
-
+*/
 
 
 /*--------------------------------------------------------------------

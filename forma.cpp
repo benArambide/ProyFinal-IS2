@@ -51,6 +51,17 @@ QList<Forma*> Forma::listar()
 
 
 
+QSqlQueryModel* Forma::listarNombres()
+{
+    QSqlQueryModel* model=new QSqlQueryModel;
+    model->setQuery("select nombre from forma");
+    return model;
+}
+
+
+
+
+
 /**
  * @brief Ingresando el nombre de la Forma, puede verificar si esta en la base de datos
  *        o no, en caso de que si este llena el objeto Forma con los datos de la tabla

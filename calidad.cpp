@@ -47,6 +47,25 @@ QList<Calidad*> Calidad::listar()
 }
 
 
+
+
+
+QSqlQueryModel* Calidad::listarNombres()
+{
+    QSqlQueryModel* model=new QSqlQueryModel;
+    model->setQuery("select nombre from calidad");
+    return model;
+}
+
+
+
+
+
+
+
+
+
+
 /**
  * @brief Ingresando el nombre de la calidad, puede verificar si esta en la base de datos
  *        o no, en caso de que si este llena el objeto calidad con los datos de la tabla
@@ -73,6 +92,13 @@ bool Calidad::existente(QString _nombre)
    else
        return false;
 }
+
+
+
+
+
+
+
 
 /*--------------------------------------------------------------------
                 FUNCIONES GET'S Y SET'S

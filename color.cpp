@@ -51,6 +51,19 @@ QList<Color*> Color::listar()
 
 
 
+QSqlQueryModel* Color::listarNombres()
+{
+    QSqlQueryModel* model=new QSqlQueryModel;
+    model->setQuery("select color from color");
+    return model;
+}
+
+
+
+
+
+
+
 /**
  * @brief Ingresando el nombre de la Color, puede verificar si esta en la base de datos
  *        o no, en caso de que si este llena el objeto Color con los datos de la tabla

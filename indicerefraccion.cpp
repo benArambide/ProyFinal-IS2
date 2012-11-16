@@ -46,6 +46,17 @@ QList<IndiceRefraccion*> IndiceRefraccion::listar()
 
 
 
+QSqlQueryModel* IndiceRefraccion::listarNombres()
+{
+    QSqlQueryModel* model=new QSqlQueryModel;
+    model->setQuery("select valor from indice_refraccion");
+    return model;
+}
+
+
+
+
+
 
 /**
  * @brief Ingresando el nombre de la IndiceRefraccion, puede verificar si esta en la base de datos

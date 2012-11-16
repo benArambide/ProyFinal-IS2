@@ -5,6 +5,8 @@
 #include <montura.h>
 #include <QTreeWidgetItem>
 #include <QWidget>
+#include <ui_producto_agregar_luna.h>
+#include <ui_producto_agregar_montura.h>
 
 namespace Ui {
 class ui_producto;
@@ -24,6 +26,8 @@ private slots:
     void on_treeWidget_itemClicked(QTreeWidgetItem *item, int column);
 
     void on_treeWidget_itemDoubleClicked(QTreeWidgetItem *item, int column);
+
+    void on_pushButton_clicked();
 
 private:
     Ui::ui_producto *ui;

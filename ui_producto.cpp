@@ -43,3 +43,17 @@ void ui_producto::on_treeWidget_itemDoubleClicked(QTreeWidgetItem *item, int col
 {
 
 }
+
+void ui_producto::on_pushButton_clicked()
+{
+    if(posicion==0)
+    {
+        ui_producto_agregar_luna* ventana_agregar=new ui_producto_agregar_luna;
+        ventana_agregar->show();
+    }
+    else if(posicion==1)
+    {
+        ui_producto_agregar_montura* ventana_agregar=new ui_producto_agregar_montura;
+        ventana_agregar->show();
+    }
+}
