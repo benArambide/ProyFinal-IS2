@@ -16,6 +16,9 @@ public:
     explicit ui_tienda(QWidget *parent = 0);
     ~ui_tienda();
     
+private slots:
+    void on_pushButton_clicked();
+
 private:
     Ui::ui_tienda *ui;
 };
