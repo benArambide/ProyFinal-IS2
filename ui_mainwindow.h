@@ -1,8 +1,8 @@
 /********************************************************************************
 ** Form generated from reading UI file 'mainwindow.ui'
 **
-** Created: Thu Nov 15 23:20:13 2012
-**      by: Qt User Interface Compiler version 4.7.4
+** Created: Fri Nov 16 07:47:46 2012
+**      by: Qt User Interface Compiler version 4.8.1
 **
 ** WARNING! All changes made in this file will be lost when recompiling UI file!
 ********************************************************************************/
@@ -32,6 +32,7 @@ public:
     QAction *actionEditar;
     QAction *actionNuevo;
     QAction *actionBuscar;
+    QAction *actionTiendas;
     QWidget *centralWidget;
     QGridLayout *gridLayout;
     QToolBar *toolBar_modulos;
@@ -41,7 +42,7 @@ public:
     {
         if (MainWindow->objectName().isEmpty())
             MainWindow->setObjectName(QString::fromUtf8("MainWindow"));
-        MainWindow->resize(369, 96);
+        MainWindow->resize(451, 96);
         QIcon icon;
         icon.addFile(QString::fromUtf8(":/Icons/internet-news-reader.png"), QSize(), QIcon::Normal, QIcon::Off);
         MainWindow->setWindowIcon(icon);
@@ -77,6 +78,11 @@ public:
         QIcon icon6;
         icon6.addFile(QString::fromUtf8(":/Icons/1349716430_zoom.png"), QSize(), QIcon::Normal, QIcon::Off);
         actionBuscar->setIcon(icon6);
+        actionTiendas = new QAction(MainWindow);
+        actionTiendas->setObjectName(QString::fromUtf8("actionTiendas"));
+        QIcon icon7;
+        icon7.addFile(QString::fromUtf8(":/Icons/autoship.png"), QSize(), QIcon::Normal, QIcon::Off);
+        actionTiendas->setIcon(icon7);
         centralWidget = new QWidget(MainWindow);
         centralWidget->setObjectName(QString::fromUtf8("centralWidget"));
         gridLayout = new QGridLayout(centralWidget);
@@ -97,6 +103,7 @@ public:
         toolBar_modulos->addAction(actionProducto);
         toolBar_modulos->addAction(actionUsuario);
         toolBar_modulos->addAction(actionCliente);
+        toolBar_modulos->addAction(actionTiendas);
 
         retranslateUi(MainWindow);
 
@@ -124,6 +131,11 @@ public:
         actionNuevo->setShortcut(QApplication::translate("MainWindow", "Ctrl+N", 0, QApplication::UnicodeUTF8));
         actionBuscar->setText(QApplication::translate("MainWindow", "Buscar", 0, QApplication::UnicodeUTF8));
         actionBuscar->setShortcut(QApplication::translate("MainWindow", "Ctrl+B", 0, QApplication::UnicodeUTF8));
+        actionTiendas->setText(QApplication::translate("MainWindow", "Tiendas", 0, QApplication::UnicodeUTF8));
+#ifndef QT_NO_TOOLTIP
+        actionTiendas->setToolTip(QApplication::translate("MainWindow", "Tienda", 0, QApplication::UnicodeUTF8));
+#endif // QT_NO_TOOLTIP
+        actionTiendas->setShortcut(QApplication::translate("MainWindow", "Ctrl+T", 0, QApplication::UnicodeUTF8));
         toolBar_modulos->setWindowTitle(QApplication::translate("MainWindow", "toolBar", 0, QApplication::UnicodeUTF8));
     } // retranslateUi
 
