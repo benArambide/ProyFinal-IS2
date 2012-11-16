@@ -52,6 +52,14 @@ int main(int argc,char *argv[])
 {
     QApplication a(argc, argv);
 
+    if(a.arguments().contains("--without-login"))
+    {
+      MainWindow *MAIN_WINDOW;
+      MAIN_WINDOW = new MainWindow;
+      MAIN_WINDOW->showMaximized();
+      return a.exec();
+    }
+
     //ToDo: Organizar este codigo spaguetti xD
     QTextCodec* linuxCodec=QTextCodec::codecForName("UTF-8");
     QTextCodec::setCodecForTr(linuxCodec);
@@ -76,5 +84,6 @@ int main(int argc,char *argv[])
     UI_LOGIN login;
     splash.close();
     login.show();
+
     return a.exec();
 }
