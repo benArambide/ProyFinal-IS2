@@ -6,6 +6,11 @@
 
 MyComboBox::MyComboBox(QWidget* parent):QComboBox(parent)
 {
+
+    ventana_agregar_1=0;
+    ventana_agregar_2=0;
+
+
     //Inicalizamos los punteros a funcion para poder llenar el combobox
 
     map_funciones["calidad"]=(&(Calidad::listarNombres));
@@ -16,7 +21,7 @@ MyComboBox::MyComboBox(QWidget* parent):QComboBox(parent)
     map_funciones["tipoluna"]=(&(TipoLuna::listarNombres));
     map_funciones["forma"]=(&(Forma::listarNombres));
 
-//nose porque no funcional la coneccion
+
     this->connect(this,SIGNAL(activated(QString)),this,SLOT(Show_Agregar()));
 
     icono_agregar=new QIcon("Icons/1348112114_notification_add.png");
@@ -39,6 +44,12 @@ void MyComboBox::Actualizar_Items()
         this->addItem(resultado->record(i).value(0).toString());
     this->addItem(*icono_agregar,"...Nuevo...");
 
+}
+
+
+void MyComboBox::test()
+{
+    qDebug()<<"prueba que ya se cerro";
 }
 
 
@@ -87,6 +98,29 @@ void MyComboBox::Eliminar_Item()
 
  void MyComboBox::Show_Agregar()
  {
-     ui_agregar_nombre* ventana_agregar=new ui_agregar_nombre;
-     ventana_agregar->show();
+     if(this->currentText()=="...Nuevo...")
+     {
+        if(tipo=="marca")
+        {
+           ventana_agregar_1=new ui_agregar_nomDesc;
+           ventana_agregar_1->recibir_tipo(tipo);
+
+           this->connect(ventana_agregar_1,SIGNAL(envia_senial(int)),this,SLOT(Actualizar_Items()));
+
+           QString nombre_ventana="Agregar "+tipo;
+           ventana_agregar_1->setWindowTitle(nombre_ventana);
+           ventana_agregar_1->show();
+        }
+        else
+        {
+            ventana_agregar_2=new ui_agregar_nombre;
+            ventana_agregar_2->recibir_tipo(tipo);
+
+            this->connect(ventana_agregar_2,SIGNAL(envia_senial(int)),this,SLOT(Actualizar_Items()));
+
+            QString nombre_ventana="Agregar "+tipo;
+            ventana_agregar_2->setWindowTitle(nombre_ventana);
+            ventana_agregar_2->show();
+        }
+     }
  }
