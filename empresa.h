@@ -2,6 +2,7 @@
 #define EMPRESA_H
 
 #include <objetopersistente.h>
+#include <QSqlQueryModel>
 
 class empresa:public ObjetoPersistente
 {

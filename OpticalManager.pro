@@ -44,7 +44,8 @@ SOURCES += main.cpp\
     tienda.cpp \
     ui_tienda_agregar.cpp \
     empresa.cpp \
-    ui_agregar_nomdesc.cpp
+    ui_agregar_nomdesc.cpp \
+    ui_empresa.cpp
 
 HEADERS  += mainwindow.h \
     sesion.h \
@@ -81,7 +82,8 @@ HEADERS  += mainwindow.h \
     tienda.h \
     ui_tienda_agregar.h \
     empresa.h \
-    ui_agregar_nomdesc.h
+    ui_agregar_nomdesc.h \
+    ui_empresa.h
 
 FORMS    += mainwindow.ui \
     ui_login.ui \
@@ -98,7 +100,8 @@ FORMS    += mainwindow.ui \
     ui_agregar_nombre.ui \
     ui_tienda_agregar.ui \
     ui_tienda.ui \
-    ui_agregar_nomdesc.ui
+    ui_agregar_nomdesc.ui \
+    ui_empresa.ui
 
 RESOURCES += \
     Icons/Icons.qrc \

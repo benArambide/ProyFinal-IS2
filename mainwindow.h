@@ -7,6 +7,7 @@
 #include <objetopersistente.h>
 #include <ui_producto.h>
 #include <ui_tienda.h>
+#include <ui_empresa.h>
 
 namespace Ui {
 class MainWindow;
@@ -29,6 +30,8 @@ private slots:
 
 
     void on_actionTiendas_triggered();
+
+    void on_actionEmpresas_triggered();
 
 private:
     Ui::MainWindow *ui;

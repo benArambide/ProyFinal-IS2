@@ -51,3 +51,11 @@ void MainWindow::on_actionTiendas_triggered()
     setCentralWidget(tienda_form);
     tienda_form->showMaximized();
 }
+
+void MainWindow::on_actionEmpresas_triggered()
+{
+    ui_empresa* empresa_form;
+    empresa_form=new ui_empresa;
+    setCentralWidget(empresa_form);
+    empresa_form->showMaximized();
+}
