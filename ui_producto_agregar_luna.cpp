@@ -12,3 +12,13 @@ ui_producto_agregar_luna::~ui_producto_agregar_luna()
 {
     delete ui;
 }
+
+void ui_producto_agregar_luna::on_pushButton_5_clicked()
+{
+    this->close();
+}
+
+void ui_producto_agregar_luna::on_pushButton_cancelar_clicked()
+{
+    this->close();
+}

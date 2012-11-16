@@ -15,6 +15,11 @@ public:
     explicit ui_producto_agregar_luna(QWidget *parent = 0);
     ~ui_producto_agregar_luna();
 
+private slots:
+    void on_pushButton_5_clicked();
+
+    void on_pushButton_cancelar_clicked();
+
 private:
     Ui::ui_producto_agregar_luna *ui;
 };

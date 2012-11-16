@@ -1,5 +1,8 @@
 #include "mycombobox.h"
 #include <QDebug>
+#include <QSqlTableModel>
+#include <QSqlRecord>
+#include <QVariant>
 
 MyComboBox::MyComboBox(QWidget* parent):QComboBox(parent)
 {
@@ -13,6 +16,11 @@ MyComboBox::MyComboBox(QWidget* parent):QComboBox(parent)
     map_funciones["tipoluna"]=(&(TipoLuna::listarNombres));
     map_funciones["forma"]=(&(Forma::listarNombres));
 
+//nose porque no funcional la coneccion
+    this->connect(this,SIGNAL(activated(QString)),this,SLOT(Show_Agregar()));
+
+    icono_agregar=new QIcon("Icons/1348112114_notification_add.png");
+
 }
 
 
@@ -23,15 +31,20 @@ void MyComboBox::IngresarTipo(QString _tipo)
 
 void MyComboBox::Actualizar_Items()
 {
+    //AUn tiene un problemas se espera mejora
+    this->clear();
+
     QSqlQueryModel* resultado=(map_funciones[tipo])();
-    this->setModel(resultado);
+    for(int i=0;i<resultado->rowCount();i++)
+        this->addItem(resultado->record(i).value(0).toString());
+    this->addItem(*icono_agregar,"...Nuevo...");
+
 }
 
 
 void MyComboBox::Eliminar_Item()
 {
     QString nombre=this->currentText();
-    qDebug()<<"marca a eliminar "<<nombre;
 
     if(tipo=="calidad"){
         Calidad calidad;
@@ -71,3 +84,11 @@ void MyComboBox::Eliminar_Item()
 
     this->Actualizar_Items();
 }
+
+
+
+ void MyComboBox::Show_Agregar()
+ {
+     ui_agregar_nombre* ventana_agregar=new ui_agregar_nombre;
+     ventana_agregar->show();
+ }
