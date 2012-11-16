@@ -39,7 +39,11 @@ SOURCES += main.cpp\
     mycombobox.cpp \
     ui_producto_agregar_luna.cpp \
     ui_producto_agregar_montura.cpp \
-    ui_agregar_nombre.cpp
+    ui_agregar_nombre.cpp \
+    ui_tienda.cpp \
+    tienda.cpp \
+    ui_tienda_agregar.cpp \
+    empresa.cpp
 
 HEADERS  += mainwindow.h \
     sesion.h \
@@ -69,7 +73,13 @@ HEADERS  += mainwindow.h \
     mycombobox.h \
     ui_producto_agregar_luna.h \
     ui_producto_agregar_montura.h \
-    ui_agregar_nombre.h
+    ui_agregar_nombre.h \
+    ui_ui_tienda_agregar.h \
+    ui_ui_tienda.h \
+    ui_tienda.h \
+    tienda.h \
+    ui_tienda_agregar.h \
+    empresa.h
 
 FORMS    += mainwindow.ui \
     ui_login.ui \
@@ -83,7 +93,9 @@ FORMS    += mainwindow.ui \
     ui_statur_bar.ui \
     ui_producto_agregar_luna.ui \
     ui_producto_agregar_montura.ui \
-    ui_agregar_nombre.ui
+    ui_agregar_nombre.ui \
+    ui_tienda_agregar.ui \
+    ui_tienda.ui
 
 RESOURCES += \
     Icons/Icons.qrc \
