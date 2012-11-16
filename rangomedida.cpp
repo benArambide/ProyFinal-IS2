@@ -1,4 +1,8 @@
 #include "rangomedida.h"
+#include <QDebug>
+#include <QSqlQueryModel>
+#include <QSqlRecord>
+#include <QSqlError>
 
 RangoMedida::RangoMedida(int _id,float _valorIni,float _valorFin, QString _descripcion)
 {
@@ -59,8 +63,30 @@ QList<RangoMedida*> RangoMedida::listar()
 
 
 
+/**
+ * @brief Ingresando el nombre de la RangoMedida, puede verificar si esta en la base de datos
+ *        o no, en caso de que si este llena el objeto RangoMedida con los datos de la tabla
+ * @return Bool si es exite return true, y si no exite return false
+ */
 
+/*
+bool RangoMedida::existente(float _valorini,float _valorfin)
+{
+    //USE UN QSQLQUERYMODEL porque me salia un error con el query
+   //Se realiza la consulta con el nombre de la RangoMedida a buscar
+    QSqlQueryModel  query;
+    query.setQuery("select * from rango_medida where val_ini="+QString::number(_valorini)+" and val_fin="+QString::number(_valorfin));
+    if(query.rowCount()>0)
+    {
+        id = query.record(0).value("idrango_medida").toInt();
+        descripcion = query.record(0).value("obs").toString();
+        return true;
+    }
+    else
+        return false;
+}
 
+*/
 
 
 /*--------------------------------------------------------------------
@@ -168,10 +194,17 @@ bool RangoMedida::agregar()
     if(descripcion!="")
     {
         QSqlQuery query;
-        query.prepare("INSERT INTO rango_medida (val_ini,val_fin,obs) VALUES ("+QString::number(valorini)+","+QString::number(valorfin)+",'"+descripcion+"'");
+        qDebug()<<"insertando"<<QString::number(valorini);
+        qDebug()<<"insertando"<<QString::number(valorfin);
+        query.prepare("INSERT INTO rango_medida (val_ini,val_fin,obs)"
+                      "VALUES (?,?,?)");
+        query.bindValue(0,valorini);
+        query.bindValue(1,valorfin);
+        query.bindValue(2,descripcion);
 
         if(query.exec()==true)
         {
+            qDebug()<<"se realizo bien el query";
             query.prepare("SELECT idrango_medida FROM rango_medida WHERE val_ini="+QString::number(valorini)+" and "+QString::number(valorfin));
             query.exec();
             query.next();

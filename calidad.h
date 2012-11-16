@@ -21,12 +21,19 @@ public:
     Calidad(int _id,QString _nombre);
     Calidad(QString _nombre);
     Calidad();
+
     static QList<Calidad*> listar();
+    static QSqlQueryModel* listarNombres();
+
 
     int getId();
     QString getNombre();
     void setId(int _id);
     void setNombre(QString _nombre);
+
+    bool existente(QString _nombre);
+
+
 
     bool agregar();
     bool actualizar();

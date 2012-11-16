@@ -21,11 +21,14 @@ public:
     TipoLuna();
     TipoLuna(QString _nombre);
     static QList<TipoLuna*> listar();
+    static QSqlQueryModel* listarNombres();
 
     int getId();
     QString getNombre();
     void setId(int _id);
     void setNombre(QString _nombre);
+
+    bool existente(QString _nombre);
 
     bool agregar();
     bool actualizar();

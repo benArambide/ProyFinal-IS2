@@ -48,6 +48,42 @@ QList<TipoLuna*> TipoLuna::listar()
 
 
 
+QSqlQueryModel* TipoLuna::listarNombres()
+{
+    QSqlQueryModel* model=new QSqlQueryModel;
+    model->setQuery("select nombre from tipo_luna");
+    return model;
+}
+
+
+
+/**
+ * @brief Ingresando el nombre de la TipoLuna, puede verificar si esta en la base de datos
+ *        o no, en caso de que si este llena el objeto TipoLuna con los datos de la tabla
+ * @return Bool si es exite return true, y si no exite return false
+ */
+bool TipoLuna::existente(QString _nombre)
+{
+    //Se realiza la consulta con el nombre de la TipoLuna a buscar
+    QSqlQuery query;
+    query.prepare("select * from tipo_luna where nombre='"+_nombre+"'");
+    query.exec();
+
+    //se verifica si el resultado de la consulta esta vacia
+    if(query.size()>0)
+   {
+       //si tiene contenido el resultado de la consulta se comienza a llenar
+       //los datos del objeto TipoLuna y retorna true
+
+       nombre=_nombre;
+       query.next();
+       id=query.value(0).toInt();
+        return true;
+   }
+   else
+       return false;
+}
+
 
 
 

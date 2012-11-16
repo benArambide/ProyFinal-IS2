@@ -204,8 +204,8 @@ QSqlQueryModel* Montura::entregarMonturas()
 {
 
     QSqlQueryModel *model = new QSqlQueryModel;
-         model->setQuery("select codigo,"
-                         "c.nombre as calidad, \
+         model->setQuery("select codigo,\
+                         c.nombre as calidad, \
                          f.nombre as forma, \
                          t.nombre as tamanio, \
                          color,descripcion,stock,accesorios,p_descuento,precio \
@@ -223,3 +223,44 @@ QSqlQueryModel* Montura::entregarMonturas()
 
     return model;
 }
+
+
+
+
+
+QSqlQueryModel* Montura::buscar(QString _item)
+{
+
+    QSqlQueryModel *model = new QSqlQueryModel;
+         model->setQuery("select codigo,\
+                         c.nombre as calidad, \
+                         f.nombre as forma, \
+                         t.nombre as tamanio, \
+                         color,descripcion,stock,accesorios,p_descuento,precio \
+                         from montura m \
+                         inner join producto p \
+                         on m.idproducto=p.idproducto \
+                         inner join calidad c \
+                         on m.idcalidad=c.idcalidad \
+                         inner join forma f \
+                         on m.idforma=f.idforma \
+                         inner join color co \
+                         on m.idcolor=co.idcolor \
+                         inner join tamanio t \
+                         on m.idtamanio=t.idtamanio\
+                         where codigo like '%"+_item+"%' or \
+                         c.nombre like '%"+_item+"%' or \
+                         f.nombre like '%"+_item+"%' or \
+                         t.nombre like '%"+_item+"%' or \
+                         co.color like '%"+_item+"%' or \
+                         descripcion like '%"+_item+"%' or \
+                         stock like '%"+_item+"%' or \
+                         precio like '%"+_item+"%' or \
+                         accesorios like '%"+_item+"%' or \
+                         p_descuento like '%"+_item+"%'");
+
+    return model;
+}
+
+
+

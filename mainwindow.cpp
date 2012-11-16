@@ -3,30 +3,21 @@
 #include <QDebug>
 #include <QDialog>
 #include <montura.h>
+<<<<<<< HEAD
 
 #include "modulousuarios.h"
 
+=======
+#include <luna.h>
+>>>>>>> 6c266d3538be0ef3f21d35fbbf6e4ffb74a092c9
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
     ui(new Ui::MainWindow)
 {
+
     ui->setupUi(this);
 
 
-    Marca marc("marca6","esta es una marca inventada");
-    marc.agregar();
-    Forma form("forma6");
-    form.agregar();
-    Tamanio tam("tamano6");
-    tam.agregar();
-    Color col("color6");
-    col.agregar();
-    Calidad cal("calidad6");
-    cal.agregar();
-
-    Montura mon("ab126","este asases una montura mala","belu",marc,338,12.12,"4estuche",12.12,true,col,form,cal,tam);
-    mon.agregar();
-    qDebug()<<mon.eliminar();
 }
 
 MainWindow::~MainWindow()
@@ -37,6 +28,10 @@ MainWindow::~MainWindow()
 
 void MainWindow::on_actionProducto_triggered()
 {
+    ui_producto* produc_fom;
+    produc_fom = new ui_producto;
+    setCentralWidget(produc_fom);
+    produc_fom->showMaximized();
 }
 
 void MainWindow::on_actionUsuario_triggered()
@@ -53,13 +48,23 @@ void MainWindow::on_actionCliente_triggered()
 {
     /*UI_CLIENT *CLIENT_FORM;
     CLIENT_FORM = new UI_CLIENT;
+
     setCentralWidget(CLIENT_FORM);
     CLIENT_FORM->showMaximized();*/
 
 }
 
+<<<<<<< HEAD
 void MainWindow::on_actionBuscar_triggered()
 {
   //QDialog::accept()
     //ActiveModule->Buscar();
+=======
+void MainWindow::on_actionTiendas_triggered()
+{
+    ui_tienda* tienda_form;
+    tienda_form=new ui_tienda;
+    setCentralWidget(tienda_form);
+    tienda_form->showMaximized();
+>>>>>>> 6c266d3538be0ef3f21d35fbbf6e4ffb74a092c9
 }

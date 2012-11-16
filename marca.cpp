@@ -1,4 +1,5 @@
 #include "marca.h"
+#include <QDebug>
 
 Marca::Marca(int _id,QString _nombre, QString _descripcion )
 {
@@ -49,6 +50,46 @@ QList<Marca*> Marca::listar()
 }
 
 
+
+
+QSqlQueryModel* Marca::listarNombres()
+{
+    QSqlQueryModel* model=new QSqlQueryModel;
+    model->setQuery("select nombre from marca");
+    return model;
+}
+
+
+
+
+
+/**
+ * @brief Ingresando el nombre de la Marca, puede verificar si esta en la base de datos
+ *        o no, en caso de que si este llena el objeto Marca con los datos de la tabla
+ * @return Bool si es exite return true, y si no exite return false
+ */
+bool Marca::existente(QString _nombre)
+{
+    //Se realiza la consulta con el nombre de la Marca a buscar
+    QSqlQuery query;
+    query.prepare("select * from marca where nombre='"+_nombre+"'");
+    query.exec();
+
+    //se verifica si el resultado de la consulta esta vacia
+    if(query.size()>0)
+   {
+       //si tiene contenido el resultado de la consulta se comienza a llenar
+       //los datos del objeto Marca y retorna true
+
+       nombre=_nombre;
+       query.next();
+       id=query.value(0).toInt();
+       descripcion=query.value(2).toString();
+       return true;
+   }
+   else
+       return false;
+}
 
 
 
@@ -189,7 +230,7 @@ bool Marca::eliminar()
     if(nombre!="")
     {
         QSqlQuery query;
-        query.prepare("DELETE FROM marca WHERE idmarca="+ QString::number(id));
+        query.prepare("DELETE FROM marca WHERE idmarca="+ QString::number(id));        
         return query.exec();
     }
     else

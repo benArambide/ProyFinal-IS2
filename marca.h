@@ -24,6 +24,7 @@ public:
     Marca(QString _nombre, QString _descripcion );
     Marca();
     static QList<Marca*> listar();
+    static QSqlQueryModel* listarNombres();
 
     int getId();
     QString getNombre();
@@ -32,6 +33,8 @@ public:
     void setNombre(QString _nombre);
     void setdescripcion(QString _descripcion);
 
+
+    bool existente(QString _nombre);
 
     bool agregar();
     bool actualizar();

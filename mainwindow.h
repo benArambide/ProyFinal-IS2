@@ -5,6 +5,8 @@
 #include <QMainWindow>
 #include <color.h>
 #include <objetopersistente.h>
+#include <ui_producto.h>
+#include <ui_tienda.h>
 
 #include "moduleinterface.h"
 
@@ -23,6 +25,9 @@ private slots:
     void on_actionUsuario_triggered();
     void on_actionCliente_triggered();
     void on_actionBuscar_triggered();
+
+
+    void on_actionTiendas_triggered();
 
 private:
     Ui::MainWindow *ui;

@@ -3,10 +3,12 @@
 empresa::empresa()
 {
 }
+
 int empresa::getRuc()
 {
     return ruc;
 }
+
 QString empresa::getrazonSocial()
 {
     return razonSocial;

@@ -6,8 +6,13 @@
    <rect>
     <x>0</x>
     <y>0</y>
+<<<<<<< HEAD
     <width>822</width>
     <height>375</height>
+=======
+    <width>572</width>
+    <height>96</height>
+>>>>>>> 6c266d3538be0ef3f21d35fbbf6e4ffb74a092c9
    </rect>
   </property>
   <property name="windowTitle">
@@ -51,6 +56,8 @@
    <addaction name="actionProducto"/>
    <addaction name="actionUsuario"/>
    <addaction name="actionCliente"/>
+   <addaction name="actionEmpresas"/>
+   <addaction name="actionTiendas"/>
   </widget>
   <widget class="QStatusBar" name="statusBar">
    <property name="cursor">
@@ -154,6 +161,36 @@
    </property>
    <property name="shortcut">
     <string>Ctrl+B</string>
+   </property>
+  </action>
+  <action name="actionTiendas">
+   <property name="icon">
+    <iconset resource="Icons/Icons.qrc">
+     <normaloff>:/Icons/autoship.png</normaloff>:/Icons/autoship.png</iconset>
+   </property>
+   <property name="text">
+    <string>Tiendas</string>
+   </property>
+   <property name="toolTip">
+    <string>Tienda</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+T</string>
+   </property>
+  </action>
+  <action name="actionEmpresas">
+   <property name="icon">
+    <iconset resource="Icons/Icons.qrc">
+     <normaloff>:/Icons/photo.png</normaloff>:/Icons/photo.png</iconset>
+   </property>
+   <property name="text">
+    <string>Empresas</string>
+   </property>
+   <property name="toolTip">
+    <string>Empresas</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+V</string>
    </property>
   </action>
  </widget>

@@ -180,6 +180,16 @@
                      <string>Categoria</string>
                     </property>
                    </column>
+                   <item>
+                    <property name="text">
+                     <string>Lunas</string>
+                    </property>
+                   </item>
+                   <item>
+                    <property name="text">
+                     <string>Monturas</string>
+                    </property>
+                   </item>
                   </widget>
                  </item>
                 </layout>
@@ -338,7 +348,6 @@
    </item>
   </layout>
   <zorder></zorder>
-  <zorder>tabWidget</zorder>
  </widget>
  <resources>
   <include location="Icons/Icons.qrc"/>
