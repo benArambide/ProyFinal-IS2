@@ -48,6 +48,14 @@ QList<TipoLuna*> TipoLuna::listar()
 
 
 
+QSqlQueryModel* TipoLuna::listarNombres()
+{
+    QSqlQueryModel* model=new QSqlQueryModel;
+    model->setQuery("select nombre from tipo_luna");
+    return model;
+}
+
+
 
 /**
  * @brief Ingresando el nombre de la TipoLuna, puede verificar si esta en la base de datos

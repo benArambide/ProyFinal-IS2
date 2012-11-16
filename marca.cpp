@@ -1,4 +1,5 @@
 #include "marca.h"
+#include <QDebug>
 
 Marca::Marca(int _id,QString _nombre, QString _descripcion )
 {
@@ -47,6 +48,19 @@ QList<Marca*> Marca::listar()
     }
     return lista_resultado;
 }
+
+
+
+
+QSqlQueryModel* Marca::listarNombres()
+{
+    QSqlQueryModel* model=new QSqlQueryModel;
+    model->setQuery("select nombre from marca");
+    return model;
+}
+
+
+
 
 
 /**
@@ -216,7 +230,7 @@ bool Marca::eliminar()
     if(nombre!="")
     {
         QSqlQuery query;
-        query.prepare("DELETE FROM marca WHERE idmarca="+ QString::number(id));
+        query.prepare("DELETE FROM marca WHERE idmarca="+ QString::number(id));        
         return query.exec();
     }
     else

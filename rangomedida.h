@@ -34,7 +34,7 @@ public:
     void setValorIncial(float _valorIncial);
     void setValorFinal(float _valorFinal);
 
-    bool existente(float _valorini,float _valorfin);
+    //bool existente(float _valorini,float _valorfin);
 
     bool agregar();
     bool actualizar();

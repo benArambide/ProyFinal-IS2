@@ -21,6 +21,7 @@ public:
     Tamanio(QString _nombre);
     Tamanio();
     static QList<Tamanio*> listar();
+    static QSqlQueryModel* listarNombres();
 
     int getId();
     QString getNombre();

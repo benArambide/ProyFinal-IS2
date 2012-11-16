@@ -22,6 +22,7 @@ public:
     Color(QString _nombre);
     Color();
     static QList<Color*> listar();
+    static QSqlQueryModel* listarNombres();
 
     int getId();
     QString getNombre();
