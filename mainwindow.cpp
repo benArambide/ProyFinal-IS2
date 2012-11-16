@@ -43,3 +43,11 @@ void MainWindow::on_actionCliente_triggered()
     CLIENT_FORM->showMaximized();*/
 
 }
+
+void MainWindow::on_actionTiendas_triggered()
+{
+    ui_tienda* tienda_form;
+    tienda_form=new ui_tienda;
+    setCentralWidget(tienda_form);
+    tienda_form->showMaximized();
+}

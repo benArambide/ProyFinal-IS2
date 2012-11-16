@@ -6,6 +6,7 @@
 #include <color.h>
 #include <objetopersistente.h>
 #include <ui_producto.h>
+#include <ui_tienda.h>
 
 namespace Ui {
 class MainWindow;
@@ -26,6 +27,8 @@ private slots:
 
     void on_actionCliente_triggered();
 
+
+    void on_actionTiendas_triggered();
 
 private:
     Ui::MainWindow *ui;

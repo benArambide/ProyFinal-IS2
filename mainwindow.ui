@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>369</width>
+    <width>451</width>
     <height>96</height>
    </rect>
   </property>
@@ -51,6 +51,7 @@
    <addaction name="actionProducto"/>
    <addaction name="actionUsuario"/>
    <addaction name="actionCliente"/>
+   <addaction name="actionTiendas"/>
   </widget>
   <widget class="QStatusBar" name="statusBar">
    <property name="cursor">
@@ -133,6 +134,21 @@
    </property>
    <property name="shortcut">
     <string>Ctrl+B</string>
+   </property>
+  </action>
+  <action name="actionTiendas">
+   <property name="icon">
+    <iconset resource="Icons/Icons.qrc">
+     <normaloff>:/Icons/autoship.png</normaloff>:/Icons/autoship.png</iconset>
+   </property>
+   <property name="text">
+    <string>Tiendas</string>
+   </property>
+   <property name="toolTip">
+    <string>Tienda</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+T</string>
    </property>
   </action>
  </widget>
