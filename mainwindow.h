@@ -6,27 +6,27 @@
 #include <color.h>
 #include <objetopersistente.h>
 
+#include "moduleinterface.h"
+
 namespace Ui {
 class MainWindow;
 }
 
 class MainWindow : public QMainWindow
 {
-    Q_OBJECT
-    
+    Q_OBJECT   
 public:
     explicit MainWindow(QWidget *parent = 0);
     ~MainWindow();
-    
 private slots:
     void on_actionProducto_triggered();
-
     void on_actionUsuario_triggered();
-
     void on_actionCliente_triggered();
+    void on_actionBuscar_triggered();
 
 private:
     Ui::MainWindow *ui;
+    ModuleInterface* ActiveModule;
 };
 
 #endif // MAINWINDOW_H

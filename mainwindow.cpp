@@ -1,7 +1,11 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
 #include <QDebug>
+#include <QDialog>
 #include <montura.h>
+
+#include "modulousuarios.h"
+
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
     ui(new Ui::MainWindow)
@@ -27,7 +31,8 @@ MainWindow::MainWindow(QWidget *parent) :
 
 MainWindow::~MainWindow()
 {
-    delete ui;
+  delete ui;
+  delete ActiveModule;
 }
 
 void MainWindow::on_actionProducto_triggered()
@@ -40,6 +45,8 @@ void MainWindow::on_actionUsuario_triggered()
     USER_FORM = new UI_USER;
     setCentralWidget(USER_FORM);
     USER_FORM->showMaximized();*/
+  ActiveModule = new ModuloUsuarios(this);
+  this->setCentralWidget(ActiveModule);
 }
 
 void MainWindow::on_actionCliente_triggered()
@@ -49,4 +56,10 @@ void MainWindow::on_actionCliente_triggered()
     setCentralWidget(CLIENT_FORM);
     CLIENT_FORM->showMaximized();*/
 
+}
+
+void MainWindow::on_actionBuscar_triggered()
+{
+  //QDialog::accept()
+    //ActiveModule->Buscar();
 }
