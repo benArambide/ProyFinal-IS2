@@ -3,13 +3,8 @@
 #include <QDebug>
 #include <QDialog>
 #include <montura.h>
-<<<<<<< HEAD
-
 #include "modulousuarios.h"
-
-=======
 #include <luna.h>
->>>>>>> 6c266d3538be0ef3f21d35fbbf6e4ffb74a092c9
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
     ui(new Ui::MainWindow)
@@ -54,19 +49,18 @@ void MainWindow::on_actionCliente_triggered()
 
 }
 
-<<<<<<< HEAD
 void MainWindow::on_actionBuscar_triggered()
 {
   //QDialog::accept()
     //ActiveModule->Buscar();
-=======
+}
+
 void MainWindow::on_actionTiendas_triggered()
 {
     ui_tienda* tienda_form;
     tienda_form=new ui_tienda;
     setCentralWidget(tienda_form);
     tienda_form->showMaximized();
->>>>>>> 6c266d3538be0ef3f21d35fbbf6e4ffb74a092c9
 }
 
 void MainWindow::on_actionEmpresas_triggered()

@@ -34,11 +34,9 @@ SOURCES += main.cpp\
     ui_cliente_datos.cpp \
     ui_usuario_datos.cpp \
     montura.cpp \
-<<<<<<< HEAD
     moduleinterface.cpp \
     modulousuarios.cpp \
-    ui_buscarusuario.cpp
-=======
+    ui_buscarusuario.cpp \
     ui_statur_bar.cpp \
     luna.cpp \
     mycombobox.cpp \
@@ -49,13 +47,8 @@ SOURCES += main.cpp\
     tienda.cpp \
     ui_tienda_agregar.cpp \
     empresa.cpp \
-<<<<<<< HEAD
-    ui_agregar_nomdesc.cpp \
-    ui_empresa.cpp
-=======
+    ui_empresa.cpp \
     ui_agregar_nomdesc.cpp
->>>>>>> 6c266d3538be0ef3f21d35fbbf6e4ffb74a092c9
->>>>>>> 07cc33c779bac9c00d75bde72ac24a0b038f2c4c
 
 HEADERS  += mainwindow.h \
     sesion.h \
@@ -80,11 +73,9 @@ HEADERS  += mainwindow.h \
     ui_cliente_datos.h \
     ui_usuario_datos.h \
     montura.h \
-<<<<<<< HEAD
     moduleinterface.h \
     modulousuarios.h \
-    ui_buscarusuario.h
-=======
+    ui_buscarusuario.h \
     ui_statur_bar.h \
     luna.h \
     mycombobox.h \
@@ -97,13 +88,9 @@ HEADERS  += mainwindow.h \
     tienda.h \
     ui_tienda_agregar.h \
     empresa.h \
-<<<<<<< HEAD
+    ui_empresa.h \
     ui_agregar_nomdesc.h \
-    ui_empresa.h
-=======
-    ui_agregar_nomdesc.h
->>>>>>> 6c266d3538be0ef3f21d35fbbf6e4ffb74a092c9
->>>>>>> 07cc33c779bac9c00d75bde72ac24a0b038f2c4c
+    ui_mainwindow.h
 
 FORMS    += mainwindow.ui \
     ui_login.ui \
@@ -114,23 +101,17 @@ FORMS    += mainwindow.ui \
     ui_producto_datos.ui \
     ui_cliente_datos.ui \
     ui_usuario_datos.ui \
-<<<<<<< HEAD
     moduleinterface.ui \
-    ui_buscarusuario.ui
-=======
+    ui_buscarusuario.ui \
     ui_statur_bar.ui \
     ui_producto_agregar_luna.ui \
     ui_producto_agregar_montura.ui \
     ui_agregar_nombre.ui \
     ui_tienda_agregar.ui \
     ui_tienda.ui \
-<<<<<<< HEAD
     ui_agregar_nomdesc.ui \
-    ui_empresa.ui
-=======
+    ui_empresa.ui \
     ui_agregar_nomdesc.ui
->>>>>>> 6c266d3538be0ef3f21d35fbbf6e4ffb74a092c9
->>>>>>> 07cc33c779bac9c00d75bde72ac24a0b038f2c4c
 
 RESOURCES += \
     Icons/Icons.qrc \

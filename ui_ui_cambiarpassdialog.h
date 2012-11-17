@@ -1,13 +1,8 @@
 /********************************************************************************
 ** Form generated from reading UI file 'ui_cambiarpassdialog.ui'
 **
-<<<<<<< HEAD
-** Created: Fri Nov 16 12:06:52 2012
-**      by: Qt User Interface Compiler version 4.8.3
-=======
-** Created: Fri Nov 16 12:16:02 2012
-**      by: Qt User Interface Compiler version 4.7.4
->>>>>>> 6c266d3538be0ef3f21d35fbbf6e4ffb74a092c9
+** Created: Fri Nov 16 22:27:59 2012
+**      by: Qt User Interface Compiler version 4.8.1
 **
 ** WARNING! All changes made in this file will be lost when recompiling UI file!
 ********************************************************************************/
@@ -54,10 +49,7 @@ public:
         if (ui_cambiarPassDialog->objectName().isEmpty())
             ui_cambiarPassDialog->setObjectName(QString::fromUtf8("ui_cambiarPassDialog"));
         ui_cambiarPassDialog->resize(419, 180);
-<<<<<<< HEAD
         ui_cambiarPassDialog->setContextMenuPolicy(Qt::CustomContextMenu);
-=======
->>>>>>> 6c266d3538be0ef3f21d35fbbf6e4ffb74a092c9
         gridLayout = new QGridLayout(ui_cambiarPassDialog);
         gridLayout->setObjectName(QString::fromUtf8("gridLayout"));
         label_3 = new QLabel(ui_cambiarPassDialog);
