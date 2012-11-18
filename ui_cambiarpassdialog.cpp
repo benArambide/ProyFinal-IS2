@@ -55,8 +55,8 @@ void ui_cambiarPassDialog::on_lineEdit_nuevoPass_textChanged(const QString &arg1
 
 void ui_cambiarPassDialog::on_buttonBox_clicked(QAbstractButton *button)
 {
-    if(button->text()=="&OK");
+    /*if(button->text()=="&OK");
     {
 
-    }
+    }*/
 }

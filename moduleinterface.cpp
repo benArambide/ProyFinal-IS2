@@ -6,10 +6,13 @@ ModuleInterface::ModuleInterface(QWidget *parent,QWidget* detalles):
 {
   ui->setupUi(this);
   ui->Module_tabWidget->addTab(detalles,"Detalles");
-  QRect r = parent->geometry();
-  int height = parent->geometry().height();
-  r.setHeight(height-100);
-  ui->Module_tabWidget->setGeometry(r);
+  //detalles->showMaximized();
+  //QRect r = parent->geometry();
+  //int height = parent->geometry().height();
+  //r.setHeight(height-100);
+  //ui->Module_tabWidget->setGeometry(r);
+  //ui->Module_tabWidget->showMaximized();
+  //this->showMaximized();
 }
 
 ModuleInterface::~ModuleInterface()

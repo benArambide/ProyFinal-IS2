@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>572</width>
+    <width>759</width>
     <height>96</height>
    </rect>
   </property>
@@ -58,6 +58,24 @@
    <property name="cursor">
     <cursorShape>IBeamCursor</cursorShape>
    </property>
+  </widget>
+  <widget class="QToolBar" name="options_toolBar">
+   <property name="windowTitle">
+    <string>toolBar</string>
+   </property>
+   <property name="iconSize">
+    <size>
+     <width>36</width>
+     <height>36</height>
+    </size>
+   </property>
+   <attribute name="toolBarArea">
+    <enum>TopToolBarArea</enum>
+   </attribute>
+   <attribute name="toolBarBreak">
+    <bool>false</bool>
+   </attribute>
+   <addaction name="actionBuscar"/>
   </widget>
   <action name="actionProducto">
    <property name="icon">

@@ -1,8 +1,8 @@
 /********************************************************************************
 ** Form generated from reading UI file 'mainwindow.ui'
 **
-** Created: Fri Nov 16 22:27:59 2012
-**      by: Qt User Interface Compiler version 4.8.1
+** Created: Sat Nov 17 19:15:58 2012
+**      by: Qt User Interface Compiler version 4.8.3
 **
 ** WARNING! All changes made in this file will be lost when recompiling UI file!
 ********************************************************************************/
@@ -38,12 +38,13 @@ public:
     QGridLayout *gridLayout;
     QToolBar *toolBar_modulos;
     QStatusBar *statusBar;
+    QToolBar *options_toolBar;
 
     void setupUi(QMainWindow *MainWindow)
     {
         if (MainWindow->objectName().isEmpty())
             MainWindow->setObjectName(QString::fromUtf8("MainWindow"));
-        MainWindow->resize(572, 96);
+        MainWindow->resize(759, 96);
         QIcon icon;
         icon.addFile(QString::fromUtf8(":/Icons/internet-news-reader.png"), QSize(), QIcon::Normal, QIcon::Off);
         MainWindow->setWindowIcon(icon);
@@ -105,12 +106,17 @@ public:
         statusBar->setObjectName(QString::fromUtf8("statusBar"));
         statusBar->setCursor(QCursor(Qt::IBeamCursor));
         MainWindow->setStatusBar(statusBar);
+        options_toolBar = new QToolBar(MainWindow);
+        options_toolBar->setObjectName(QString::fromUtf8("options_toolBar"));
+        options_toolBar->setIconSize(QSize(36, 36));
+        MainWindow->addToolBar(Qt::TopToolBarArea, options_toolBar);
 
         toolBar_modulos->addAction(actionProducto);
         toolBar_modulos->addAction(actionUsuario);
         toolBar_modulos->addAction(actionCliente);
         toolBar_modulos->addAction(actionEmpresas);
         toolBar_modulos->addAction(actionTiendas);
+        options_toolBar->addAction(actionBuscar);
 
         retranslateUi(MainWindow);
 
@@ -149,6 +155,7 @@ public:
 #endif // QT_NO_TOOLTIP
         actionEmpresas->setShortcut(QApplication::translate("MainWindow", "Ctrl+V", 0, QApplication::UnicodeUTF8));
         toolBar_modulos->setWindowTitle(QApplication::translate("MainWindow", "toolBar", 0, QApplication::UnicodeUTF8));
+        options_toolBar->setWindowTitle(QApplication::translate("MainWindow", "toolBar", 0, QApplication::UnicodeUTF8));
     } // retranslateUi
 
 };
