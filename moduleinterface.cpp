@@ -6,13 +6,23 @@ ModuleInterface::ModuleInterface(QWidget *parent,QWidget* detalles):
 {
   ui->setupUi(this);
   ui->Module_tabWidget->addTab(detalles,"Detalles");
-  //detalles->showMaximized();
-  //QRect r = parent->geometry();
-  //int height = parent->geometry().height();
-  //r.setHeight(height-100);
-  //ui->Module_tabWidget->setGeometry(r);
-  //ui->Module_tabWidget->showMaximized();
-  //this->showMaximized();
+  detalles->setEnabled(false);
+      ui->Module_tabWidget->setTabEnabled(1,false);
+}
+
+QDialog* ModuleInterface::makeBusquedaDialog(QWidget* form)
+{
+  QDialog* dialogBuscar =  new QDialog(this);
+  QDialogButtonBox* buttons= new QDialogButtonBox();
+  buttons->addButton("Buscar",QDialogButtonBox::AcceptRole);
+  buttons->addButton("Cancelar",QDialogButtonBox::RejectRole);
+  connect(buttons, SIGNAL(accepted()), dialogBuscar, SLOT(accept()));
+  connect(buttons, SIGNAL(rejected()), dialogBuscar, SLOT(reject()));
+  QGridLayout* layout = new QGridLayout;
+  layout->addWidget(form);
+  layout->addWidget(buttons);
+  dialogBuscar->setLayout(layout);
+  return dialogBuscar;
 }
 
 ModuleInterface::~ModuleInterface()

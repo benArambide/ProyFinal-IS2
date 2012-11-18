@@ -2,6 +2,8 @@
 #define MODULEINTERFACE_H
 
 #include <QWidget>
+#include <QDialog>
+#include <QDialogButtonBox>
 #include "ui_moduleinterface.h"
 
 namespace Ui {
@@ -23,6 +25,7 @@ protected:
   Ui::ModuleInterface *ui;
   QWidget* detallesWidget;
   QWidget* busquedaWidget;
+  QDialog* makeBusquedaDialog(QWidget* form);
 };
 
 #endif // MODULEINTERFACE_H

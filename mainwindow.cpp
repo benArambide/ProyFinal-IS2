@@ -53,7 +53,7 @@ void MainWindow::on_actionCliente_triggered()
 void MainWindow::on_actionBuscar_triggered()
 {
   //QDialog::accept()
-    //ActiveModule->Buscar();
+    ActiveModule->Buscar();
 }
 
 void MainWindow::on_actionTiendas_triggered()

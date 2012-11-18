@@ -2,6 +2,7 @@
 #define UI_BUSCARUSUARIO_H
 
 #include <QWidget>
+#include "ui_ui_buscarusuario.h"
 
 namespace Ui {
   class ui_BuscarUsuario;
@@ -14,7 +15,7 @@ class ui_BuscarUsuario : public QWidget
 public:
   explicit ui_BuscarUsuario(QWidget *parent = 0);
   ~ui_BuscarUsuario();
-  
+  friend class ModuloUsuarios;
 private:
   Ui::ui_BuscarUsuario *ui;
 };
