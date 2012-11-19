@@ -5,6 +5,7 @@
 #include <QDialog>
 #include <QDialogButtonBox>
 #include "ui_moduleinterface.h"
+#include <QtSql>
 
 namespace Ui {
   class ModuleInterface;
@@ -26,6 +27,8 @@ protected:
   QWidget* detallesWidget;
   QWidget* busquedaWidget;
   QDialog* makeBusquedaDialog(QWidget* form);
+private slots:
+  void on_list_tableView_activated(const QModelIndex &index);
 };
 
 #endif // MODULEINTERFACE_H

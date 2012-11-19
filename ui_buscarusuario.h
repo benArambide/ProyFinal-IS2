@@ -16,6 +16,9 @@ public:
   explicit ui_BuscarUsuario(QWidget *parent = 0);
   ~ui_BuscarUsuario();
   friend class ModuloUsuarios;
+private slots:
+  void on_le_dni_cursorPositionChanged(int arg1, int arg2);
+
 private:
   Ui::ui_BuscarUsuario *ui;
 };

@@ -80,7 +80,6 @@ int main(int argc,char *argv[])
     if(!confConexionDB())
         return -1;
     Sesion::Configurar(3,10,6000);
-
     UI_LOGIN login;
     splash.close();
     login.show();

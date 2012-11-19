@@ -7,7 +7,8 @@ ModuleInterface::ModuleInterface(QWidget *parent,QWidget* detalles):
   ui->setupUi(this);
   ui->Module_tabWidget->addTab(detalles,"Detalles");
   detalles->setEnabled(false);
-      ui->Module_tabWidget->setTabEnabled(1,false);
+  ui->Module_tabWidget->setTabEnabled(1,false);
+  ui->list_tableView->horizontalHeader()->setResizeMode(QHeaderView::ResizeToContents);
 }
 
 QDialog* ModuleInterface::makeBusquedaDialog(QWidget* form)
@@ -28,4 +29,9 @@ QDialog* ModuleInterface::makeBusquedaDialog(QWidget* form)
 ModuleInterface::~ModuleInterface()
 {
   delete ui;
+}
+
+void ModuleInterface::on_list_tableView_activated(const QModelIndex &index)
+{
+  //index.model()
 }
