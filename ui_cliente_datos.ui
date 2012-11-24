@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>686</width>
-    <height>374</height>
+    <width>706</width>
+    <height>349</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -18,8 +18,18 @@
     <layout class="QGridLayout" name="gridLayout_2">
      <item row="0" column="0">
       <layout class="QGridLayout" name="gridLayout_4">
-       <item row="0" column="0">
-        <spacer name="horizontalSpacer_4">
+       <item row="3" column="4">
+        <widget class="QLineEdit" name="lineEdit_nroDoc"/>
+       </item>
+       <item row="4" column="0" colspan="5">
+        <widget class="Line" name="line">
+         <property name="orientation">
+          <enum>Qt::Horizontal</enum>
+         </property>
+        </widget>
+       </item>
+       <item row="0" column="4">
+        <spacer name="horizontalSpacer_12">
          <property name="orientation">
           <enum>Qt::Horizontal</enum>
          </property>
@@ -34,8 +44,48 @@
          </property>
         </spacer>
        </item>
+       <item row="2" column="3">
+        <widget class="QLabel" name="label_29">
+         <property name="text">
+          <string>Segundo Apellido</string>
+         </property>
+        </widget>
+       </item>
+       <item row="3" column="3">
+        <widget class="QLabel" name="label_16">
+         <property name="text">
+          <string>Número de Documento</string>
+         </property>
+        </widget>
+       </item>
+       <item row="1" column="0">
+        <widget class="QLabel" name="label_25">
+         <property name="text">
+          <string>Nombres</string>
+         </property>
+        </widget>
+       </item>
+       <item row="1" column="1" colspan="4">
+        <widget class="QLineEdit" name="lineEdit_nombres"/>
+       </item>
        <item row="0" column="1">
         <spacer name="horizontalSpacer_7">
+         <property name="orientation">
+          <enum>Qt::Horizontal</enum>
+         </property>
+         <property name="sizeType">
+          <enum>QSizePolicy::Fixed</enum>
+         </property>
+         <property name="sizeHint" stdset="0">
+          <size>
+           <width>150</width>
+           <height>13</height>
+          </size>
+         </property>
+        </spacer>
+       </item>
+       <item row="0" column="3">
+        <spacer name="horizontalSpacer_11">
          <property name="orientation">
           <enum>Qt::Horizontal</enum>
          </property>
@@ -66,68 +116,6 @@
          </property>
         </spacer>
        </item>
-       <item row="0" column="3">
-        <spacer name="horizontalSpacer_11">
-         <property name="orientation">
-          <enum>Qt::Horizontal</enum>
-         </property>
-         <property name="sizeType">
-          <enum>QSizePolicy::Fixed</enum>
-         </property>
-         <property name="sizeHint" stdset="0">
-          <size>
-           <width>150</width>
-           <height>13</height>
-          </size>
-         </property>
-        </spacer>
-       </item>
-       <item row="0" column="4">
-        <spacer name="horizontalSpacer_12">
-         <property name="orientation">
-          <enum>Qt::Horizontal</enum>
-         </property>
-         <property name="sizeType">
-          <enum>QSizePolicy::Fixed</enum>
-         </property>
-         <property name="sizeHint" stdset="0">
-          <size>
-           <width>150</width>
-           <height>13</height>
-          </size>
-         </property>
-        </spacer>
-       </item>
-       <item row="1" column="0">
-        <widget class="QLabel" name="label_25">
-         <property name="text">
-          <string>Nombres</string>
-         </property>
-        </widget>
-       </item>
-       <item row="1" column="1" colspan="4">
-        <widget class="QLineEdit" name="lineEdit_13"/>
-       </item>
-       <item row="2" column="0">
-        <widget class="QLabel" name="label_21">
-         <property name="text">
-          <string>Primer Apellido</string>
-         </property>
-        </widget>
-       </item>
-       <item row="2" column="1">
-        <widget class="QLineEdit" name="lineEdit_10"/>
-       </item>
-       <item row="2" column="3">
-        <widget class="QLabel" name="label_29">
-         <property name="text">
-          <string>Segundo Apellido</string>
-         </property>
-        </widget>
-       </item>
-       <item row="2" column="4">
-        <widget class="QLineEdit" name="lineEdit_16"/>
-       </item>
        <item row="3" column="0">
         <widget class="QLabel" name="label_24">
          <property name="text">
@@ -135,21 +123,11 @@
          </property>
         </widget>
        </item>
-       <item row="3" column="1">
-        <widget class="QLineEdit" name="lineEdit_9"/>
+       <item row="10" column="1">
+        <widget class="QLineEdit" name="lineEdit_telefono"/>
        </item>
-       <item row="3" column="3">
-        <widget class="QLabel" name="label_16">
-         <property name="text">
-          <string>Número de Documento</string>
-         </property>
-        </widget>
-       </item>
-       <item row="3" column="4">
-        <widget class="QLineEdit" name="lineEdit_14"/>
-       </item>
-       <item row="4" column="0" colspan="5">
-        <widget class="Line" name="line">
+       <item row="7" column="0" colspan="5">
+        <widget class="Line" name="line_2">
          <property name="orientation">
           <enum>Qt::Horizontal</enum>
          </property>
@@ -162,8 +140,81 @@
          </property>
         </widget>
        </item>
+       <item row="9" column="0" colspan="5">
+        <widget class="Line" name="line_3">
+         <property name="orientation">
+          <enum>Qt::Horizontal</enum>
+         </property>
+        </widget>
+       </item>
+       <item row="2" column="0">
+        <widget class="QLabel" name="label_21">
+         <property name="text">
+          <string>Primer Apellido</string>
+         </property>
+        </widget>
+       </item>
+       <item row="10" column="0">
+        <widget class="QLabel" name="label_22">
+         <property name="text">
+          <string>Teléfono</string>
+         </property>
+        </widget>
+       </item>
+       <item row="0" column="0">
+        <spacer name="horizontalSpacer_4">
+         <property name="orientation">
+          <enum>Qt::Horizontal</enum>
+         </property>
+         <property name="sizeType">
+          <enum>QSizePolicy::Fixed</enum>
+         </property>
+         <property name="sizeHint" stdset="0">
+          <size>
+           <width>150</width>
+           <height>13</height>
+          </size>
+         </property>
+        </spacer>
+       </item>
+       <item row="2" column="1">
+        <widget class="QLineEdit" name="lineEdit_primerApellido"/>
+       </item>
+       <item row="2" column="4">
+        <widget class="QLineEdit" name="lineEdit_segundoApellido"/>
+       </item>
+       <item row="8" column="0">
+        <widget class="QLabel" name="label_19">
+         <property name="text">
+          <string>Dirección</string>
+         </property>
+        </widget>
+       </item>
+       <item row="8" column="1" colspan="4">
+        <widget class="QLineEdit" name="lineEdit_direccion"/>
+       </item>
+       <item row="6" column="1">
+        <widget class="QComboBox" name="comboBox_sexo">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+         <item>
+          <property name="text">
+           <string>Femenino</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>Masculino</string>
+          </property>
+         </item>
+        </widget>
+       </item>
        <item row="5" column="1">
-        <widget class="QDateEdit" name="dateEdit_2">
+        <widget class="QDateEdit" name="dateEdit">
          <property name="sizePolicy">
           <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
            <horstretch>0</horstretch>
@@ -182,168 +233,18 @@
          </property>
         </widget>
        </item>
-       <item row="6" column="1">
-        <widget class="QComboBox" name="comboBox_8">
-         <property name="sizePolicy">
-          <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
-           <horstretch>0</horstretch>
-           <verstretch>0</verstretch>
-          </sizepolicy>
-         </property>
-         <item>
-          <property name="text">
-           <string>Masculino</string>
-          </property>
-         </item>
-         <item>
-          <property name="text">
-           <string>Femenino</string>
-          </property>
-         </item>
-        </widget>
+       <item row="3" column="1">
+        <widget class="QComboBox" name="comboBox_tipoDoc"/>
        </item>
-       <item row="6" column="3">
-        <widget class="QLabel" name="label_20">
-         <property name="sizePolicy">
-          <sizepolicy hsizetype="Fixed" vsizetype="Preferred">
-           <horstretch>0</horstretch>
-           <verstretch>0</verstretch>
-          </sizepolicy>
-         </property>
-         <property name="text">
-          <string>Estado Civil</string>
-         </property>
-        </widget>
-       </item>
-       <item row="6" column="4">
-        <widget class="QComboBox" name="comboBox_10">
-         <property name="sizePolicy">
-          <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
-           <horstretch>0</horstretch>
-           <verstretch>0</verstretch>
-          </sizepolicy>
-         </property>
-         <item>
-          <property name="text">
-           <string>Soltero/a</string>
-          </property>
-         </item>
-         <item>
-          <property name="text">
-           <string>Casado/a</string>
-          </property>
-         </item>
-         <item>
-          <property name="text">
-           <string>Viudo/a</string>
-          </property>
-         </item>
-         <item>
-          <property name="text">
-           <string>Divorciado/a</string>
-          </property>
-         </item>
-        </widget>
-       </item>
-       <item row="7" column="0" colspan="5">
-        <widget class="Line" name="line_2">
-         <property name="orientation">
-          <enum>Qt::Horizontal</enum>
-         </property>
-        </widget>
-       </item>
-       <item row="8" column="0">
-        <widget class="QLabel" name="label_23">
-         <property name="text">
-          <string>Departamento</string>
-         </property>
-        </widget>
-       </item>
-       <item row="8" column="1">
-        <widget class="QComboBox" name="comboBox_7">
-         <property name="sizePolicy">
-          <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
-           <horstretch>0</horstretch>
-           <verstretch>0</verstretch>
-          </sizepolicy>
-         </property>
-         <item>
-          <property name="text">
-           <string>Arequipa</string>
-          </property>
-         </item>
-        </widget>
-       </item>
-       <item row="8" column="3">
-        <widget class="QLabel" name="label_18">
-         <property name="text">
-          <string>Provincia</string>
-         </property>
-        </widget>
-       </item>
-       <item row="8" column="4">
-        <widget class="QComboBox" name="comboBox_9">
-         <property name="sizePolicy">
-          <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
-           <horstretch>0</horstretch>
-           <verstretch>0</verstretch>
-          </sizepolicy>
-         </property>
-        </widget>
-       </item>
-       <item row="9" column="0">
-        <widget class="QLabel" name="label_26">
-         <property name="text">
-          <string>Distrito</string>
-         </property>
-        </widget>
-       </item>
-       <item row="9" column="1">
-        <widget class="QComboBox" name="comboBox_6">
-         <property name="sizePolicy">
-          <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
-           <horstretch>0</horstretch>
-           <verstretch>0</verstretch>
-          </sizepolicy>
-         </property>
-        </widget>
-       </item>
-       <item row="10" column="0">
-        <widget class="QLabel" name="label_19">
-         <property name="text">
-          <string>Dirección</string>
-         </property>
-        </widget>
-       </item>
-       <item row="10" column="1" colspan="4">
-        <widget class="QLineEdit" name="lineEdit_12"/>
-       </item>
-       <item row="12" column="0">
-        <widget class="QLabel" name="label_22">
-         <property name="text">
-          <string>Teléfono</string>
-         </property>
-        </widget>
-       </item>
-       <item row="12" column="1">
-        <widget class="QLineEdit" name="lineEdit_15"/>
-       </item>
-       <item row="13" column="0">
+       <item row="10" column="3">
         <widget class="QLabel" name="label">
          <property name="text">
-          <string>Caracteristica de medida</string>
+          <string>Celular</string>
          </property>
         </widget>
        </item>
-       <item row="13" column="1">
-        <widget class="QLineEdit" name="lineEdit"/>
-       </item>
-       <item row="11" column="0" colspan="5">
-        <widget class="Line" name="line_3">
-         <property name="orientation">
-          <enum>Qt::Horizontal</enum>
-         </property>
-        </widget>
+       <item row="10" column="4">
+        <widget class="QLineEdit" name="celular"/>
        </item>
       </layout>
      </item>
@@ -383,12 +284,18 @@
          <property name="text">
           <string>Guardar</string>
          </property>
+         <property name="shortcut">
+          <string>Ctrl+G</string>
+         </property>
         </widget>
        </item>
        <item row="0" column="2">
         <widget class="QPushButton" name="pushButton_Cancelar">
          <property name="text">
           <string>Cancelar</string>
+         </property>
+         <property name="shortcut">
+          <string>Esc</string>
          </property>
         </widget>
        </item>

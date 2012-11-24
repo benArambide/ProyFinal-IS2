@@ -8,6 +8,7 @@
 #include <ui_producto.h>
 #include <ui_tienda.h>
 #include <ui_empresa.h>
+#include <ui_cliente.h>
 
 #include "moduleinterface.h"
 

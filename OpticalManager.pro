@@ -48,7 +48,10 @@ SOURCES += main.cpp\
     ui_tienda_agregar.cpp \
     empresa.cpp \
     ui_empresa.cpp \
-    ui_agregar_nomdesc.cpp
+    ui_agregar_nomdesc.cpp \
+    persona.cpp \
+    cliente.cpp \
+    tipodoc_ident.cpp
 
 HEADERS  += mainwindow.h \
     sesion.h \
@@ -90,7 +93,10 @@ HEADERS  += mainwindow.h \
     empresa.h \
     ui_empresa.h \
     ui_agregar_nomdesc.h \
-    ui_mainwindow.h
+    ui_mainwindow.h \
+    persona.h \
+    cliente.h \
+    tipodoc_ident.h
 
 FORMS    += mainwindow.ui \
     ui_login.ui \
