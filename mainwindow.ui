@@ -53,7 +53,6 @@
    <addaction name="actionCliente"/>
    <addaction name="actionEmpresas"/>
    <addaction name="actionTiendas"/>
-   <addaction name="separator"/>
   </widget>
   <widget class="QStatusBar" name="statusBar">
    <property name="cursor">
@@ -78,6 +77,18 @@
    </attribute>
    <addaction name="actionBuscar"/>
   </widget>
+  <action name="actionProducto">
+   <property name="icon">
+    <iconset resource="Icons/Icons.qrc">
+     <normaloff>:/Icons/inventory-maintenance.png</normaloff>:/Icons/inventory-maintenance.png</iconset>
+   </property>
+   <property name="text">
+    <string>Producto</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+P</string>
+   </property>
+  </action>
   <action name="actionUsuario">
    <property name="icon">
     <iconset resource="Icons/Icons.qrc">
@@ -87,7 +98,7 @@
     <string>Usuario</string>
    </property>
    <property name="shortcut">
-    <string>Alt+U</string>
+    <string>Ctrl+U</string>
    </property>
   </action>
   <action name="actionCliente">
@@ -99,7 +110,7 @@
     <string>Cliente</string>
    </property>
    <property name="shortcut">
-    <string>Alt+C</string>
+    <string>Ctrl+L</string>
    </property>
   </action>
   <action name="actionEditar">
@@ -156,7 +167,7 @@
     <string>Tienda</string>
    </property>
    <property name="shortcut">
-    <string>Alt+T</string>
+    <string>Ctrl+T</string>
    </property>
   </action>
   <action name="actionEmpresas">
@@ -171,19 +182,7 @@
     <string>Empresas</string>
    </property>
    <property name="shortcut">
-    <string>Alt+E</string>
-   </property>
-  </action>
-  <action name="actionProducto">
-   <property name="icon">
-    <iconset resource="Icons/Icons.qrc">
-     <normaloff>:/Icons/inventory-maintenance.png</normaloff>:/Icons/inventory-maintenance.png</iconset>
-   </property>
-   <property name="text">
-    <string>Producto</string>
-   </property>
-   <property name="shortcut">
-    <string>Alt+P</string>
+    <string>Ctrl+V</string>
    </property>
   </action>
  </widget>

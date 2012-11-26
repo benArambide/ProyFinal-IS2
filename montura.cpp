@@ -195,6 +195,8 @@ bool Montura::eliminar()
             query.prepare("DELETE FROM producto WHERE idproducto="+ QString::number(id));
             return query.exec();
         }
+        else
+            return false;
     }
     else
         return false;

@@ -199,7 +199,7 @@ bool IndiceRefraccion::eliminar()
     if(valor!="")
     {
         QSqlQuery query;
-        query.prepare("DELETE FROM indice_refraccion WHERE idindice_refraccion="+ QString::number(id));
+        query.prepare("DELETE FROM indice_refraccion WHERE idindice_refraccion="+QString::number(id));
         return query.exec();
     }
     else
