@@ -35,6 +35,15 @@ bool cliente::actualizar()
 
 bool cliente::eliminar()
 {
+    QSqlQuery query;
+    query.prepare("DELETE FROM cliente WHERE idcliente=?");
+
+    query.bindValue(0,idCliente);
+
+    if(query.exec())
+        return true;
+    else
+        return false;
     return true;
 }
 

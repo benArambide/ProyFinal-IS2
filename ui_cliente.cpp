@@ -30,9 +30,6 @@ void ui_cliente::on_pushButton_clicked()
     connect(cliente_agregar,SIGNAL(guarde()),this,SLOT(listar()));
 }
 
-#include <iostream>
-using namespace std;
-
 void ui_cliente::on_pushButton_2_clicked()
 {
     int fila=ui->tableView->currentIndex().row();
@@ -53,6 +50,29 @@ void ui_cliente::on_pushButton_2_clicked()
                 cliente_actualizar->setCliente(&persona_selec);
                 cliente_actualizar->show();
                 connect(cliente_actualizar,SIGNAL(guarde()),this,SLOT(listar()));
+            }
+        }
+    }
+}
+
+void ui_cliente::on_pushButton_3_clicked()
+{
+    int fila=ui->tableView->currentIndex().row();
+    if(fila!=-1)
+    {
+        //mensaje de esta seguro???
+        persona persona_selec;
+        persona_selec.setNombres(ui->tableView->model()->data(ui->tableView->model()->index(fila,0)).toString());
+        persona_selec.setPrimerApellido(ui->tableView->model()->data(ui->tableView->model()->index(fila,1)).toString());
+        persona_selec.setSegundoApellido(ui->tableView->model()->data(ui->tableView->model()->index(fila,2)).toString());
+        if(persona_selec.buscar())
+        {
+            cliente cliente_selec;
+            cliente_selec.setIdCliente(persona_selec.getIdPersona());
+            if(cliente_selec.buscar())
+            {
+                cliente_selec.eliminar();
+                listar();
             }
         }
     }
