@@ -20,6 +20,8 @@ public:
     Tamanio(int _id,QString _nombre);
     Tamanio(QString _nombre);
     Tamanio();
+    Tamanio(int _id);
+
     static QList<Tamanio*> listar();
     static QSqlQueryModel* listarNombres();
 

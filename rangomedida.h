@@ -23,6 +23,8 @@ public:
     RangoMedida(int _id,float _valorIni,float valorFin, QString _descripcion);
     RangoMedida(float _valorIni,float valorFin, QString _descripcion);
     RangoMedida();
+    RangoMedida(int _id);
+
     static QList<RangoMedida*> listar();
 
     int getId();

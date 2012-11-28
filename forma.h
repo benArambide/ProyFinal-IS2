@@ -21,6 +21,8 @@ public:
     Forma(int _id,QString _nombre);
     Forma(QString _nombre);
     Forma();
+    Forma(int _id);
+
     static QList<Forma*> listar();
     static QSqlQueryModel* listarNombres();
 

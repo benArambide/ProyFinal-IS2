@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>759</width>
-    <height>96</height>
+    <height>337</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -27,7 +27,11 @@
    <enum>Qt::ToolButtonTextBesideIcon</enum>
   </property>
   <widget class="QWidget" name="centralWidget">
-   <layout class="QGridLayout" name="gridLayout"/>
+   <layout class="QGridLayout" name="gridLayout">
+    <item row="0" column="0">
+     <widget class="QTableView" name="test"/>
+    </item>
+   </layout>
   </widget>
   <widget class="QToolBar" name="toolBar_modulos">
    <property name="windowTitle">

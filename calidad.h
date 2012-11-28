@@ -21,6 +21,7 @@ public:
     Calidad(int _id,QString _nombre);
     Calidad(QString _nombre);
     Calidad();
+    Calidad(int _id);
 
     static QList<Calidad*> listar();
     static QSqlQueryModel* listarNombres();

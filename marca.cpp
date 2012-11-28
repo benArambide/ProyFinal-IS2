@@ -23,6 +23,17 @@ Marca::Marca(QString _nombre, QString _descripcion )
 }
 
 
+//Constructo con solo tener el ID
+Marca::Marca(int _id)
+{
+    QSqlQuery query;
+    query.prepare("select * from marca where idmarca="+QString::number(_id));
+    query.exec();
+    query.next();
+    id=_id;
+    nombre=query.value(1).toString();
+    descripcion=query.value(2).toString();
+}
 
 /*--------------------------------------------------------------------
                 FUNCION PARA DEVOLVER OBJETOS EXISTENTE

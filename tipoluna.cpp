@@ -21,6 +21,18 @@ TipoLuna::TipoLuna(QString _nombre)
 
 
 
+//Constructo con solo tener el ID
+TipoLuna::TipoLuna(int _id)
+{
+    QSqlQuery query;
+    query.prepare("select * from tipo_luna where idtipo_luna="+QString::number(_id));
+    query.exec();
+    query.next();
+    id=_id;
+    nombre=query.value(1).toString();
+}
+
+
 /*--------------------------------------------------------------------
                 FUNCION PARA DEVOLVER OBJETOS EXISTENTE
 ---------------------------------------------------------------------*/

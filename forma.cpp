@@ -20,6 +20,17 @@ Forma::Forma(QString _nombre)
 
 
 
+//Constructo con solo tener el ID
+Forma::Forma(int _id)
+{
+    QSqlQuery query;
+    query.prepare("select * from forma where idforma="+QString::number(_id));
+    query.exec();
+    query.next();
+    id=_id;
+    nombre=query.value(1).toString();
+}
+
 
 /*--------------------------------------------------------------------
                 FUNCION PARA DEVOLVER OBJETOS EXISTENTE

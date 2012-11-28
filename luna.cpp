@@ -27,6 +27,19 @@ Luna::Luna()
 
 }
 
+//COnstructo con solo id, por lo normal solo lo usare para el eliminar y solo
+//necesito el id de la lua y el id del producto
+Luna::Luna(int _id)
+{
+    QSqlQuery query;
+    query.prepare("SELECT idproducto FROM luna WHERE idluna="+QString::number(_id));
+    query.exec();
+    query.next();
+    id=query.value(0).toInt();
+    idluna=_id;
+
+}
+
 
 /*--------------------------------------------------------------------
                 FUNCIONES GET'S Y SET'S
@@ -68,6 +81,12 @@ TipoLuna Luna::getTipoLuna()
 {
     return tipoluna;
 }
+
+int Luna::getIdLuna()
+{
+    return idluna;
+}
+
 
 /**
  * @brief Permite cambiar el Rango de Medida de la Luna
@@ -171,8 +190,6 @@ bool Luna::actualizar()
 
 bool Luna::eliminar()
 {
-    if(nombre!="" || codigo !="")
-    {
         QSqlQuery query;
         query.prepare("DELETE FROM luna WHERE idluna="+ QString::number(idluna));
         if(query.exec()==true)
@@ -182,9 +199,6 @@ bool Luna::eliminar()
         }
         else
             return false;
-    }
-    else
-        return false;
 }
 
 
@@ -222,7 +236,7 @@ QSqlQueryModel* Luna::entregarLunas()
 QSqlQueryModel* Luna::buscar(QString _item)
 {
     QSqlQueryModel *model = new QSqlQueryModel;
-         model->setQuery("select codigo, \
+         model->setQuery("select idluna,codigo, \
                          c.nombre as calidad,\
                          rm.val_ini as Valor_Inicial,\
                          rm.val_fin as Valor_Final, \

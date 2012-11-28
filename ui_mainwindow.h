@@ -1,8 +1,8 @@
 /********************************************************************************
 ** Form generated from reading UI file 'mainwindow.ui'
 **
-** Created: Sat Nov 17 19:15:58 2012
-**      by: Qt User Interface Compiler version 4.8.3
+** Created: Wed Nov 28 00:59:20 2012
+**      by: Qt User Interface Compiler version 4.7.4
 **
 ** WARNING! All changes made in this file will be lost when recompiling UI file!
 ********************************************************************************/
@@ -18,6 +18,7 @@
 #include <QtGui/QHeaderView>
 #include <QtGui/QMainWindow>
 #include <QtGui/QStatusBar>
+#include <QtGui/QTableView>
 #include <QtGui/QToolBar>
 #include <QtGui/QWidget>
 
@@ -36,6 +37,7 @@ public:
     QAction *actionEmpresas;
     QWidget *centralWidget;
     QGridLayout *gridLayout;
+    QTableView *test;
     QToolBar *toolBar_modulos;
     QStatusBar *statusBar;
     QToolBar *options_toolBar;
@@ -44,7 +46,7 @@ public:
     {
         if (MainWindow->objectName().isEmpty())
             MainWindow->setObjectName(QString::fromUtf8("MainWindow"));
-        MainWindow->resize(759, 96);
+        MainWindow->resize(759, 337);
         QIcon icon;
         icon.addFile(QString::fromUtf8(":/Icons/internet-news-reader.png"), QSize(), QIcon::Normal, QIcon::Off);
         MainWindow->setWindowIcon(icon);
@@ -96,6 +98,11 @@ public:
         gridLayout->setSpacing(6);
         gridLayout->setContentsMargins(11, 11, 11, 11);
         gridLayout->setObjectName(QString::fromUtf8("gridLayout"));
+        test = new QTableView(centralWidget);
+        test->setObjectName(QString::fromUtf8("test"));
+
+        gridLayout->addWidget(test, 0, 0, 1, 1);
+
         MainWindow->setCentralWidget(centralWidget);
         toolBar_modulos = new QToolBar(MainWindow);
         toolBar_modulos->setObjectName(QString::fromUtf8("toolBar_modulos"));
