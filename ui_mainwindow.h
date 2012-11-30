@@ -1,8 +1,8 @@
 /********************************************************************************
 ** Form generated from reading UI file 'mainwindow.ui'
 **
-** Created: Wed 28. Nov 23:58:25 2012
-**      by: Qt User Interface Compiler version 4.8.1
+** Created: Fri 30. Nov 13:27:15 2012
+**      by: Qt User Interface Compiler version 4.8.0
 **
 ** WARNING! All changes made in this file will be lost when recompiling UI file!
 ********************************************************************************/
@@ -36,6 +36,8 @@ public:
     QAction *actionTiendas;
     QAction *actionEmpresas;
     QAction *actionAlmacen;
+    QAction *actionProveedores;
+    QAction *actionCompras;
     QWidget *centralWidget;
     QGridLayout *gridLayout;
     QTableView *test;
@@ -47,7 +49,7 @@ public:
     {
         if (MainWindow->objectName().isEmpty())
             MainWindow->setObjectName(QString::fromUtf8("MainWindow"));
-        MainWindow->resize(759, 337);
+        MainWindow->resize(843, 337);
         QIcon icon;
         icon.addFile(QString::fromUtf8(":/Icons/internet-news-reader.png"), QSize(), QIcon::Normal, QIcon::Off);
         MainWindow->setWindowIcon(icon);
@@ -86,7 +88,7 @@ public:
         actionTiendas = new QAction(MainWindow);
         actionTiendas->setObjectName(QString::fromUtf8("actionTiendas"));
         QIcon icon7;
-        icon7.addFile(QString::fromUtf8(":/Icons/autoship.png"), QSize(), QIcon::Normal, QIcon::Off);
+        icon7.addFile(QString::fromUtf8(":/Icons/1354299865_rssshop.png"), QSize(), QIcon::Normal, QIcon::Off);
         actionTiendas->setIcon(icon7);
         actionEmpresas = new QAction(MainWindow);
         actionEmpresas->setObjectName(QString::fromUtf8("actionEmpresas"));
@@ -98,6 +100,16 @@ public:
         QIcon icon9;
         icon9.addFile(QString::fromUtf8(":/Icons/file-roller.png"), QSize(), QIcon::Normal, QIcon::Off);
         actionAlmacen->setIcon(icon9);
+        actionProveedores = new QAction(MainWindow);
+        actionProveedores->setObjectName(QString::fromUtf8("actionProveedores"));
+        QIcon icon10;
+        icon10.addFile(QString::fromUtf8(":/Icons/autoship.png"), QSize(), QIcon::Normal, QIcon::Off);
+        actionProveedores->setIcon(icon10);
+        actionCompras = new QAction(MainWindow);
+        actionCompras->setObjectName(QString::fromUtf8("actionCompras"));
+        QIcon icon11;
+        icon11.addFile(QString::fromUtf8(":/Icons/shopping-cart_basic_blue.png"), QSize(), QIcon::Normal, QIcon::Off);
+        actionCompras->setIcon(icon11);
         centralWidget = new QWidget(MainWindow);
         centralWidget->setObjectName(QString::fromUtf8("centralWidget"));
         gridLayout = new QGridLayout(centralWidget);
@@ -131,6 +143,8 @@ public:
         toolBar_modulos->addAction(actionEmpresas);
         toolBar_modulos->addAction(actionTiendas);
         toolBar_modulos->addAction(actionAlmacen);
+        toolBar_modulos->addAction(actionProveedores);
+        toolBar_modulos->addAction(actionCompras);
         options_toolBar->addAction(actionBuscar);
 
         retranslateUi(MainWindow);
@@ -170,6 +184,10 @@ public:
 #endif // QT_NO_TOOLTIP
         actionEmpresas->setShortcut(QApplication::translate("MainWindow", "Ctrl+V", 0, QApplication::UnicodeUTF8));
         actionAlmacen->setText(QApplication::translate("MainWindow", "Almacenes", 0, QApplication::UnicodeUTF8));
+        actionProveedores->setText(QApplication::translate("MainWindow", "Proveedores", 0, QApplication::UnicodeUTF8));
+        actionProveedores->setShortcut(QApplication::translate("MainWindow", "Ctrl+D", 0, QApplication::UnicodeUTF8));
+        actionCompras->setText(QApplication::translate("MainWindow", "Compras", 0, QApplication::UnicodeUTF8));
+        actionCompras->setShortcut(QApplication::translate("MainWindow", "Ctrl+C", 0, QApplication::UnicodeUTF8));
         toolBar_modulos->setWindowTitle(QApplication::translate("MainWindow", "toolBar", 0, QApplication::UnicodeUTF8));
         options_toolBar->setWindowTitle(QApplication::translate("MainWindow", "toolBar", 0, QApplication::UnicodeUTF8));
     } // retranslateUi
