@@ -43,6 +43,10 @@ INPUT(
 ./debug\tipodoc_ident.o
 ./debug\ui_almacen.o
 ./debug\ui_almacen_opciones.o
+./debug\ui_proveedores.o
+./debug\ui_datos_proveedor.o
+./debug\ui_datos_compras.o
+./debug\compras.o
 ./debug\moc_mainwindow.o
 ./debug\moc_sesion.o
 ./debug\moc_ui_login.o
@@ -67,5 +71,9 @@ INPUT(
 ./debug\moc_ui_agregar_nomdesc.o
 ./debug\moc_ui_almacen.o
 ./debug\moc_ui_almacen_opciones.o
+./debug\moc_ui_proveedores.o
+./debug\moc_ui_datos_proveedor.o
+./debug\moc_ui_datos_compras.o
+./debug\moc_compras.o
 ./debug\qrc_Icons.o
 );
