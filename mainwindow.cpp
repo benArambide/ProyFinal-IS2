@@ -5,6 +5,8 @@
 #include <montura.h>
 #include "modulousuarios.h"
 #include <luna.h>
+
+
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
     ui(new Ui::MainWindow)
@@ -66,4 +68,11 @@ void MainWindow::on_actionEmpresas_triggered()
     empresa_form=new ui_empresa;
     setCentralWidget(empresa_form);
     //empresa_form->showMaximized();
+}
+
+void MainWindow::on_actionAlmacen_triggered()
+{
+    ui_almacen* almacen_form;
+    almacen_form = new ui_almacen;
+    setCentralWidget(almacen_form);
 }

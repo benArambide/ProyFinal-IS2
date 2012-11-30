@@ -1,8 +1,8 @@
 /********************************************************************************
 ** Form generated from reading UI file 'mainwindow.ui'
 **
-** Created: Wed Nov 28 00:59:20 2012
-**      by: Qt User Interface Compiler version 4.7.4
+** Created: Wed 28. Nov 23:58:25 2012
+**      by: Qt User Interface Compiler version 4.8.1
 **
 ** WARNING! All changes made in this file will be lost when recompiling UI file!
 ********************************************************************************/
@@ -35,6 +35,7 @@ public:
     QAction *actionBuscar;
     QAction *actionTiendas;
     QAction *actionEmpresas;
+    QAction *actionAlmacen;
     QWidget *centralWidget;
     QGridLayout *gridLayout;
     QTableView *test;
@@ -92,6 +93,11 @@ public:
         QIcon icon8;
         icon8.addFile(QString::fromUtf8(":/Icons/photo.png"), QSize(), QIcon::Normal, QIcon::Off);
         actionEmpresas->setIcon(icon8);
+        actionAlmacen = new QAction(MainWindow);
+        actionAlmacen->setObjectName(QString::fromUtf8("actionAlmacen"));
+        QIcon icon9;
+        icon9.addFile(QString::fromUtf8(":/Icons/file-roller.png"), QSize(), QIcon::Normal, QIcon::Off);
+        actionAlmacen->setIcon(icon9);
         centralWidget = new QWidget(MainWindow);
         centralWidget->setObjectName(QString::fromUtf8("centralWidget"));
         gridLayout = new QGridLayout(centralWidget);
@@ -117,12 +123,14 @@ public:
         options_toolBar->setObjectName(QString::fromUtf8("options_toolBar"));
         options_toolBar->setIconSize(QSize(36, 36));
         MainWindow->addToolBar(Qt::TopToolBarArea, options_toolBar);
+        MainWindow->insertToolBarBreak(options_toolBar);
 
         toolBar_modulos->addAction(actionProducto);
         toolBar_modulos->addAction(actionUsuario);
         toolBar_modulos->addAction(actionCliente);
         toolBar_modulos->addAction(actionEmpresas);
         toolBar_modulos->addAction(actionTiendas);
+        toolBar_modulos->addAction(actionAlmacen);
         options_toolBar->addAction(actionBuscar);
 
         retranslateUi(MainWindow);
@@ -161,6 +169,7 @@ public:
         actionEmpresas->setToolTip(QApplication::translate("MainWindow", "Empresas", 0, QApplication::UnicodeUTF8));
 #endif // QT_NO_TOOLTIP
         actionEmpresas->setShortcut(QApplication::translate("MainWindow", "Ctrl+V", 0, QApplication::UnicodeUTF8));
+        actionAlmacen->setText(QApplication::translate("MainWindow", "Almacenes", 0, QApplication::UnicodeUTF8));
         toolBar_modulos->setWindowTitle(QApplication::translate("MainWindow", "toolBar", 0, QApplication::UnicodeUTF8));
         options_toolBar->setWindowTitle(QApplication::translate("MainWindow", "toolBar", 0, QApplication::UnicodeUTF8));
     } // retranslateUi

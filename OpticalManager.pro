@@ -51,7 +51,9 @@ SOURCES += main.cpp\
     ui_agregar_nomdesc.cpp \
     persona.cpp \
     cliente.cpp \
-    tipodoc_ident.cpp
+    tipodoc_ident.cpp \
+    ui_almacen.cpp \
+    ui_almacen_opciones.cpp
 
 HEADERS  += mainwindow.h \
     sesion.h \
@@ -96,7 +98,9 @@ HEADERS  += mainwindow.h \
     ui_mainwindow.h \
     persona.h \
     cliente.h \
-    tipodoc_ident.h
+    tipodoc_ident.h \
+    ui_almacen.h \
+    ui_almacen_opciones.h
 
 FORMS    += mainwindow.ui \
     ui_login.ui \
@@ -117,7 +121,9 @@ FORMS    += mainwindow.ui \
     ui_tienda.ui \
     ui_agregar_nomdesc.ui \
     ui_empresa.ui \
-    ui_agregar_nomdesc.ui
+    ui_agregar_nomdesc.ui \
+    ui_almacen.ui \
+    ui_almacen_opciones.ui
 
 RESOURCES += \
     Icons/Icons.qrc \

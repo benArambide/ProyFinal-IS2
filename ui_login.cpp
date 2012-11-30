@@ -25,6 +25,7 @@ UI_LOGIN::~UI_LOGIN()
 
 void UI_LOGIN::on_pushButton_Aceptar_clicked()
 {
+    /*
     int status = Sesion::Iniciar(ui->lineEdit_Usuario->text(),ui->lineEdit_Password->text());
     switch(status)
     {
@@ -58,12 +59,16 @@ void UI_LOGIN::on_pushButton_Aceptar_clicked()
     }
     case Sesion::inicioOK :
     {
+    */
+
         this->close();
         MainWindow *MAIN_WINDOW;
         MAIN_WINDOW = new MainWindow;
         MAIN_WINDOW->showMaximized();
+    /*
     }
     }
+    */
 
 }
 
