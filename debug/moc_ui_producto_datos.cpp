@@ -1,7 +1,7 @@
 /****************************************************************************
 ** Meta object code from reading C++ file 'ui_producto_datos.h'
 **
-** Created: Thu 29. Nov 00:00:44 2012
+** Created: Thu 29. Nov 22:26:03 2012
 **      by: The Qt Meta Object Compiler version 63 (Qt 4.8.1)
 **
 ** WARNING! All changes made in this file will be lost!

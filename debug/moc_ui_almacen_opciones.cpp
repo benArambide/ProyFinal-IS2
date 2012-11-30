@@ -1,7 +1,7 @@
 /****************************************************************************
 ** Meta object code from reading C++ file 'ui_almacen_opciones.h'
 **
-** Created: Thu 29. Nov 00:02:00 2012
+** Created: Thu 29. Nov 22:27:37 2012
 **      by: The Qt Meta Object Compiler version 63 (Qt 4.8.1)
 **
 ** WARNING! All changes made in this file will be lost!
