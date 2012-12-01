@@ -17,7 +17,7 @@ bool confConexionDB()
     db.setDriver("QMYSQL");
     db.setName("opticaldb");
 
-    db.setHost("servercsunsa.sytes.net");
+    db.setHost("192.168.1.241");
     db.setUser("opticaldb");
     db.setPass("optical123");
 

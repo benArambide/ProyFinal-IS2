@@ -23,6 +23,6 @@ void ui_tienda::on_pushButton_clicked()
 
 void ui_tienda::on_ver_vitrina_clicked()
 {
-    ui_vitrina * vitrinas=new ui_vitrina();
-    vitrinas->show();
+    /*ui_vitrina * vitrinas=new ui_vitrina();
+    vitrinas->show();*/
 }

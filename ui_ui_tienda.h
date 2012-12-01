@@ -1,8 +1,8 @@
 /********************************************************************************
 ** Form generated from reading UI file 'ui_tienda.ui'
 **
-** Created: Sat Nov 17 19:15:58 2012
-**      by: Qt User Interface Compiler version 4.8.3
+** Created: Sat 1. Dec 10:57:15 2012
+**      by: Qt User Interface Compiler version 4.8.0
 **
 ** WARNING! All changes made in this file will be lost when recompiling UI file!
 ********************************************************************************/
@@ -49,10 +49,12 @@ public:
     QGridLayout *gridLayout_2;
     QLabel *label_2;
     QGridLayout *gridLayout;
-    QSpacerItem *horizontalSpacer_2;
     QPushButton *pushButton;
+    QSpacerItem *horizontalSpacer_2;
     QPushButton *pushButton_2;
+    QPushButton *ver_vitrina;
     QPushButton *pushButton_3;
+    QPushButton *pushButton_7;
     QTableView *tableView;
     QSpacerItem *horizontalSpacer_4;
     QWidget *details;
@@ -148,10 +150,6 @@ public:
 
         gridLayout = new QGridLayout();
         gridLayout->setObjectName(QString::fromUtf8("gridLayout"));
-        horizontalSpacer_2 = new QSpacerItem(40, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
-
-        gridLayout->addItem(horizontalSpacer_2, 0, 0, 1, 1);
-
         pushButton = new QPushButton(List);
         pushButton->setObjectName(QString::fromUtf8("pushButton"));
         QSizePolicy sizePolicy1(QSizePolicy::Fixed, QSizePolicy::Fixed);
@@ -164,7 +162,11 @@ public:
         pushButton->setIcon(icon2);
         pushButton->setFlat(true);
 
-        gridLayout->addWidget(pushButton, 0, 1, 1, 1);
+        gridLayout->addWidget(pushButton, 0, 3, 1, 1);
+
+        horizontalSpacer_2 = new QSpacerItem(40, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
+
+        gridLayout->addItem(horizontalSpacer_2, 0, 0, 1, 1);
 
         pushButton_2 = new QPushButton(List);
         pushButton_2->setObjectName(QString::fromUtf8("pushButton_2"));
@@ -175,7 +177,13 @@ public:
         pushButton_2->setIcon(icon3);
         pushButton_2->setFlat(true);
 
-        gridLayout->addWidget(pushButton_2, 0, 2, 1, 1);
+        gridLayout->addWidget(pushButton_2, 0, 4, 1, 1);
+
+        ver_vitrina = new QPushButton(List);
+        ver_vitrina->setObjectName(QString::fromUtf8("ver_vitrina"));
+        ver_vitrina->setFlat(true);
+
+        gridLayout->addWidget(ver_vitrina, 0, 2, 1, 1);
 
         pushButton_3 = new QPushButton(List);
         pushButton_3->setObjectName(QString::fromUtf8("pushButton_3"));
@@ -186,7 +194,13 @@ public:
         pushButton_3->setIcon(icon4);
         pushButton_3->setFlat(true);
 
-        gridLayout->addWidget(pushButton_3, 0, 3, 1, 1);
+        gridLayout->addWidget(pushButton_3, 0, 5, 1, 1);
+
+        pushButton_7 = new QPushButton(List);
+        pushButton_7->setObjectName(QString::fromUtf8("pushButton_7"));
+        pushButton_7->setFlat(true);
+
+        gridLayout->addWidget(pushButton_7, 0, 1, 1, 1);
 
 
         gridLayout_3->addLayout(gridLayout, 2, 0, 1, 1);
@@ -234,7 +248,9 @@ public:
         label_2->setText(QApplication::translate("ui_tienda", "Lista de Tiendas", 0, QApplication::UnicodeUTF8));
         pushButton->setText(QApplication::translate("ui_tienda", "A\303\261adir", 0, QApplication::UnicodeUTF8));
         pushButton_2->setText(QApplication::translate("ui_tienda", "Editar", 0, QApplication::UnicodeUTF8));
+        ver_vitrina->setText(QApplication::translate("ui_tienda", "Ver Vitrinas", 0, QApplication::UnicodeUTF8));
         pushButton_3->setText(QApplication::translate("ui_tienda", "Deshabilitar", 0, QApplication::UnicodeUTF8));
+        pushButton_7->setText(QApplication::translate("ui_tienda", "Imprimir Productos", 0, QApplication::UnicodeUTF8));
         tabWidget->setTabText(tabWidget->indexOf(List), QApplication::translate("ui_tienda", "Lista", 0, QApplication::UnicodeUTF8));
         tabWidget->setTabText(tabWidget->indexOf(details), QApplication::translate("ui_tienda", "Detalles", 0, QApplication::UnicodeUTF8));
     } // retranslateUi

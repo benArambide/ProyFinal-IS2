@@ -106,63 +106,7 @@ En este documento se plantea las funcionalidades principales que debe cumplir el
 
 
 \chapter{\textbf {Casos de Uso}}
-\section{Resumen y actores}
-\begin{center}
-\begin{tabulary}{16cm}{||L|L|L||}
-\hline
-Código & Caso de Uso & Actores Participantes\\
-\hline
-UC-Gen
-&Presenta el caso de uso general para el software de administracíon de clínica, en el cual se observan todos los modulos que comprende el sistema. 
-&El Doctor, La Recepcionista, La Enfermera. \\
-\hline
-UC-AdmiPac
-&Presenta el caso de uso referente a la administracion de los Pacientes. 
-&El Doctor, La Enfermera.\\
-\hline
-UC-AdminAge
-&Presenta el caso de uso referente a la administracion de la agenda. 
-&El Doctor, La Recepcionista\\
-\hline
-UC-AdminFich
-&Presentea el caso de uso referente a la administracion de las fichas clinicas.
-&El Doctor, La Enfermera, La Recepcionista.\\
-\hline
-UC-AdminIma
-&Presenta el caso de uso referente a la administracion de imagenes generadas el los procesos opetatorios.
-&El Doctor.\\
-\hline
-UC-AdminUsu
-&Presenta el caso de uso referente a la administracion de las cuentas de usuarios del sistema.
-&El Doctor.\\
-\hline
-UC-AdminEsq
-&Presenta el caso de uso referente a la administracion de los esquemas de tratamientos.
-&El Doctor.\\
-\hline
-UC-AdminCot
-&Presenta el caso de uso referente a la administracion de las cotizaciones.
-&El Doctor.\\
-\hline
-UC-AdminSeg
-&Presenta el caso de uso referente a la administracion de la seguridad(Backups).
-&El Doctor.\\
-\hline
-UC-AdminMai
-&Presenta el caso de uso referene a la administracion del serivcio de mailing(envio de correo electronico).
-&El Doctor, La Recepcionista.\\
-\hline
-UC-NavegAyu
-&Presenta el caso de uso referente a la utilizacion del servicio de ayuda.
-&El Doctor, La Enfermera, La Recepcionista.\\
-\hline
-`UC-AdminAle
-&Presenta el caso de uso referente a la administracion de las alertas generadas por del sistema.
-&El Doctor, La Enfermera, La recepcionista.\\
-\hline
-\hline
-\end{tabulary}
-\end{center}
+
 \subsection{Caso de uso Acceder al sistema}
 \begin{center}
 \begin{tabular}{||p{2.8cm}|p{13cm}||}
@@ -1152,6 +1096,364 @@ Post condici\'on & \\
 \end{center}
 \pagebreak{}
 
+
+\subsection{Almacen}
+\subsubsection{Añadir Almac\'en}
+\begin{center}
+\begin{tabular}{||p{2.8cm}|p{13cm}||}
+\hline
+\hline
+Nombre & Descripción\\
+\hline
+Caso de uso & Añadir Almac\'en \\
+\hline
+Actores & Administrador\\
+\hline
+Descripci\'on &  Este caso de uso describe todo el proceso de añadir almac\'en , acciones que sólo puede ejecutar el Administrador.\\
+\hline
+Pre condici\'on & El usuario debe haber iniciado sesión antes y debe ser el administrador.\\
+\hline
+Flujo principal & 
+\begin{enumerate}
+\item Una vez ingresado al sistema el usuario como administrador  selecciona la pestaña rotulada con el nombre de Almac\'enes la cual estará habilitada solo para usuarios con permisos de administrador, en la cual aparecerán las siguientes iconos:
+
+\item Nuevo, Guardar, Modificar, Eliminar.
+\item Cuando el Administrador hace un click en la pestaña nuevo deberán habilitarse los campos:
+\item Lista de tiendas disponibles.
+\item Nombre de Almac\'en, descripci\'on.
+\item También deberá habilitarse el icono Guardar.
+\item Una vez concluida la inserción de datos del almac\'en el usuario deberá hacer click en el icono Guardar, El software deberá mostrar un mensaje indicando que los datos se guardaron correctamente. Y actualizar la lista de almacenes con el nuevo almac\'en agregado.
+\end{enumerate} \\
+\hline
+Flujo Alternativo & 
+\begin{enumerate}
+\item Si el la tienda tiene ya tiene agregada un almac\'e el sistema mostrar\'a un mensaje el cual indica que ya tiene un almacen, dado que cada tienda tiene solo un almac\'en.
+\item Si los campos ingresados no han sido llenados de la manera correcta, aparecerá un mensaje de error indicando el campo que no es correcto que contendrá (Llenado de datos incorrectos).
+\item Si el administrador pulsa el botón de Agregar,  sin haber llenado ningún campo se mostrará un mensaje (No ha ingresado ningún campo.)
+\end{enumerate}\\
+\hline
+Post condici\'on & Se actualiza la base de datos con los datos eliminados.\\
+\hline
+\hline
+\end{tabular}
+\end{center}
+\pagebreak{}
+
+\subsubsection{Editar Almac\'en}
+\begin{center}
+\begin{tabular}{||p{2.8cm}|p{13cm}||}
+\hline
+\hline
+Nombre & Descripción\\
+\hline
+Caso de uso & Editar Almac\'en \\
+\hline
+Actores & Administrador\\
+\hline
+Descripci\'on &  Este caso de uso describe todo el proceso de edici\'on de  almac\'en , acciones que sólo puede ejecutar el Administrador.\\
+\hline
+Pre condici\'on & El usuario debe haber iniciado sesión antes y debe ser el administrador.\\
+\hline
+Flujo principal & 
+\begin{enumerate}
+\item Una vez ingresado al sistema el usuario como administrador  selecciona la pestaña rotulada con el nombre de Almac\'enes el cual podr\'a buscar de la lista de tiendas el almacen asociado para su edici\'on. El cual estará habilitada solo para usuarios con permisos de administrador, en la cual aparecerán las siguientes iconos:
+\item Cuando el usuario selecciona un almacen para su edici\'on se debera mostrar los siguietes campos con los datos actuales del almac\'en.
+\item Lista de tiendas diponibles.
+\item Nombre de Almac\'en, descripci\'on.
+\item También deberá habilitarse el icono Guardar.
+\item Una vez concluida la edici\'on de los datos del almac\'en el usuario deberá hacer click en el icono Guardar, El software deberá mostrar un mensaje indicando que los datos se guardaron correctamente. Y actualizar la lista de almacenes con el nuevo almac\'en agregado.
+\end{enumerate} \\
+\hline
+Flujo Alternativo & 
+\begin{enumerate}
+\item Si el la tienda tiene ya tiene agregada un almac\'e el sistema mostrar\'a un mensaje el cual indica que ya tiene un almacen, dado que cada tiene solo un almac\'en.
+\item Si los campos ingresados no han sido llenados de la manera correcta, aparecerá un mensaje de error indicando el campo que no es correcto que contendrá (Llenado de datos incorrectos).
+\item Si el administrador pulsa el botón de Agregar,  sin haber llenado ningún campo se mostrará un mensaje (No ha ingresado ningún campo.)
+\end{enumerate}\\
+\hline
+Post condici\'on & Se actualiza la base de datos con los datos del proveedor añadido.\\
+\hline
+\hline
+\end{tabular}
+\end{center}
+\pagebreak{}
+
+\subsubsection{Eliminar Almac\'en}
+\begin{center}
+\begin{tabular}{||p{2.8cm}|p{13cm}||}
+\hline
+\hline
+Nombre & Descripción\\
+\hline
+Caso de uso & ELiminar Almac\'en \\
+\hline
+Actores & Administrador\\
+\hline
+Descripci\'on &  Este caso de uso describe todo el proceso de eliminar un almac\'en , acciones que sólo puede ejecutar el Administrador.\\
+\hline
+Pre condici\'on & El usuario debe haber iniciado sesión antes y debe ser el administrador.\\
+\hline
+Flujo principal & 
+\begin{enumerate}
+\item Una vez ingresado al sistema el usuario como administrador  selecciona la pestaña rotulada con el nombre de Almac\'enes el cual podr\'a buscar de la lista de tiendas el almacen asociado para su eliminaci\'on. El cual estará habilitada solo para usuarios con permisos de administrador, en la cual aparecerán las siguientes iconos:
+\item Cuando el usuario selecciona un almacen para su eliminaci\'on se debera mostrar un mensaje si desealmente desea elimnar del nombre de la tienda asociada al almacen.
+\item Si el elsuario preciona aceptar entonces se muestra un mensaje indicado que el almacen fue eliminado de la tienda.
+
+\end{enumerate} \\
+\hline
+Flujo Alternativo & 
+\begin{enumerate}
+\item En caso de que el usuario presione cancelar no se realiza ning\'un procedimiento y ce cierra la ventana de eliminacion de Almacen.
+\end{enumerate}\\
+\hline
+Post condici\'on & Se actualiza la base de datos con los datos del proveedor añadido.\\
+\hline
+\hline
+\end{tabular}
+\end{center}
+\pagebreak{}
+
+
+\subsection{Andamios}
+\subsubsection{Añadir Andamio}
+\begin{center}
+\begin{tabular}{||p{2.8cm}|p{13cm}||}
+\hline
+\hline
+Nombre & Descripción\\
+\hline
+Caso de uso & Añadir Andamio \\
+\hline
+Actores & Administrador\\
+\hline
+Descripci\'on &  Este caso de uso describe todo el proceso de añadir andamio , acciones que sólo puede ejecutar el Administrador. Los andamios pertenecen a un almacen en concreto.\\
+\hline
+Pre condici\'on & El usuario debe haber iniciado sesión antes y debe ser el administrador.\\
+\hline
+Flujo principal & 
+\begin{enumerate}
+\item Una vez ingresado al sistema el usuario como administrador  selecciona la pestaña rotulada con el nombre de andamios la cual estará habilitada solo para usuarios con permisos de administrador, en la cual aparecerán las siguientes botones:
+
+\item Nuevo, Guardar, Modificar, Eliminar.
+\item Cuando el Administrador hace un click en la boton nuevo deberán habilitarse los campos:
+\item Codigo de Andamio autogenerado por ejemplo: A, B, C, D, E.
+\item Lista de almacenes disponibles para agregar el andamio actual.
+\item N\'umero de filas.(Obligatorio)
+\item N\'umero de columnas.(Obligatorio)
+\item Descripci\'on.(Alternativo)
+\item También deberá habilitar el boton Guardar.
+\item Una vez concluida la inserción de datos del andamio el usuario deberá hacer click en el icono Guardar, El software deberá mostrar un mensaje indicando que los datos se guardaron correctamente. Y actualizar la lista de andamios que pertenecen al almac\'en.
+\end{enumerate} \\
+\hline
+Flujo Alternativo & 
+\begin{enumerate}
+\item Si los campos ingresados no han sido llenados de la manera correcta, aparecerá un mensaje de error indicando el campo que no es correcto que contendrá (Llenado de datos incorrectos).
+\item Si el administrador pulsa el botón de Agregar,  sin haber llenado ningún campo se mostrará un mensaje (No ha ingresado ningún campo.)
+\end{enumerate}\\
+\hline
+Post condici\'on & Se actualiza la base de datos con los datos del proveedor añadido.\\
+\hline
+\hline
+\end{tabular}
+\end{center}
+\pagebreak{}
+
+\subsubsection{Editar Andamio}
+\begin{center}
+\begin{tabular}{||p{2.8cm}|p{13cm}||}
+\hline
+\hline
+Nombre & Descripción\\
+\hline
+Caso de uso & Editar Andamio \\
+\hline
+Actores & Administrador\\
+\hline
+Descripci\'on &  Este caso de uso describe todo el proceso de edici\'on de  andamio , acciones que sólo puede ejecutar el Administrador.\\
+\hline
+Pre condici\'on & El usuario debe haber iniciado sesión antes y debe ser el administrador.\\
+\hline
+Flujo principal & 
+\begin{enumerate}
+\item Una vez ingresado al sistema el usuario como administrador  selecciona la pestaña rotulada con el nombre de andamios el cual podr\'a buscar de la lista de almac\'enes asociado para su edici\'on. Se debe considerar que no se podr\'a cambiar el andamio entre diferentes almacenes. Pero si se podran enditar los siguientes campos:
+\item N\'umero de filas.
+\item N\'umero de columnas.
+\item Descripci\'on.
+\item También deberá habilitar el boton Guardar.
+\item Una vez concluida la edici\'on de los datos del almac\'en el usuario deberá hacer click en el icono Guardar, El software deberá mostrar un mensaje indicando que los datos se guardaron correctamente. Y actualizar la lista de almacenes con el nuevo almac\'en agregado.
+\end{enumerate} \\
+\hline
+Flujo Alternativo & 
+\begin{enumerate}
+\item Si los campos ingresados no han sido llenados de la manera correcta, aparecerá un mensaje de error indicando el campo que no es correcto que contendrá (Llenado de datos incorrectos).
+\item Si el administrador pulsa el botón de Agregar,  sin haber llenado ningún campo se mostrará un mensaje (No ha ingresado ningún campo.)
+\end{enumerate}\\
+\hline
+Post condici\'on & Se actualiza la base de datos con los datos del proveedor añadido.\\
+\hline
+\hline
+\end{tabular}
+\end{center}
+\pagebreak{}
+
+\subsubsection{Eliminar Andamio}
+\begin{center}
+\begin{tabular}{||p{2.8cm}|p{13cm}||}
+\hline
+\hline
+Nombre & Descripción\\
+\hline
+Caso de uso & Eliminar Andamio \\
+\hline
+Actores & Administrador\\
+\hline
+Descripci\'on &  Este caso de uso describe todo el proceso de eliminar una andamio de almac\'en , acciones que sólo puede ejecutar el Administrador.\\
+\hline
+Pre condici\'on & El usuario debe haber iniciado sesión antes y debe ser el administrador.\\
+\hline
+Flujo principal & 
+\begin{enumerate}
+\item Una vez ingresado al sistema el usuario como administrador  selecciona la pestaña rotulada con el nombre de Almac\'enes el cual podr\'a buscar de la lista de andamio del almac\'en asociado para su eliminaci\'on. El cual estará habilitada solo para usuarios con permisos de administrador, en la cual aparecerán las siguientes iconos:
+\item Cuando el usuario selecciona un andamio para su eliminaci\'on se deber\'a mostrar un mensaje si desealmente desea eliminar el codigo del andamio asociado al almacen.
+\item Si el el usuario presiona aceptar entonces se muestra un mensaje indicado que el andamio fue eliminado del almac\'en.
+
+\end{enumerate} \\
+\hline
+Flujo Alternativo & 
+\begin{enumerate}
+\item En caso de que el usuario presione cancelar no se realiza ning\'un procedimiento y se cierra la ventana de eliminaci\'on de contenedor.
+\end{enumerate}\\
+\hline
+Post condici\'on & Se actualiza la base de datos con los datos eliminados.\\
+\hline
+\hline
+\end{tabular}
+\end{center}
+\pagebreak{}
+
+
+
+\subsection{Contenedores}
+\subsubsection{Añadir Contenedores}
+\begin{center}
+\begin{tabular}{||p{2.8cm}|p{13cm}||}
+\hline
+\hline
+Nombre & Descripción\\
+\hline
+Caso de uso & Añadir Andamio \\
+\hline
+Actores & Administrador\\
+\hline
+Descripci\'on &  Un contenedor tiene una lista de productos, esta lista no tiene un tamano maximo. Este caso de uso describe todo el proceso de añadir contenedores, acciones que sólo puede ejecutar el Administrador.\\
+\hline
+Pre condici\'on & El usuario debe haber iniciado sesión antes y debe ser el administrador.\\
+\hline
+Flujo principal & 
+\begin{enumerate}
+\item Una vez ingresado al sistema el usuario como administrador  selecciona la pestaña rotulada con el nombre de contenedores el cual estará habilitada solo para usuarios con permisos de administrador, en la cual aparecerán las siguientes botones: Nuevo, Guardar, Modificar, Eliminar. Para agregar un contenedor el usuario deber\'a hacer click en el boton nuevo. En la cual mostrar\'a una ventana con los siguietes datos:
+\item Tabla de pocisiones del Andamio (Donde el usario podra seleccionar la fila y columna donde agregara el contenedor)
+\item Descripci\'on de contenedor(Obligatorio).
+\item También deberá habilitar el boton Guardar.
+\item Una vez concluida la inserción de datos del contenedor el usuario deberá hacer click en el icono Guardar, El software deberá mostrar un mensaje indicando que los datos se guardaron correctamente. Y actualizar la tabla de datos de andamio con las descripciones de los contenedores. ejemplo:
+\begin{tabular}{|c | c | c | c | c | c|}
+\hline
+ A & B & C & D & E & F \\
+\hline
+1 & Descripci\'on & Descripci\'on & Libre & Libre & Libre  \\
+\hline
+2 & Descripci\'on & Libre & Libre & Libre &  Libre \\
+\hline
+3 & Descripci\'on & Libre & Libre & Libre &  Libre \\
+\hline
+4 & Descripci\'on & Libre & Libre & Libre &  Libre \\
+\hline
+\end{tabular}
+\end{enumerate} \\
+\hline
+Flujo Alternativo & 
+\begin{enumerate}
+\item Si los campos ingresados no han sido llenados de la manera correcta, aparecerá un mensaje de error indicando el campo que no es correcto que contendrá (Llenado de datos incorrectos).
+\item Si el administrador pulsa el botón de Agregar,  sin haber llenado ningún campo se mostrará un mensaje (No ha ingresado ningún campo.)
+\end{enumerate}\\
+\hline
+Post condici\'on & Se actualiza la base de datos con los datos del proveedor añadido.\\
+\hline
+\hline
+\end{tabular}
+\end{center}
+\pagebreak{}
+
+\subsubsection{Editar Contenedor}
+\begin{center}
+\begin{tabular}{||p{2.8cm}|p{13cm}||}
+\hline
+\hline
+Nombre & Descripción\\
+\hline
+Caso de uso & Editar contenedor \\
+\hline
+Actores & Administrador\\
+\hline
+Descripci\'on &  Este caso de uso describe todo el proceso de edici\'on de contenedor , acciones que sólo puede ejecutar el Administrador.\\
+\hline
+Pre condici\'on & El usuario debe haber iniciado sesión antes y debe ser el administrador.\\
+\hline
+Flujo principal & 
+\begin{enumerate}
+\item Una vez ingresado al sistema el usuario como administrador  selecciona la pestaña rotulada con el nombre de contenedores el cual podr\'a buscar de la lista de andamios en la cual seleccionara que contenedor editar\'a. Considerar que no se podra cambiar contenedores entre andamios de diferentes almacenes. Cuando el usuario selecciona el contenedor y presiona el boton editar se mostrara:
+\item Descripci\'on.
+\item También deberá habilitar el boton Guardar.
+\item Una vez concluida la edici\'on de los datos del contenedor el usuario deberá hacer click en el bot\'on Guardar, El software deberá mostrar un mensaje indicando que los datos se guardaron correctamente. Y actualizar la tabla de andamios como corresponde al contenedor editado.
+\end{enumerate} \\
+\hline
+Flujo Alternativo & 
+\begin{enumerate}
+\item Si los campos ingresados no han sido llenados de la manera correcta, aparecerá un mensaje de error indicando el campo que no es correcto que contendrá (Llenado de datos incorrectos).
+\item Si el administrador pulsa el botón de Agregar,  sin haber seleccionado ninguna pocisi\'on de un andamio entonces se mostrara un mensaje indicando: Seleccione un posici\'on del andamio.
+\end{enumerate}\\
+\hline
+Post condici\'on & Se actualiza la base de datos con los datos del proveedor añadido.\\
+\hline
+\hline
+\end{tabular}
+\end{center}
+\pagebreak{}
+
+\subsubsection{Eliminar Contenedor}
+\begin{center}
+\begin{tabular}{||p{2.8cm}|p{13cm}||}
+\hline
+\hline
+Nombre & Descripción\\
+\hline
+Caso de uso & Eliminar Andamio \\
+\hline
+Actores & Administrador\\
+\hline
+Descripci\'on &  Este caso de uso describe todo el proceso de eliminar una andamio de almac\'en , acciones que sólo puede ejecutar el Administrador.\\
+\hline
+Pre condici\'on & El usuario debe haber iniciado sesión antes y debe ser el administrador.\\
+\hline
+Flujo principal & 
+\begin{enumerate}
+\item Una vez ingresado al sistema el usuario como administrador  selecciona la pestaña rotulada con el nombre de Andamios el cual podr\'a seleccionar de la tabla del andamio y luego presionar el boton eliminar.
+\item Cuando el usuario selecciona un contenedor para su eliminaci\'on se deber\'a mostrar un mensaje si realmente desea elimnar del codigo de la contenendor asociado del andamio.
+\item Si el el usuario presiona aceptar entonces se muestra un mensaje indicado que el contenedor fue eliminado del andamio.
+
+\end{enumerate} \\
+\hline
+Flujo Alternativo & 
+\begin{enumerate}
+\item En caso de que el usuario presione cancelar no se realiza ning\'un procedimiento y se cierra la ventana de eliminaci\'on de contenedor.
+\end{enumerate}\\
+\hline
+Post condici\'on & Se actualiza la base de datos con los datos eliminados.\\
+\hline
+\hline
+\end{tabular}
+\end{center}
+\pagebreak{}
 
 
 

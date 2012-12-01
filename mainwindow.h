@@ -35,6 +35,8 @@ private slots:
 
     void on_actionAlmacen_triggered();
 
+    void on_actionProveedores_triggered();
+
 private:
     Ui::MainWindow *ui;
     ModuleInterface* ActiveModule;
