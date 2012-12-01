@@ -84,6 +84,19 @@ bool tienda::agregar()
 
 bool tienda::actualizar()
 {
+    QSqlQuery query;
+    query.prepare("INSERT INTO tienda (idEmpresa,alias,direccion,telefono,permiso_municipal) VALUES (?,?,?,?,?)");
+
+    query.bindValue(0,idEmpresa);
+    query.bindValue(1,alias);
+    query.bindValue(2,direccion);
+    query.bindValue(3,telefono);
+    query.bindValue(4,permisoMunicipal);
+
+    if(query.exec())
+        return true;
+    else
+        return false;
     return true;
 }
 
@@ -95,6 +108,6 @@ bool tienda::eliminar()
 QSqlQueryModel* tienda::mostrar()
 {
     QSqlQueryModel* model=new QSqlQueryModel;
-    model->setQuery("select * from tienda");
+    model->setQuery("select alias,direccion,telefono,permiso_municipal from tienda");
     return model;
 }

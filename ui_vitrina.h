@@ -20,6 +20,8 @@ public:
 private slots:
     void on_agregar_clicked();
 
+    void on_editar_clicked();
+
 private:
     Ui::ui_vitrina *ui;
 };

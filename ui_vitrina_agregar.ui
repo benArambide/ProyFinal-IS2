@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>269</width>
+    <width>359</width>
     <height>337</height>
    </rect>
   </property>
@@ -18,7 +18,7 @@
     <rect>
      <x>10</x>
      <y>10</y>
-     <width>231</width>
+     <width>316</width>
      <height>298</height>
     </rect>
    </property>
@@ -55,14 +55,14 @@
        </spacer>
       </item>
       <item row="0" column="1">
-       <widget class="QPushButton" name="pushButton_Aceptar">
+       <widget class="QPushButton" name="guardar">
         <property name="text">
          <string>Guardar</string>
         </property>
        </widget>
       </item>
       <item row="0" column="2">
-       <widget class="QPushButton" name="pushButton_Cancelar">
+       <widget class="QPushButton" name="cancelar">
         <property name="text">
          <string>Cancelar</string>
         </property>
@@ -85,22 +85,6 @@
     </item>
     <item row="0" column="0">
      <layout class="QGridLayout" name="gridLayout_4">
-      <item row="0" column="0">
-       <spacer name="horizontalSpacer_4">
-        <property name="orientation">
-         <enum>Qt::Horizontal</enum>
-        </property>
-        <property name="sizeType">
-         <enum>QSizePolicy::Fixed</enum>
-        </property>
-        <property name="sizeHint" stdset="0">
-         <size>
-          <width>150</width>
-          <height>13</height>
-         </size>
-        </property>
-       </spacer>
-      </item>
       <item row="0" column="1">
        <spacer name="horizontalSpacer_7">
         <property name="orientation">
@@ -117,73 +101,85 @@
         </property>
        </spacer>
       </item>
-      <item row="6" column="0" colspan="3">
-       <widget class="Line" name="line_2">
-        <property name="orientation">
-         <enum>Qt::Horizontal</enum>
-        </property>
-       </widget>
+      <item row="5" column="1">
+       <widget class="QSpinBox" name="spinBoxFilas"/>
       </item>
-      <item row="7" column="0">
-       <widget class="QLabel" name="label_22">
-        <property name="text">
-         <string>Columnas</string>
-        </property>
-       </widget>
-      </item>
-      <item row="2" column="0">
-       <widget class="QLabel" name="label_24">
-        <property name="text">
-         <string>Alias</string>
-        </property>
-       </widget>
-      </item>
-      <item row="2" column="1">
-       <widget class="QLineEdit" name="textAlias"/>
-      </item>
-      <item row="1" column="1">
-       <widget class="QLineEdit" name="textIdTienda">
-        <property name="enabled">
-         <bool>false</bool>
-        </property>
-       </widget>
-      </item>
-      <item row="1" column="0">
-       <widget class="QLabel" name="label_21">
-        <property name="text">
-         <string>idVitrina</string>
-        </property>
-       </widget>
-      </item>
-      <item row="3" column="0" colspan="3">
-       <widget class="Line" name="line">
-        <property name="orientation">
-         <enum>Qt::Horizontal</enum>
-        </property>
-       </widget>
-      </item>
-      <item row="4" column="0">
-       <widget class="QLabel" name="label_28">
-        <property name="text">
-         <string>Filas</string>
-        </property>
-       </widget>
-      </item>
-      <item row="8" column="0">
+      <item row="9" column="0">
        <widget class="QLabel" name="label_23">
         <property name="text">
          <string>Niveles</string>
         </property>
        </widget>
       </item>
-      <item row="7" column="1">
-       <widget class="QComboBox" name="comboBox_2"/>
+      <item row="8" column="0">
+       <widget class="QLabel" name="label_22">
+        <property name="text">
+         <string>Columnas</string>
+        </property>
+       </widget>
       </item>
-      <item row="4" column="1">
-       <widget class="QComboBox" name="comboBox"/>
+      <item row="0" column="0">
+       <spacer name="horizontalSpacer_4">
+        <property name="orientation">
+         <enum>Qt::Horizontal</enum>
+        </property>
+        <property name="sizeType">
+         <enum>QSizePolicy::Fixed</enum>
+        </property>
+        <property name="sizeHint" stdset="0">
+         <size>
+          <width>150</width>
+          <height>13</height>
+         </size>
+        </property>
+       </spacer>
+      </item>
+      <item row="7" column="0" colspan="3">
+       <widget class="Line" name="line_2">
+        <property name="orientation">
+         <enum>Qt::Horizontal</enum>
+        </property>
+       </widget>
       </item>
       <item row="8" column="1">
-       <widget class="QComboBox" name="comboBox_3"/>
+       <widget class="QSpinBox" name="spinBoxcolumnas"/>
+      </item>
+      <item row="5" column="0">
+       <widget class="QLabel" name="label_28">
+        <property name="text">
+         <string>Filas</string>
+        </property>
+       </widget>
+      </item>
+      <item row="4" column="0" colspan="3">
+       <widget class="Line" name="line">
+        <property name="orientation">
+         <enum>Qt::Horizontal</enum>
+        </property>
+       </widget>
+      </item>
+      <item row="9" column="1">
+       <widget class="QSpinBox" name="spinBoxniveles"/>
+      </item>
+      <item row="1" column="0">
+       <widget class="QLabel" name="label_25">
+        <property name="text">
+         <string>Codigo</string>
+        </property>
+       </widget>
+      </item>
+      <item row="3" column="0">
+       <widget class="QLabel" name="label_24">
+        <property name="text">
+         <string>Alias</string>
+        </property>
+       </widget>
+      </item>
+      <item row="1" column="1">
+       <widget class="QLineEdit" name="textCodigo"/>
+      </item>
+      <item row="3" column="1">
+       <widget class="QLineEdit" name="textAlias"/>
       </item>
      </layout>
     </item>
