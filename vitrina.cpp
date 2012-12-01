@@ -133,7 +133,9 @@ bool vitrina::eliminar()
 QSqlQueryModel* vitrina::mostrar()
 {
     QSqlQueryModel* model=new QSqlQueryModel;
-    model->setQuery("select codigo,alias,num_filas,num_columnas,num_niveles from vitrina");
+
+    model->setQuery("select codigo,alias,num_filas,num_columnas,num_niveles from vitrina ");
+
     return model;
 }
 
