@@ -57,7 +57,11 @@ SOURCES += main.cpp\
     ui_proveedores.cpp \
     ui_datos_proveedor.cpp \
     ui_datos_compras.cpp \
-    compras.cpp
+    compras.cpp \
+    ui_vitrina.cpp \
+    ui_vitrina_agregar.cpp \
+    ui_traspaso_producto.cpp \
+    vitrina.cpp
 
 HEADERS  += mainwindow.h \
     sesion.h \
@@ -108,7 +112,11 @@ HEADERS  += mainwindow.h \
     ui_proveedores.h \
     ui_datos_proveedor.h \
     ui_datos_compras.h \
-    compras.h
+    compras.h \
+    ui_vitrina.h \
+    ui_vitrina_agregar.h \
+    ui_traspaso_producto.h \
+    vitrina.h
 
 FORMS    += mainwindow.ui \
     ui_login.ui \
@@ -135,7 +143,10 @@ FORMS    += mainwindow.ui \
     ui_proveedores.ui \
     ui_datos_proveedor.ui \
     ui_datos_compras.ui \
-    compras.ui
+    compras.ui \
+    ui_vitrina.ui \
+    ui_vitrina_agregar.ui \
+    ui_traspaso_producto.ui
 
 RESOURCES += \
     Icons/Icons.qrc \
