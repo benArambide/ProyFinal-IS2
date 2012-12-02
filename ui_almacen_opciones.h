@@ -20,6 +20,10 @@ private slots:
 
     void on_pushButton_8_clicked();
 
+    void on_botonConfirmarAndamio_clicked();
+
+    void on_botonConfirmarContenedor_clicked();
+
 private:
     Ui::ui_almacen_opciones *ui;
 };

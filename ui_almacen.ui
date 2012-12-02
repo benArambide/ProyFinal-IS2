@@ -20,133 +20,6 @@
       <layout class="QGridLayout" name="gridLayout_6">
        <item row="0" column="0">
         <layout class="QGridLayout" name="gridLayout_5">
-         <item row="0" column="0">
-          <layout class="QGridLayout" name="gridLayout_3">
-           <item row="0" column="0">
-            <widget class="QLabel" name="label_3">
-             <property name="sizePolicy">
-              <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
-               <horstretch>0</horstretch>
-               <verstretch>0</verstretch>
-              </sizepolicy>
-             </property>
-             <property name="text">
-              <string>Empresa :</string>
-             </property>
-            </widget>
-           </item>
-           <item row="0" column="1">
-            <spacer name="horizontalSpacer">
-             <property name="orientation">
-              <enum>Qt::Horizontal</enum>
-             </property>
-             <property name="sizeType">
-              <enum>QSizePolicy::Preferred</enum>
-             </property>
-             <property name="sizeHint" stdset="0">
-              <size>
-               <width>18</width>
-               <height>20</height>
-              </size>
-             </property>
-            </spacer>
-           </item>
-           <item row="0" column="2">
-            <widget class="QComboBox" name="comboBox">
-             <property name="sizePolicy">
-              <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
-               <horstretch>0</horstretch>
-               <verstretch>0</verstretch>
-              </sizepolicy>
-             </property>
-             <item>
-              <property name="text">
-               <string>Empresa 1</string>
-              </property>
-             </item>
-             <item>
-              <property name="text">
-               <string>Empresa 2</string>
-              </property>
-             </item>
-            </widget>
-           </item>
-          </layout>
-         </item>
-         <item row="1" column="0">
-          <widget class="QTreeWidget" name="treeWidget">
-           <property name="sizePolicy">
-            <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
-             <horstretch>0</horstretch>
-             <verstretch>0</verstretch>
-            </sizepolicy>
-           </property>
-           <property name="maximumSize">
-            <size>
-             <width>200</width>
-             <height>16777215</height>
-            </size>
-           </property>
-           <attribute name="headerVisible">
-            <bool>false</bool>
-           </attribute>
-           <column>
-            <property name="text">
-             <string>Empresas</string>
-            </property>
-           </column>
-           <item>
-            <property name="text">
-             <string>Tienda 1</string>
-            </property>
-            <item>
-             <property name="text">
-              <string>Almacen 1</string>
-             </property>
-             <item>
-              <property name="text">
-               <string>Contenedor 1</string>
-              </property>
-             </item>
-             <item>
-              <property name="text">
-               <string>Contenedor 2</string>
-              </property>
-             </item>
-             <item>
-              <property name="text">
-               <string>Contenedor 3</string>
-              </property>
-             </item>
-            </item>
-            <item>
-             <property name="text">
-              <string>Almacen 2</string>
-             </property>
-             <item>
-              <property name="text">
-               <string>Contenedor 1</string>
-              </property>
-             </item>
-            </item>
-           </item>
-           <item>
-            <property name="text">
-             <string>Tienda 2</string>
-            </property>
-            <item>
-             <property name="text">
-              <string>Almacen 1</string>
-             </property>
-            </item>
-           </item>
-           <item>
-            <property name="text">
-             <string>Tienda 3</string>
-            </property>
-           </item>
-          </widget>
-         </item>
          <item row="2" column="0">
           <layout class="QGridLayout" name="gridLayout_2">
            <item row="0" column="0">
@@ -233,6 +106,79 @@
            </item>
           </layout>
          </item>
+         <item row="0" column="0">
+          <layout class="QGridLayout" name="gridLayout_3">
+           <item row="0" column="0">
+            <widget class="QLabel" name="label_3">
+             <property name="sizePolicy">
+              <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+               <horstretch>0</horstretch>
+               <verstretch>0</verstretch>
+              </sizepolicy>
+             </property>
+             <property name="text">
+              <string>Empresa :</string>
+             </property>
+            </widget>
+           </item>
+           <item row="0" column="1">
+            <spacer name="horizontalSpacer">
+             <property name="orientation">
+              <enum>Qt::Horizontal</enum>
+             </property>
+             <property name="sizeType">
+              <enum>QSizePolicy::Preferred</enum>
+             </property>
+             <property name="sizeHint" stdset="0">
+              <size>
+               <width>18</width>
+               <height>20</height>
+              </size>
+             </property>
+            </spacer>
+           </item>
+           <item row="0" column="2">
+            <widget class="QComboBox" name="comboBox">
+             <property name="sizePolicy">
+              <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+               <horstretch>0</horstretch>
+               <verstretch>0</verstretch>
+              </sizepolicy>
+             </property>
+             <item>
+              <property name="text">
+               <string>Empresa 1</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>Empresa 2</string>
+              </property>
+             </item>
+            </widget>
+           </item>
+          </layout>
+         </item>
+         <item row="1" column="0">
+          <widget class="QTreeWidget" name="treeWidget">
+           <property name="font">
+            <font>
+             <kerning>true</kerning>
+            </font>
+           </property>
+           <property name="itemsExpandable">
+            <bool>true</bool>
+           </property>
+           <attribute name="headerVisible">
+            <bool>false</bool>
+           </attribute>
+           <column>
+            <property name="text">
+             <string>Empresas</string>
+            </property>
+           </column>
+          </widget>
+         </item>
         </layout>
        </item>
        <item row="1" column="0">
@@ -257,6 +203,9 @@
       <layout class="QGridLayout" name="gridLayout_7">
        <item row="0" column="0">
         <layout class="QGridLayout" name="gridLayout_4">
+         <item row="1" column="0">
+          <widget class="QTableView" name="tableView"/>
+         </item>
          <item row="0" column="0">
           <widget class="QLabel" name="label_2">
            <property name="sizePolicy">
@@ -355,25 +304,6 @@
             </widget>
            </item>
           </layout>
-         </item>
-         <item row="1" column="0">
-          <widget class="QTableWidget" name="tableWidget">
-           <column>
-            <property name="text">
-             <string>Nombre</string>
-            </property>
-           </column>
-           <column>
-            <property name="text">
-             <string>Codigo</string>
-            </property>
-           </column>
-           <column>
-            <property name="text">
-             <string>Calidad</string>
-            </property>
-           </column>
-          </widget>
          </item>
         </layout>
        </item>
