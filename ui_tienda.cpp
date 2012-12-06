@@ -20,3 +20,9 @@ void ui_tienda::on_pushButton_clicked()
     ui_tienda_agregar* tienda_agregar=new ui_tienda_agregar;
     tienda_agregar->show();
 }
+
+void ui_tienda::on_ver_vitrina_clicked()
+{
+    ui_vitrina * vitrinas=new ui_vitrina();
+    vitrinas->show();
+}

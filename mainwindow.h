@@ -8,7 +8,8 @@
 #include <ui_producto.h>
 #include <ui_tienda.h>
 #include <ui_empresa.h>
-
+#include <ui_cliente.h>
+#include "ui_almacen.h"
 #include "moduleinterface.h"
 
 namespace Ui {
@@ -31,6 +32,8 @@ private slots:
     void on_actionTiendas_triggered();
 
     void on_actionEmpresas_triggered();
+
+    void on_actionAlmacen_triggered();
 
 private:
     Ui::MainWindow *ui;

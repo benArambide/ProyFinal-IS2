@@ -11,7 +11,7 @@ MyComboBox::MyComboBox(QWidget* parent):QComboBox(parent)
     ventana_agregar_2=0;
 
 
-    //Inicalizamos los punteros a funcion para poder llenar el combobox
+    //Inicializamos los punteros a funcion para poder llenar el combobox
 
     map_funciones["calidad"]=(&(Calidad::listarNombres));
     map_funciones["color"]=(&(Color::listarNombres));
@@ -28,7 +28,8 @@ MyComboBox::MyComboBox(QWidget* parent):QComboBox(parent)
 
 }
 
-
+//esa funcion es muy importante ya que si no se da el tipo el combo
+//no sabra con que datos trabajar
 void MyComboBox::IngresarTipo(QString _tipo)
 {
     tipo=_tipo;
@@ -47,53 +48,51 @@ void MyComboBox::Actualizar_Items()
 }
 
 
-void MyComboBox::test()
-{
-    qDebug()<<"prueba que ya se cerro";
-}
-
-
-void MyComboBox::Eliminar_Item()
+bool MyComboBox::Eliminar_Item()
 {
     QString nombre=this->currentText();
+    bool exitoso;//este bool lamacena si elimno con exito o no
 
     if(tipo=="calidad"){
         Calidad calidad;
         calidad.existente(nombre);
-        calidad.eliminar();
+        exitoso=calidad.eliminar();
     }
     if(tipo=="color"){
         Color color;
         color.existente(nombre);
-        color.eliminar();
+        exitoso=color.eliminar();
     }
     if(tipo=="indicerefraccion"){
         IndiceRefraccion indicerefraccion;
         indicerefraccion.existente(nombre);
-        indicerefraccion.eliminar();
+        exitoso=indicerefraccion.eliminar();
     }
     if(tipo=="marca"){
         Marca marca;
         marca.existente(nombre);
-        marca.eliminar();
+        exitoso=marca.eliminar();
     }
     if(tipo=="tamanio"){
         Tamanio tamanio;
-        tamanio.existente(nombre);
-        tamanio.eliminar();
+        tamanio.existente(nombre);        
+        exitoso=tamanio.eliminar();
     }
     if(tipo=="tipoluna"){
         TipoLuna tipoluna;
         tipoluna.existente(nombre);
-        tipoluna.eliminar();
+        exitoso=tipoluna.eliminar();
     }
     if(tipo=="forma"){
         Forma forma;
         forma.existente(nombre);
-        forma.eliminar();
+        exitoso=forma.eliminar();
     }
 
-    this->Actualizar_Items();
+    if(exitoso==true)
+        this->Actualizar_Items();
+    else
+        return false;
 }
 
  void MyComboBox::Show_Agregar()

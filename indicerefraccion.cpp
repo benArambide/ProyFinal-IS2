@@ -20,6 +20,18 @@ IndiceRefraccion::IndiceRefraccion(QString _valor)
 
 
 
+//Constructo con solo tener el ID
+IndiceRefraccion::IndiceRefraccion(int _id)
+{
+    QSqlQuery query;
+    query.prepare("select * from indice_refraccion where idindice_refraccion="+QString::number(_id));
+    query.exec();
+    query.next();
+    id=_id;
+    valor=query.value(1).toString();
+}
+
+
 /*--------------------------------------------------------------------
                 FUNCION PARA DEVOLVER OBJETOS EXISTENTE
 ---------------------------------------------------------------------*/
@@ -199,7 +211,7 @@ bool IndiceRefraccion::eliminar()
     if(valor!="")
     {
         QSqlQuery query;
-        query.prepare("DELETE FROM indice_refraccion WHERE idindice_refraccion="+ QString::number(id));
+        query.prepare("DELETE FROM indice_refraccion WHERE idindice_refraccion="+QString::number(id));
         return query.exec();
     }
     else

@@ -27,6 +27,21 @@ Montura::Montura()
 }
 
 
+
+//COnstructo con solo id, por lo normal solo lo usare para el eliminar y solo
+//necesito el id de la montura y el id del producto
+Montura::Montura(int _id)
+{
+    QSqlQuery query;
+    query.prepare("SELECT idproducto FROM luna WHERE idmontura="+QString::number(_id));
+    query.exec();
+    query.next();
+    id=query.value(0).toInt();
+    idmontura=_id;
+
+}
+
+
 /*--------------------------------------------------------------------
                 FUNCIONES GET'S Y SET'S
 ---------------------------------------------------------------------*/
@@ -67,6 +82,14 @@ Tamanio Montura::getTamanio()
 {
     return tamanio;
 }
+
+int Montura::getIdMontura()
+{
+    return idmontura;
+}
+
+
+
 
 /**
  * @brief Permite cambiar el color de la Montura
@@ -186,8 +209,6 @@ bool Montura::actualizar()
 
 bool Montura::eliminar()
 {
-    if(nombre!="" || codigo !="")
-    {
         QSqlQuery query;
         query.prepare("DELETE FROM montura WHERE idmontura="+ QString::number(idmontura));
         if(query.exec()==true)
@@ -195,10 +216,11 @@ bool Montura::eliminar()
             query.prepare("DELETE FROM producto WHERE idproducto="+ QString::number(id));
             return query.exec();
         }
-    }
-    else
-        return false;
+        else
+            return false;
 }
+
+
 
 QSqlQueryModel* Montura::entregarMonturas()
 {
@@ -232,7 +254,7 @@ QSqlQueryModel* Montura::buscar(QString _item)
 {
 
     QSqlQueryModel *model = new QSqlQueryModel;
-         model->setQuery("select codigo,\
+         model->setQuery("select idmontura,codigo,\
                          c.nombre as calidad, \
                          f.nombre as forma, \
                          t.nombre as tamanio, \

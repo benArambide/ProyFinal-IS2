@@ -3,6 +3,7 @@
 
 #include <QWidget>
 #include <tienda.h>
+#include "ui_vitrina.h"
 
 namespace Ui {
 class ui_tienda;
@@ -18,6 +19,8 @@ public:
     
 private slots:
     void on_pushButton_clicked();
+
+    void on_ver_vitrina_clicked();
 
 private:
     Ui::ui_tienda *ui;

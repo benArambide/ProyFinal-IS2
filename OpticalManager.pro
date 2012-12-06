@@ -48,7 +48,21 @@ SOURCES += main.cpp\
     ui_tienda_agregar.cpp \
     empresa.cpp \
     ui_empresa.cpp \
-    ui_agregar_nomdesc.cpp
+    ui_agregar_nomdesc.cpp \
+    persona.cpp \
+    cliente.cpp \
+    tipodoc_ident.cpp \
+    ui_almacen.cpp \
+    ui_almacen_opciones.cpp \
+    ui_proveedores.cpp \
+    ui_datos_proveedor.cpp \
+    ui_datos_compras.cpp \
+    compras.cpp \
+    ui_vitrina_agregar.cpp \
+    ui_vitrina.cpp \
+    andamio.cpp \
+    contenedor.cpp \
+    almacen.cpp
 
 HEADERS  += mainwindow.h \
     sesion.h \
@@ -90,7 +104,22 @@ HEADERS  += mainwindow.h \
     empresa.h \
     ui_empresa.h \
     ui_agregar_nomdesc.h \
-    ui_mainwindow.h
+    ui_mainwindow.h \
+    persona.h \
+    cliente.h \
+    tipodoc_ident.h \
+    ui_almacen.h \
+    ui_almacen_opciones.h \
+    ui_proveedores.h \
+    ui_datos_proveedor.h \
+    ui_datos_compras.h \
+    compras.h \
+    ui_vitrina_agregar.h \
+    ui_vitrina.h \
+    andamio.h \
+    contenedor.h \
+    almacen.h \
+    ui_almacen_nuevo.h
 
 FORMS    += mainwindow.ui \
     ui_login.ui \
@@ -111,7 +140,15 @@ FORMS    += mainwindow.ui \
     ui_tienda.ui \
     ui_agregar_nomdesc.ui \
     ui_empresa.ui \
-    ui_agregar_nomdesc.ui
+    ui_agregar_nomdesc.ui \
+    ui_almacen.ui \
+    ui_almacen_opciones.ui \
+    ui_proveedores.ui \
+    ui_datos_proveedor.ui \
+    ui_datos_compras.ui \
+    compras.ui \
+    ui_vitrina_agregar.ui \
+    ui_vitrina.ui
 
 RESOURCES += \
     Icons/Icons.qrc \

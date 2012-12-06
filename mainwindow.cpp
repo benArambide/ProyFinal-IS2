@@ -5,13 +5,14 @@
 #include <montura.h>
 #include "modulousuarios.h"
 #include <luna.h>
+
+
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
     ui(new Ui::MainWindow)
 {
 
     ui->setupUi(this);
-
 
 }
 
@@ -42,12 +43,9 @@ void MainWindow::on_actionUsuario_triggered()
 
 void MainWindow::on_actionCliente_triggered()
 {
-    /*UI_CLIENT *CLIENT_FORM;
-    CLIENT_FORM = new UI_CLIENT;
-
-    setCentralWidget(CLIENT_FORM);
-    CLIENT_FORM->showMaximized();*/
-
+    ui_cliente* cliente_form;
+    cliente_form=new ui_cliente;
+    setCentralWidget(cliente_form);
 }
 
 void MainWindow::on_actionBuscar_triggered()
@@ -70,4 +68,11 @@ void MainWindow::on_actionEmpresas_triggered()
     empresa_form=new ui_empresa;
     setCentralWidget(empresa_form);
     //empresa_form->showMaximized();
+}
+
+void MainWindow::on_actionAlmacen_triggered()
+{
+    ui_almacen* almacen_form;
+    almacen_form = new ui_almacen;
+    setCentralWidget(almacen_form);
 }

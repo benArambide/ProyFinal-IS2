@@ -21,6 +21,8 @@ public:
     IndiceRefraccion(int _id,QString _valor);
     IndiceRefraccion(QString _valor);
     IndiceRefraccion();
+    IndiceRefraccion(int _id);
+
     static QList<IndiceRefraccion*> listar();
     static QSqlQueryModel* listarNombres();
 

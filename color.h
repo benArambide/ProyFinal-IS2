@@ -21,6 +21,8 @@ public:
     Color(int _id,QString _nombre);
     Color(QString _nombre);
     Color();
+    Color(int _id);
+
     static QList<Color*> listar();
     static QSqlQueryModel* listarNombres();
 

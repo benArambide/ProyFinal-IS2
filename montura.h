@@ -24,11 +24,13 @@ public:
     Montura(int _id ,QString _codigo,QString _descripcion, QString _nombre, Marca _marca,int _stock,float _precio,QString _accesorios,float _p_descuento,bool _habilitado,Color _color,Forma _forma, Calidad _calidad, Tamanio _tamanio);
     Montura(QString _codigo,QString _descripcion, QString _nombre, Marca _marca,int _stock,float _precio,QString _accesorios,float _p_descuento,bool _habilitado,Color _color,Forma _forma, Calidad _calidad, Tamanio _tamanio);
     Montura();
+    Montura(int _id);
 
     Color getColor();
     Forma getForma();
     Calidad getCalidad();
     Tamanio getTamanio();
+    int getIdMontura();
 
     void setColor(Color _color);
     void setForma(Forma _forma);

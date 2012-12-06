@@ -32,6 +32,18 @@ RangoMedida::RangoMedida()
 }
 
 
+//Constructo con solo tener el ID
+RangoMedida::RangoMedida(int _id)
+{
+    QSqlQuery query;
+    query.prepare("select * from rango_medida where idrango_medida="+QString::number(_id));
+    query.exec();
+    query.next();
+    id=_id;
+    valorini=query.value(1).toFloat();
+    valorfin=query.value(2).toFloat();
+    descripcion=query.value(3).toFloat();
+}
 
 
 
@@ -69,24 +81,6 @@ QList<RangoMedida*> RangoMedida::listar()
  * @return Bool si es exite return true, y si no exite return false
  */
 
-/*
-bool RangoMedida::existente(float _valorini,float _valorfin)
-{
-    //USE UN QSQLQUERYMODEL porque me salia un error con el query
-   //Se realiza la consulta con el nombre de la RangoMedida a buscar
-    QSqlQueryModel  query;
-    query.setQuery("select * from rango_medida where val_ini="+QString::number(_valorini)+" and val_fin="+QString::number(_valorfin));
-    if(query.rowCount()>0)
-    {
-        id = query.record(0).value("idrango_medida").toInt();
-        descripcion = query.record(0).value("obs").toString();
-        return true;
-    }
-    else
-        return false;
-}
-
-*/
 
 
 /*--------------------------------------------------------------------
@@ -204,10 +198,10 @@ bool RangoMedida::agregar()
 
         if(query.exec()==true)
         {
-            qDebug()<<"se realizo bien el query";
-            query.prepare("SELECT idrango_medida FROM rango_medida WHERE val_ini="+QString::number(valorini)+" and "+QString::number(valorfin));
+            //Una muy buena soluciona alo que estaba haciendo, atento para la refactorizacion
+            query.prepare("SELECT MAX(idrango_medida) FROM rango_medida");
             query.exec();
-            query.next();
+            query.next();            
             id=query.value(0).toInt();
             return true;
         }

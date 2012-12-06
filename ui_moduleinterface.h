@@ -1,8 +1,13 @@
 /********************************************************************************
 ** Form generated from reading UI file 'moduleinterface.ui'
 **
+<<<<<<< HEAD
 ** Created: Tue Nov 20 11:36:28 2012
 **      by: Qt User Interface Compiler version 4.8.3
+=======
+** Created: Wed 28. Nov 23:58:26 2012
+**      by: Qt User Interface Compiler version 4.8.1
+>>>>>>> 4bcd705ddb683ca489d113e822d38d7b7e5d2309
 **
 ** WARNING! All changes made in this file will be lost when recompiling UI file!
 ********************************************************************************/

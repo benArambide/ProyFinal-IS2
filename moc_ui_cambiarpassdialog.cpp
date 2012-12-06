@@ -1,7 +1,7 @@
 /****************************************************************************
 ** Meta object code from reading C++ file 'ui_cambiarpassdialog.h'
 **
-** Created: Fri Nov 16 22:28:58 2012
+** Created: Fri Nov 30 15:04:22 2012
 **      by: The Qt Meta Object Compiler version 63 (Qt 4.8.1)
 **
 ** WARNING! All changes made in this file will be lost!

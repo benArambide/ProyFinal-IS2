@@ -15,6 +15,14 @@
 #include <ui_agregar_nombre.h>
 #include <ui_agregar_nomdesc.h>
 
+
+
+/**
+ * @author Josue Benjamin Arambide Quispe
+ * @file mycombox.h
+ * @class MyCombobox
+ * @brief Es la clase combobox modificada para poder hacerlerar lo procesos
+ */
 class MyComboBox:public QComboBox
 {
     Q_OBJECT
@@ -32,10 +40,9 @@ public:
 
 
 public slots:
-    void Eliminar_Item();
+    bool Eliminar_Item();
     void Show_Agregar();
     void Actualizar_Items();
-    void test();
 };
 
 #endif // MYCOMBOBOX_H

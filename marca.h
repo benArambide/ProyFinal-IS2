@@ -23,6 +23,8 @@ public:
     Marca(int _id,QString _nombre, QString _descripcion );
     Marca(QString _nombre, QString _descripcion );
     Marca();
+    Marca(int _id);
+
     static QList<Marca*> listar();
     static QSqlQueryModel* listarNombres();
 

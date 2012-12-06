@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>759</width>
-    <height>96</height>
+    <width>843</width>
+    <height>337</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -27,7 +27,11 @@
    <enum>Qt::ToolButtonTextBesideIcon</enum>
   </property>
   <widget class="QWidget" name="centralWidget">
-   <layout class="QGridLayout" name="gridLayout"/>
+   <layout class="QGridLayout" name="gridLayout">
+    <item row="0" column="0">
+     <widget class="QTableView" name="test"/>
+    </item>
+   </layout>
   </widget>
   <widget class="QToolBar" name="toolBar_modulos">
    <property name="windowTitle">
@@ -53,6 +57,9 @@
    <addaction name="actionCliente"/>
    <addaction name="actionEmpresas"/>
    <addaction name="actionTiendas"/>
+   <addaction name="actionAlmacen"/>
+   <addaction name="actionProveedores"/>
+   <addaction name="actionCompras"/>
   </widget>
   <widget class="QStatusBar" name="statusBar">
    <property name="cursor">
@@ -73,7 +80,7 @@
     <enum>TopToolBarArea</enum>
    </attribute>
    <attribute name="toolBarBreak">
-    <bool>false</bool>
+    <bool>true</bool>
    </attribute>
    <addaction name="actionBuscar"/>
   </widget>
@@ -158,7 +165,7 @@
   <action name="actionTiendas">
    <property name="icon">
     <iconset resource="Icons/Icons.qrc">
-     <normaloff>:/Icons/autoship.png</normaloff>:/Icons/autoship.png</iconset>
+     <normaloff>:/Icons/1354299865_rssshop.png</normaloff>:/Icons/1354299865_rssshop.png</iconset>
    </property>
    <property name="text">
     <string>Tiendas</string>
@@ -183,6 +190,39 @@
    </property>
    <property name="shortcut">
     <string>Ctrl+V</string>
+   </property>
+  </action>
+  <action name="actionAlmacen">
+   <property name="icon">
+    <iconset resource="Icons/Icons.qrc">
+     <normaloff>:/Icons/file-roller.png</normaloff>:/Icons/file-roller.png</iconset>
+   </property>
+   <property name="text">
+    <string>Almacenes</string>
+   </property>
+  </action>
+  <action name="actionProveedores">
+   <property name="icon">
+    <iconset resource="Icons/Icons.qrc">
+     <normaloff>:/Icons/autoship.png</normaloff>:/Icons/autoship.png</iconset>
+   </property>
+   <property name="text">
+    <string>Proveedores</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+D</string>
+   </property>
+  </action>
+  <action name="actionCompras">
+   <property name="icon">
+    <iconset resource="Icons/Icons.qrc">
+     <normaloff>:/Icons/shopping-cart_basic_blue.png</normaloff>:/Icons/shopping-cart_basic_blue.png</iconset>
+   </property>
+   <property name="text">
+    <string>Compras</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+C</string>
    </property>
   </action>
  </widget>

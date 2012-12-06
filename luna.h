@@ -24,11 +24,15 @@ private:
 public:
     Luna(int _id ,QString _codigo,QString _descripcion, QString _nombre, Marca _marca,int _stock,float _precio,QString _accesorios,float _p_descuento,bool _habilitado,RangoMedida _rangomedida,IndiceRefraccion _indicerefraccion, TipoLuna _tipoluna,Calidad _calidad);
     Luna(QString _codigo,QString _descripcion, QString _nombre, Marca _marca,int _stock,float _precio,QString _accesorios,float _p_descuento,bool _habilitado,RangoMedida _rangomedida,IndiceRefraccion _indicerefraccion, TipoLuna _tipoluna,Calidad _calidad);
+    Luna(int _id);
     Luna();
+
+
     RangoMedida getRangoMedida();
     IndiceRefraccion getIndiceRefraccion();
     Calidad getCalidad();
     TipoLuna getTipoLuna();
+    int getIdLuna();
 
     void setRangoMedida(RangoMedida _tipoluna);
     void setIndiceRefraccion(IndiceRefraccion _forma);

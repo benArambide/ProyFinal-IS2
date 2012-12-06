@@ -25,9 +25,13 @@ private slots:
 
     void on_treeWidget_itemClicked(QTreeWidgetItem *item, int column);
 
-    void on_treeWidget_itemDoubleClicked(QTreeWidgetItem *item, int column);
-
     void on_pushButton_clicked();
+
+    void on_pushButton_aditar_luna_clicked();
+
+    void on_tableView_clicked(const QModelIndex &index);
+
+    void on_pushButton_eliminar_luna_clicked();
 
 private:
     Ui::ui_producto *ui;
@@ -35,6 +39,8 @@ private:
     QVector<QSqlQueryModel* (*) (QString)> vec_funciones;
 
     int posicion;
+
+    QSqlQueryModel* model_actual;//puntero al model del de la consulta actual
 };
 
 #endif // UI_PRODUCTO_H

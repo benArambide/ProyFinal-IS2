@@ -1,7 +1,7 @@
 /****************************************************************************
 ** Meta object code from reading C++ file 'ui_login.h'
 **
-** Created: Fri Nov 16 22:28:57 2012
+** Created: Sat Dec 1 15:51:11 2012
 **      by: The Qt Meta Object Compiler version 63 (Qt 4.8.1)
 **
 ** WARNING! All changes made in this file will be lost!

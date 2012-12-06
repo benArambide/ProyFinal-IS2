@@ -19,6 +19,8 @@ private:
 public:
     TipoLuna(int _id,QString _nombre);
     TipoLuna();
+    TipoLuna(int _id);
+
     TipoLuna(QString _nombre);
     static QList<TipoLuna*> listar();
     static QSqlQueryModel* listarNombres();
