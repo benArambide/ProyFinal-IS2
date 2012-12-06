@@ -1,5 +1,4 @@
 #include "ui_usuario_datos.h"
-#include "ui_ui_usuario_datos.h"
 
 ui_usuario_datos::ui_usuario_datos(QWidget *parent) :
     QWidget(parent),

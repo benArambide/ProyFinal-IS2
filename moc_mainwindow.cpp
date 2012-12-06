@@ -1,8 +1,13 @@
 /****************************************************************************
 ** Meta object code from reading C++ file 'mainwindow.h'
 **
+<<<<<<< Updated upstream
 ** Created: Sat Dec 1 15:51:10 2012
 **      by: The Qt Meta Object Compiler version 63 (Qt 4.8.1)
+=======
+** Created: Fri Nov 30 12:14:12 2012
+**      by: The Qt Meta Object Compiler version 63 (Qt 4.8.3)
+>>>>>>> Stashed changes
 **
 ** WARNING! All changes made in this file will be lost!
 *****************************************************************************/
@@ -11,7 +16,7 @@
 #if !defined(Q_MOC_OUTPUT_REVISION)
 #error "The header file 'mainwindow.h' doesn't include <QObject>."
 #elif Q_MOC_OUTPUT_REVISION != 63
-#error "This file was generated using the moc from 4.8.1. It"
+#error "This file was generated using the moc from 4.8.3. It"
 #error "cannot be used with the include files from this version of Qt."
 #error "(The moc has changed too much.)"
 #endif
@@ -49,7 +54,11 @@ static const char qt_meta_stringdata_MainWindow[] = {
     "on_actionBuscar_triggered()\0"
     "on_actionTiendas_triggered()\0"
     "on_actionEmpresas_triggered()\0"
+<<<<<<< Updated upstream
     "on_actionAlmacen_triggered()\0"
+=======
+    "on_actionGuardar_triggered()\0"
+>>>>>>> Stashed changes
 };
 
 void MainWindow::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, void **_a)
@@ -64,7 +73,11 @@ void MainWindow::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, 
         case 3: _t->on_actionBuscar_triggered(); break;
         case 4: _t->on_actionTiendas_triggered(); break;
         case 5: _t->on_actionEmpresas_triggered(); break;
+<<<<<<< Updated upstream
         case 6: _t->on_actionAlmacen_triggered(); break;
+=======
+        case 6: _t->on_actionGuardar_triggered(); break;
+>>>>>>> Stashed changes
         default: ;
         }
     }

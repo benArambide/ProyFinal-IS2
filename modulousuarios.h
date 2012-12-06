@@ -10,7 +10,7 @@ public:
   explicit ModuloUsuarios(QWidget *parent = 0);
   void Agregar(){}
   void Editar(){}
-  void Guardar(){}
+  void Guardar();
   void Buscar();
 signals:
   

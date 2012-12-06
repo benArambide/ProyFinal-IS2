@@ -1,6 +1,8 @@
 #include "modulousuarios.h"
 #include "ui_usuario_datos.h"
 #include "ui_buscarusuario.h"
+#include <QDataWidgetMapper>
+#include <QStringListModel>
 
 #include <QDebug>
 #include <QMessageBox>
@@ -32,5 +34,33 @@ void ModuloUsuarios::Buscar()
     return;
   }
   ui->list_tableView->setModel(queryModel);
+  mapper = new QDataWidgetMapper(this);
+  ui_usuario_datos * data = (ui_usuario_datos *)this->detalles_tab;
+  QStringList items;
+  items << tr("DNI") << tr("CE");
+  QStringListModel* typeModel = new QStringListModel(items, this);
+  data->getUI()->cB_tDoc->setModel(typeModel);
+  mapper->setModel(queryModel);
+  //data->getUI()->cb_sexo->addItem("asdasd",1);
+  qDebug()<<data->getUI()->cb_sexo->itemData(2).toInt();
+  mapper->addMapping(data->getUI()->le_pApellido, 0);
+  mapper->addMapping(data->getUI()->le_sApellido, 1);
+  mapper->addMapping(data->getUI()->le_nombre, 2);
+  mapper->addMapping(data->getUI()->le_numDoc, 9);
+  mapper->addMapping(data->getUI()->le_Usuario, 4);
+  mapper->addMapping(data->getUI()->de_fechaNac,queryModel->record().indexOf("F. Nacimiento"));
+  //qDebug()<<queryModel->record().indexOf("T. DI");
+  mapper->addMapping(data->getUI()->c_tDoc,queryModel->record().indexOf("T. DI"), "currentIndex");
+
+  //mapper->addMapping(addressEdit, 1);
+  //mapper->addMapping(typeComboBox, 2, "currentIndex");
+  mapper->setSubmitPolicy(QDataWidgetMapper::ManualSubmit);
+
   delete dialogBuscar;
+}
+
+void ModuloUsuarios::Guardar()
+{
+  QSqlDatabase::database().tables();
+
 }

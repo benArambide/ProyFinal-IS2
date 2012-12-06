@@ -2,12 +2,13 @@
 
 ModuleInterface::ModuleInterface(QWidget *parent,QWidget* detalles):
   QWidget(parent),
-  ui(new Ui::ModuleInterface)
+  ui(new Ui::ModuleInterface),
+  detalles_tab(detalles)
 {
   ui->setupUi(this);
   ui->Module_tabWidget->addTab(detalles,"Detalles");
-  detalles->setEnabled(false);
-  ui->Module_tabWidget->setTabEnabled(1,false);
+  //detalles->setEnabled(false);
+  //ui->Module_tabWidget->setTabEnabled(1,false);
   ui->list_tableView->horizontalHeader()->setResizeMode(QHeaderView::ResizeToContents);
 }
 
@@ -33,5 +34,5 @@ ModuleInterface::~ModuleInterface()
 
 void ModuleInterface::on_list_tableView_activated(const QModelIndex &index)
 {
-  //index.model()
+  mapper->setCurrentModelIndex(index);
 }

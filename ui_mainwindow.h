@@ -1,8 +1,13 @@
 /********************************************************************************
 ** Form generated from reading UI file 'mainwindow.ui'
 **
+<<<<<<< Updated upstream
 ** Created: Sat Dec 1 14:34:40 2012
 **      by: Qt User Interface Compiler version 4.8.1
+=======
+** Created: Fri Nov 30 12:12:33 2012
+**      by: Qt User Interface Compiler version 4.8.3
+>>>>>>> Stashed changes
 **
 ** WARNING! All changes made in this file will be lost when recompiling UI file!
 ********************************************************************************/
@@ -35,9 +40,13 @@ public:
     QAction *actionBuscar;
     QAction *actionTiendas;
     QAction *actionEmpresas;
+<<<<<<< Updated upstream
     QAction *actionAlmacen;
     QAction *actionProveedores;
     QAction *actionCompras;
+=======
+    QAction *actionGuardar;
+>>>>>>> Stashed changes
     QWidget *centralWidget;
     QGridLayout *gridLayout;
     QTableView *test;
@@ -49,7 +58,11 @@ public:
     {
         if (MainWindow->objectName().isEmpty())
             MainWindow->setObjectName(QString::fromUtf8("MainWindow"));
+<<<<<<< Updated upstream
         MainWindow->resize(843, 337);
+=======
+        MainWindow->resize(795, 96);
+>>>>>>> Stashed changes
         QIcon icon;
         icon.addFile(QString::fromUtf8(":/Icons/internet-news-reader.png"), QSize(), QIcon::Normal, QIcon::Off);
         MainWindow->setWindowIcon(icon);
@@ -95,6 +108,7 @@ public:
         QIcon icon8;
         icon8.addFile(QString::fromUtf8(":/Icons/photo.png"), QSize(), QIcon::Normal, QIcon::Off);
         actionEmpresas->setIcon(icon8);
+<<<<<<< Updated upstream
         actionAlmacen = new QAction(MainWindow);
         actionAlmacen->setObjectName(QString::fromUtf8("actionAlmacen"));
         QIcon icon9;
@@ -110,6 +124,13 @@ public:
         QIcon icon11;
         icon11.addFile(QString::fromUtf8(":/Icons/shopping-cart_basic_blue.png"), QSize(), QIcon::Normal, QIcon::Off);
         actionCompras->setIcon(icon11);
+=======
+        actionGuardar = new QAction(MainWindow);
+        actionGuardar->setObjectName(QString::fromUtf8("actionGuardar"));
+        QIcon icon9;
+        icon9.addFile(QString::fromUtf8(":/Icons/1349716356_save.png"), QSize(), QIcon::Normal, QIcon::Off);
+        actionGuardar->setIcon(icon9);
+>>>>>>> Stashed changes
         centralWidget = new QWidget(MainWindow);
         centralWidget->setObjectName(QString::fromUtf8("centralWidget"));
         gridLayout = new QGridLayout(centralWidget);
@@ -146,6 +167,7 @@ public:
         toolBar_modulos->addAction(actionProveedores);
         toolBar_modulos->addAction(actionCompras);
         options_toolBar->addAction(actionBuscar);
+        options_toolBar->addAction(actionGuardar);
 
         retranslateUi(MainWindow);
 
@@ -183,11 +205,19 @@ public:
         actionEmpresas->setToolTip(QApplication::translate("MainWindow", "Empresas", 0, QApplication::UnicodeUTF8));
 #endif // QT_NO_TOOLTIP
         actionEmpresas->setShortcut(QApplication::translate("MainWindow", "Ctrl+V", 0, QApplication::UnicodeUTF8));
+<<<<<<< Updated upstream
         actionAlmacen->setText(QApplication::translate("MainWindow", "Almacenes", 0, QApplication::UnicodeUTF8));
         actionProveedores->setText(QApplication::translate("MainWindow", "Proveedores", 0, QApplication::UnicodeUTF8));
         actionProveedores->setShortcut(QApplication::translate("MainWindow", "Ctrl+D", 0, QApplication::UnicodeUTF8));
         actionCompras->setText(QApplication::translate("MainWindow", "Compras", 0, QApplication::UnicodeUTF8));
         actionCompras->setShortcut(QApplication::translate("MainWindow", "Ctrl+C", 0, QApplication::UnicodeUTF8));
+=======
+        actionGuardar->setText(QApplication::translate("MainWindow", "Guardar", 0, QApplication::UnicodeUTF8));
+#ifndef QT_NO_TOOLTIP
+        actionGuardar->setToolTip(QApplication::translate("MainWindow", "Guardar el registro en edici\303\263n", 0, QApplication::UnicodeUTF8));
+#endif // QT_NO_TOOLTIP
+        actionGuardar->setShortcut(QApplication::translate("MainWindow", "Ctrl+G", 0, QApplication::UnicodeUTF8));
+>>>>>>> Stashed changes
         toolBar_modulos->setWindowTitle(QApplication::translate("MainWindow", "toolBar", 0, QApplication::UnicodeUTF8));
         options_toolBar->setWindowTitle(QApplication::translate("MainWindow", "toolBar", 0, QApplication::UnicodeUTF8));
     } // retranslateUi
