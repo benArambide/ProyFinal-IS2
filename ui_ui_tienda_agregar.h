@@ -1,7 +1,7 @@
 /********************************************************************************
 ** Form generated from reading UI file 'ui_tienda_agregar.ui'
 **
-** Created: Tue Nov 20 11:36:28 2012
+** Created: Thu Dec 6 18:52:41 2012
 **      by: Qt User Interface Compiler version 4.8.3
 **
 ** WARNING! All changes made in this file will be lost when recompiling UI file!

@@ -30,6 +30,7 @@ protected:
   QDialog* makeBusquedaDialog(QWidget* form);
   QWidget * detalles_tab;
   QDataWidgetMapper * mapper;
+  QSqlQueryModel * queryModel;
 private slots:
   void on_list_tableView_activated(const QModelIndex &index);
 };

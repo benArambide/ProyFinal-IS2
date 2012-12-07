@@ -1,8 +1,8 @@
 /********************************************************************************
 ** Form generated from reading UI file 'ui_proveedores.ui'
 **
-** Created: Fri 30. Nov 13:51:45 2012
-**      by: Qt User Interface Compiler version 4.8.0
+** Created: Thu Dec 6 18:52:41 2012
+**      by: Qt User Interface Compiler version 4.8.3
 **
 ** WARNING! All changes made in this file will be lost when recompiling UI file!
 ********************************************************************************/

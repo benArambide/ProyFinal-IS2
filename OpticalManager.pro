@@ -62,7 +62,8 @@ SOURCES += main.cpp\
     ui_vitrina.cpp \
     andamio.cpp \
     contenedor.cpp \
-    almacen.cpp
+    almacen.cpp \
+    vitrina.cpp
 
 HEADERS  += mainwindow.h \
     sesion.h \
@@ -119,7 +120,8 @@ HEADERS  += mainwindow.h \
     andamio.h \
     contenedor.h \
     almacen.h \
-    ui_almacen_nuevo.h
+    ui_almacen_nuevo.h \
+    vitrina.h
 
 FORMS    += mainwindow.ui \
     ui_login.ui \

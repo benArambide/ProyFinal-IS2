@@ -1,13 +1,8 @@
 /********************************************************************************
 ** Form generated from reading UI file 'ui_tienda.ui'
 **
-<<<<<<< Updated upstream
-** Created: Sat Dec 1 15:01:41 2012
-**      by: Qt User Interface Compiler version 4.8.1
-=======
-** Created: Tue Nov 20 11:36:28 2012
+** Created: Thu Dec 6 18:52:41 2012
 **      by: Qt User Interface Compiler version 4.8.3
->>>>>>> Stashed changes
 **
 ** WARNING! All changes made in this file will be lost when recompiling UI file!
 ********************************************************************************/

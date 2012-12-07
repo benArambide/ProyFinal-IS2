@@ -10,7 +10,8 @@
 ModuloUsuarios::ModuloUsuarios(QWidget *parent) :
   ModuleInterface(parent,new ui_usuario_datos)
 {
-
+  ui_usuario_datos * data = (ui_usuario_datos *)this->detalles_tab;
+  connect(data->getUI()->pB_cambiarPass,SIGNAL(clicked()),SLOT(CambiarPass()));
 }
 
 void ModuloUsuarios::Buscar()
@@ -20,7 +21,7 @@ void ModuloUsuarios::Buscar()
   int result = dialogBuscar->exec();
   if(result == QDialog::Rejected)
     return;
-  QSqlQueryModel * queryModel = new QSqlQueryModel;
+  queryModel = new QSqlQueryModel;
   QString query = "call buscarUsuarios('%1','%2','%3','%4')";
   query = query.arg(b->ui->le_nick->text())
           .arg(b->ui->le_nombre->text())
@@ -49,8 +50,9 @@ void ModuloUsuarios::Buscar()
   mapper->addMapping(data->getUI()->le_numDoc, 9);
   mapper->addMapping(data->getUI()->le_Usuario, 4);
   mapper->addMapping(data->getUI()->de_fechaNac,queryModel->record().indexOf("F. Nacimiento"));
+  mapper->addMapping(data->getUI()->le_direccion,10);
   //qDebug()<<queryModel->record().indexOf("T. DI");
-  mapper->addMapping(data->getUI()->c_tDoc,queryModel->record().indexOf("T. DI"), "currentIndex");
+  //mapper->addMapping(data->getUI()->c_tDoc,queryModel->record().indexOf("T. DI"), "currentIndex");
 
   //mapper->addMapping(addressEdit, 1);
   //mapper->addMapping(typeComboBox, 2, "currentIndex");
@@ -63,4 +65,15 @@ void ModuloUsuarios::Guardar()
 {
   QSqlDatabase::database().tables();
 
+}
+
+void ModuloUsuarios::CambiarPass()
+{
+  int id = queryModel->record(mapper->currentIndex()).value("ID").toInt();
+  QSqlQuery query("call resetPass("+QString::number(id)+")");
+  bool ok = query.exec();
+  if(!ok)
+  {
+    QMessageBox::warning(0,"SQL error",query.lastError().text(),0,0);
+  }
 }

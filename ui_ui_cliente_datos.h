@@ -1,8 +1,8 @@
 /********************************************************************************
 ** Form generated from reading UI file 'ui_cliente_datos.ui'
 **
-** Created: Wed 28. Nov 23:58:26 2012
-**      by: Qt User Interface Compiler version 4.8.1
+** Created: Thu Dec 6 18:52:41 2012
+**      by: Qt User Interface Compiler version 4.8.3
 **
 ** WARNING! All changes made in this file will be lost when recompiling UI file!
 ********************************************************************************/
