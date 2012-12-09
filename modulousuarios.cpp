@@ -38,7 +38,7 @@ void ModuloUsuarios::Buscar()
   mapper = new QDataWidgetMapper(this);
   ui_usuario_datos * data = (ui_usuario_datos *)this->detalles_tab;
   QStringList items;
-  items << tr("DNI") << tr("CE");
+  items << "DNI" << "CE";
   QStringListModel* typeModel = new QStringListModel(items, this);
   data->getUI()->cB_tDoc->setModel(typeModel);
   mapper->setModel(queryModel);
@@ -47,12 +47,22 @@ void ModuloUsuarios::Buscar()
   mapper->addMapping(data->getUI()->le_pApellido, 0);
   mapper->addMapping(data->getUI()->le_sApellido, 1);
   mapper->addMapping(data->getUI()->le_nombre, 2);
-  mapper->addMapping(data->getUI()->le_numDoc, 9);
+  //mapper->addMapping(data->getUI()->le_nombre, 3); COMBO
   mapper->addMapping(data->getUI()->le_Usuario, 4);
-  mapper->addMapping(data->getUI()->de_fechaNac,queryModel->record().indexOf("F. Nacimiento"));
+  //mapper->addMapping(data->getUI()->le_nombre, 5); COMBO
+  //mapper->addMapping(data->getUI()->le_nombre, 6); HABILITADO
+  //mapper->addMapping(data->getUI()->le_nombre, 7); CAMBIAR CONTRASEÑA
+  //mapper->addMapping(data->getUI()->le_nombre, 8); COMBO TIPO_doc
+  mapper->addMapping(data->getUI()->le_numDoc, 9);
   mapper->addMapping(data->getUI()->le_direccion,10);
-  //qDebug()<<queryModel->record().indexOf("T. DI");
-  //mapper->addMapping(data->getUI()->c_tDoc,queryModel->record().indexOf("T. DI"), "currentIndex");
+  mapper->addMapping(data->getUI()->le_telf,11);
+  mapper->addMapping(data->getUI()->le_cell,12);
+  mapper->addMapping(data->getUI()->lE_telfFam,13);
+  mapper->addMapping(data->getUI()->de_fechaNac,14);
+  //mapper->addMapping(data->getUI()->de_fechaNac,15); SEXO
+  mapper->addMapping(data->getUI()->tE_obs,16);
+  //mapper->addMapping(data->getUI()->tE_obs,17); ID
+  mapper->addMapping(8, "currentText");
 
   //mapper->addMapping(addressEdit, 1);
   //mapper->addMapping(typeComboBox, 2, "currentIndex");
@@ -69,11 +79,19 @@ void ModuloUsuarios::Guardar()
 
 void ModuloUsuarios::CambiarPass()
 {
-  int id = queryModel->record(mapper->currentIndex()).value("ID").toInt();
-  QSqlQuery query("call resetPass("+QString::number(id)+")");
-  bool ok = query.exec();
-  if(!ok)
+  int resp = QMessageBox::question(this,"Cambio de Contraseña","¿Desea que el usuario actual cambie su contraseña en el siguiente inicio de sesion?",QMessageBox::Ok|QMessageBox::Cancel,QMessageBox::Ok);
+  if(resp==QMessageBox::Ok)
   {
-    QMessageBox::warning(0,"SQL error",query.lastError().text(),0,0);
+    int id = queryModel->record(mapper->currentIndex()).value("ID").toInt();
+    QSqlQuery query("call resetPass("+QString::number(id)+")");
+    bool ok = query.exec();
+    if(!ok)
+    {
+      QMessageBox::warning(0,"SQL error",query.lastError().text(),0,0);
+    }
+  }
+  else if(resp==QMessageBox::Cancel)
+  {
+    qDebug()<<"canceled";
   }
 }
