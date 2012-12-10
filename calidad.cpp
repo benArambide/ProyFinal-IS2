@@ -179,7 +179,7 @@ bool Calidad::agregar()
 
         if(query.exec()==true)
         {
-            query.prepare("SELECT idcalidad FROM calidad WHERE nombre='"+nombre+"'"); 
+            query.prepare("SELECT MAX(idcalidad) FROM calidad");
             query.exec();
             query.next();
             id=query.value(0).toInt();
