@@ -37,17 +37,17 @@ void tipodoc_ident::setSize(QString tmp)
 
 bool tipodoc_ident::agregar()
 {
-
+    return true;
 }
 
 bool tipodoc_ident::actualizar()
 {
-
+    return true;
 }
 
 bool tipodoc_ident::eliminar()
 {
-
+    return true;
 }
 
 QSqlQueryModel* tipodoc_ident::mostrar()

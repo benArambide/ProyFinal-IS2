@@ -60,7 +60,7 @@ QList<Tratamiento*> Tratamiento::listar()
 QSqlQueryModel* Tratamiento::listarNombres()
 {
     QSqlQueryModel* model=new QSqlQueryModel;
-    model->setQuery("select nombre from tratamiento");
+    model->setQuery("select tipo from tratamiento");
     return model;
 }
 
