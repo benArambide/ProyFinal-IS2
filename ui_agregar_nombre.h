@@ -11,6 +11,7 @@
 #include <tipoluna.h>
 #include <QIcon>
 #include <QDialog>
+#include <tratamiento.h>
 
 namespace Ui {
     class ui_agregar_nombre;

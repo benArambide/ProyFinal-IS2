@@ -1,8 +1,8 @@
 /********************************************************************************
 ** Form generated from reading UI file 'ui_producto_agregar_luna.ui'
 **
-** Created: Thu Dec 6 18:52:41 2012
-**      by: Qt User Interface Compiler version 4.8.3
+** Created: Sun Dec 9 21:18:23 2012
+**      by: Qt User Interface Compiler version 4.7.4
 **
 ** WARNING! All changes made in this file will be lost when recompiling UI file!
 ********************************************************************************/
@@ -15,14 +15,12 @@
 #include <QtGui/QApplication>
 #include <QtGui/QButtonGroup>
 #include <QtGui/QDialog>
-#include <QtGui/QDoubleSpinBox>
 #include <QtGui/QFrame>
 #include <QtGui/QGridLayout>
 #include <QtGui/QHBoxLayout>
 #include <QtGui/QHeaderView>
 #include <QtGui/QLabel>
 #include <QtGui/QLineEdit>
-#include <QtGui/QPlainTextEdit>
 #include <QtGui/QPushButton>
 #include <QtGui/QSpacerItem>
 #include <QtGui/QVBoxLayout>
@@ -51,7 +49,17 @@ public:
     QLineEdit *lineEdit_precio;
     QLineEdit *lineEdit_codigo;
     QLabel *label_2;
-    QPlainTextEdit *plainTextEdit_descripcion;
+    QLineEdit *descripcion;
+    QLabel *label_17;
+    QLineEdit *descripcion_2;
+    QLabel *label_15;
+    QHBoxLayout *horizontalLayout_3;
+    QLineEdit *descripcion_6;
+    QLabel *label_18;
+    QLabel *label_19;
+    QLabel *label_20;
+    QLineEdit *lineEdit_stock_2;
+    QLineEdit *lineEdit_stock_3;
     QSpacerItem *horizontalSpacer_3;
     QVBoxLayout *verticalLayout_8;
     QVBoxLayout *verticalLayout_3;
@@ -63,7 +71,7 @@ public:
     QVBoxLayout *verticalLayout_4;
     QLabel *label_9;
     QHBoxLayout *horizontalLayout_8;
-    MyComboBox *comboBox_indice_refraccion;
+    MyComboBox *comboBox_tratamiento;
     QPushButton *pushButton_xindice;
     QSpacerItem *verticalSpacer_7;
     QVBoxLayout *verticalLayout_5;
@@ -82,21 +90,19 @@ public:
     QLabel *label_12;
     QHBoxLayout *horizontalLayout_2;
     QLabel *label_16;
-    QPlainTextEdit *plainTextEdit_descripcionRM;
+    QLineEdit *descripcion_3;
     QHBoxLayout *horizontalLayout_11;
     QLabel *label_13;
-    QDoubleSpinBox *doubleSpinBox_valor_ini;
+    QLineEdit *descripcion_4;
     QSpacerItem *horizontalSpacer;
     QLabel *label_14;
-    QDoubleSpinBox *doubleSpinBox_valor_fin;
+    QLineEdit *descripcion_5;
     QHBoxLayout *horizontalLayout;
     QPushButton *pushButton_5;
     QPushButton *pushButton_cancelar;
     QSpacerItem *horizontalSpacer_2;
-    QSpacerItem *verticalSpacer;
+    QSpacerItem *verticalSpacer_2;
     QLabel *label;
-    QLineEdit *lineEdit_nombre;
-    QLabel *label_15;
     QFrame *line;
 
     void setupUi(QDialog *ui_producto_agregar_luna)
@@ -104,7 +110,7 @@ public:
         if (ui_producto_agregar_luna->objectName().isEmpty())
             ui_producto_agregar_luna->setObjectName(QString::fromUtf8("ui_producto_agregar_luna"));
         ui_producto_agregar_luna->setEnabled(true);
-        ui_producto_agregar_luna->resize(700, 522);
+        ui_producto_agregar_luna->resize(712, 522);
         ui_producto_agregar_luna->setMinimumSize(QSize(700, 522));
         ui_producto_agregar_luna->setMaximumSize(QSize(712, 522));
         ui_producto_agregar_luna->setContextMenuPolicy(Qt::NoContextMenu);
@@ -113,7 +119,7 @@ public:
         ui_producto_agregar_luna->setModal(false);
         verticalLayoutWidget = new QWidget(ui_producto_agregar_luna);
         verticalLayoutWidget->setObjectName(QString::fromUtf8("verticalLayoutWidget"));
-        verticalLayoutWidget->setGeometry(QRect(20, 70, 671, 441));
+        verticalLayoutWidget->setGeometry(QRect(20, 50, 681, 441));
         verticalLayout = new QVBoxLayout(verticalLayoutWidget);
         verticalLayout->setObjectName(QString::fromUtf8("verticalLayout"));
         verticalLayout->setContentsMargins(0, 0, 0, 0);
@@ -128,27 +134,27 @@ public:
         label_3 = new QLabel(verticalLayoutWidget);
         label_3->setObjectName(QString::fromUtf8("label_3"));
 
-        gridLayout->addWidget(label_3, 5, 0, 1, 1);
+        gridLayout->addWidget(label_3, 7, 0, 1, 1);
 
         lineEdit_accesorios = new QLineEdit(verticalLayoutWidget);
         lineEdit_accesorios->setObjectName(QString::fromUtf8("lineEdit_accesorios"));
 
-        gridLayout->addWidget(lineEdit_accesorios, 4, 1, 1, 1);
+        gridLayout->addWidget(lineEdit_accesorios, 6, 1, 1, 1);
 
         label_6 = new QLabel(verticalLayoutWidget);
         label_6->setObjectName(QString::fromUtf8("label_6"));
 
-        gridLayout->addWidget(label_6, 4, 0, 1, 1);
+        gridLayout->addWidget(label_6, 6, 0, 1, 1);
 
         label_7 = new QLabel(verticalLayoutWidget);
         label_7->setObjectName(QString::fromUtf8("label_7"));
 
-        gridLayout->addWidget(label_7, 3, 0, 1, 1);
+        gridLayout->addWidget(label_7, 5, 0, 1, 1);
 
         lineEdit_p_descuento = new QLineEdit(verticalLayoutWidget);
         lineEdit_p_descuento->setObjectName(QString::fromUtf8("lineEdit_p_descuento"));
 
-        gridLayout->addWidget(lineEdit_p_descuento, 3, 1, 1, 1);
+        gridLayout->addWidget(lineEdit_p_descuento, 5, 1, 1, 1);
 
         label_4 = new QLabel(verticalLayoutWidget);
         label_4->setObjectName(QString::fromUtf8("label_4"));
@@ -167,6 +173,7 @@ public:
 
         lineEdit_precio = new QLineEdit(verticalLayoutWidget);
         lineEdit_precio->setObjectName(QString::fromUtf8("lineEdit_precio"));
+        lineEdit_precio->setCursorPosition(0);
 
         gridLayout->addWidget(lineEdit_precio, 1, 1, 1, 1);
 
@@ -180,11 +187,66 @@ public:
 
         gridLayout->addWidget(label_2, 0, 0, 1, 1);
 
-        plainTextEdit_descripcion = new QPlainTextEdit(verticalLayoutWidget);
-        plainTextEdit_descripcion->setObjectName(QString::fromUtf8("plainTextEdit_descripcion"));
-        plainTextEdit_descripcion->setMaximumSize(QSize(140, 100));
+        descripcion = new QLineEdit(verticalLayoutWidget);
+        descripcion->setObjectName(QString::fromUtf8("descripcion"));
+        descripcion->setMinimumSize(QSize(190, 0));
 
-        gridLayout->addWidget(plainTextEdit_descripcion, 5, 1, 1, 1);
+        gridLayout->addWidget(descripcion, 7, 1, 1, 1);
+
+        label_17 = new QLabel(verticalLayoutWidget);
+        label_17->setObjectName(QString::fromUtf8("label_17"));
+
+        gridLayout->addWidget(label_17, 8, 0, 1, 1);
+
+        descripcion_2 = new QLineEdit(verticalLayoutWidget);
+        descripcion_2->setObjectName(QString::fromUtf8("descripcion_2"));
+        descripcion_2->setMinimumSize(QSize(190, 0));
+        descripcion_2->setCursorPosition(0);
+
+        gridLayout->addWidget(descripcion_2, 8, 1, 1, 1);
+
+        label_15 = new QLabel(verticalLayoutWidget);
+        label_15->setObjectName(QString::fromUtf8("label_15"));
+        label_15->setMaximumSize(QSize(16777215, 35));
+
+        gridLayout->addWidget(label_15, 9, 0, 1, 1);
+
+        horizontalLayout_3 = new QHBoxLayout();
+        horizontalLayout_3->setObjectName(QString::fromUtf8("horizontalLayout_3"));
+        descripcion_6 = new QLineEdit(verticalLayoutWidget);
+        descripcion_6->setObjectName(QString::fromUtf8("descripcion_6"));
+        descripcion_6->setMinimumSize(QSize(120, 0));
+        descripcion_6->setMaximumSize(QSize(80, 16777215));
+
+        horizontalLayout_3->addWidget(descripcion_6);
+
+        label_18 = new QLabel(verticalLayoutWidget);
+        label_18->setObjectName(QString::fromUtf8("label_18"));
+
+        horizontalLayout_3->addWidget(label_18);
+
+
+        gridLayout->addLayout(horizontalLayout_3, 9, 1, 1, 1);
+
+        label_19 = new QLabel(verticalLayoutWidget);
+        label_19->setObjectName(QString::fromUtf8("label_19"));
+
+        gridLayout->addWidget(label_19, 4, 0, 1, 1);
+
+        label_20 = new QLabel(verticalLayoutWidget);
+        label_20->setObjectName(QString::fromUtf8("label_20"));
+
+        gridLayout->addWidget(label_20, 3, 0, 1, 1);
+
+        lineEdit_stock_2 = new QLineEdit(verticalLayoutWidget);
+        lineEdit_stock_2->setObjectName(QString::fromUtf8("lineEdit_stock_2"));
+
+        gridLayout->addWidget(lineEdit_stock_2, 3, 1, 1, 1);
+
+        lineEdit_stock_3 = new QLineEdit(verticalLayoutWidget);
+        lineEdit_stock_3->setObjectName(QString::fromUtf8("lineEdit_stock_3"));
+
+        gridLayout->addWidget(lineEdit_stock_3, 4, 1, 1, 1);
 
 
         horizontalLayout_12->addLayout(gridLayout);
@@ -261,12 +323,12 @@ public:
 
         horizontalLayout_8 = new QHBoxLayout();
         horizontalLayout_8->setObjectName(QString::fromUtf8("horizontalLayout_8"));
-        comboBox_indice_refraccion = new MyComboBox(verticalLayoutWidget);
-        comboBox_indice_refraccion->setObjectName(QString::fromUtf8("comboBox_indice_refraccion"));
-        sizePolicy1.setHeightForWidth(comboBox_indice_refraccion->sizePolicy().hasHeightForWidth());
-        comboBox_indice_refraccion->setSizePolicy(sizePolicy1);
+        comboBox_tratamiento = new MyComboBox(verticalLayoutWidget);
+        comboBox_tratamiento->setObjectName(QString::fromUtf8("comboBox_tratamiento"));
+        sizePolicy1.setHeightForWidth(comboBox_tratamiento->sizePolicy().hasHeightForWidth());
+        comboBox_tratamiento->setSizePolicy(sizePolicy1);
 
-        horizontalLayout_8->addWidget(comboBox_indice_refraccion);
+        horizontalLayout_8->addWidget(comboBox_tratamiento);
 
         pushButton_xindice = new QPushButton(verticalLayoutWidget);
         pushButton_xindice->setObjectName(QString::fromUtf8("pushButton_xindice"));
@@ -378,17 +440,10 @@ public:
 
         horizontalLayout_2->addWidget(label_16);
 
-        plainTextEdit_descripcionRM = new QPlainTextEdit(verticalLayoutWidget);
-        plainTextEdit_descripcionRM->setObjectName(QString::fromUtf8("plainTextEdit_descripcionRM"));
-        QSizePolicy sizePolicy3(QSizePolicy::MinimumExpanding, QSizePolicy::Expanding);
-        sizePolicy3.setHorizontalStretch(0);
-        sizePolicy3.setVerticalStretch(0);
-        sizePolicy3.setHeightForWidth(plainTextEdit_descripcionRM->sizePolicy().hasHeightForWidth());
-        plainTextEdit_descripcionRM->setSizePolicy(sizePolicy3);
-        plainTextEdit_descripcionRM->setMinimumSize(QSize(0, 0));
-        plainTextEdit_descripcionRM->setMaximumSize(QSize(200, 60));
+        descripcion_3 = new QLineEdit(verticalLayoutWidget);
+        descripcion_3->setObjectName(QString::fromUtf8("descripcion_3"));
 
-        horizontalLayout_2->addWidget(plainTextEdit_descripcionRM);
+        horizontalLayout_2->addWidget(descripcion_3);
 
 
         verticalLayout_7->addLayout(horizontalLayout_2);
@@ -400,12 +455,16 @@ public:
 
         horizontalLayout_11->addWidget(label_13);
 
-        doubleSpinBox_valor_ini = new QDoubleSpinBox(verticalLayoutWidget);
-        doubleSpinBox_valor_ini->setObjectName(QString::fromUtf8("doubleSpinBox_valor_ini"));
-        doubleSpinBox_valor_ini->setMaximum(10);
-        doubleSpinBox_valor_ini->setSingleStep(0.1);
+        descripcion_4 = new QLineEdit(verticalLayoutWidget);
+        descripcion_4->setObjectName(QString::fromUtf8("descripcion_4"));
+        QSizePolicy sizePolicy3(QSizePolicy::Maximum, QSizePolicy::Fixed);
+        sizePolicy3.setHorizontalStretch(0);
+        sizePolicy3.setVerticalStretch(0);
+        sizePolicy3.setHeightForWidth(descripcion_4->sizePolicy().hasHeightForWidth());
+        descripcion_4->setSizePolicy(sizePolicy3);
+        descripcion_4->setMaximumSize(QSize(60, 27));
 
-        horizontalLayout_11->addWidget(doubleSpinBox_valor_ini);
+        horizontalLayout_11->addWidget(descripcion_4);
 
         horizontalSpacer = new QSpacerItem(40, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
 
@@ -416,12 +475,11 @@ public:
 
         horizontalLayout_11->addWidget(label_14);
 
-        doubleSpinBox_valor_fin = new QDoubleSpinBox(verticalLayoutWidget);
-        doubleSpinBox_valor_fin->setObjectName(QString::fromUtf8("doubleSpinBox_valor_fin"));
-        doubleSpinBox_valor_fin->setMaximum(10.99);
-        doubleSpinBox_valor_fin->setSingleStep(0.1);
+        descripcion_5 = new QLineEdit(verticalLayoutWidget);
+        descripcion_5->setObjectName(QString::fromUtf8("descripcion_5"));
+        descripcion_5->setMaximumSize(QSize(50, 16777215));
 
-        horizontalLayout_11->addWidget(doubleSpinBox_valor_fin);
+        horizontalLayout_11->addWidget(descripcion_5);
 
 
         verticalLayout_7->addLayout(horizontalLayout_11);
@@ -451,27 +509,41 @@ public:
 
         gridLayout_3->addItem(horizontalSpacer_2, 0, 1, 1, 1);
 
-        verticalSpacer = new QSpacerItem(6, 35, QSizePolicy::Minimum, QSizePolicy::Maximum);
+        verticalSpacer_2 = new QSpacerItem(20, 40, QSizePolicy::Minimum, QSizePolicy::Expanding);
 
-        gridLayout_3->addItem(verticalSpacer, 1, 0, 1, 1);
+        gridLayout_3->addItem(verticalSpacer_2, 1, 1, 1, 1);
 
 
         verticalLayout->addLayout(gridLayout_3);
 
         label = new QLabel(ui_producto_agregar_luna);
         label->setObjectName(QString::fromUtf8("label"));
-        label->setGeometry(QRect(20, 10, 131, 31));
-        lineEdit_nombre = new QLineEdit(ui_producto_agregar_luna);
-        lineEdit_nombre->setObjectName(QString::fromUtf8("lineEdit_nombre"));
-        lineEdit_nombre->setGeometry(QRect(370, 20, 321, 27));
-        label_15 = new QLabel(ui_producto_agregar_luna);
-        label_15->setObjectName(QString::fromUtf8("label_15"));
-        label_15->setGeometry(QRect(300, 20, 67, 17));
+        label->setGeometry(QRect(20, 0, 131, 31));
         line = new QFrame(ui_producto_agregar_luna);
         line->setObjectName(QString::fromUtf8("line"));
-        line->setGeometry(QRect(0, 50, 701, 21));
+        line->setGeometry(QRect(10, 30, 701, 21));
         line->setFrameShape(QFrame::HLine);
         line->setFrameShadow(QFrame::Sunken);
+        QWidget::setTabOrder(lineEdit_codigo, lineEdit_precio);
+        QWidget::setTabOrder(lineEdit_precio, lineEdit_stock);
+        QWidget::setTabOrder(lineEdit_stock, lineEdit_p_descuento);
+        QWidget::setTabOrder(lineEdit_p_descuento, lineEdit_accesorios);
+        QWidget::setTabOrder(lineEdit_accesorios, descripcion);
+        QWidget::setTabOrder(descripcion, descripcion_2);
+        QWidget::setTabOrder(descripcion_2, descripcion_6);
+        QWidget::setTabOrder(descripcion_6, comboBox_marca);
+        QWidget::setTabOrder(comboBox_marca, comboBox_tratamiento);
+        QWidget::setTabOrder(comboBox_tratamiento, comboBox_tipo_luna);
+        QWidget::setTabOrder(comboBox_tipo_luna, comboBox_calidad);
+        QWidget::setTabOrder(comboBox_calidad, descripcion_3);
+        QWidget::setTabOrder(descripcion_3, descripcion_4);
+        QWidget::setTabOrder(descripcion_4, descripcion_5);
+        QWidget::setTabOrder(descripcion_5, pushButton_5);
+        QWidget::setTabOrder(pushButton_5, pushButton_cancelar);
+        QWidget::setTabOrder(pushButton_cancelar, pushButton_xcalidad);
+        QWidget::setTabOrder(pushButton_xcalidad, pushButton_xindice);
+        QWidget::setTabOrder(pushButton_xindice, pushButton_xmarca);
+        QWidget::setTabOrder(pushButton_xmarca, pushButton_xtipo);
 
         retranslateUi(ui_producto_agregar_luna);
 
@@ -487,9 +559,14 @@ public:
         label_4->setText(QApplication::translate("ui_producto_agregar_luna", "Stock", 0, QApplication::UnicodeUTF8));
         label_5->setText(QApplication::translate("ui_producto_agregar_luna", "Precio", 0, QApplication::UnicodeUTF8));
         label_2->setText(QApplication::translate("ui_producto_agregar_luna", "Codigo", 0, QApplication::UnicodeUTF8));
+        label_17->setText(QApplication::translate("ui_producto_agregar_luna", "Indice de Refraccion", 0, QApplication::UnicodeUTF8));
+        label_15->setText(QApplication::translate("ui_producto_agregar_luna", "Diametro", 0, QApplication::UnicodeUTF8));
+        label_18->setText(QApplication::translate("ui_producto_agregar_luna", "mm", 0, QApplication::UnicodeUTF8));
+        label_19->setText(QApplication::translate("ui_producto_agregar_luna", "Precio De Venta", 0, QApplication::UnicodeUTF8));
+        label_20->setText(QApplication::translate("ui_producto_agregar_luna", "Precio de Compra", 0, QApplication::UnicodeUTF8));
         label_8->setText(QApplication::translate("ui_producto_agregar_luna", "Marca", 0, QApplication::UnicodeUTF8));
         pushButton_xmarca->setText(QString());
-        label_9->setText(QApplication::translate("ui_producto_agregar_luna", "Indice de Refraccion", 0, QApplication::UnicodeUTF8));
+        label_9->setText(QApplication::translate("ui_producto_agregar_luna", "Tratamiento", 0, QApplication::UnicodeUTF8));
         pushButton_xindice->setText(QString());
         label_10->setText(QApplication::translate("ui_producto_agregar_luna", "Tipo de  Luna", 0, QApplication::UnicodeUTF8));
         pushButton_xtipo->setText(QString());
@@ -502,7 +579,6 @@ public:
         pushButton_5->setText(QApplication::translate("ui_producto_agregar_luna", "Agregar", 0, QApplication::UnicodeUTF8));
         pushButton_cancelar->setText(QApplication::translate("ui_producto_agregar_luna", "Cancelar", 0, QApplication::UnicodeUTF8));
         label->setText(QApplication::translate("ui_producto_agregar_luna", "Agregar Luna", 0, QApplication::UnicodeUTF8));
-        label_15->setText(QApplication::translate("ui_producto_agregar_luna", "Nombre", 0, QApplication::UnicodeUTF8));
     } // retranslateUi
 
 };

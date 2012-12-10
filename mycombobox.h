@@ -14,6 +14,7 @@
 #include <QIcon>
 #include <ui_agregar_nombre.h>
 #include <ui_agregar_nomdesc.h>
+#include <tratamiento.h>
 
 
 

@@ -1,8 +1,8 @@
 /********************************************************************************
 ** Form generated from reading UI file 'ui_producto_agregar_montura.ui'
 **
-** Created: Thu Dec 6 18:52:41 2012
-**      by: Qt User Interface Compiler version 4.8.3
+** Created: Sun Dec 9 21:18:23 2012
+**      by: Qt User Interface Compiler version 4.7.4
 **
 ** WARNING! All changes made in this file will be lost when recompiling UI file!
 ********************************************************************************/
@@ -21,7 +21,6 @@
 #include <QtGui/QHeaderView>
 #include <QtGui/QLabel>
 #include <QtGui/QLineEdit>
-#include <QtGui/QPlainTextEdit>
 #include <QtGui/QPushButton>
 #include <QtGui/QSpacerItem>
 #include <QtGui/QVBoxLayout>
@@ -34,13 +33,10 @@ class Ui_ui_producto_agregar_montura
 {
 public:
     QLabel *label;
-    QLineEdit *lineEdit_nombre;
-    QLabel *label_12;
     QWidget *gridLayoutWidget_2;
     QGridLayout *gridLayout_2;
     QGridLayout *gridLayout;
     QLabel *label_3;
-    QPlainTextEdit *plainTextEdit_descripcion;
     QLabel *label_6;
     QLineEdit *lineEdit_accesorios;
     QLabel *label_7;
@@ -52,6 +48,11 @@ public:
     QLabel *label_2;
     QLineEdit *lineEdit_codigo;
     QSpacerItem *horizontalSpacer;
+    QLineEdit *lineEdit_accesorios_2;
+    QLabel *label_12;
+    QLineEdit *lineEdit_accesorios_3;
+    QLabel *label_13;
+    QLineEdit *lineEdit_accesorios_4;
     QVBoxLayout *verticalLayout_8;
     QVBoxLayout *verticalLayout_3;
     QLabel *label_8;
@@ -100,15 +101,9 @@ public:
         label = new QLabel(ui_producto_agregar_montura);
         label->setObjectName(QString::fromUtf8("label"));
         label->setGeometry(QRect(10, 0, 121, 41));
-        lineEdit_nombre = new QLineEdit(ui_producto_agregar_montura);
-        lineEdit_nombre->setObjectName(QString::fromUtf8("lineEdit_nombre"));
-        lineEdit_nombre->setGeometry(QRect(320, 20, 321, 27));
-        label_12 = new QLabel(ui_producto_agregar_montura);
-        label_12->setObjectName(QString::fromUtf8("label_12"));
-        label_12->setGeometry(QRect(230, 10, 71, 41));
         gridLayoutWidget_2 = new QWidget(ui_producto_agregar_montura);
         gridLayoutWidget_2->setObjectName(QString::fromUtf8("gridLayoutWidget_2"));
-        gridLayoutWidget_2->setGeometry(QRect(10, 80, 631, 405));
+        gridLayoutWidget_2->setGeometry(QRect(20, 50, 631, 405));
         gridLayout_2 = new QGridLayout(gridLayoutWidget_2);
         gridLayout_2->setObjectName(QString::fromUtf8("gridLayout_2"));
         gridLayout_2->setContentsMargins(0, 0, 0, 0);
@@ -117,38 +112,28 @@ public:
         label_3 = new QLabel(gridLayoutWidget_2);
         label_3->setObjectName(QString::fromUtf8("label_3"));
 
-        gridLayout->addWidget(label_3, 5, 0, 1, 1);
-
-        plainTextEdit_descripcion = new QPlainTextEdit(gridLayoutWidget_2);
-        plainTextEdit_descripcion->setObjectName(QString::fromUtf8("plainTextEdit_descripcion"));
-        QSizePolicy sizePolicy(QSizePolicy::Expanding, QSizePolicy::MinimumExpanding);
-        sizePolicy.setHorizontalStretch(0);
-        sizePolicy.setVerticalStretch(0);
-        sizePolicy.setHeightForWidth(plainTextEdit_descripcion->sizePolicy().hasHeightForWidth());
-        plainTextEdit_descripcion->setSizePolicy(sizePolicy);
-        plainTextEdit_descripcion->setMaximumSize(QSize(200, 130));
-
-        gridLayout->addWidget(plainTextEdit_descripcion, 5, 1, 1, 1);
+        gridLayout->addWidget(label_3, 8, 0, 1, 1);
 
         label_6 = new QLabel(gridLayoutWidget_2);
         label_6->setObjectName(QString::fromUtf8("label_6"));
 
-        gridLayout->addWidget(label_6, 4, 0, 1, 1);
+        gridLayout->addWidget(label_6, 7, 0, 1, 1);
 
         lineEdit_accesorios = new QLineEdit(gridLayoutWidget_2);
         lineEdit_accesorios->setObjectName(QString::fromUtf8("lineEdit_accesorios"));
 
-        gridLayout->addWidget(lineEdit_accesorios, 4, 1, 1, 1);
+        gridLayout->addWidget(lineEdit_accesorios, 7, 1, 1, 1);
 
         label_7 = new QLabel(gridLayoutWidget_2);
         label_7->setObjectName(QString::fromUtf8("label_7"));
 
-        gridLayout->addWidget(label_7, 3, 0, 1, 1);
+        gridLayout->addWidget(label_7, 5, 0, 1, 1);
 
         lineEdit_p_descuento = new QLineEdit(gridLayoutWidget_2);
         lineEdit_p_descuento->setObjectName(QString::fromUtf8("lineEdit_p_descuento"));
+        lineEdit_p_descuento->setMinimumSize(QSize(170, 0));
 
-        gridLayout->addWidget(lineEdit_p_descuento, 3, 1, 1, 1);
+        gridLayout->addWidget(lineEdit_p_descuento, 5, 1, 1, 1);
 
         label_4 = new QLabel(gridLayoutWidget_2);
         label_4->setObjectName(QString::fromUtf8("label_4"));
@@ -180,9 +165,34 @@ public:
 
         gridLayout->addWidget(lineEdit_codigo, 0, 1, 1, 1);
 
-        horizontalSpacer = new QSpacerItem(40, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
+        horizontalSpacer = new QSpacerItem(20, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
 
-        gridLayout->addItem(horizontalSpacer, 5, 2, 1, 1);
+        gridLayout->addItem(horizontalSpacer, 8, 2, 1, 1);
+
+        lineEdit_accesorios_2 = new QLineEdit(gridLayoutWidget_2);
+        lineEdit_accesorios_2->setObjectName(QString::fromUtf8("lineEdit_accesorios_2"));
+
+        gridLayout->addWidget(lineEdit_accesorios_2, 8, 1, 1, 1);
+
+        label_12 = new QLabel(gridLayoutWidget_2);
+        label_12->setObjectName(QString::fromUtf8("label_12"));
+
+        gridLayout->addWidget(label_12, 4, 0, 1, 1);
+
+        lineEdit_accesorios_3 = new QLineEdit(gridLayoutWidget_2);
+        lineEdit_accesorios_3->setObjectName(QString::fromUtf8("lineEdit_accesorios_3"));
+
+        gridLayout->addWidget(lineEdit_accesorios_3, 4, 1, 1, 1);
+
+        label_13 = new QLabel(gridLayoutWidget_2);
+        label_13->setObjectName(QString::fromUtf8("label_13"));
+
+        gridLayout->addWidget(label_13, 3, 0, 1, 1);
+
+        lineEdit_accesorios_4 = new QLineEdit(gridLayoutWidget_2);
+        lineEdit_accesorios_4->setObjectName(QString::fromUtf8("lineEdit_accesorios_4"));
+
+        gridLayout->addWidget(lineEdit_accesorios_4, 3, 1, 1, 1);
 
 
         gridLayout_2->addLayout(gridLayout, 0, 2, 1, 1);
@@ -193,11 +203,11 @@ public:
         verticalLayout_3->setObjectName(QString::fromUtf8("verticalLayout_3"));
         label_8 = new QLabel(gridLayoutWidget_2);
         label_8->setObjectName(QString::fromUtf8("label_8"));
-        QSizePolicy sizePolicy1(QSizePolicy::Preferred, QSizePolicy::Preferred);
-        sizePolicy1.setHorizontalStretch(0);
-        sizePolicy1.setVerticalStretch(0);
-        sizePolicy1.setHeightForWidth(label_8->sizePolicy().hasHeightForWidth());
-        label_8->setSizePolicy(sizePolicy1);
+        QSizePolicy sizePolicy(QSizePolicy::Preferred, QSizePolicy::Preferred);
+        sizePolicy.setHorizontalStretch(0);
+        sizePolicy.setVerticalStretch(0);
+        sizePolicy.setHeightForWidth(label_8->sizePolicy().hasHeightForWidth());
+        label_8->setSizePolicy(sizePolicy);
 
         verticalLayout_3->addWidget(label_8);
 
@@ -205,21 +215,21 @@ public:
         horizontalLayout_7->setObjectName(QString::fromUtf8("horizontalLayout_7"));
         myComboBox_marca = new MyComboBox(gridLayoutWidget_2);
         myComboBox_marca->setObjectName(QString::fromUtf8("myComboBox_marca"));
-        QSizePolicy sizePolicy2(QSizePolicy::Expanding, QSizePolicy::Fixed);
-        sizePolicy2.setHorizontalStretch(0);
-        sizePolicy2.setVerticalStretch(0);
-        sizePolicy2.setHeightForWidth(myComboBox_marca->sizePolicy().hasHeightForWidth());
-        myComboBox_marca->setSizePolicy(sizePolicy2);
+        QSizePolicy sizePolicy1(QSizePolicy::Expanding, QSizePolicy::Fixed);
+        sizePolicy1.setHorizontalStretch(0);
+        sizePolicy1.setVerticalStretch(0);
+        sizePolicy1.setHeightForWidth(myComboBox_marca->sizePolicy().hasHeightForWidth());
+        myComboBox_marca->setSizePolicy(sizePolicy1);
 
         horizontalLayout_7->addWidget(myComboBox_marca);
 
         pushButton_xmarca = new QPushButton(gridLayoutWidget_2);
         pushButton_xmarca->setObjectName(QString::fromUtf8("pushButton_xmarca"));
-        QSizePolicy sizePolicy3(QSizePolicy::Fixed, QSizePolicy::Fixed);
-        sizePolicy3.setHorizontalStretch(0);
-        sizePolicy3.setVerticalStretch(0);
-        sizePolicy3.setHeightForWidth(pushButton_xmarca->sizePolicy().hasHeightForWidth());
-        pushButton_xmarca->setSizePolicy(sizePolicy3);
+        QSizePolicy sizePolicy2(QSizePolicy::Fixed, QSizePolicy::Fixed);
+        sizePolicy2.setHorizontalStretch(0);
+        sizePolicy2.setVerticalStretch(0);
+        sizePolicy2.setHeightForWidth(pushButton_xmarca->sizePolicy().hasHeightForWidth());
+        pushButton_xmarca->setSizePolicy(sizePolicy2);
         QIcon icon;
         icon.addFile(QString::fromUtf8(":/Icons/1349716373_monotone_close_exit_delete_small.png"), QSize(), QIcon::Normal, QIcon::Off);
         pushButton_xmarca->setIcon(icon);
@@ -242,8 +252,8 @@ public:
         verticalLayout_4->setObjectName(QString::fromUtf8("verticalLayout_4"));
         label_9 = new QLabel(gridLayoutWidget_2);
         label_9->setObjectName(QString::fromUtf8("label_9"));
-        sizePolicy1.setHeightForWidth(label_9->sizePolicy().hasHeightForWidth());
-        label_9->setSizePolicy(sizePolicy1);
+        sizePolicy.setHeightForWidth(label_9->sizePolicy().hasHeightForWidth());
+        label_9->setSizePolicy(sizePolicy);
 
         verticalLayout_4->addWidget(label_9);
 
@@ -251,15 +261,15 @@ public:
         horizontalLayout_8->setObjectName(QString::fromUtf8("horizontalLayout_8"));
         comboBox_tamanio = new MyComboBox(gridLayoutWidget_2);
         comboBox_tamanio->setObjectName(QString::fromUtf8("comboBox_tamanio"));
-        sizePolicy2.setHeightForWidth(comboBox_tamanio->sizePolicy().hasHeightForWidth());
-        comboBox_tamanio->setSizePolicy(sizePolicy2);
+        sizePolicy1.setHeightForWidth(comboBox_tamanio->sizePolicy().hasHeightForWidth());
+        comboBox_tamanio->setSizePolicy(sizePolicy1);
 
         horizontalLayout_8->addWidget(comboBox_tamanio);
 
         pushButton_xtamanio = new QPushButton(gridLayoutWidget_2);
         pushButton_xtamanio->setObjectName(QString::fromUtf8("pushButton_xtamanio"));
-        sizePolicy3.setHeightForWidth(pushButton_xtamanio->sizePolicy().hasHeightForWidth());
-        pushButton_xtamanio->setSizePolicy(sizePolicy3);
+        sizePolicy2.setHeightForWidth(pushButton_xtamanio->sizePolicy().hasHeightForWidth());
+        pushButton_xtamanio->setSizePolicy(sizePolicy2);
         pushButton_xtamanio->setIcon(icon);
         pushButton_xtamanio->setAutoDefault(false);
         pushButton_xtamanio->setFlat(true);
@@ -280,8 +290,8 @@ public:
         verticalLayout_5->setObjectName(QString::fromUtf8("verticalLayout_5"));
         label_10 = new QLabel(gridLayoutWidget_2);
         label_10->setObjectName(QString::fromUtf8("label_10"));
-        sizePolicy1.setHeightForWidth(label_10->sizePolicy().hasHeightForWidth());
-        label_10->setSizePolicy(sizePolicy1);
+        sizePolicy.setHeightForWidth(label_10->sizePolicy().hasHeightForWidth());
+        label_10->setSizePolicy(sizePolicy);
 
         verticalLayout_5->addWidget(label_10);
 
@@ -289,15 +299,15 @@ public:
         horizontalLayout_9->setObjectName(QString::fromUtf8("horizontalLayout_9"));
         comboBox_forma = new MyComboBox(gridLayoutWidget_2);
         comboBox_forma->setObjectName(QString::fromUtf8("comboBox_forma"));
-        sizePolicy2.setHeightForWidth(comboBox_forma->sizePolicy().hasHeightForWidth());
-        comboBox_forma->setSizePolicy(sizePolicy2);
+        sizePolicy1.setHeightForWidth(comboBox_forma->sizePolicy().hasHeightForWidth());
+        comboBox_forma->setSizePolicy(sizePolicy1);
 
         horizontalLayout_9->addWidget(comboBox_forma);
 
         pushButton_xforma = new QPushButton(gridLayoutWidget_2);
         pushButton_xforma->setObjectName(QString::fromUtf8("pushButton_xforma"));
-        sizePolicy3.setHeightForWidth(pushButton_xforma->sizePolicy().hasHeightForWidth());
-        pushButton_xforma->setSizePolicy(sizePolicy3);
+        sizePolicy2.setHeightForWidth(pushButton_xforma->sizePolicy().hasHeightForWidth());
+        pushButton_xforma->setSizePolicy(sizePolicy2);
         pushButton_xforma->setIcon(icon);
         pushButton_xforma->setAutoDefault(false);
         pushButton_xforma->setFlat(true);
@@ -318,8 +328,8 @@ public:
         verticalLayout_6->setObjectName(QString::fromUtf8("verticalLayout_6"));
         label_11 = new QLabel(gridLayoutWidget_2);
         label_11->setObjectName(QString::fromUtf8("label_11"));
-        sizePolicy1.setHeightForWidth(label_11->sizePolicy().hasHeightForWidth());
-        label_11->setSizePolicy(sizePolicy1);
+        sizePolicy.setHeightForWidth(label_11->sizePolicy().hasHeightForWidth());
+        label_11->setSizePolicy(sizePolicy);
 
         verticalLayout_6->addWidget(label_11);
 
@@ -327,15 +337,15 @@ public:
         horizontalLayout_10->setObjectName(QString::fromUtf8("horizontalLayout_10"));
         comboBox_calidad = new MyComboBox(gridLayoutWidget_2);
         comboBox_calidad->setObjectName(QString::fromUtf8("comboBox_calidad"));
-        sizePolicy2.setHeightForWidth(comboBox_calidad->sizePolicy().hasHeightForWidth());
-        comboBox_calidad->setSizePolicy(sizePolicy2);
+        sizePolicy1.setHeightForWidth(comboBox_calidad->sizePolicy().hasHeightForWidth());
+        comboBox_calidad->setSizePolicy(sizePolicy1);
 
         horizontalLayout_10->addWidget(comboBox_calidad);
 
         pushButton_4 = new QPushButton(gridLayoutWidget_2);
         pushButton_4->setObjectName(QString::fromUtf8("pushButton_4"));
-        sizePolicy3.setHeightForWidth(pushButton_4->sizePolicy().hasHeightForWidth());
-        pushButton_4->setSizePolicy(sizePolicy3);
+        sizePolicy2.setHeightForWidth(pushButton_4->sizePolicy().hasHeightForWidth());
+        pushButton_4->setSizePolicy(sizePolicy2);
         pushButton_4->setIcon(icon);
         pushButton_4->setAutoDefault(false);
         pushButton_4->setFlat(true);
@@ -356,8 +366,8 @@ public:
         verticalLayout_10->setObjectName(QString::fromUtf8("verticalLayout_10"));
         label_15 = new QLabel(gridLayoutWidget_2);
         label_15->setObjectName(QString::fromUtf8("label_15"));
-        sizePolicy1.setHeightForWidth(label_15->sizePolicy().hasHeightForWidth());
-        label_15->setSizePolicy(sizePolicy1);
+        sizePolicy.setHeightForWidth(label_15->sizePolicy().hasHeightForWidth());
+        label_15->setSizePolicy(sizePolicy);
 
         verticalLayout_10->addWidget(label_15);
 
@@ -365,15 +375,15 @@ public:
         horizontalLayout_14->setObjectName(QString::fromUtf8("horizontalLayout_14"));
         comboBox_color = new MyComboBox(gridLayoutWidget_2);
         comboBox_color->setObjectName(QString::fromUtf8("comboBox_color"));
-        sizePolicy2.setHeightForWidth(comboBox_color->sizePolicy().hasHeightForWidth());
-        comboBox_color->setSizePolicy(sizePolicy2);
+        sizePolicy1.setHeightForWidth(comboBox_color->sizePolicy().hasHeightForWidth());
+        comboBox_color->setSizePolicy(sizePolicy1);
 
         horizontalLayout_14->addWidget(comboBox_color);
 
         pushButton_8 = new QPushButton(gridLayoutWidget_2);
         pushButton_8->setObjectName(QString::fromUtf8("pushButton_8"));
-        sizePolicy3.setHeightForWidth(pushButton_8->sizePolicy().hasHeightForWidth());
-        pushButton_8->setSizePolicy(sizePolicy3);
+        sizePolicy2.setHeightForWidth(pushButton_8->sizePolicy().hasHeightForWidth());
+        pushButton_8->setSizePolicy(sizePolicy2);
         pushButton_8->setIcon(icon);
         pushButton_8->setAutoDefault(false);
         pushButton_8->setFlat(true);
@@ -419,7 +429,7 @@ public:
 
         line = new QFrame(ui_producto_agregar_montura);
         line->setObjectName(QString::fromUtf8("line"));
-        line->setGeometry(QRect(0, 50, 741, 21));
+        line->setGeometry(QRect(0, 30, 741, 21));
         line->setFrameShape(QFrame::HLine);
         line->setFrameShadow(QFrame::Sunken);
 
@@ -432,13 +442,14 @@ public:
     {
         ui_producto_agregar_montura->setWindowTitle(QApplication::translate("ui_producto_agregar_montura", "Agregar Montura", 0, QApplication::UnicodeUTF8));
         label->setText(QApplication::translate("ui_producto_agregar_montura", "Agregar Montura", 0, QApplication::UnicodeUTF8));
-        label_12->setText(QApplication::translate("ui_producto_agregar_montura", "Nombre", 0, QApplication::UnicodeUTF8));
         label_3->setText(QApplication::translate("ui_producto_agregar_montura", "Descripcion", 0, QApplication::UnicodeUTF8));
         label_6->setText(QApplication::translate("ui_producto_agregar_montura", "Accesorios", 0, QApplication::UnicodeUTF8));
-        label_7->setText(QApplication::translate("ui_producto_agregar_montura", "Precio Descuento", 0, QApplication::UnicodeUTF8));
+        label_7->setText(QApplication::translate("ui_producto_agregar_montura", "Precio De Descuento", 0, QApplication::UnicodeUTF8));
         label_4->setText(QApplication::translate("ui_producto_agregar_montura", "Stock", 0, QApplication::UnicodeUTF8));
         label_5->setText(QApplication::translate("ui_producto_agregar_montura", "Precio", 0, QApplication::UnicodeUTF8));
         label_2->setText(QApplication::translate("ui_producto_agregar_montura", "Codigo", 0, QApplication::UnicodeUTF8));
+        label_12->setText(QApplication::translate("ui_producto_agregar_montura", "Precio de Venta", 0, QApplication::UnicodeUTF8));
+        label_13->setText(QApplication::translate("ui_producto_agregar_montura", "Precio de Compra", 0, QApplication::UnicodeUTF8));
         label_8->setText(QApplication::translate("ui_producto_agregar_montura", "Marca", 0, QApplication::UnicodeUTF8));
         pushButton_xmarca->setText(QString());
         label_9->setText(QApplication::translate("ui_producto_agregar_montura", "Tama\303\261o", 0, QApplication::UnicodeUTF8));

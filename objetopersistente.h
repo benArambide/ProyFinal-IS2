@@ -5,6 +5,8 @@
 #include <QList>
 #include <QVariant>
 #include <QSqlQueryModel>
+#include <QDebug>
+
 /**
  * @author Josue Benjamin Arambide Quispe
  * @file objetopersistente.h

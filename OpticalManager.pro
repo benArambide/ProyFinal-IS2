@@ -63,7 +63,8 @@ SOURCES += main.cpp\
     andamio.cpp \
     contenedor.cpp \
     almacen.cpp \
-    vitrina.cpp
+    vitrina.cpp \
+    tratamiento.cpp
 
 HEADERS  += mainwindow.h \
     sesion.h \
@@ -105,7 +106,6 @@ HEADERS  += mainwindow.h \
     empresa.h \
     ui_empresa.h \
     ui_agregar_nomdesc.h \
-    ui_mainwindow.h \
     persona.h \
     cliente.h \
     tipodoc_ident.h \
@@ -121,7 +121,9 @@ HEADERS  += mainwindow.h \
     contenedor.h \
     almacen.h \
     ui_almacen_nuevo.h \
-    vitrina.h
+    vitrina.h \
+    ui_mainwindow.h \
+    tratamiento.h
 
 FORMS    += mainwindow.ui \
     ui_login.ui \
