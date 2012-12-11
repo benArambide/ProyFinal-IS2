@@ -37,9 +37,9 @@ void ui_agregar_nombre::on_pushButton_guardar_clicked()
         Color color(nombre);
         color.agregar();
     }
-    if(tipo=="indicerefraccion"){
-        IndiceRefraccion indicerefraccion(nombre);
-        indicerefraccion.agregar();
+    if(tipo=="tratamiento"){
+        Tratamiento _tratamiento(nombre);
+        _tratamiento.agregar();
     }
     if(tipo=="tamanio"){
         Tamanio tamanio(nombre);

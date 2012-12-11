@@ -9,7 +9,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>700</width>
+    <width>712</width>
     <height>522</height>
    </rect>
   </property>
@@ -44,8 +44,8 @@
    <property name="geometry">
     <rect>
      <x>20</x>
-     <y>70</y>
-     <width>671</width>
+     <y>50</y>
+     <width>681</width>
      <height>441</height>
     </rect>
    </property>
@@ -58,31 +58,31 @@
          <layout class="QHBoxLayout" name="horizontalLayout_12">
           <item>
            <layout class="QGridLayout" name="gridLayout">
-            <item row="5" column="0">
+            <item row="7" column="0">
              <widget class="QLabel" name="label_3">
               <property name="text">
                <string>Descripcion</string>
               </property>
              </widget>
             </item>
-            <item row="4" column="1">
+            <item row="6" column="1">
              <widget class="QLineEdit" name="lineEdit_accesorios"/>
             </item>
-            <item row="4" column="0">
+            <item row="6" column="0">
              <widget class="QLabel" name="label_6">
               <property name="text">
                <string>Accesorios</string>
               </property>
              </widget>
             </item>
-            <item row="3" column="0">
+            <item row="5" column="0">
              <widget class="QLabel" name="label_7">
               <property name="text">
                <string>Precio Descuento</string>
               </property>
              </widget>
             </item>
-            <item row="3" column="1">
+            <item row="5" column="1">
              <widget class="QLineEdit" name="lineEdit_p_descuento"/>
             </item>
             <item row="2" column="0">
@@ -103,7 +103,11 @@
              </widget>
             </item>
             <item row="1" column="1">
-             <widget class="QLineEdit" name="lineEdit_precio"/>
+             <widget class="QLineEdit" name="lineEdit_precio">
+              <property name="cursorPosition">
+               <number>0</number>
+              </property>
+             </widget>
             </item>
             <item row="0" column="1">
              <widget class="QLineEdit" name="lineEdit_codigo"/>
@@ -115,15 +119,95 @@
               </property>
              </widget>
             </item>
-            <item row="5" column="1">
-             <widget class="QPlainTextEdit" name="plainTextEdit_descripcion">
-              <property name="maximumSize">
+            <item row="7" column="1">
+             <widget class="QLineEdit" name="descripcion">
+              <property name="minimumSize">
                <size>
-                <width>140</width>
-                <height>100</height>
+                <width>190</width>
+                <height>0</height>
                </size>
               </property>
              </widget>
+            </item>
+            <item row="8" column="0">
+             <widget class="QLabel" name="label_17">
+              <property name="text">
+               <string>Indice de Refraccion</string>
+              </property>
+             </widget>
+            </item>
+            <item row="8" column="1">
+             <widget class="QLineEdit" name="descripcion_2">
+              <property name="minimumSize">
+               <size>
+                <width>190</width>
+                <height>0</height>
+               </size>
+              </property>
+              <property name="cursorPosition">
+               <number>0</number>
+              </property>
+             </widget>
+            </item>
+            <item row="9" column="0">
+             <widget class="QLabel" name="label_15">
+              <property name="maximumSize">
+               <size>
+                <width>16777215</width>
+                <height>35</height>
+               </size>
+              </property>
+              <property name="text">
+               <string>Diametro</string>
+              </property>
+             </widget>
+            </item>
+            <item row="9" column="1">
+             <layout class="QHBoxLayout" name="horizontalLayout_3">
+              <item>
+               <widget class="QLineEdit" name="descripcion_6">
+                <property name="minimumSize">
+                 <size>
+                  <width>120</width>
+                  <height>0</height>
+                 </size>
+                </property>
+                <property name="maximumSize">
+                 <size>
+                  <width>80</width>
+                  <height>16777215</height>
+                 </size>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QLabel" name="label_18">
+                <property name="text">
+                 <string>mm</string>
+                </property>
+               </widget>
+              </item>
+             </layout>
+            </item>
+            <item row="4" column="0">
+             <widget class="QLabel" name="label_19">
+              <property name="text">
+               <string>Precio De Venta</string>
+              </property>
+             </widget>
+            </item>
+            <item row="3" column="0">
+             <widget class="QLabel" name="label_20">
+              <property name="text">
+               <string>Precio de Compra</string>
+              </property>
+             </widget>
+            </item>
+            <item row="3" column="1">
+             <widget class="QLineEdit" name="lineEdit_stock_2"/>
+            </item>
+            <item row="4" column="1">
+             <widget class="QLineEdit" name="lineEdit_stock_3"/>
             </item>
            </layout>
           </item>
@@ -224,14 +308,14 @@
              </sizepolicy>
             </property>
             <property name="text">
-             <string>Indice de Refraccion</string>
+             <string>Tratamiento</string>
             </property>
            </widget>
           </item>
           <item>
            <layout class="QHBoxLayout" name="horizontalLayout_8">
             <item>
-             <widget class="MyComboBox" name="comboBox_indice_refraccion">
+             <widget class="MyComboBox" name="comboBox_tratamiento">
               <property name="sizePolicy">
                <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
                 <horstretch>0</horstretch>
@@ -433,26 +517,7 @@
              </widget>
             </item>
             <item>
-             <widget class="QPlainTextEdit" name="plainTextEdit_descripcionRM">
-              <property name="sizePolicy">
-               <sizepolicy hsizetype="MinimumExpanding" vsizetype="Expanding">
-                <horstretch>0</horstretch>
-                <verstretch>0</verstretch>
-               </sizepolicy>
-              </property>
-              <property name="minimumSize">
-               <size>
-                <width>0</width>
-                <height>0</height>
-               </size>
-              </property>
-              <property name="maximumSize">
-               <size>
-                <width>200</width>
-                <height>60</height>
-               </size>
-              </property>
-             </widget>
+             <widget class="QLineEdit" name="descripcion_3"/>
             </item>
            </layout>
           </item>
@@ -466,12 +531,18 @@
              </widget>
             </item>
             <item>
-             <widget class="QDoubleSpinBox" name="doubleSpinBox_valor_ini">
-              <property name="maximum">
-               <double>10.000000000000000</double>
+             <widget class="QLineEdit" name="descripcion_4">
+              <property name="sizePolicy">
+               <sizepolicy hsizetype="Maximum" vsizetype="Fixed">
+                <horstretch>0</horstretch>
+                <verstretch>0</verstretch>
+               </sizepolicy>
               </property>
-              <property name="singleStep">
-               <double>0.100000000000000</double>
+              <property name="maximumSize">
+               <size>
+                <width>60</width>
+                <height>27</height>
+               </size>
               </property>
              </widget>
             </item>
@@ -496,12 +567,12 @@
              </widget>
             </item>
             <item>
-             <widget class="QDoubleSpinBox" name="doubleSpinBox_valor_fin">
-              <property name="maximum">
-               <double>10.990000000000000</double>
-              </property>
-              <property name="singleStep">
-               <double>0.100000000000000</double>
+             <widget class="QLineEdit" name="descripcion_5">
+              <property name="maximumSize">
+               <size>
+                <width>50</width>
+                <height>16777215</height>
+               </size>
               </property>
              </widget>
             </item>
@@ -542,18 +613,15 @@
         </property>
        </spacer>
       </item>
-      <item row="1" column="0">
-       <spacer name="verticalSpacer">
+      <item row="1" column="1">
+       <spacer name="verticalSpacer_2">
         <property name="orientation">
          <enum>Qt::Vertical</enum>
         </property>
-        <property name="sizeType">
-         <enum>QSizePolicy::Maximum</enum>
-        </property>
         <property name="sizeHint" stdset="0">
          <size>
-          <width>6</width>
-          <height>35</height>
+          <width>20</width>
+          <height>40</height>
          </size>
         </property>
        </spacer>
@@ -566,7 +634,7 @@
    <property name="geometry">
     <rect>
      <x>20</x>
-     <y>10</y>
+     <y>0</y>
      <width>131</width>
      <height>31</height>
     </rect>
@@ -575,34 +643,11 @@
     <string>Agregar Luna</string>
    </property>
   </widget>
-  <widget class="QLineEdit" name="lineEdit_nombre">
-   <property name="geometry">
-    <rect>
-     <x>370</x>
-     <y>20</y>
-     <width>321</width>
-     <height>27</height>
-    </rect>
-   </property>
-  </widget>
-  <widget class="QLabel" name="label_15">
-   <property name="geometry">
-    <rect>
-     <x>300</x>
-     <y>20</y>
-     <width>67</width>
-     <height>17</height>
-    </rect>
-   </property>
-   <property name="text">
-    <string>Nombre</string>
-   </property>
-  </widget>
   <widget class="Line" name="line">
    <property name="geometry">
     <rect>
-     <x>0</x>
-     <y>50</y>
+     <x>10</x>
+     <y>30</y>
      <width>701</width>
      <height>21</height>
     </rect>
@@ -622,6 +667,29 @@
    </slots>
   </customwidget>
  </customwidgets>
+ <tabstops>
+  <tabstop>lineEdit_codigo</tabstop>
+  <tabstop>lineEdit_precio</tabstop>
+  <tabstop>lineEdit_stock</tabstop>
+  <tabstop>lineEdit_p_descuento</tabstop>
+  <tabstop>lineEdit_accesorios</tabstop>
+  <tabstop>descripcion</tabstop>
+  <tabstop>descripcion_2</tabstop>
+  <tabstop>descripcion_6</tabstop>
+  <tabstop>comboBox_marca</tabstop>
+  <tabstop>comboBox_tratamiento</tabstop>
+  <tabstop>comboBox_tipo_luna</tabstop>
+  <tabstop>comboBox_calidad</tabstop>
+  <tabstop>descripcion_3</tabstop>
+  <tabstop>descripcion_4</tabstop>
+  <tabstop>descripcion_5</tabstop>
+  <tabstop>pushButton_5</tabstop>
+  <tabstop>pushButton_cancelar</tabstop>
+  <tabstop>pushButton_xcalidad</tabstop>
+  <tabstop>pushButton_xindice</tabstop>
+  <tabstop>pushButton_xmarca</tabstop>
+  <tabstop>pushButton_xtipo</tabstop>
+ </tabstops>
  <resources>
   <include location="Icons/Icons.qrc"/>
  </resources>

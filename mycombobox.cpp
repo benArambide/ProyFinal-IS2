@@ -15,7 +15,7 @@ MyComboBox::MyComboBox(QWidget* parent):QComboBox(parent)
 
     map_funciones["calidad"]=(&(Calidad::listarNombres));
     map_funciones["color"]=(&(Color::listarNombres));
-    map_funciones["indicerefraccion"]=(&(IndiceRefraccion::listarNombres));
+    map_funciones["tratamiento"]=(&(Tratamiento::listarNombres));
     map_funciones["marca"]=(&(Marca::listarNombres));
     map_funciones["tamanio"]=(&(Tamanio::listarNombres));
     map_funciones["tipoluna"]=(&(TipoLuna::listarNombres));
@@ -63,10 +63,10 @@ bool MyComboBox::Eliminar_Item()
         color.existente(nombre);
         exitoso=color.eliminar();
     }
-    if(tipo=="indicerefraccion"){
-        IndiceRefraccion indicerefraccion;
-        indicerefraccion.existente(nombre);
-        exitoso=indicerefraccion.eliminar();
+    if(tipo=="tratamiento"){
+        Tratamiento _tratamiento;
+        _tratamiento.existente(nombre);
+        exitoso=_tratamiento.eliminar();
     }
     if(tipo=="marca"){
         Marca marca;

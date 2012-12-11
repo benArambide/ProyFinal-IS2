@@ -102,25 +102,7 @@ void ui_producto::on_pushButton_clicked()
  */
 void ui_producto::on_pushButton_aditar_luna_clicked()
 {
-    //verifica que no este nulo para que no se cuelgue, siempre debe aver seleccionado
-    //alguno
-    if(model_actual!=NULL)
-    {
-        int id;
-        if(posicion==0)
-        {
-            //Toma el id del producto seleccionado
-            id= model_actual->data(model_actual->index(ui->tableView->currentIndex().row(),0)).toInt();
 
-            //ui_producto_agregar_luna* ventana_agregar=new ui_producto_agregar_luna;
-            //ventana_agregar->show();
-        }
-        else if(posicion==1)
-        {
-            //ui_producto_agregar_montura* ventana_agregar=new ui_producto_agregar_montura;
-            //ventana_agregar->show();
-        }
-    }
 }
 
 void ui_producto::on_tableView_clicked(const QModelIndex &index)
