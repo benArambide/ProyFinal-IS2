@@ -76,3 +76,18 @@ void MainWindow::on_actionAlmacen_triggered()
     almacen_form = new ui_almacen;
     setCentralWidget(almacen_form);
 }
+
+void MainWindow::on_actionNuevo_triggered()
+{
+    ActiveModule->Agregar();
+}
+
+void MainWindow::on_actionGuardar_triggered()
+{
+    ActiveModule->Guardar();
+}
+
+void MainWindow::on_actionEditar_triggered()
+{
+    ActiveModule->Editar();
+}

@@ -23,6 +23,7 @@ public:
   virtual void Editar() = 0;
   virtual void Guardar() = 0;
   virtual void Buscar() = 0;
+  virtual void mostrar() = 0;
 protected:
   Ui::ModuleInterface *ui;
   QWidget* detallesWidget;
@@ -30,7 +31,7 @@ protected:
   QDialog* makeBusquedaDialog(QWidget* form);
   QWidget * detalles_tab;
   QDataWidgetMapper * mapper;
-  QSqlQueryModel * queryModel;
+  QSqlRelationalTableModel * relTableModel;
 private slots:
   void on_list_tableView_activated(const QModelIndex &index);
 };

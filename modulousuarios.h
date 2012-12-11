@@ -8,10 +8,11 @@ class ModuloUsuarios : public ModuleInterface
   Q_OBJECT
 public:
   explicit ModuloUsuarios(QWidget *parent = 0);
-  void Agregar(){}
-  void Editar(){}
+  void Agregar();
+  void Editar();
   void Guardar();
   void Buscar();
+  void mostrar();
 signals:
   
 public slots:

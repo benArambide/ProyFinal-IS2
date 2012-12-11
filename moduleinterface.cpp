@@ -9,7 +9,13 @@ ModuleInterface::ModuleInterface(QWidget *parent,QWidget* detalles):
   ui->Module_tabWidget->addTab(detalles,"Detalles");
   //detalles->setEnabled(false);
   //ui->Module_tabWidget->setTabEnabled(1,false);
+  relTableModel = new QSqlRelationalTableModel;
+  mapper = new QDataWidgetMapper(this);
+  mapper->setItemDelegate(new QSqlRelationalDelegate);
+  mapper->setSubmitPolicy(QDataWidgetMapper::ManualSubmit);
+  relTableModel->setEditStrategy(QSqlTableModel::OnManualSubmit);
   ui->list_tableView->horizontalHeader()->setResizeMode(QHeaderView::ResizeToContents);
+  ui->list_tableView->setEditTriggers(QAbstractItemView::NoEditTriggers);
 }
 
 QDialog* ModuleInterface::makeBusquedaDialog(QWidget* form)
@@ -35,4 +41,6 @@ ModuleInterface::~ModuleInterface()
 void ModuleInterface::on_list_tableView_activated(const QModelIndex &index)
 {
   mapper->setCurrentModelIndex(index);
+  ui->Module_tabWidget->setCurrentIndex(1);
+  mostrar();
 }

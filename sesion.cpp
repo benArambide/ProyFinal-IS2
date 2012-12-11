@@ -2,6 +2,8 @@
 #include <QSqlQuery>
 #include <QVariant>
 #include <QSqlRecord>
+#include <QDebug>
+#include <QSqlError>
 
 Sesion* Sesion::mp_instance = 0;
 int Sesion::intentos = 0;
@@ -42,7 +44,8 @@ int Sesion::Iniciar(QString user, QString pass)
     if(sleep&&tiempoBloqueo.elapsed()<tiempoEspera) ///<Si el incio de sesion esta dentro de el tiempo de bloqueo
         return Sesion::SleepTime;                   ///<Retorna bloqueo
     QSqlQuery q;
-    q.exec("call verify_usrpass('"+user+"','"+pass+"')"); ///<Verifica si el usuario y el pass estan registrados
+    bool ok = q.exec("call verify_usrpass('"+user+"','"+pass+"')"); ///<Verifica si el usuario y el pass estan registrados
+    if(!ok) qDebug()<<q.lastError().text();
     if(!q.next())                                   ///<Si no se producen resultados
     {
         intentos ++;                                ///<Se aumenta el numero de intentos;
