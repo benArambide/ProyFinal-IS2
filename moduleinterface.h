@@ -31,10 +31,12 @@ protected:
   void verDetalles();
 
 signals:
-  void enableEdit();
+  void rowSelected();
 private slots:
   void on_list_tableView_activated(const QModelIndex &index);
   void on_list_tableView_entered(const QModelIndex &);
+  void on_actionUp_triggered();
+  void selectionChangedHandle(QModelIndex cur,QModelIndex prev);
 };
 
 #endif // MODULEINTERFACE_H

@@ -40,7 +40,7 @@ private slots:
     void on_actionGuardar_triggered();
 
     void on_actionEditar_triggered();
-
+    void enableEdit();
 private:
     Ui::MainWindow *ui;
     ModuleInterface* ActiveModule;

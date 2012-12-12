@@ -7,8 +7,8 @@ ModuleInterface::ModuleInterface(QWidget *parent,QWidget* detalles):
 {
   ui->setupUi(this);
   ui->Module_tabWidget->addTab(detalles,"Detalles");
-  //detalles->setEnabled(false);
-  //ui->Module_tabWidget->setTabEnabled(1,false);
+  detalles->setEnabled(false);
+  ui->Module_tabWidget->setTabEnabled(1,false);
   relTableModel = new QSqlRelationalTableModel;
   mapper = new QDataWidgetMapper(this);
   mapper->setItemDelegate(new QSqlRelationalDelegate);
@@ -16,6 +16,14 @@ ModuleInterface::ModuleInterface(QWidget *parent,QWidget* detalles):
   relTableModel->setEditStrategy(QSqlTableModel::OnManualSubmit);
   ui->list_tableView->horizontalHeader()->setResizeMode(QHeaderView::ResizeToContents);
   ui->list_tableView->setEditTriggers(QAbstractItemView::NoEditTriggers);
+}
+
+void ModuleInterface::selectionChangedHandle(QModelIndex cur,QModelIndex )
+{
+  ui->Module_tabWidget->setTabEnabled(1,true);
+  detalles_tab->setEnabled(false);
+  mapper->setCurrentIndex(cur.row());
+  emit rowSelected();
 }
 
 QDialog* ModuleInterface::makeBusquedaDialog(QWidget* form)
@@ -52,4 +60,11 @@ void ModuleInterface::verDetalles()
 void ModuleInterface::on_list_tableView_entered(const QModelIndex &)
 {
   qDebug()<<"entered" ;
+ // ui->list_tableView->selectRow();
+}
+
+void ModuleInterface::on_actionUp_triggered()
+{
+  qDebug()<<ui->list_tableView->currentIndex().row();
+    //ui->list_tableView->selectRow();
 }

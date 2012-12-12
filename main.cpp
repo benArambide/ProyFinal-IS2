@@ -10,6 +10,8 @@
 #include <QDebug>
 #include "sesion.h"
 
+#include <iostream>
+
 //ToDo: Meter esta funcion en un clase que configure el sistema a partir de un archivo de configuracion
 bool confConexionDB()
 {
@@ -51,7 +53,6 @@ bool confConexionDB()
 int main(int argc,char *argv[])
 {
     QApplication a(argc, argv);
-
     if(a.arguments().contains("--without-login"))
     {
       MainWindow *MAIN_WINDOW;
