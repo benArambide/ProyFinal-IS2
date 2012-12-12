@@ -9,10 +9,7 @@ MyComboBox::MyComboBox(QWidget* parent):QComboBox(parent)
 
     ventana_agregar_1=0;
     ventana_agregar_2=0;
-
-
     //Inicializamos los punteros a funcion para poder llenar el combobox
-
     map_funciones["calidad"]=(&(Calidad::listarNombres));
     map_funciones["color"]=(&(Color::listarNombres));
     map_funciones["tratamiento"]=(&(Tratamiento::listarNombres));

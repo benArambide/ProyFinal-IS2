@@ -1,7 +1,7 @@
 /********************************************************************************
 ** Form generated from reading UI file 'ui_usuario_datos.ui'
 **
-** Created: Sat Dec 8 22:30:57 2012
+** Created: Tue Dec 11 18:43:26 2012
 **      by: Qt User Interface Compiler version 4.8.3
 **
 ** WARNING! All changes made in this file will be lost when recompiling UI file!
@@ -14,6 +14,7 @@
 #include <QtGui/QAction>
 #include <QtGui/QApplication>
 #include <QtGui/QButtonGroup>
+#include <QtGui/QCheckBox>
 #include <QtGui/QComboBox>
 #include <QtGui/QDateEdit>
 #include <QtGui/QFrame>
@@ -21,9 +22,9 @@
 #include <QtGui/QHeaderView>
 #include <QtGui/QLabel>
 #include <QtGui/QLineEdit>
+#include <QtGui/QPlainTextEdit>
 #include <QtGui/QPushButton>
 #include <QtGui/QSpacerItem>
-#include <QtGui/QTextEdit>
 #include <QtGui/QWidget>
 
 QT_BEGIN_NAMESPACE
@@ -40,27 +41,27 @@ public:
     QSpacerItem *horizontalSpacer_6;
     QPushButton *pushButton_Cancelar;
     QGridLayout *gridLayout_4;
-    QLineEdit *le_Usuario;
+    QCheckBox *checkBox_habilitado;
+    QComboBox *cb_tienda;
     QLabel *label_25;
     QLabel *label_24;
     QLabel *label_16;
+    QLabel *label_21;
     QLineEdit *le_numDoc;
     QLabel *label_28;
     QDateEdit *de_fechaNac;
     QLabel *label_19;
+    QLineEdit *lE_telfFam;
     QLabel *label_22;
     QLabel *label_27;
     QLineEdit *le_telf;
     QLineEdit *le_cell;
-    QTextEdit *tE_obs;
     QFrame *line_3;
     QFrame *line_5;
     QLineEdit *le_direccion;
     QComboBox *cB_tDoc;
     QLabel *label_17;
-    QComboBox *cb_sexo;
     QLineEdit *le_sApellido;
-    QLabel *label_21;
     QLabel *label_29;
     QPushButton *pB_cambiarPass;
     QLineEdit *le_pApellido;
@@ -68,10 +69,11 @@ public:
     QLabel *label_3;
     QLabel *label_30;
     QLabel *label;
-    QLineEdit *lE_telfFam;
     QLineEdit *le_nombre;
     QLabel *label_4;
     QComboBox *cB_tipoCol;
+    QLineEdit *le_Usuario;
+    QPlainTextEdit *tE_obs;
 
     void setupUi(QWidget *ui_usuario_datos)
     {
@@ -112,11 +114,21 @@ public:
 
         gridLayout_4 = new QGridLayout();
         gridLayout_4->setObjectName(QString::fromUtf8("gridLayout_4"));
-        le_Usuario = new QLineEdit(ui_usuario_datos);
-        le_Usuario->setObjectName(QString::fromUtf8("le_Usuario"));
-        le_Usuario->setReadOnly(true);
+        checkBox_habilitado = new QCheckBox(ui_usuario_datos);
+        checkBox_habilitado->setObjectName(QString::fromUtf8("checkBox_habilitado"));
+        checkBox_habilitado->setChecked(true);
 
-        gridLayout_4->addWidget(le_Usuario, 8, 1, 1, 1);
+        gridLayout_4->addWidget(checkBox_habilitado, 10, 1, 1, 1);
+
+        cb_tienda = new QComboBox(ui_usuario_datos);
+        cb_tienda->setObjectName(QString::fromUtf8("cb_tienda"));
+        QSizePolicy sizePolicy(QSizePolicy::Fixed, QSizePolicy::Fixed);
+        sizePolicy.setHorizontalStretch(0);
+        sizePolicy.setVerticalStretch(0);
+        sizePolicy.setHeightForWidth(cb_tienda->sizePolicy().hasHeightForWidth());
+        cb_tienda->setSizePolicy(sizePolicy);
+
+        gridLayout_4->addWidget(cb_tienda, 3, 3, 1, 1);
 
         label_25 = new QLabel(ui_usuario_datos);
         label_25->setObjectName(QString::fromUtf8("label_25"));
@@ -133,6 +145,11 @@ public:
 
         gridLayout_4->addWidget(label_16, 2, 2, 1, 1);
 
+        label_21 = new QLabel(ui_usuario_datos);
+        label_21->setObjectName(QString::fromUtf8("label_21"));
+
+        gridLayout_4->addWidget(label_21, 1, 0, 1, 1);
+
         le_numDoc = new QLineEdit(ui_usuario_datos);
         le_numDoc->setObjectName(QString::fromUtf8("le_numDoc"));
 
@@ -145,11 +162,11 @@ public:
 
         de_fechaNac = new QDateEdit(ui_usuario_datos);
         de_fechaNac->setObjectName(QString::fromUtf8("de_fechaNac"));
-        QSizePolicy sizePolicy(QSizePolicy::Expanding, QSizePolicy::Fixed);
-        sizePolicy.setHorizontalStretch(0);
-        sizePolicy.setVerticalStretch(0);
-        sizePolicy.setHeightForWidth(de_fechaNac->sizePolicy().hasHeightForWidth());
-        de_fechaNac->setSizePolicy(sizePolicy);
+        QSizePolicy sizePolicy1(QSizePolicy::Expanding, QSizePolicy::Fixed);
+        sizePolicy1.setHorizontalStretch(0);
+        sizePolicy1.setVerticalStretch(0);
+        sizePolicy1.setHeightForWidth(de_fechaNac->sizePolicy().hasHeightForWidth());
+        de_fechaNac->setSizePolicy(sizePolicy1);
         de_fechaNac->setCalendarPopup(true);
 
         gridLayout_4->addWidget(de_fechaNac, 3, 1, 1, 1);
@@ -158,6 +175,11 @@ public:
         label_19->setObjectName(QString::fromUtf8("label_19"));
 
         gridLayout_4->addWidget(label_19, 4, 0, 1, 1);
+
+        lE_telfFam = new QLineEdit(ui_usuario_datos);
+        lE_telfFam->setObjectName(QString::fromUtf8("lE_telfFam"));
+
+        gridLayout_4->addWidget(lE_telfFam, 7, 1, 1, 1);
 
         label_22 = new QLabel(ui_usuario_datos);
         label_22->setObjectName(QString::fromUtf8("label_22"));
@@ -178,18 +200,6 @@ public:
         le_cell->setObjectName(QString::fromUtf8("le_cell"));
 
         gridLayout_4->addWidget(le_cell, 6, 3, 1, 1);
-
-        tE_obs = new QTextEdit(ui_usuario_datos);
-        tE_obs->setObjectName(QString::fromUtf8("tE_obs"));
-        QSizePolicy sizePolicy1(QSizePolicy::Expanding, QSizePolicy::Expanding);
-        sizePolicy1.setHorizontalStretch(0);
-        sizePolicy1.setVerticalStretch(0);
-        sizePolicy1.setHeightForWidth(tE_obs->sizePolicy().hasHeightForWidth());
-        tE_obs->setSizePolicy(sizePolicy1);
-        tE_obs->setMinimumSize(QSize(0, 50));
-        tE_obs->setMaximumSize(QSize(16777215, 50));
-
-        gridLayout_4->addWidget(tE_obs, 11, 0, 1, 4);
 
         line_3 = new QFrame(ui_usuario_datos);
         line_3->setObjectName(QString::fromUtf8("line_3"));
@@ -220,25 +230,10 @@ public:
 
         gridLayout_4->addWidget(label_17, 3, 2, 1, 1);
 
-        cb_sexo = new QComboBox(ui_usuario_datos);
-        cb_sexo->setObjectName(QString::fromUtf8("cb_sexo"));
-        QSizePolicy sizePolicy2(QSizePolicy::Fixed, QSizePolicy::Fixed);
-        sizePolicy2.setHorizontalStretch(0);
-        sizePolicy2.setVerticalStretch(0);
-        sizePolicy2.setHeightForWidth(cb_sexo->sizePolicy().hasHeightForWidth());
-        cb_sexo->setSizePolicy(sizePolicy2);
-
-        gridLayout_4->addWidget(cb_sexo, 3, 3, 1, 1);
-
         le_sApellido = new QLineEdit(ui_usuario_datos);
         le_sApellido->setObjectName(QString::fromUtf8("le_sApellido"));
 
         gridLayout_4->addWidget(le_sApellido, 1, 3, 1, 1);
-
-        label_21 = new QLabel(ui_usuario_datos);
-        label_21->setObjectName(QString::fromUtf8("label_21"));
-
-        gridLayout_4->addWidget(label_21, 1, 0, 1, 1);
 
         label_29 = new QLabel(ui_usuario_datos);
         label_29->setObjectName(QString::fromUtf8("label_29"));
@@ -275,11 +270,6 @@ public:
 
         gridLayout_4->addWidget(label, 7, 0, 1, 1);
 
-        lE_telfFam = new QLineEdit(ui_usuario_datos);
-        lE_telfFam->setObjectName(QString::fromUtf8("lE_telfFam"));
-
-        gridLayout_4->addWidget(lE_telfFam, 7, 1, 1, 1);
-
         le_nombre = new QLineEdit(ui_usuario_datos);
         le_nombre->setObjectName(QString::fromUtf8("le_nombre"));
 
@@ -294,6 +284,24 @@ public:
         cB_tipoCol->setObjectName(QString::fromUtf8("cB_tipoCol"));
 
         gridLayout_4->addWidget(cB_tipoCol, 7, 3, 1, 1);
+
+        le_Usuario = new QLineEdit(ui_usuario_datos);
+        le_Usuario->setObjectName(QString::fromUtf8("le_Usuario"));
+        le_Usuario->setReadOnly(false);
+
+        gridLayout_4->addWidget(le_Usuario, 8, 1, 1, 1);
+
+        tE_obs = new QPlainTextEdit(ui_usuario_datos);
+        tE_obs->setObjectName(QString::fromUtf8("tE_obs"));
+        QSizePolicy sizePolicy2(QSizePolicy::Expanding, QSizePolicy::Expanding);
+        sizePolicy2.setHorizontalStretch(0);
+        sizePolicy2.setVerticalStretch(0);
+        sizePolicy2.setHeightForWidth(tE_obs->sizePolicy().hasHeightForWidth());
+        tE_obs->setSizePolicy(sizePolicy2);
+        tE_obs->setMinimumSize(QSize(0, 50));
+        tE_obs->setMaximumSize(QSize(16777215, 50));
+
+        gridLayout_4->addWidget(tE_obs, 11, 0, 1, 4);
 
 
         gridLayout->addLayout(gridLayout_4, 0, 0, 1, 1);
@@ -314,21 +322,22 @@ public:
         pushButton_Aceptar->setShortcut(QApplication::translate("ui_usuario_datos", "Return", 0, QApplication::UnicodeUTF8));
         pushButton_Cancelar->setText(QApplication::translate("ui_usuario_datos", "Cancelar", 0, QApplication::UnicodeUTF8));
         pushButton_Cancelar->setShortcut(QApplication::translate("ui_usuario_datos", "Esc", 0, QApplication::UnicodeUTF8));
+        checkBox_habilitado->setText(QApplication::translate("ui_usuario_datos", "Habilitado", 0, QApplication::UnicodeUTF8));
+        cb_tienda->clear();
+        cb_tienda->insertItems(0, QStringList()
+         << QApplication::translate("ui_usuario_datos", "Masculino", 0, QApplication::UnicodeUTF8)
+         << QApplication::translate("ui_usuario_datos", "Femenino", 0, QApplication::UnicodeUTF8)
+        );
         label_25->setText(QApplication::translate("ui_usuario_datos", "Nombres", 0, QApplication::UnicodeUTF8));
         label_24->setText(QApplication::translate("ui_usuario_datos", "Tipo de Documento", 0, QApplication::UnicodeUTF8));
         label_16->setText(QApplication::translate("ui_usuario_datos", "N\303\272mero de Documento", 0, QApplication::UnicodeUTF8));
+        label_21->setText(QApplication::translate("ui_usuario_datos", "Primer Apellido", 0, QApplication::UnicodeUTF8));
         label_28->setText(QApplication::translate("ui_usuario_datos", "Fecha de Nacimiento", 0, QApplication::UnicodeUTF8));
         de_fechaNac->setDisplayFormat(QApplication::translate("ui_usuario_datos", "dd/MM/yyyy", 0, QApplication::UnicodeUTF8));
         label_19->setText(QApplication::translate("ui_usuario_datos", "Direcci\303\263n", 0, QApplication::UnicodeUTF8));
         label_22->setText(QApplication::translate("ui_usuario_datos", "Tel\303\251fono", 0, QApplication::UnicodeUTF8));
         label_27->setText(QApplication::translate("ui_usuario_datos", "Celular", 0, QApplication::UnicodeUTF8));
-        label_17->setText(QApplication::translate("ui_usuario_datos", "Sexo", 0, QApplication::UnicodeUTF8));
-        cb_sexo->clear();
-        cb_sexo->insertItems(0, QStringList()
-         << QApplication::translate("ui_usuario_datos", "Masculino", 0, QApplication::UnicodeUTF8)
-         << QApplication::translate("ui_usuario_datos", "Femenino", 0, QApplication::UnicodeUTF8)
-        );
-        label_21->setText(QApplication::translate("ui_usuario_datos", "Primer Apellido", 0, QApplication::UnicodeUTF8));
+        label_17->setText(QApplication::translate("ui_usuario_datos", "Tienda :", 0, QApplication::UnicodeUTF8));
         label_29->setText(QApplication::translate("ui_usuario_datos", "Segundo Apellido", 0, QApplication::UnicodeUTF8));
         pB_cambiarPass->setText(QApplication::translate("ui_usuario_datos", "Cambiar Contrase\303\261a", 0, QApplication::UnicodeUTF8));
         label_2->setText(QApplication::translate("ui_usuario_datos", "Nombre de Usuario", 0, QApplication::UnicodeUTF8));

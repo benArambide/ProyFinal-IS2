@@ -8,10 +8,6 @@
 #include <QtSql>
 #include <QDataWidgetMapper>
 
-namespace Ui {
-  class ModuleInterface;
-}
-
 class ModuleInterface : public QWidget
 {
   Q_OBJECT
@@ -29,11 +25,16 @@ protected:
   QWidget* detallesWidget;
   QWidget* busquedaWidget;
   QDialog* makeBusquedaDialog(QWidget* form);
-  QWidget * detalles_tab;
+  QWidget* detalles_tab;
   QDataWidgetMapper * mapper;
   QSqlRelationalTableModel * relTableModel;
+  void verDetalles();
+
+signals:
+  void enableEdit();
 private slots:
   void on_list_tableView_activated(const QModelIndex &index);
+  void on_list_tableView_entered(const QModelIndex &);
 };
 
 #endif // MODULEINTERFACE_H

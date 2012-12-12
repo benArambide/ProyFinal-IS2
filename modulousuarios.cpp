@@ -76,13 +76,14 @@ void ModuloUsuarios::Buscar()
   QString query = "nombre_usuario like '%%1%'"
       "and nombres like '%%2%' "
       "and primer_apellido like '%%3%' "
-      "and nro_doc like '%%4%' ";
-    query = query.arg(b->ui->le_nick->text())
-            .arg(b->ui->le_nombre->text())
-            .arg(b->ui->le_apellido->text())
-            .arg(b->ui->le_dni->text());
+      "and nro_doc like '%%4%'";
+  query = query.arg(b->ui->le_nick->text())
+      .arg(b->ui->le_nombre->text())
+      .arg(b->ui->le_apellido->text())
+      .arg(b->ui->le_dni->text());
   relTableModel->setFilter(query);
-  relTableModel->select();
+  bool ok = relTableModel->select();
+  qDebug()<<ok;
   if(relTableModel->lastError().isValid())
     QMessageBox::critical(this,"Error",relTableModel->lastError().text(),0,0);
   ui->list_tableView->setModel(relTableModel);
@@ -102,6 +103,7 @@ void ModuloUsuarios::Agregar()
   int i = relTableModel->rowCount();
   relTableModel->insertRow(i);
   mapper->setCurrentIndex(i);
+  verDetalles();
 }
 
 void ModuloUsuarios::Editar()

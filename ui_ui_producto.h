@@ -1,8 +1,8 @@
 /********************************************************************************
 ** Form generated from reading UI file 'ui_producto.ui'
 **
-** Created: Mon Dec 10 10:11:58 2012
-**      by: Qt User Interface Compiler version 4.7.4
+** Created: Tue Dec 11 18:43:26 2012
+**      by: Qt User Interface Compiler version 4.8.3
 **
 ** WARNING! All changes made in this file will be lost when recompiling UI file!
 ********************************************************************************/

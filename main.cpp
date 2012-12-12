@@ -31,9 +31,9 @@ bool confConexionDB()
     {
         QSqlDatabase::removeDatabase("qt_sql_default_connection");
         db.setOptions("UNIX_SOCKET=/opt/lampp/var/mysql/mysql.sock");
-        db.setHost("192.168.1.241");
-        db.setUser("opticaldb");
-        db.setPass("optical123");
+        db.setHost("localhost");
+        db.setUser("root");
+        db.setPass("jose-123");
         if(db.connect())
         {
             qDebug()<<"Conectado a localhost ...";

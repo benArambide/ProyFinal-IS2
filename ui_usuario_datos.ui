@@ -87,11 +87,34 @@
      </item>
      <item row="0" column="0">
       <layout class="QGridLayout" name="gridLayout_4">
-       <item row="8" column="1">
-        <widget class="QLineEdit" name="le_Usuario">
-         <property name="readOnly">
+       <item row="10" column="1">
+        <widget class="QCheckBox" name="checkBox_habilitado">
+         <property name="text">
+          <string>Habilitado</string>
+         </property>
+         <property name="checked">
           <bool>true</bool>
          </property>
+        </widget>
+       </item>
+       <item row="3" column="3">
+        <widget class="QComboBox" name="cb_tienda">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+         <item>
+          <property name="text">
+           <string>Masculino</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>Femenino</string>
+          </property>
+         </item>
         </widget>
        </item>
        <item row="0" column="0">
@@ -112,6 +135,13 @@
         <widget class="QLabel" name="label_16">
          <property name="text">
           <string>Número de Documento</string>
+         </property>
+        </widget>
+       </item>
+       <item row="1" column="0">
+        <widget class="QLabel" name="label_21">
+         <property name="text">
+          <string>Primer Apellido</string>
          </property>
         </widget>
        </item>
@@ -148,6 +178,9 @@
          </property>
         </widget>
        </item>
+       <item row="7" column="1">
+        <widget class="QLineEdit" name="lE_telfFam"/>
+       </item>
        <item row="6" column="0">
         <widget class="QLabel" name="label_22">
          <property name="text">
@@ -167,28 +200,6 @@
        </item>
        <item row="6" column="3">
         <widget class="QLineEdit" name="le_cell"/>
-       </item>
-       <item row="11" column="0" colspan="4">
-        <widget class="QTextEdit" name="tE_obs">
-         <property name="sizePolicy">
-          <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
-           <horstretch>0</horstretch>
-           <verstretch>0</verstretch>
-          </sizepolicy>
-         </property>
-         <property name="minimumSize">
-          <size>
-           <width>0</width>
-           <height>50</height>
-          </size>
-         </property>
-         <property name="maximumSize">
-          <size>
-           <width>16777215</width>
-           <height>50</height>
-          </size>
-         </property>
-        </widget>
        </item>
        <item row="5" column="0" colspan="4">
         <widget class="Line" name="line_3">
@@ -213,39 +224,12 @@
        <item row="3" column="2">
         <widget class="QLabel" name="label_17">
          <property name="text">
-          <string>Sexo</string>
+          <string>Tienda :</string>
          </property>
-        </widget>
-       </item>
-       <item row="3" column="3">
-        <widget class="QComboBox" name="cb_sexo">
-         <property name="sizePolicy">
-          <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
-           <horstretch>0</horstretch>
-           <verstretch>0</verstretch>
-          </sizepolicy>
-         </property>
-         <item>
-          <property name="text">
-           <string>Masculino</string>
-          </property>
-         </item>
-         <item>
-          <property name="text">
-           <string>Femenino</string>
-          </property>
-         </item>
         </widget>
        </item>
        <item row="1" column="3">
         <widget class="QLineEdit" name="le_sApellido"/>
-       </item>
-       <item row="1" column="0">
-        <widget class="QLabel" name="label_21">
-         <property name="text">
-          <string>Primer Apellido</string>
-         </property>
-        </widget>
        </item>
        <item row="1" column="2">
         <widget class="QLabel" name="label_29">
@@ -292,9 +276,6 @@
          </property>
         </widget>
        </item>
-       <item row="7" column="1">
-        <widget class="QLineEdit" name="lE_telfFam"/>
-       </item>
        <item row="0" column="1" colspan="3">
         <widget class="QLineEdit" name="le_nombre"/>
        </item>
@@ -307,6 +288,35 @@
        </item>
        <item row="7" column="3">
         <widget class="QComboBox" name="cB_tipoCol"/>
+       </item>
+       <item row="8" column="1">
+        <widget class="QLineEdit" name="le_Usuario">
+         <property name="readOnly">
+          <bool>false</bool>
+         </property>
+        </widget>
+       </item>
+       <item row="11" column="0" colspan="4">
+        <widget class="QPlainTextEdit" name="tE_obs">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+         <property name="minimumSize">
+          <size>
+           <width>0</width>
+           <height>50</height>
+          </size>
+         </property>
+         <property name="maximumSize">
+          <size>
+           <width>16777215</width>
+           <height>50</height>
+          </size>
+         </property>
+        </widget>
        </item>
       </layout>
      </item>

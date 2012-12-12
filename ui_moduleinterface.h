@@ -1,7 +1,7 @@
 /********************************************************************************
 ** Form generated from reading UI file 'moduleinterface.ui'
 **
-** Created: Thu Dec 6 18:52:41 2012
+** Created: Tue Dec 11 18:43:26 2012
 **      by: Qt User Interface Compiler version 4.8.3
 **
 ** WARNING! All changes made in this file will be lost when recompiling UI file!
@@ -35,7 +35,7 @@ public:
     {
         if (ModuleInterface->objectName().isEmpty())
             ModuleInterface->setObjectName(QString::fromUtf8("ModuleInterface"));
-        ModuleInterface->resize(738, 624);
+        ModuleInterface->resize(296, 262);
         ModuleInterface->setMouseTracking(false);
         ModuleInterface->setLayoutDirection(Qt::LeftToRight);
         ModuleInterface->setAutoFillBackground(false);

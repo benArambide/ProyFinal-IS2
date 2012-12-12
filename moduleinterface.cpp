@@ -41,6 +41,15 @@ ModuleInterface::~ModuleInterface()
 void ModuleInterface::on_list_tableView_activated(const QModelIndex &index)
 {
   mapper->setCurrentModelIndex(index);
+  verDetalles();
+}
+
+void ModuleInterface::verDetalles()
+{
   ui->Module_tabWidget->setCurrentIndex(1);
-  mostrar();
+}
+
+void ModuleInterface::on_list_tableView_entered(const QModelIndex &)
+{
+  qDebug()<<"entered" ;
 }
