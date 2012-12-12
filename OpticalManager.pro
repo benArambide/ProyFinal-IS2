@@ -65,7 +65,7 @@ SOURCES += main.cpp\
     almacen.cpp \
     vitrina.cpp \
     tratamiento.cpp \
-    receta.cpp
+    #receta.cpp
 
 HEADERS  += mainwindow.h \
     sesion.h \
@@ -125,7 +125,7 @@ HEADERS  += mainwindow.h \
     vitrina.h \
     ui_mainwindow.h \
     tratamiento.h \
-    receta.h
+#    receta.h
 
 FORMS    += mainwindow.ui \
     ui_login.ui \
