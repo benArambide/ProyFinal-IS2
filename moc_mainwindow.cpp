@@ -1,7 +1,7 @@
 /****************************************************************************
 ** Meta object code from reading C++ file 'mainwindow.h'
 **
-** Created: Tue Dec 11 19:50:02 2012
+** Created: Wed Dec 12 11:01:09 2012
 **      by: The Qt Meta Object Compiler version 63 (Qt 4.8.3)
 **
 ** WARNING! All changes made in this file will be lost!
@@ -23,7 +23,7 @@ static const uint qt_meta_data_MainWindow[] = {
        6,       // revision
        0,       // classname
        0,    0, // classinfo
-      10,   14, // methods
+      11,   14, // methods
        0,    0, // properties
        0,    0, // enums/sets
        0,    0, // constructors
@@ -41,6 +41,7 @@ static const uint qt_meta_data_MainWindow[] = {
      216,   11,   11,   11, 0x08,
      243,   11,   11,   11, 0x08,
      272,   11,   11,   11, 0x08,
+     300,   11,   11,   11, 0x08,
 
        0        // eod
 };
@@ -55,7 +56,7 @@ static const char qt_meta_stringdata_MainWindow[] = {
     "on_actionAlmacen_triggered()\0"
     "on_actionNuevo_triggered()\0"
     "on_actionGuardar_triggered()\0"
-    "on_actionEditar_triggered()\0"
+    "on_actionEditar_triggered()\0enableEdit()\0"
 };
 
 void MainWindow::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, void **_a)
@@ -74,6 +75,7 @@ void MainWindow::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, 
         case 7: _t->on_actionNuevo_triggered(); break;
         case 8: _t->on_actionGuardar_triggered(); break;
         case 9: _t->on_actionEditar_triggered(); break;
+        case 10: _t->enableEdit(); break;
         default: ;
         }
     }
@@ -112,9 +114,9 @@ int MainWindow::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
     if (_id < 0)
         return _id;
     if (_c == QMetaObject::InvokeMetaMethod) {
-        if (_id < 10)
+        if (_id < 11)
             qt_static_metacall(this, _c, _id, _a);
-        _id -= 10;
+        _id -= 11;
     }
     return _id;
 }

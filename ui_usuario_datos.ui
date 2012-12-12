@@ -19,72 +19,6 @@
    </property>
    <item row="0" column="0">
     <layout class="QGridLayout" name="gridLayout">
-     <item row="1" column="0">
-      <spacer name="verticalSpacer">
-       <property name="orientation">
-        <enum>Qt::Vertical</enum>
-       </property>
-       <property name="sizeType">
-        <enum>QSizePolicy::Fixed</enum>
-       </property>
-       <property name="sizeHint" stdset="0">
-        <size>
-         <width>20</width>
-         <height>13</height>
-        </size>
-       </property>
-      </spacer>
-     </item>
-     <item row="2" column="0">
-      <layout class="QGridLayout" name="gridLayout_3">
-       <item row="0" column="0">
-        <spacer name="horizontalSpacer_5">
-         <property name="orientation">
-          <enum>Qt::Horizontal</enum>
-         </property>
-         <property name="sizeHint" stdset="0">
-          <size>
-           <width>40</width>
-           <height>20</height>
-          </size>
-         </property>
-        </spacer>
-       </item>
-       <item row="0" column="1">
-        <widget class="QPushButton" name="pushButton_Aceptar">
-         <property name="text">
-          <string>Guardar</string>
-         </property>
-         <property name="shortcut">
-          <string>Return</string>
-         </property>
-        </widget>
-       </item>
-       <item row="0" column="3">
-        <spacer name="horizontalSpacer_6">
-         <property name="orientation">
-          <enum>Qt::Horizontal</enum>
-         </property>
-         <property name="sizeHint" stdset="0">
-          <size>
-           <width>40</width>
-           <height>20</height>
-          </size>
-         </property>
-        </spacer>
-       </item>
-       <item row="0" column="2">
-        <widget class="QPushButton" name="pushButton_Cancelar">
-         <property name="text">
-          <string>Cancelar</string>
-         </property>
-         <property name="shortcut">
-          <string>Esc</string>
-         </property>
-        </widget>
-       </item>
-      </layout>
-     </item>
      <item row="0" column="0">
       <layout class="QGridLayout" name="gridLayout_4">
        <item row="10" column="1">
@@ -324,6 +258,24 @@
    </item>
   </layout>
  </widget>
+ <tabstops>
+  <tabstop>le_nombre</tabstop>
+  <tabstop>le_pApellido</tabstop>
+  <tabstop>le_sApellido</tabstop>
+  <tabstop>cB_tDoc</tabstop>
+  <tabstop>le_numDoc</tabstop>
+  <tabstop>de_fechaNac</tabstop>
+  <tabstop>cb_tienda</tabstop>
+  <tabstop>le_direccion</tabstop>
+  <tabstop>le_telf</tabstop>
+  <tabstop>le_cell</tabstop>
+  <tabstop>lE_telfFam</tabstop>
+  <tabstop>cB_tipoCol</tabstop>
+  <tabstop>le_Usuario</tabstop>
+  <tabstop>pB_cambiarPass</tabstop>
+  <tabstop>tE_obs</tabstop>
+  <tabstop>checkBox_habilitado</tabstop>
+ </tabstops>
  <resources/>
  <connections/>
 </ui>

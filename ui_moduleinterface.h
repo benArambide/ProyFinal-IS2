@@ -1,7 +1,7 @@
 /********************************************************************************
 ** Form generated from reading UI file 'moduleinterface.ui'
 **
-** Created: Tue Dec 11 18:43:26 2012
+** Created: Tue Dec 11 21:20:36 2012
 **      by: Qt User Interface Compiler version 4.8.3
 **
 ** WARNING! All changes made in this file will be lost when recompiling UI file!
@@ -25,6 +25,8 @@ QT_BEGIN_NAMESPACE
 class Ui_ModuleInterface
 {
 public:
+    QAction *actionUp;
+    QAction *actionDown;
     QGridLayout *gridLayout_2;
     QTabWidget *Module_tabWidget;
     QWidget *list_tab;
@@ -39,6 +41,10 @@ public:
         ModuleInterface->setMouseTracking(false);
         ModuleInterface->setLayoutDirection(Qt::LeftToRight);
         ModuleInterface->setAutoFillBackground(false);
+        actionUp = new QAction(ModuleInterface);
+        actionUp->setObjectName(QString::fromUtf8("actionUp"));
+        actionDown = new QAction(ModuleInterface);
+        actionDown->setObjectName(QString::fromUtf8("actionDown"));
         gridLayout_2 = new QGridLayout(ModuleInterface);
         gridLayout_2->setObjectName(QString::fromUtf8("gridLayout_2"));
         Module_tabWidget = new QTabWidget(ModuleInterface);
@@ -49,9 +55,12 @@ public:
         gridLayout->setObjectName(QString::fromUtf8("gridLayout"));
         list_tableView = new QTableView(list_tab);
         list_tableView->setObjectName(QString::fromUtf8("list_tableView"));
+        list_tableView->setEditTriggers(QAbstractItemView::AnyKeyPressed|QAbstractItemView::CurrentChanged|QAbstractItemView::DoubleClicked|QAbstractItemView::EditKeyPressed);
         list_tableView->setAlternatingRowColors(true);
         list_tableView->setSelectionMode(QAbstractItemView::SingleSelection);
         list_tableView->setSelectionBehavior(QAbstractItemView::SelectRows);
+        list_tableView->setGridStyle(Qt::DashLine);
+        list_tableView->setSortingEnabled(false);
 
         gridLayout->addWidget(list_tableView, 0, 0, 1, 1);
 
@@ -71,6 +80,10 @@ public:
     void retranslateUi(QWidget *ModuleInterface)
     {
         ModuleInterface->setWindowTitle(QApplication::translate("ModuleInterface", "Form", 0, QApplication::UnicodeUTF8));
+        actionUp->setText(QApplication::translate("ModuleInterface", "up", 0, QApplication::UnicodeUTF8));
+        actionUp->setShortcut(QApplication::translate("ModuleInterface", "Up", 0, QApplication::UnicodeUTF8));
+        actionDown->setText(QApplication::translate("ModuleInterface", "down", 0, QApplication::UnicodeUTF8));
+        actionDown->setShortcut(QApplication::translate("ModuleInterface", "Down", 0, QApplication::UnicodeUTF8));
         Module_tabWidget->setTabText(Module_tabWidget->indexOf(list_tab), QApplication::translate("ModuleInterface", "Lista", 0, QApplication::UnicodeUTF8));
     } // retranslateUi
 

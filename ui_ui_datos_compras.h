@@ -1,7 +1,7 @@
 /********************************************************************************
 ** Form generated from reading UI file 'ui_datos_compras.ui'
 **
-** Created: Tue Dec 11 18:43:27 2012
+** Created: Tue Dec 11 20:51:03 2012
 **      by: Qt User Interface Compiler version 4.8.3
 **
 ** WARNING! All changes made in this file will be lost when recompiling UI file!

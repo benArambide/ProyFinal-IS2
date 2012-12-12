@@ -1,7 +1,7 @@
 /********************************************************************************
 ** Form generated from reading UI file 'ui_usuario_datos.ui'
 **
-** Created: Tue Dec 11 18:43:26 2012
+** Created: Tue Dec 11 22:16:28 2012
 **      by: Qt User Interface Compiler version 4.8.3
 **
 ** WARNING! All changes made in this file will be lost when recompiling UI file!
@@ -24,7 +24,6 @@
 #include <QtGui/QLineEdit>
 #include <QtGui/QPlainTextEdit>
 #include <QtGui/QPushButton>
-#include <QtGui/QSpacerItem>
 #include <QtGui/QWidget>
 
 QT_BEGIN_NAMESPACE
@@ -34,12 +33,6 @@ class Ui_ui_usuario_datos
 public:
     QGridLayout *gridLayout_2;
     QGridLayout *gridLayout;
-    QSpacerItem *verticalSpacer;
-    QGridLayout *gridLayout_3;
-    QSpacerItem *horizontalSpacer_5;
-    QPushButton *pushButton_Aceptar;
-    QSpacerItem *horizontalSpacer_6;
-    QPushButton *pushButton_Cancelar;
     QGridLayout *gridLayout_4;
     QCheckBox *checkBox_habilitado;
     QComboBox *cb_tienda;
@@ -85,33 +78,6 @@ public:
         gridLayout_2->setSizeConstraint(QLayout::SetMaximumSize);
         gridLayout = new QGridLayout();
         gridLayout->setObjectName(QString::fromUtf8("gridLayout"));
-        verticalSpacer = new QSpacerItem(20, 13, QSizePolicy::Minimum, QSizePolicy::Fixed);
-
-        gridLayout->addItem(verticalSpacer, 1, 0, 1, 1);
-
-        gridLayout_3 = new QGridLayout();
-        gridLayout_3->setObjectName(QString::fromUtf8("gridLayout_3"));
-        horizontalSpacer_5 = new QSpacerItem(40, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
-
-        gridLayout_3->addItem(horizontalSpacer_5, 0, 0, 1, 1);
-
-        pushButton_Aceptar = new QPushButton(ui_usuario_datos);
-        pushButton_Aceptar->setObjectName(QString::fromUtf8("pushButton_Aceptar"));
-
-        gridLayout_3->addWidget(pushButton_Aceptar, 0, 1, 1, 1);
-
-        horizontalSpacer_6 = new QSpacerItem(40, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
-
-        gridLayout_3->addItem(horizontalSpacer_6, 0, 3, 1, 1);
-
-        pushButton_Cancelar = new QPushButton(ui_usuario_datos);
-        pushButton_Cancelar->setObjectName(QString::fromUtf8("pushButton_Cancelar"));
-
-        gridLayout_3->addWidget(pushButton_Cancelar, 0, 2, 1, 1);
-
-
-        gridLayout->addLayout(gridLayout_3, 2, 0, 1, 1);
-
         gridLayout_4 = new QGridLayout();
         gridLayout_4->setObjectName(QString::fromUtf8("gridLayout_4"));
         checkBox_habilitado = new QCheckBox(ui_usuario_datos);
@@ -309,6 +275,21 @@ public:
 
         gridLayout_2->addLayout(gridLayout, 0, 0, 1, 1);
 
+        QWidget::setTabOrder(le_nombre, le_pApellido);
+        QWidget::setTabOrder(le_pApellido, le_sApellido);
+        QWidget::setTabOrder(le_sApellido, cB_tDoc);
+        QWidget::setTabOrder(cB_tDoc, le_numDoc);
+        QWidget::setTabOrder(le_numDoc, de_fechaNac);
+        QWidget::setTabOrder(de_fechaNac, cb_tienda);
+        QWidget::setTabOrder(cb_tienda, le_direccion);
+        QWidget::setTabOrder(le_direccion, le_telf);
+        QWidget::setTabOrder(le_telf, le_cell);
+        QWidget::setTabOrder(le_cell, lE_telfFam);
+        QWidget::setTabOrder(lE_telfFam, cB_tipoCol);
+        QWidget::setTabOrder(cB_tipoCol, le_Usuario);
+        QWidget::setTabOrder(le_Usuario, pB_cambiarPass);
+        QWidget::setTabOrder(pB_cambiarPass, tE_obs);
+        QWidget::setTabOrder(tE_obs, checkBox_habilitado);
 
         retranslateUi(ui_usuario_datos);
 
@@ -318,10 +299,6 @@ public:
     void retranslateUi(QWidget *ui_usuario_datos)
     {
         ui_usuario_datos->setWindowTitle(QApplication::translate("ui_usuario_datos", "Form", 0, QApplication::UnicodeUTF8));
-        pushButton_Aceptar->setText(QApplication::translate("ui_usuario_datos", "Guardar", 0, QApplication::UnicodeUTF8));
-        pushButton_Aceptar->setShortcut(QApplication::translate("ui_usuario_datos", "Return", 0, QApplication::UnicodeUTF8));
-        pushButton_Cancelar->setText(QApplication::translate("ui_usuario_datos", "Cancelar", 0, QApplication::UnicodeUTF8));
-        pushButton_Cancelar->setShortcut(QApplication::translate("ui_usuario_datos", "Esc", 0, QApplication::UnicodeUTF8));
         checkBox_habilitado->setText(QApplication::translate("ui_usuario_datos", "Habilitado", 0, QApplication::UnicodeUTF8));
         cb_tienda->clear();
         cb_tienda->insertItems(0, QStringList()
