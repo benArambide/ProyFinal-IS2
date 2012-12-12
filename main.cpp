@@ -33,7 +33,7 @@ bool confConexionDB()
         db.setOptions("UNIX_SOCKET=/opt/lampp/var/mysql/mysql.sock");
         db.setHost("localhost");
         db.setUser("root");
-        db.setPass("jose-123");
+        db.setPass("enter");
         if(db.connect())
         {
             qDebug()<<"Conectado a localhost ...";
