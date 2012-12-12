@@ -65,14 +65,10 @@ SOURCES += main.cpp\
     almacen.cpp \
     vitrina.cpp \
     tratamiento.cpp \
-<<<<<<< HEAD
-    #receta.cpp
-=======
     receta.cpp \
     ui_venta.cpp \
     ui_agregar_venta.cpp \
     venta.cpp
->>>>>>> ff9f7cc44b0cf17315229ba183ca9bf10e78093c
 
 HEADERS  += mainwindow.h \
     sesion.h \
@@ -132,15 +128,10 @@ HEADERS  += mainwindow.h \
     vitrina.h \
     ui_mainwindow.h \
     tratamiento.h \
-<<<<<<< HEAD
-#    receta.h
-=======
-    receta.h \
     receta.h \
     ui_venta.h \
     ui_agregar_venta.h \
     venta.h
->>>>>>> ff9f7cc44b0cf17315229ba183ca9bf10e78093c
 
 FORMS    += mainwindow.ui \
     ui_login.ui \
