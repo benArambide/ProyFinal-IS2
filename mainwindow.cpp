@@ -13,7 +13,8 @@ MainWindow::MainWindow(QWidget *parent) :
 {
 
     ui->setupUi(this);
-
+    ui->actionEditar->setEnabled(false);
+    ui->actionGuardar->setEnabled(false);
 }
 
 MainWindow::~MainWindow()
@@ -38,6 +39,7 @@ void MainWindow::on_actionUsuario_triggered()
     USER_FORM->showMaximized();*/
   ActiveModule = new ModuloUsuarios(this);
   this->setCentralWidget(ActiveModule);
+  connect(ActiveModule,SIGNAL(rowSelected()),this,SLOT(enableEdit()));
   //ActiveModule->showMaximized();
 }
 
@@ -89,5 +91,14 @@ void MainWindow::on_actionGuardar_triggered()
 
 void MainWindow::on_actionEditar_triggered()
 {
-    ActiveModule->Editar();
+  ui->actionBuscar->setEnabled(false);
+  ui->actionNuevo->setEnabled(false);
+  ui->actionEditar->setEnabled(false);
+  ui->actionGuardar->setEnabled(true);
+  ActiveModule->Editar();
+}
+
+void MainWindow::enableEdit()
+{
+  ui->actionEditar->setEnabled(true);
 }

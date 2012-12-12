@@ -68,6 +68,8 @@ ModuloUsuarios::ModuloUsuarios(QWidget *parent) :
 
 void ModuloUsuarios::Buscar()
 {
+  QItemSelectionModel * sm = ui->list_tableView->selectionModel();
+  disconnect(sm,SIGNAL(currentRowChanged(QModelIndex,QModelIndex)),this,SLOT(selectionChangedHandle(QModelIndex,QModelIndex)));
   ui_BuscarUsuario* b = new ui_BuscarUsuario;
   QDialog* dialogBuscar = makeBusquedaDialog(b);
   int result = dialogBuscar->exec();
@@ -87,6 +89,8 @@ void ModuloUsuarios::Buscar()
   if(relTableModel->lastError().isValid())
     QMessageBox::critical(this,"Error",relTableModel->lastError().text(),0,0);
   ui->list_tableView->setModel(relTableModel);
+  sm = ui->list_tableView->selectionModel();
+  connect(sm,SIGNAL(currentRowChanged(QModelIndex,QModelIndex)),this,SLOT(selectionChangedHandle(QModelIndex,QModelIndex)));
   ui->list_tableView->hideColumn(0);
   ui->list_tableView->hideColumn(17);
   delete dialogBuscar;
@@ -108,6 +112,8 @@ void ModuloUsuarios::Agregar()
 
 void ModuloUsuarios::Editar()
 {
+  verDetalles();
+  detalles_tab->setEnabled(true);
 }
 
 void ModuloUsuarios::mostrar()
