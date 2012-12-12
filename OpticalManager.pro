@@ -65,7 +65,10 @@ SOURCES += main.cpp\
     almacen.cpp \
     vitrina.cpp \
     tratamiento.cpp \
-    receta.cpp
+    receta.cpp \
+    ui_venta.cpp \
+    ui_agregar_venta.cpp \
+    venta.cpp
 
 HEADERS  += mainwindow.h \
     sesion.h \
@@ -125,7 +128,11 @@ HEADERS  += mainwindow.h \
     vitrina.h \
     ui_mainwindow.h \
     tratamiento.h \
-    receta.h
+    receta.h \
+    receta.h \
+    ui_venta.h \
+    ui_agregar_venta.h \
+    venta.h
 
 FORMS    += mainwindow.ui \
     ui_login.ui \
@@ -154,7 +161,9 @@ FORMS    += mainwindow.ui \
     ui_datos_compras.ui \
     compras.ui \
     ui_vitrina_agregar.ui \
-    ui_vitrina.ui
+    ui_vitrina.ui \
+    ui_venta.ui \
+    ui_agregar_venta.ui
 
 RESOURCES += \
     Icons/Icons.qrc \
