@@ -1,31 +1,40 @@
 #ifndef ANDAMIO_H
 #define ANDAMIO_H
 
-#include <objetopersistente.h>
-#include <QSqlQueryModel>
-#include <QSqlRecord>
+#include "objetopersistente.h"
 
 class andamio:public ObjetoPersistente
 {
-    private:
-        QString idAndamio;
-        QString idAlmacen;
-        QString nombre;
+private:
+    QString idAndamio;
+    QString idAlmacen;
+    QString nombre;
+    QString descripcion;
+    QString fila;
+    QString columna;
 
-    public:
-        andamio(QString,QString,QString);
-        void setIdAndamio(QString);
-        void setIdAlmacen(QString);
-        void setNombre(QString);
-        QString getIdAndamio();
-        QString getIdAlmacen();
-        QString getNombre();
+public:
+    andamio();
+    andamio(QString,QString,QString,QString,QString,QString);
 
-        static andamio* getAndamioByNombre(QString);
-        static QSqlQueryModel* getAndamios(QString=QString());
-        bool agregar();
-        bool actualizar();
-        bool eliminar();
+    QString getIdAndamio();
+    QString getIdAlmacen();
+    QString getNombre();
+    QString getDescripcion();
+    QString getFila();
+    QString getColumna();
+
+    void setIdAndamio(QString);
+    void setIdAlmacen(QString);
+    void setNombre(QString);
+    void setDescripcion(QString);
+    void setFila(QString);
+    void setColumna(QString);
+
+    bool agregar();
+    bool actualizar();
+    bool eliminar();
+
 };
 
 #endif // ANDAMIO_H

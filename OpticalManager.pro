@@ -53,7 +53,6 @@ SOURCES += main.cpp\
     cliente.cpp \
     tipodoc_ident.cpp \
     ui_almacen.cpp \
-    ui_almacen_opciones.cpp \
     ui_proveedores.cpp \
     ui_datos_proveedor.cpp \
     ui_datos_compras.cpp \
@@ -117,7 +116,6 @@ HEADERS  += mainwindow.h \
     cliente.h \
     tipodoc_ident.h \
     ui_almacen.h \
-    ui_almacen_opciones.h \
     ui_proveedores.h \
     ui_datos_proveedor.h \
     ui_datos_compras.h \
@@ -160,7 +158,6 @@ FORMS    += mainwindow.ui \
     ui_empresa.ui \
     ui_agregar_nomdesc.ui \
     ui_almacen.ui \
-    ui_almacen_opciones.ui \
     ui_proveedores.ui \
     ui_datos_proveedor.ui \
     ui_datos_compras.ui \

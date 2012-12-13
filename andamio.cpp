@@ -1,22 +1,17 @@
 #include "andamio.h"
 
-andamio::andamio(QString ian,QString ial,QString n):idAndamio(ian),idAlmacen(ial),nombre(n)
+andamio::andamio()
 {
 }
 
-void andamio::setIdAndamio(QString ian)
+andamio::andamio(QString idAn, QString idAl, QString n, QString d, QString f, QString c)
 {
-    idAndamio=ian;
-}
-
-void andamio::setIdAlmacen(QString ial)
-{
-    idAlmacen=ial;
-}
-
-void andamio::setNombre(QString n)
-{
-    nombre=n;
+    idAndamio = idAn;
+    idAlmacen = idAl;
+    nombre = n;
+    descripcion = d;
+    fila = f;
+    columna= c;
 }
 
 QString andamio::getIdAndamio()
@@ -34,66 +29,95 @@ QString andamio::getNombre()
     return nombre;
 }
 
-andamio* andamio::getAndamioByNombre(QString nombre)
+QString andamio::getDescripcion()
 {
-    QSqlQuery query;
-    query.prepare("SELECT * FROM andamio WHERE nombre=?");
-    query.bindValue(0,nombre);
-    query.exec();
-
-    QSqlQueryModel* model=new QSqlQueryModel;
-    model->setQuery(query);
-    return new andamio(model->record(0).value(0).toString(),model->record(1).value(0).toString(),model->record(2).value(0).toString());
+    return descripcion;
 }
 
-QSqlQueryModel* andamio::getAndamios(QString idAlmacen)
+QString andamio::getFila()
 {
-    QSqlQuery query;
-    if(idAlmacen.compare("")==0)
-        query.prepare("SELECT * FROM andamio");
-    else
-        query.prepare("SELECT * FROM andamio WHERE idAlmacen=?");
-    query.bindValue(0,idAlmacen);
-    query.exec();
+    return fila;
+}
 
-    QSqlQueryModel* model=new QSqlQueryModel;
-    model->setQuery(query);
-    return model;
+QString andamio::getColumna()
+{
+    return columna;
+
+}
+
+void andamio::setIdAndamio(QString idAn)
+{
+    idAndamio = idAn;
+}
+
+void andamio::setIdAlmacen(QString idAl)
+{
+    idAlmacen = idAl;
+}
+
+void andamio::setNombre(QString n)
+{
+    nombre = n;
+}
+
+void andamio::setDescripcion(QString d)
+{
+    descripcion = d;
+}
+
+void andamio::setFila(QString f)
+{
+    fila = f;
+}
+
+void andamio::setColumna(QString c)
+{
+    columna = c;
 }
 
 bool andamio::agregar()
 {
     QSqlQuery query;
-    query.prepare("INSERT INTO andamio(idAlmacen,nombre) VALUES(?,?)");
-
+    query.prepare("INSERT INTO andamio(idalmacen,nombre,descripcion,fila,columna) VALUES(?,?,?,?,?)");
     query.bindValue(0,idAlmacen);
     query.bindValue(1,nombre);
+    query.bindValue(2,descripcion);
+    query.bindValue(3,fila);
+    query.bindValue(4,columna);
 
     if(query.exec())
         return true;
     else
         return false;
-    return true;
 }
 
 bool andamio::actualizar()
 {
     QSqlQuery query;
-    query.prepare("UPDATE andamio SET idAlmacen=?,nombre=? WHERE idAndamio=?");
-
+    query.prepare("UPDATE andamio SET idalmacen=?,nombre=?,descripcion=?,fila=?,columna=? WHERE idandamio=?");
     query.bindValue(0,idAlmacen);
     query.bindValue(1,nombre);
-    query.bindValue(2,idAndamio);
+    query.bindValue(2,descripcion);
+    query.bindValue(3,fila);
+    query.bindValue(4,columna);
+    query.bindValue(5,idAndamio);
 
     if(query.exec())
         return true;
     else
         return false;
-    return true;
 }
+
 
 bool andamio::eliminar()
 {
-    return true;
+    QSqlQuery query;
+    query.prepare("DELETE FROM andamio WHERE idandamio='"+idAndamio+"'");
+
+    if(query.exec())
+        return true;
+    else
+        return false;
 }
+
 

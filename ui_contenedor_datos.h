@@ -52,8 +52,6 @@ private slots:
 
     void on_pushButton_deleteProducto_clicked();
 
-    void on_tableWidget_list_productos_currentItemChanged(QTableWidgetItem *current, QTableWidgetItem *previous);
-
 private:
     Ui::ui_contenedor_datos *ui;
 };
