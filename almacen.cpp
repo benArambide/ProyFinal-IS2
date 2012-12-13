@@ -1,22 +1,15 @@
 #include "almacen.h"
 
-almacen::almacen(QString ia,QString it,QString n):idAlmacen(ia),idTienda(it),nombre(n)
+almacen::almacen()
 {
 }
 
-void almacen::setIdAlmacen(QString ial)
+almacen::almacen(QString idA, QString idT, QString n, QString d)
 {
-    idAlmacen=ial;
-}
-
-void almacen::setIdTienda(QString it)
-{
-    idTienda=it;
-}
-
-void almacen::setNombre(QString n)
-{
-    nombre=n;
+    idAlmacen = idA;
+    idTienda = idT;
+    nombre = n;
+    descripcion = d;
 }
 
 QString almacen::getIdAlmacen()
@@ -34,45 +27,67 @@ QString almacen::getNombre()
     return nombre;
 }
 
-almacen* almacen::getAlmacenByNombre(QString nombre)
+QString almacen::getDescripcion()
 {
-    QSqlQuery query;
-    query.prepare("SELECT * FROM almacen WHERE nombre=?");
-    query.bindValue(0,nombre);
-    query.exec();
-
-    QSqlQueryModel* model=new QSqlQueryModel;
-    model->setQuery(query);
-    return new almacen(model->record(0).value(0).toString(),model->record(1).value(0).toString(),model->record(2).value(0).toString());
+    return descripcion;
 }
 
-QSqlQueryModel* almacen::getAlmacenes(QString idTienda)
+void almacen::setIdAlmacen(QString idA)
 {
-    QSqlQuery query;
-    if(idTienda.compare("")==0)
-        query.prepare("SELECT * FROM almacen");
-    else
-        query.prepare("SELECT * FROM almacen WHERE idTienda=?");
-    query.bindValue(0,idTienda);
-    query.exec();
+    idAlmacen = idA;
+}
 
-    QSqlQueryModel* model=new QSqlQueryModel;
-    model->setQuery(query);
-    return model;
+void almacen::setIdTienda(QString idT)
+{
+    idTienda = idT;
+}
+
+void almacen::setNombre(QString n)
+{
+    nombre = n;
+}
+
+void almacen::setDescripcion(QString d)
+{
+    descripcion = d;
 }
 
 bool almacen::agregar()
 {
-    return true;
-}
+    QSqlQuery query;
+    query.prepare("INSERT INTO almacen(idtienda,nombre,descripcion) VALUES(?,?,?)");
+    query.bindValue(0,idTienda);
+    query.bindValue(1,nombre);
+    query.bindValue(2,descripcion);
 
+    if(query.exec())
+        return true;
+    else
+        return false;
+
+}
 bool almacen::actualizar()
 {
-    return true;
+    QSqlQuery query;
+    query.prepare("UPDATE almacen SET idtienda=?,nombre=?,descripcion=? where idalmacen=?");
+    query.bindValue(0,idTienda);
+    query.bindValue(1,nombre);
+    query.bindValue(2,descripcion);
+    query.bindValue(3,idAlmacen);
+
+    if(query.exec())
+        return true;
+    else
+        return false;
 }
 
 bool almacen::eliminar()
 {
-    return true;
-}
+    QSqlQuery query;
+    query.prepare("DELETE FROM almacen WHERE idalmacen='"+idAlmacen+"'");
 
+    if(query.exec())
+        return true;
+    else
+        return false;
+}

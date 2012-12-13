@@ -63,6 +63,9 @@ SOURCES += main.cpp\
     andamio.cpp \
     contenedor.cpp \
     almacen.cpp \
+    ui_almacen_datos.cpp \
+    ui_andamio_datos.cpp \
+    ui_contenedor_datos.cpp \
     vitrina.cpp \
     tratamiento.cpp \
     receta.cpp \
@@ -131,7 +134,10 @@ HEADERS  += mainwindow.h \
     receta.h \
     ui_venta.h \
     ui_agregar_venta.h \
-    venta.h
+    venta.h \
+    ui_almacen_datos.h \
+    ui_andamio_datos.h \
+    ui_contenedor_datos.h
 
 FORMS    += mainwindow.ui \
     ui_login.ui \
@@ -162,7 +168,10 @@ FORMS    += mainwindow.ui \
     ui_vitrina_agregar.ui \
     ui_vitrina.ui \
     ui_venta.ui \
-    ui_agregar_venta.ui
+    ui_agregar_venta.ui \
+    ui_almacen_datos.ui \
+    ui_andamio_datos.ui \
+    ui_contenedor_datos.ui
 
 RESOURCES += \
     Icons/Icons.qrc \
