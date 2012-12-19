@@ -20,40 +20,22 @@ bool configurador::leerConfiguracion()
     file.open(QIODevice::ReadOnly|QIODevice::Text);
     QString str_db;
     QTextStream in(&file);
-    str_db = in.readAll();
-    vector<QString> v_str;
-    qDebug()<<"str_db: "<<str_db<<endl;
-    int posInit=0;
-    v_str.resize(5);
-    int j=0;
-    for(int i=0; i<str_db.length(); i++)
-    {
-        if(str_db[i] == '#')
-        {
-            v_str[j] = str_db.mid(posInit, i-posInit);
-            posInit = i+1;
-            j++;
-        }
-    }
+    str_db = in.readLine();
     file.close();
+    //qDebug()<<"str_db: "<<str_db<<endl;
+    QStringList tokens=str_db.split(QRegExp("[#]"));
 
-
-
-    conexiondb->setHost(v_str[0]);
-    conexiondb->setName(v_str[1]);
-    conexiondb->setUser(v_str[2]);
-    conexiondb->setPass(v_str[3]);
-    conexiondb->setPort(v_str[4]);
-
-   /* qDebug()<<"v_str[0]: "<<v_str[0]<<endl;
-    qDebug()<<"v_str[1]: "<<v_str[1]<<endl;
-    qDebug()<<"v_str[2]: "<<v_str[2]<<endl;
-    qDebug()<<"v_str[3]: "<<v_str[3]<<endl;fgAlex
-    qDebug()<<"v_str[4]: "<<v_str[4]<<endl;*/
-
+    conexiondb->setHost(tokens[0]);
+    conexiondb->setName(tokens[1]);
+    conexiondb->setUser(tokens[2]);
+    conexiondb->setPass(tokens[3]);
+    conexiondb->setPort(tokens[4]);
 }
+
 bool configurador::actualizarConfiguracion()
-{}
+{
+}
+
 bool configurador::conectar_db()
 {
     if(conexiondb->connect())
@@ -66,4 +48,3 @@ bool configurador::conectar_db()
     }
 
 }
-
