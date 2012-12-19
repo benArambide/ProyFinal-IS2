@@ -86,7 +86,7 @@ void ConfigProgram::on_pushButton_clicked()
         file.write(str.toStdString().data());
         file.close();
         this->close();
-        QString path = "start ClinicaProyect.exe";
+        QString path = "start OpticalManager.exe";
         system(path.toStdString().c_str());
     }
 }

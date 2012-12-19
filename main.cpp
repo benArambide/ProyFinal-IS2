@@ -25,7 +25,6 @@ int main(int argc,char *argv[])
       return a.exec();
     }
 
-    //ToDo: Organizar este codigo spaguetti xD
     QTextCodec* linuxCodec=QTextCodec::codecForName("UTF-8");
     QTextCodec::setCodecForTr(linuxCodec);
     QTextCodec::setCodecForCStrings(linuxCodec);
@@ -36,11 +35,8 @@ int main(int argc,char *argv[])
     pix = pix.scaled(800,450);
 
     QSplashScreen splash(pix);
-    //ToDO: Cambiar el color de letra o posicion del texto de Cargando...
     splash.show();
-    splash.showMessage("Cargando Modulos",Qt::AlignLeft,Qt::white);
-    //QTimer::singleShot(10000,splash,SLOT(close()));
-    //ToDo: Sincronizar el SplashScreen con la conexion a BD y la ventana de Login
+    splash.showMessage("Cargando Modulos",Qt::AlignLeft,Qt::white);    
     configurador config("config.ini");
 
     if(config.conectar_db())

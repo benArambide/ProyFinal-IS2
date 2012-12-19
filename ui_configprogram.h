@@ -1,7 +1,7 @@
 /********************************************************************************
 ** Form generated from reading UI file 'configprogram.ui'
 **
-** Created: Tue 18. Dec 22:47:57 2012
+** Created: Wed 19. Dec 07:29:51 2012
 **      by: Qt User Interface Compiler version 4.8.0
 **
 ** WARNING! All changes made in this file will be lost when recompiling UI file!
@@ -155,13 +155,13 @@ public:
         pushButton_2->setText(QApplication::translate("ConfigProgram", "Cancel", 0, QApplication::UnicodeUTF8));
         label_6->setText(QApplication::translate("ConfigProgram", "DATABASE SERVER", 0, QApplication::UnicodeUTF8));
         label->setText(QApplication::translate("ConfigProgram", "Host Name:", 0, QApplication::UnicodeUTF8));
-        lineEdit_hostName->setText(QApplication::translate("ConfigProgram", "localhost", 0, QApplication::UnicodeUTF8));
+        lineEdit_hostName->setText(QApplication::translate("ConfigProgram", "servercsunsa.sytes.net", 0, QApplication::UnicodeUTF8));
         label_2->setText(QApplication::translate("ConfigProgram", "Database Name:", 0, QApplication::UnicodeUTF8));
         lineEdit_databaseName->setText(QApplication::translate("ConfigProgram", "opticaldb", 0, QApplication::UnicodeUTF8));
         label_3->setText(QApplication::translate("ConfigProgram", "User Name:", 0, QApplication::UnicodeUTF8));
-        lineEdit_userName->setText(QApplication::translate("ConfigProgram", "root", 0, QApplication::UnicodeUTF8));
+        lineEdit_userName->setText(QApplication::translate("ConfigProgram", "opticaldb", 0, QApplication::UnicodeUTF8));
         label_4->setText(QApplication::translate("ConfigProgram", "Password:", 0, QApplication::UnicodeUTF8));
-        lineEdit_password->setText(QApplication::translate("ConfigProgram", "1234", 0, QApplication::UnicodeUTF8));
+        lineEdit_password->setText(QApplication::translate("ConfigProgram", "optical123", 0, QApplication::UnicodeUTF8));
         label_10->setText(QApplication::translate("ConfigProgram", "Port:", 0, QApplication::UnicodeUTF8));
         lineEdit_port->setText(QApplication::translate("ConfigProgram", "3306", 0, QApplication::UnicodeUTF8));
     } // retranslateUi

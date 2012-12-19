@@ -82,7 +82,7 @@
        <item row="1" column="1">
         <widget class="QLineEdit" name="lineEdit_hostName">
          <property name="text">
-          <string>localhost</string>
+          <string>servercsunsa.sytes.net</string>
          </property>
         </widget>
        </item>
@@ -110,7 +110,7 @@
        <item row="3" column="1">
         <widget class="QLineEdit" name="lineEdit_userName">
          <property name="text">
-          <string>root</string>
+          <string>opticaldb</string>
          </property>
         </widget>
        </item>
@@ -124,7 +124,7 @@
        <item row="4" column="1">
         <widget class="QLineEdit" name="lineEdit_password">
          <property name="text">
-          <string>1234</string>
+          <string>optical123</string>
          </property>
          <property name="echoMode">
           <enum>QLineEdit::Password</enum>
