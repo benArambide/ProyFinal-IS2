@@ -45,7 +45,6 @@ int main(int argc,char *argv[])
         UI_LOGIN* login = new UI_LOGIN;
         splash.close();
         login->show();
-        qDebug()<<"Hola"<<endl;
     }
     else
     {

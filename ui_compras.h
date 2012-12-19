@@ -1,7 +1,7 @@
 /********************************************************************************
 ** Form generated from reading UI file 'compras.ui'
 **
-** Created: Tue 18. Dec 22:47:57 2012
+** Created: Wed 19. Dec 09:28:17 2012
 **      by: Qt User Interface Compiler version 4.8.0
 **
 ** WARNING! All changes made in this file will be lost when recompiling UI file!
@@ -30,9 +30,7 @@ QT_BEGIN_NAMESPACE
 class Ui_compras
 {
 public:
-    QWidget *layoutWidget;
-    QGridLayout *gridLayout_6;
-    QGridLayout *gridLayout_11;
+    QGridLayout *gridLayout_5;
     QSpacerItem *horizontalSpacer_5;
     QGridLayout *gridLayout_10;
     QLabel *label_3;
@@ -43,17 +41,17 @@ public:
     QFrame *line;
     QTabWidget *tabWidget;
     QWidget *List;
-    QGridLayout *gridLayout_5;
+    QGridLayout *gridLayout_6;
     QGridLayout *gridLayout_4;
     QGridLayout *gridLayout_3;
     QGridLayout *gridLayout_2;
     QLabel *label_2;
+    QTableView *tableView;
     QGridLayout *gridLayout;
     QSpacerItem *horizontalSpacer_2;
     QPushButton *pushButton;
     QPushButton *pushButton_2;
     QPushButton *pushButton_3;
-    QTableView *tableView;
     QSpacerItem *horizontalSpacer_4;
     QWidget *details;
 
@@ -61,34 +59,28 @@ public:
     {
         if (compras->objectName().isEmpty())
             compras->setObjectName(QString::fromUtf8("compras"));
-        compras->resize(691, 383);
-        layoutWidget = new QWidget(compras);
-        layoutWidget->setObjectName(QString::fromUtf8("layoutWidget"));
-        layoutWidget->setGeometry(QRect(10, 10, 678, 365));
-        gridLayout_6 = new QGridLayout(layoutWidget);
-        gridLayout_6->setObjectName(QString::fromUtf8("gridLayout_6"));
-        gridLayout_6->setContentsMargins(0, 0, 0, 0);
-        gridLayout_11 = new QGridLayout();
-        gridLayout_11->setObjectName(QString::fromUtf8("gridLayout_11"));
-        horizontalSpacer_5 = new QSpacerItem(40, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
+        compras->resize(687, 382);
+        gridLayout_5 = new QGridLayout(compras);
+        gridLayout_5->setObjectName(QString::fromUtf8("gridLayout_5"));
+        horizontalSpacer_5 = new QSpacerItem(146, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
 
-        gridLayout_11->addItem(horizontalSpacer_5, 0, 0, 1, 1);
+        gridLayout_5->addItem(horizontalSpacer_5, 0, 0, 1, 1);
 
         gridLayout_10 = new QGridLayout();
         gridLayout_10->setObjectName(QString::fromUtf8("gridLayout_10"));
-        label_3 = new QLabel(layoutWidget);
+        label_3 = new QLabel(compras);
         label_3->setObjectName(QString::fromUtf8("label_3"));
 
         gridLayout_10->addWidget(label_3, 0, 0, 1, 1);
 
-        lineEdit = new QLineEdit(layoutWidget);
+        lineEdit = new QLineEdit(compras);
         lineEdit->setObjectName(QString::fromUtf8("lineEdit"));
         lineEdit->setMinimumSize(QSize(250, 0));
         lineEdit->setMaximumSize(QSize(250, 16777215));
 
         gridLayout_10->addWidget(lineEdit, 0, 1, 1, 1);
 
-        pushButton_5 = new QPushButton(layoutWidget);
+        pushButton_5 = new QPushButton(compras);
         pushButton_5->setObjectName(QString::fromUtf8("pushButton_5"));
         QIcon icon;
         icon.addFile(QString::fromUtf8(":/Icons/1349716430_zoom.png"), QSize(), QIcon::Normal, QIcon::Off);
@@ -97,7 +89,7 @@ public:
 
         gridLayout_10->addWidget(pushButton_5, 0, 2, 1, 1);
 
-        pushButton_6 = new QPushButton(layoutWidget);
+        pushButton_6 = new QPushButton(compras);
         pushButton_6->setObjectName(QString::fromUtf8("pushButton_6"));
         QIcon icon1;
         icon1.addFile(QString::fromUtf8(":/Icons/1349716435_cog.png"), QSize(), QIcon::Normal, QIcon::Off);
@@ -107,28 +99,25 @@ public:
         gridLayout_10->addWidget(pushButton_6, 0, 3, 1, 1);
 
 
-        gridLayout_11->addLayout(gridLayout_10, 0, 1, 1, 1);
+        gridLayout_5->addLayout(gridLayout_10, 0, 1, 1, 1);
 
-        horizontalSpacer_6 = new QSpacerItem(40, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
+        horizontalSpacer_6 = new QSpacerItem(147, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
 
-        gridLayout_11->addItem(horizontalSpacer_6, 0, 2, 1, 1);
+        gridLayout_5->addItem(horizontalSpacer_6, 0, 2, 1, 1);
 
-
-        gridLayout_6->addLayout(gridLayout_11, 0, 0, 1, 1);
-
-        line = new QFrame(layoutWidget);
+        line = new QFrame(compras);
         line->setObjectName(QString::fromUtf8("line"));
         line->setFrameShape(QFrame::HLine);
         line->setFrameShadow(QFrame::Sunken);
 
-        gridLayout_6->addWidget(line, 1, 0, 1, 1);
+        gridLayout_5->addWidget(line, 1, 0, 1, 3);
 
-        tabWidget = new QTabWidget(layoutWidget);
+        tabWidget = new QTabWidget(compras);
         tabWidget->setObjectName(QString::fromUtf8("tabWidget"));
         List = new QWidget();
         List->setObjectName(QString::fromUtf8("List"));
-        gridLayout_5 = new QGridLayout(List);
-        gridLayout_5->setObjectName(QString::fromUtf8("gridLayout_5"));
+        gridLayout_6 = new QGridLayout(List);
+        gridLayout_6->setObjectName(QString::fromUtf8("gridLayout_6"));
         gridLayout_4 = new QGridLayout();
         gridLayout_4->setObjectName(QString::fromUtf8("gridLayout_4"));
         gridLayout_3 = new QGridLayout();
@@ -147,6 +136,11 @@ public:
 
 
         gridLayout_3->addLayout(gridLayout_2, 0, 0, 1, 1);
+
+        tableView = new QTableView(List);
+        tableView->setObjectName(QString::fromUtf8("tableView"));
+
+        gridLayout_3->addWidget(tableView, 1, 0, 1, 1);
 
         gridLayout = new QGridLayout();
         gridLayout->setObjectName(QString::fromUtf8("gridLayout"));
@@ -193,11 +187,6 @@ public:
 
         gridLayout_3->addLayout(gridLayout, 2, 0, 1, 1);
 
-        tableView = new QTableView(List);
-        tableView->setObjectName(QString::fromUtf8("tableView"));
-
-        gridLayout_3->addWidget(tableView, 1, 0, 1, 1);
-
 
         gridLayout_4->addLayout(gridLayout_3, 0, 0, 1, 1);
 
@@ -206,14 +195,14 @@ public:
         gridLayout_4->addItem(horizontalSpacer_4, 1, 0, 1, 1);
 
 
-        gridLayout_5->addLayout(gridLayout_4, 0, 0, 1, 1);
+        gridLayout_6->addLayout(gridLayout_4, 0, 0, 1, 1);
 
         tabWidget->addTab(List, QString());
         details = new QWidget();
         details->setObjectName(QString::fromUtf8("details"));
         tabWidget->addTab(details, QString());
 
-        gridLayout_6->addWidget(tabWidget, 2, 0, 1, 1);
+        gridLayout_5->addWidget(tabWidget, 2, 0, 1, 3);
 
 
         retranslateUi(compras);

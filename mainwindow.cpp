@@ -5,7 +5,8 @@
 #include <montura.h>
 #include "modulousuarios.h"
 #include <luna.h>
-
+#include "ui_proveedores.h"
+#include "compras.h"
 
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
@@ -101,4 +102,16 @@ void MainWindow::on_actionEditar_triggered()
 void MainWindow::enableEdit()
 {
   ui->actionEditar->setEnabled(true);
+}
+
+void MainWindow::on_actionProveedores_triggered()
+{
+    ui_proveedores* proveedor = new ui_proveedores;
+    setCentralWidget(proveedor);
+}
+
+void MainWindow::on_actionCompras_triggered()
+{
+    compras* compra = new compras;
+    setCentralWidget(compra);
 }
