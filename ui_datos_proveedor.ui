@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>347</width>
-    <height>290</height>
+    <width>430</width>
+    <height>298</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -18,8 +18,8 @@
     <rect>
      <x>10</x>
      <y>10</y>
-     <width>331</width>
-     <height>278</height>
+     <width>408</width>
+     <height>280</height>
     </rect>
    </property>
    <layout class="QGridLayout" name="gridLayout">
@@ -37,12 +37,18 @@
       </property>
      </widget>
     </item>
+    <item row="1" column="2" colspan="3">
+     <widget class="QLineEdit" name="lineEdit_razon_social"/>
+    </item>
     <item row="2" column="1">
      <widget class="QLabel" name="label_3">
       <property name="text">
        <string>Ruc</string>
       </property>
      </widget>
+    </item>
+    <item row="2" column="2" colspan="2">
+     <widget class="QLineEdit" name="lineEdit_ruc"/>
     </item>
     <item row="3" column="1">
      <widget class="QLabel" name="label_4">
@@ -51,12 +57,18 @@
       </property>
      </widget>
     </item>
+    <item row="3" column="2" colspan="2">
+     <widget class="QLineEdit" name="lineEdit_direccion"/>
+    </item>
     <item row="4" column="1">
      <widget class="QLabel" name="label_5">
       <property name="text">
        <string>Teléfono</string>
       </property>
      </widget>
+    </item>
+    <item row="4" column="2">
+     <widget class="QLineEdit" name="lineEdit_telefono1"/>
     </item>
     <item row="4" column="3">
      <widget class="QLabel" name="label_6">
@@ -65,6 +77,9 @@
       </property>
      </widget>
     </item>
+    <item row="4" column="4">
+     <widget class="QLineEdit" name="lineEdit_telefono2"/>
+    </item>
     <item row="5" column="1">
      <widget class="QLabel" name="label_7">
       <property name="text">
@@ -72,51 +87,8 @@
       </property>
      </widget>
     </item>
-    <item row="1" column="2" colspan="3">
-     <widget class="QLineEdit" name="lineEdit_2"/>
-    </item>
-    <item row="2" column="2" colspan="2">
-     <widget class="QLineEdit" name="lineEdit_3"/>
-    </item>
-    <item row="3" column="2" colspan="2">
-     <widget class="QLineEdit" name="lineEdit_4"/>
-    </item>
-    <item row="4" column="2">
-     <widget class="QLineEdit" name="lineEdit_5"/>
-    </item>
-    <item row="4" column="4">
-     <widget class="QLineEdit" name="lineEdit_6"/>
-    </item>
     <item row="5" column="2" colspan="3">
-     <widget class="QLineEdit" name="lineEdit_7"/>
-    </item>
-    <item row="10" column="2">
-     <widget class="QPushButton" name="pushButton">
-      <property name="text">
-       <string>Guardar</string>
-      </property>
-     </widget>
-    </item>
-    <item row="10" column="3">
-     <widget class="QPushButton" name="pushButton_2">
-      <property name="text">
-       <string>Cancelar</string>
-      </property>
-     </widget>
-    </item>
-    <item row="7" column="1">
-     <widget class="QLabel" name="label_8">
-      <property name="text">
-       <string>Banco</string>
-      </property>
-     </widget>
-    </item>
-    <item row="8" column="1">
-     <widget class="QLabel" name="label_9">
-      <property name="text">
-       <string>Cuenta Bancaria</string>
-      </property>
-     </widget>
+     <widget class="QLineEdit" name="lineEdit_nombre_contacto"/>
     </item>
     <item row="6" column="1">
      <widget class="QLabel" name="label_10">
@@ -125,6 +97,29 @@
       </property>
      </widget>
     </item>
+    <item row="6" column="2" colspan="3">
+     <widget class="QLineEdit" name="lineEdit_email"/>
+    </item>
+    <item row="7" column="1">
+     <widget class="QLabel" name="label_8">
+      <property name="text">
+       <string>Banco</string>
+      </property>
+     </widget>
+    </item>
+    <item row="7" column="2" colspan="3">
+     <widget class="QLineEdit" name="lineEdit_nombre_banco"/>
+    </item>
+    <item row="8" column="1">
+     <widget class="QLabel" name="label_9">
+      <property name="text">
+       <string>Cuenta Bancaria</string>
+      </property>
+     </widget>
+    </item>
+    <item row="8" column="2" colspan="3">
+     <widget class="QLineEdit" name="lineEdit_numero_cuenta"/>
+    </item>
     <item row="9" column="1">
      <widget class="QLabel" name="label_11">
       <property name="text">
@@ -132,17 +127,52 @@
       </property>
      </widget>
     </item>
-    <item row="6" column="2" colspan="3">
-     <widget class="QLineEdit" name="lineEdit"/>
-    </item>
-    <item row="7" column="2" colspan="3">
-     <widget class="QLineEdit" name="lineEdit_8"/>
-    </item>
-    <item row="8" column="2" colspan="3">
-     <widget class="QLineEdit" name="lineEdit_9"/>
-    </item>
     <item row="9" column="2" colspan="3">
-     <widget class="QLineEdit" name="lineEdit_10"/>
+     <widget class="QLineEdit" name="lineEdit_comentario"/>
+    </item>
+    <item row="10" column="1" colspan="4">
+     <layout class="QHBoxLayout" name="horizontalLayout">
+      <item>
+       <spacer name="horizontalSpacer">
+        <property name="orientation">
+         <enum>Qt::Horizontal</enum>
+        </property>
+        <property name="sizeHint" stdset="0">
+         <size>
+          <width>40</width>
+          <height>20</height>
+         </size>
+        </property>
+       </spacer>
+      </item>
+      <item>
+       <widget class="QPushButton" name="pushButton_save">
+        <property name="text">
+         <string>Guardar</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="pushButton_cancel">
+        <property name="text">
+         <string>Cancelar</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <spacer name="horizontalSpacer_2">
+        <property name="orientation">
+         <enum>Qt::Horizontal</enum>
+        </property>
+        <property name="sizeHint" stdset="0">
+         <size>
+          <width>40</width>
+          <height>20</height>
+         </size>
+        </property>
+       </spacer>
+      </item>
+     </layout>
     </item>
    </layout>
   </widget>

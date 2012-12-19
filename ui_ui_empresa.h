@@ -1,8 +1,8 @@
 /********************************************************************************
 ** Form generated from reading UI file 'ui_empresa.ui'
 **
-** Created: Tue Dec 11 20:51:03 2012
-**      by: Qt User Interface Compiler version 4.8.3
+** Created: Tue 18. Dec 22:47:57 2012
+**      by: Qt User Interface Compiler version 4.8.0
 **
 ** WARNING! All changes made in this file will be lost when recompiling UI file!
 ********************************************************************************/
@@ -22,7 +22,7 @@
 #include <QtGui/QPushButton>
 #include <QtGui/QSpacerItem>
 #include <QtGui/QTabWidget>
-#include <QtGui/QTableView>
+#include <QtGui/QTableWidget>
 #include <QtGui/QWidget>
 
 QT_BEGIN_NAMESPACE
@@ -48,12 +48,12 @@ public:
     QGridLayout *gridLayout_3;
     QGridLayout *gridLayout_2;
     QLabel *label_2;
+    QTableWidget *tableWidget;
     QGridLayout *gridLayout;
     QSpacerItem *horizontalSpacer_2;
-    QPushButton *pushButton;
-    QPushButton *pushButton_2;
-    QPushButton *pushButton_3;
-    QTableView *tableView;
+    QPushButton *pushButton_add_Empresa;
+    QPushButton *pushButton_sup_Empresa;
+    QPushButton *pushButton_edit_Empresa;
     QSpacerItem *horizontalSpacer_4;
     QWidget *details;
 
@@ -143,6 +143,21 @@ public:
 
         gridLayout_2->addWidget(label_2, 0, 0, 1, 1);
 
+        tableWidget = new QTableWidget(List);
+        if (tableWidget->columnCount() < 4)
+            tableWidget->setColumnCount(4);
+        QTableWidgetItem *__qtablewidgetitem = new QTableWidgetItem();
+        tableWidget->setHorizontalHeaderItem(0, __qtablewidgetitem);
+        QTableWidgetItem *__qtablewidgetitem1 = new QTableWidgetItem();
+        tableWidget->setHorizontalHeaderItem(1, __qtablewidgetitem1);
+        QTableWidgetItem *__qtablewidgetitem2 = new QTableWidgetItem();
+        tableWidget->setHorizontalHeaderItem(2, __qtablewidgetitem2);
+        QTableWidgetItem *__qtablewidgetitem3 = new QTableWidgetItem();
+        tableWidget->setHorizontalHeaderItem(3, __qtablewidgetitem3);
+        tableWidget->setObjectName(QString::fromUtf8("tableWidget"));
+
+        gridLayout_2->addWidget(tableWidget, 1, 0, 1, 1);
+
 
         gridLayout_3->addLayout(gridLayout_2, 0, 0, 1, 1);
 
@@ -152,49 +167,44 @@ public:
 
         gridLayout->addItem(horizontalSpacer_2, 0, 0, 1, 1);
 
-        pushButton = new QPushButton(List);
-        pushButton->setObjectName(QString::fromUtf8("pushButton"));
+        pushButton_add_Empresa = new QPushButton(List);
+        pushButton_add_Empresa->setObjectName(QString::fromUtf8("pushButton_add_Empresa"));
         QSizePolicy sizePolicy1(QSizePolicy::Fixed, QSizePolicy::Fixed);
         sizePolicy1.setHorizontalStretch(0);
         sizePolicy1.setVerticalStretch(0);
-        sizePolicy1.setHeightForWidth(pushButton->sizePolicy().hasHeightForWidth());
-        pushButton->setSizePolicy(sizePolicy1);
+        sizePolicy1.setHeightForWidth(pushButton_add_Empresa->sizePolicy().hasHeightForWidth());
+        pushButton_add_Empresa->setSizePolicy(sizePolicy1);
         QIcon icon2;
         icon2.addFile(QString::fromUtf8(":/Icons/1349716423_sq_plus.png"), QSize(), QIcon::Normal, QIcon::Off);
-        pushButton->setIcon(icon2);
-        pushButton->setFlat(true);
+        pushButton_add_Empresa->setIcon(icon2);
+        pushButton_add_Empresa->setFlat(true);
 
-        gridLayout->addWidget(pushButton, 0, 1, 1, 1);
+        gridLayout->addWidget(pushButton_add_Empresa, 0, 1, 1, 1);
 
-        pushButton_2 = new QPushButton(List);
-        pushButton_2->setObjectName(QString::fromUtf8("pushButton_2"));
-        sizePolicy1.setHeightForWidth(pushButton_2->sizePolicy().hasHeightForWidth());
-        pushButton_2->setSizePolicy(sizePolicy1);
+        pushButton_sup_Empresa = new QPushButton(List);
+        pushButton_sup_Empresa->setObjectName(QString::fromUtf8("pushButton_sup_Empresa"));
+        sizePolicy1.setHeightForWidth(pushButton_sup_Empresa->sizePolicy().hasHeightForWidth());
+        pushButton_sup_Empresa->setSizePolicy(sizePolicy1);
         QIcon icon3;
-        icon3.addFile(QString::fromUtf8(":/Icons/1349716425_doc_edit.png"), QSize(), QIcon::Normal, QIcon::Off);
-        pushButton_2->setIcon(icon3);
-        pushButton_2->setFlat(true);
+        icon3.addFile(QString::fromUtf8(":/Icons/1349716432_round_minus.png"), QSize(), QIcon::Normal, QIcon::Off);
+        pushButton_sup_Empresa->setIcon(icon3);
+        pushButton_sup_Empresa->setFlat(true);
 
-        gridLayout->addWidget(pushButton_2, 0, 2, 1, 1);
+        gridLayout->addWidget(pushButton_sup_Empresa, 0, 3, 1, 1);
 
-        pushButton_3 = new QPushButton(List);
-        pushButton_3->setObjectName(QString::fromUtf8("pushButton_3"));
-        sizePolicy1.setHeightForWidth(pushButton_3->sizePolicy().hasHeightForWidth());
-        pushButton_3->setSizePolicy(sizePolicy1);
+        pushButton_edit_Empresa = new QPushButton(List);
+        pushButton_edit_Empresa->setObjectName(QString::fromUtf8("pushButton_edit_Empresa"));
+        sizePolicy1.setHeightForWidth(pushButton_edit_Empresa->sizePolicy().hasHeightForWidth());
+        pushButton_edit_Empresa->setSizePolicy(sizePolicy1);
         QIcon icon4;
-        icon4.addFile(QString::fromUtf8(":/Icons/1349716432_round_minus.png"), QSize(), QIcon::Normal, QIcon::Off);
-        pushButton_3->setIcon(icon4);
-        pushButton_3->setFlat(true);
+        icon4.addFile(QString::fromUtf8(":/Icons/1349716425_doc_edit.png"), QSize(), QIcon::Normal, QIcon::Off);
+        pushButton_edit_Empresa->setIcon(icon4);
+        pushButton_edit_Empresa->setFlat(true);
 
-        gridLayout->addWidget(pushButton_3, 0, 3, 1, 1);
+        gridLayout->addWidget(pushButton_edit_Empresa, 0, 2, 1, 1);
 
 
-        gridLayout_3->addLayout(gridLayout, 2, 0, 1, 1);
-
-        tableView = new QTableView(List);
-        tableView->setObjectName(QString::fromUtf8("tableView"));
-
-        gridLayout_3->addWidget(tableView, 1, 0, 1, 1);
+        gridLayout_3->addLayout(gridLayout, 1, 0, 1, 1);
 
 
         gridLayout_4->addLayout(gridLayout_3, 0, 0, 1, 1);
@@ -232,9 +242,17 @@ public:
         pushButton_5->setText(QString());
         pushButton_6->setText(QString());
         label_2->setText(QApplication::translate("ui_empresa", "Lista de Empresas", 0, QApplication::UnicodeUTF8));
-        pushButton->setText(QApplication::translate("ui_empresa", "A\303\261adir", 0, QApplication::UnicodeUTF8));
-        pushButton_2->setText(QApplication::translate("ui_empresa", "Editar", 0, QApplication::UnicodeUTF8));
-        pushButton_3->setText(QApplication::translate("ui_empresa", "Deshabilitar", 0, QApplication::UnicodeUTF8));
+        QTableWidgetItem *___qtablewidgetitem = tableWidget->horizontalHeaderItem(0);
+        ___qtablewidgetitem->setText(QApplication::translate("ui_empresa", "Ruc", 0, QApplication::UnicodeUTF8));
+        QTableWidgetItem *___qtablewidgetitem1 = tableWidget->horizontalHeaderItem(1);
+        ___qtablewidgetitem1->setText(QApplication::translate("ui_empresa", "Raz\303\263n Social", 0, QApplication::UnicodeUTF8));
+        QTableWidgetItem *___qtablewidgetitem2 = tableWidget->horizontalHeaderItem(2);
+        ___qtablewidgetitem2->setText(QApplication::translate("ui_empresa", "Direcci\303\263n", 0, QApplication::UnicodeUTF8));
+        QTableWidgetItem *___qtablewidgetitem3 = tableWidget->horizontalHeaderItem(3);
+        ___qtablewidgetitem3->setText(QApplication::translate("ui_empresa", "Tel\303\251fono", 0, QApplication::UnicodeUTF8));
+        pushButton_add_Empresa->setText(QApplication::translate("ui_empresa", "A\303\261adir", 0, QApplication::UnicodeUTF8));
+        pushButton_sup_Empresa->setText(QApplication::translate("ui_empresa", "Deshabilitar", 0, QApplication::UnicodeUTF8));
+        pushButton_edit_Empresa->setText(QApplication::translate("ui_empresa", "Editar", 0, QApplication::UnicodeUTF8));
         tabWidget->setTabText(tabWidget->indexOf(List), QApplication::translate("ui_empresa", "Lista", 0, QApplication::UnicodeUTF8));
         tabWidget->setTabText(tabWidget->indexOf(details), QApplication::translate("ui_empresa", "Detalles", 0, QApplication::UnicodeUTF8));
     } // retranslateUi

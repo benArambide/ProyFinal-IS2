@@ -1,7 +1,7 @@
 /****************************************************************************
 ** Meta object code from reading C++ file 'ui_tienda_agregar.h'
 **
-** Created: Fri 30. Nov 13:17:01 2012
+** Created: Tue 18. Dec 22:50:07 2012
 **      by: The Qt Meta Object Compiler version 63 (Qt 4.8.0)
 **
 ** WARNING! All changes made in this file will be lost!

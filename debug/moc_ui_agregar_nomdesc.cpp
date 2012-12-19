@@ -1,7 +1,7 @@
 /****************************************************************************
 ** Meta object code from reading C++ file 'ui_agregar_nomdesc.h'
 **
-** Created: Fri 30. Nov 13:17:03 2012
+** Created: Tue 18. Dec 22:50:11 2012
 **      by: The Qt Meta Object Compiler version 63 (Qt 4.8.0)
 **
 ** WARNING! All changes made in this file will be lost!

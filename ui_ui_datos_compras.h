@@ -1,8 +1,8 @@
 /********************************************************************************
 ** Form generated from reading UI file 'ui_datos_compras.ui'
 **
-** Created: Tue Dec 11 20:51:03 2012
-**      by: Qt User Interface Compiler version 4.8.3
+** Created: Tue 18. Dec 22:47:57 2012
+**      by: Qt User Interface Compiler version 4.8.0
 **
 ** WARNING! All changes made in this file will be lost when recompiling UI file!
 ********************************************************************************/
@@ -14,6 +14,7 @@
 #include <QtGui/QAction>
 #include <QtGui/QApplication>
 #include <QtGui/QButtonGroup>
+#include <QtGui/QDateEdit>
 #include <QtGui/QGridLayout>
 #include <QtGui/QHeaderView>
 #include <QtGui/QLabel>
@@ -52,6 +53,8 @@ public:
     QLabel *label_8;
     QPushButton *pushButton;
     QPushButton *pushButton_2;
+    QLabel *label_9;
+    QDateEdit *dateEdit;
 
     void setupUi(QWidget *ui_datos_compras)
     {
@@ -172,6 +175,17 @@ public:
 
         gridLayout->addWidget(pushButton_2, 4, 3, 1, 1);
 
+        label_9 = new QLabel(gridLayoutWidget);
+        label_9->setObjectName(QString::fromUtf8("label_9"));
+
+        gridLayout->addWidget(label_9, 0, 2, 1, 1);
+
+        dateEdit = new QDateEdit(gridLayoutWidget);
+        dateEdit->setObjectName(QString::fromUtf8("dateEdit"));
+        dateEdit->setCalendarPopup(true);
+
+        gridLayout->addWidget(dateEdit, 0, 3, 1, 1);
+
 
         retranslateUi(ui_datos_compras);
 
@@ -193,6 +207,7 @@ public:
         label_8->setText(QApplication::translate("ui_datos_compras", "Total", 0, QApplication::UnicodeUTF8));
         pushButton->setText(QApplication::translate("ui_datos_compras", "Buscar", 0, QApplication::UnicodeUTF8));
         pushButton_2->setText(QApplication::translate("ui_datos_compras", "Buscar", 0, QApplication::UnicodeUTF8));
+        label_9->setText(QApplication::translate("ui_datos_compras", "Fecha:", 0, QApplication::UnicodeUTF8));
     } // retranslateUi
 
 };

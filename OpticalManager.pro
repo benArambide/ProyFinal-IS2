@@ -70,7 +70,12 @@ SOURCES += main.cpp\
     receta.cpp \
     ui_venta.cpp \
     ui_agregar_venta.cpp \
-    venta.cpp
+    venta.cpp \
+    ui_datos_empresa.cpp \
+    proveedor.cpp \
+    configurador.cpp \
+    configprogram.cpp
+
 
 HEADERS  += mainwindow.h \
     sesion.h \
@@ -135,7 +140,12 @@ HEADERS  += mainwindow.h \
     venta.h \
     ui_almacen_datos.h \
     ui_andamio_datos.h \
-    ui_contenedor_datos.h
+    ui_contenedor_datos.h \
+    ui_datos_empresa.h \
+    proveedor.h \
+    configurador.h \
+    configprogram.h
+
 
 FORMS    += mainwindow.ui \
     ui_login.ui \
@@ -168,7 +178,9 @@ FORMS    += mainwindow.ui \
     ui_agregar_venta.ui \
     ui_almacen_datos.ui \
     ui_andamio_datos.ui \
-    ui_contenedor_datos.ui
+    ui_contenedor_datos.ui \
+    ui_datos_empresa.ui \
+    configprogram.ui
 
 RESOURCES += \
     Icons/Icons.qrc \

@@ -1,8 +1,8 @@
 /********************************************************************************
 ** Form generated from reading UI file 'ui_datos_proveedor.ui'
 **
-** Created: Tue Dec 11 20:51:03 2012
-**      by: Qt User Interface Compiler version 4.8.3
+** Created: Tue 18. Dec 22:47:57 2012
+**      by: Qt User Interface Compiler version 4.8.0
 **
 ** WARNING! All changes made in this file will be lost when recompiling UI file!
 ********************************************************************************/
@@ -15,10 +15,12 @@
 #include <QtGui/QApplication>
 #include <QtGui/QButtonGroup>
 #include <QtGui/QGridLayout>
+#include <QtGui/QHBoxLayout>
 #include <QtGui/QHeaderView>
 #include <QtGui/QLabel>
 #include <QtGui/QLineEdit>
 #include <QtGui/QPushButton>
+#include <QtGui/QSpacerItem>
 #include <QtGui/QWidget>
 
 QT_BEGIN_NAMESPACE
@@ -30,36 +32,39 @@ public:
     QGridLayout *gridLayout;
     QLabel *label;
     QLabel *label_2;
+    QLineEdit *lineEdit_razon_social;
     QLabel *label_3;
+    QLineEdit *lineEdit_ruc;
     QLabel *label_4;
+    QLineEdit *lineEdit_direccion;
     QLabel *label_5;
+    QLineEdit *lineEdit_telefono1;
     QLabel *label_6;
+    QLineEdit *lineEdit_telefono2;
     QLabel *label_7;
-    QLineEdit *lineEdit_2;
-    QLineEdit *lineEdit_3;
-    QLineEdit *lineEdit_4;
-    QLineEdit *lineEdit_5;
-    QLineEdit *lineEdit_6;
-    QLineEdit *lineEdit_7;
-    QPushButton *pushButton;
-    QPushButton *pushButton_2;
-    QLabel *label_8;
-    QLabel *label_9;
+    QLineEdit *lineEdit_nombre_contacto;
     QLabel *label_10;
+    QLineEdit *lineEdit_email;
+    QLabel *label_8;
+    QLineEdit *lineEdit_nombre_banco;
+    QLabel *label_9;
+    QLineEdit *lineEdit_numero_cuenta;
     QLabel *label_11;
-    QLineEdit *lineEdit;
-    QLineEdit *lineEdit_8;
-    QLineEdit *lineEdit_9;
-    QLineEdit *lineEdit_10;
+    QLineEdit *lineEdit_comentario;
+    QHBoxLayout *horizontalLayout;
+    QSpacerItem *horizontalSpacer;
+    QPushButton *pushButton_save;
+    QPushButton *pushButton_cancel;
+    QSpacerItem *horizontalSpacer_2;
 
     void setupUi(QWidget *ui_datos_proveedor)
     {
         if (ui_datos_proveedor->objectName().isEmpty())
             ui_datos_proveedor->setObjectName(QString::fromUtf8("ui_datos_proveedor"));
-        ui_datos_proveedor->resize(347, 290);
+        ui_datos_proveedor->resize(430, 298);
         gridLayoutWidget = new QWidget(ui_datos_proveedor);
         gridLayoutWidget->setObjectName(QString::fromUtf8("gridLayoutWidget"));
-        gridLayoutWidget->setGeometry(QRect(10, 10, 331, 278));
+        gridLayoutWidget->setGeometry(QRect(10, 10, 408, 280));
         gridLayout = new QGridLayout(gridLayoutWidget);
         gridLayout->setObjectName(QString::fromUtf8("gridLayout"));
         gridLayout->setContentsMargins(0, 0, 0, 0);
@@ -73,110 +78,123 @@ public:
 
         gridLayout->addWidget(label_2, 1, 1, 1, 1);
 
+        lineEdit_razon_social = new QLineEdit(gridLayoutWidget);
+        lineEdit_razon_social->setObjectName(QString::fromUtf8("lineEdit_razon_social"));
+
+        gridLayout->addWidget(lineEdit_razon_social, 1, 2, 1, 3);
+
         label_3 = new QLabel(gridLayoutWidget);
         label_3->setObjectName(QString::fromUtf8("label_3"));
 
         gridLayout->addWidget(label_3, 2, 1, 1, 1);
+
+        lineEdit_ruc = new QLineEdit(gridLayoutWidget);
+        lineEdit_ruc->setObjectName(QString::fromUtf8("lineEdit_ruc"));
+
+        gridLayout->addWidget(lineEdit_ruc, 2, 2, 1, 2);
 
         label_4 = new QLabel(gridLayoutWidget);
         label_4->setObjectName(QString::fromUtf8("label_4"));
 
         gridLayout->addWidget(label_4, 3, 1, 1, 1);
 
+        lineEdit_direccion = new QLineEdit(gridLayoutWidget);
+        lineEdit_direccion->setObjectName(QString::fromUtf8("lineEdit_direccion"));
+
+        gridLayout->addWidget(lineEdit_direccion, 3, 2, 1, 2);
+
         label_5 = new QLabel(gridLayoutWidget);
         label_5->setObjectName(QString::fromUtf8("label_5"));
 
         gridLayout->addWidget(label_5, 4, 1, 1, 1);
+
+        lineEdit_telefono1 = new QLineEdit(gridLayoutWidget);
+        lineEdit_telefono1->setObjectName(QString::fromUtf8("lineEdit_telefono1"));
+
+        gridLayout->addWidget(lineEdit_telefono1, 4, 2, 1, 1);
 
         label_6 = new QLabel(gridLayoutWidget);
         label_6->setObjectName(QString::fromUtf8("label_6"));
 
         gridLayout->addWidget(label_6, 4, 3, 1, 1);
 
+        lineEdit_telefono2 = new QLineEdit(gridLayoutWidget);
+        lineEdit_telefono2->setObjectName(QString::fromUtf8("lineEdit_telefono2"));
+
+        gridLayout->addWidget(lineEdit_telefono2, 4, 4, 1, 1);
+
         label_7 = new QLabel(gridLayoutWidget);
         label_7->setObjectName(QString::fromUtf8("label_7"));
 
         gridLayout->addWidget(label_7, 5, 1, 1, 1);
 
-        lineEdit_2 = new QLineEdit(gridLayoutWidget);
-        lineEdit_2->setObjectName(QString::fromUtf8("lineEdit_2"));
+        lineEdit_nombre_contacto = new QLineEdit(gridLayoutWidget);
+        lineEdit_nombre_contacto->setObjectName(QString::fromUtf8("lineEdit_nombre_contacto"));
 
-        gridLayout->addWidget(lineEdit_2, 1, 2, 1, 3);
-
-        lineEdit_3 = new QLineEdit(gridLayoutWidget);
-        lineEdit_3->setObjectName(QString::fromUtf8("lineEdit_3"));
-
-        gridLayout->addWidget(lineEdit_3, 2, 2, 1, 2);
-
-        lineEdit_4 = new QLineEdit(gridLayoutWidget);
-        lineEdit_4->setObjectName(QString::fromUtf8("lineEdit_4"));
-
-        gridLayout->addWidget(lineEdit_4, 3, 2, 1, 2);
-
-        lineEdit_5 = new QLineEdit(gridLayoutWidget);
-        lineEdit_5->setObjectName(QString::fromUtf8("lineEdit_5"));
-
-        gridLayout->addWidget(lineEdit_5, 4, 2, 1, 1);
-
-        lineEdit_6 = new QLineEdit(gridLayoutWidget);
-        lineEdit_6->setObjectName(QString::fromUtf8("lineEdit_6"));
-
-        gridLayout->addWidget(lineEdit_6, 4, 4, 1, 1);
-
-        lineEdit_7 = new QLineEdit(gridLayoutWidget);
-        lineEdit_7->setObjectName(QString::fromUtf8("lineEdit_7"));
-
-        gridLayout->addWidget(lineEdit_7, 5, 2, 1, 3);
-
-        pushButton = new QPushButton(gridLayoutWidget);
-        pushButton->setObjectName(QString::fromUtf8("pushButton"));
-
-        gridLayout->addWidget(pushButton, 10, 2, 1, 1);
-
-        pushButton_2 = new QPushButton(gridLayoutWidget);
-        pushButton_2->setObjectName(QString::fromUtf8("pushButton_2"));
-
-        gridLayout->addWidget(pushButton_2, 10, 3, 1, 1);
-
-        label_8 = new QLabel(gridLayoutWidget);
-        label_8->setObjectName(QString::fromUtf8("label_8"));
-
-        gridLayout->addWidget(label_8, 7, 1, 1, 1);
-
-        label_9 = new QLabel(gridLayoutWidget);
-        label_9->setObjectName(QString::fromUtf8("label_9"));
-
-        gridLayout->addWidget(label_9, 8, 1, 1, 1);
+        gridLayout->addWidget(lineEdit_nombre_contacto, 5, 2, 1, 3);
 
         label_10 = new QLabel(gridLayoutWidget);
         label_10->setObjectName(QString::fromUtf8("label_10"));
 
         gridLayout->addWidget(label_10, 6, 1, 1, 1);
 
+        lineEdit_email = new QLineEdit(gridLayoutWidget);
+        lineEdit_email->setObjectName(QString::fromUtf8("lineEdit_email"));
+
+        gridLayout->addWidget(lineEdit_email, 6, 2, 1, 3);
+
+        label_8 = new QLabel(gridLayoutWidget);
+        label_8->setObjectName(QString::fromUtf8("label_8"));
+
+        gridLayout->addWidget(label_8, 7, 1, 1, 1);
+
+        lineEdit_nombre_banco = new QLineEdit(gridLayoutWidget);
+        lineEdit_nombre_banco->setObjectName(QString::fromUtf8("lineEdit_nombre_banco"));
+
+        gridLayout->addWidget(lineEdit_nombre_banco, 7, 2, 1, 3);
+
+        label_9 = new QLabel(gridLayoutWidget);
+        label_9->setObjectName(QString::fromUtf8("label_9"));
+
+        gridLayout->addWidget(label_9, 8, 1, 1, 1);
+
+        lineEdit_numero_cuenta = new QLineEdit(gridLayoutWidget);
+        lineEdit_numero_cuenta->setObjectName(QString::fromUtf8("lineEdit_numero_cuenta"));
+
+        gridLayout->addWidget(lineEdit_numero_cuenta, 8, 2, 1, 3);
+
         label_11 = new QLabel(gridLayoutWidget);
         label_11->setObjectName(QString::fromUtf8("label_11"));
 
         gridLayout->addWidget(label_11, 9, 1, 1, 1);
 
-        lineEdit = new QLineEdit(gridLayoutWidget);
-        lineEdit->setObjectName(QString::fromUtf8("lineEdit"));
+        lineEdit_comentario = new QLineEdit(gridLayoutWidget);
+        lineEdit_comentario->setObjectName(QString::fromUtf8("lineEdit_comentario"));
 
-        gridLayout->addWidget(lineEdit, 6, 2, 1, 3);
+        gridLayout->addWidget(lineEdit_comentario, 9, 2, 1, 3);
 
-        lineEdit_8 = new QLineEdit(gridLayoutWidget);
-        lineEdit_8->setObjectName(QString::fromUtf8("lineEdit_8"));
+        horizontalLayout = new QHBoxLayout();
+        horizontalLayout->setObjectName(QString::fromUtf8("horizontalLayout"));
+        horizontalSpacer = new QSpacerItem(40, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
 
-        gridLayout->addWidget(lineEdit_8, 7, 2, 1, 3);
+        horizontalLayout->addItem(horizontalSpacer);
 
-        lineEdit_9 = new QLineEdit(gridLayoutWidget);
-        lineEdit_9->setObjectName(QString::fromUtf8("lineEdit_9"));
+        pushButton_save = new QPushButton(gridLayoutWidget);
+        pushButton_save->setObjectName(QString::fromUtf8("pushButton_save"));
 
-        gridLayout->addWidget(lineEdit_9, 8, 2, 1, 3);
+        horizontalLayout->addWidget(pushButton_save);
 
-        lineEdit_10 = new QLineEdit(gridLayoutWidget);
-        lineEdit_10->setObjectName(QString::fromUtf8("lineEdit_10"));
+        pushButton_cancel = new QPushButton(gridLayoutWidget);
+        pushButton_cancel->setObjectName(QString::fromUtf8("pushButton_cancel"));
 
-        gridLayout->addWidget(lineEdit_10, 9, 2, 1, 3);
+        horizontalLayout->addWidget(pushButton_cancel);
+
+        horizontalSpacer_2 = new QSpacerItem(40, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
+
+        horizontalLayout->addItem(horizontalSpacer_2);
+
+
+        gridLayout->addLayout(horizontalLayout, 10, 1, 1, 4);
 
 
         retranslateUi(ui_datos_proveedor);
@@ -194,12 +212,12 @@ public:
         label_5->setText(QApplication::translate("ui_datos_proveedor", "Tel\303\251fono", 0, QApplication::UnicodeUTF8));
         label_6->setText(QApplication::translate("ui_datos_proveedor", "Tel\303\251fono", 0, QApplication::UnicodeUTF8));
         label_7->setText(QApplication::translate("ui_datos_proveedor", "Contacto", 0, QApplication::UnicodeUTF8));
-        pushButton->setText(QApplication::translate("ui_datos_proveedor", "Guardar", 0, QApplication::UnicodeUTF8));
-        pushButton_2->setText(QApplication::translate("ui_datos_proveedor", "Cancelar", 0, QApplication::UnicodeUTF8));
+        label_10->setText(QApplication::translate("ui_datos_proveedor", "Email", 0, QApplication::UnicodeUTF8));
         label_8->setText(QApplication::translate("ui_datos_proveedor", "Banco", 0, QApplication::UnicodeUTF8));
         label_9->setText(QApplication::translate("ui_datos_proveedor", "Cuenta Bancaria", 0, QApplication::UnicodeUTF8));
-        label_10->setText(QApplication::translate("ui_datos_proveedor", "Email", 0, QApplication::UnicodeUTF8));
         label_11->setText(QApplication::translate("ui_datos_proveedor", "Comentario", 0, QApplication::UnicodeUTF8));
+        pushButton_save->setText(QApplication::translate("ui_datos_proveedor", "Guardar", 0, QApplication::UnicodeUTF8));
+        pushButton_cancel->setText(QApplication::translate("ui_datos_proveedor", "Cancelar", 0, QApplication::UnicodeUTF8));
     } // retranslateUi
 
 };

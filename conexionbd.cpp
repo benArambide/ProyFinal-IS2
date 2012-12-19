@@ -1,5 +1,5 @@
 #include "conexionbd.h"
-
+#include<QDebug>
 /**
  * @brief Constructor
  *
@@ -15,17 +15,20 @@ ConexionBD::ConexionBD()
  */
 bool ConexionBD::connect()
 {
-    QSqlDatabase db = QSqlDatabase::addDatabase(db_driver);
+    QSqlDatabase db = QSqlDatabase::addDatabase("QMYSQL");
     db.setHostName(db_host);
     db.setDatabaseName(db_name);
     db.setUserName(db_user);
     db.setPassword(db_pass);
-    if(!db_opciones.isEmpty())
-        db.setConnectOptions(db_opciones);
-    bool ok=db.open();
-    if(!ok)
+    QString num2str;
+    if(!db.open())
     {
         conErr = db.lastError();
+        QMessageBox::critical(0,"Error de conexion a la Base de Datos"
+                              ,conErr.text()+"\nError code: "+num2str.setNum(conErr.number())
+                              ,0,0);
+        return false;
     }
-    return ok;
+
+    return true;
 }

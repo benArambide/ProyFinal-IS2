@@ -7,23 +7,30 @@
 class empresa:public ObjetoPersistente
 {
     private:
-        int id;
-        int ruc;
+        QString id;
+        QString ruc;
         QString razonSocial;
         QString domilicioFiscal;
         QString telefono;
 
     public:
         empresa();
-        int getRuc();
+        empresa(QString idEmpresa,QString ruc,QString raz_social,QString domicilio,QString telefono);
+        QString getId();
+        QString getRuc();
         QString getrazonSocial();
         QString getDomilicioFiscal();
         QString getTelefono();
 
-        void setRuc(int);
+        void setId(QString);
+        void setRuc(QString);
         void setRazonSocial(QString);
         void setDomicilioFiscal(QString);
         void setTelefono(QString);
+        bool agregar();
+        bool actualizar();
+        bool eliminar();
+
 
 };
 

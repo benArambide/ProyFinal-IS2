@@ -1,7 +1,7 @@
 /****************************************************************************
 ** Meta object code from reading C++ file 'ui_tienda.h'
 **
-** Created: Fri 30. Nov 13:16:59 2012
+** Created: Tue 18. Dec 22:50:06 2012
 **      by: The Qt Meta Object Compiler version 63 (Qt 4.8.0)
 **
 ** WARNING! All changes made in this file will be lost!
@@ -23,7 +23,7 @@ static const uint qt_meta_data_ui_tienda[] = {
        6,       // revision
        0,       // classname
        0,    0, // classinfo
-       1,   14, // methods
+       2,   14, // methods
        0,    0, // properties
        0,    0, // enums/sets
        0,    0, // constructors
@@ -32,12 +32,14 @@ static const uint qt_meta_data_ui_tienda[] = {
 
  // slots: signature, parameters, type, tag, flags
       11,   10,   10,   10, 0x08,
+      35,   10,   10,   10, 0x08,
 
        0        // eod
 };
 
 static const char qt_meta_stringdata_ui_tienda[] = {
     "ui_tienda\0\0on_pushButton_clicked()\0"
+    "on_ver_vitrina_clicked()\0"
 };
 
 void ui_tienda::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, void **_a)
@@ -47,6 +49,7 @@ void ui_tienda::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, v
         ui_tienda *_t = static_cast<ui_tienda *>(_o);
         switch (_id) {
         case 0: _t->on_pushButton_clicked(); break;
+        case 1: _t->on_ver_vitrina_clicked(); break;
         default: ;
         }
     }
@@ -85,9 +88,9 @@ int ui_tienda::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
     if (_id < 0)
         return _id;
     if (_c == QMetaObject::InvokeMetaMethod) {
-        if (_id < 1)
+        if (_id < 2)
             qt_static_metacall(this, _c, _id, _a);
-        _id -= 1;
+        _id -= 2;
     }
     return _id;
 }

@@ -6,13 +6,14 @@
 #include<QSqlDatabase>
 #include<QMessageBox>
 #include<QSqlError>
+#include<QObject>
 
 /**
  * @class ConexionBD
  * @brief Representa y guarda los datos de la conexion a la bd
  */
 
-class ConexionBD
+class ConexionBD: public QObject
 {
 public:
     ConexionBD();
@@ -23,7 +24,17 @@ public:
     void setPass(QString val){db_pass = val;}
     void setHost(QString val){db_host = val;}
     void setName(QString val){db_name = val;}
-    void setOptions(QString val){db_opciones = val;}
+
+    void setPort(QString val){db_port = val;}
+
+
+
+    QString getUser( ){return db_user;}
+    QString getPass( ){return db_pass;}
+    QString getHost( ){return db_host;}
+    QString getName( ){return db_name;}
+    QString getPort( ){return db_port;}
+
     QSqlError & getConError(){return conErr;}
 /*TO DO: Clase de configuracion para obtener estos datos de un archivo
 */
@@ -35,6 +46,7 @@ private:
     QString db_driver;  ///<Nombre de el driver de conexion usado
     QString db_opciones; ///<Opciones extra de conexion
     QSqlError conErr;    ///<Registra error de conexion
+    QString db_port;    ///<Puerto de la Base de datos
 };
 
 #endif // CONEXIONBD_H

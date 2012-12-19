@@ -137,9 +137,33 @@
                  </property>
                 </widget>
                </item>
+               <item row="1" column="0">
+                <widget class="QTableWidget" name="tableWidget">
+                 <column>
+                  <property name="text">
+                   <string>Ruc</string>
+                  </property>
+                 </column>
+                 <column>
+                  <property name="text">
+                   <string>Razón Social</string>
+                  </property>
+                 </column>
+                 <column>
+                  <property name="text">
+                   <string>Dirección</string>
+                  </property>
+                 </column>
+                 <column>
+                  <property name="text">
+                   <string>Teléfono</string>
+                  </property>
+                 </column>
+                </widget>
+               </item>
               </layout>
              </item>
-             <item row="2" column="0">
+             <item row="1" column="0">
               <layout class="QGridLayout" name="gridLayout">
                <item row="0" column="0">
                 <spacer name="horizontalSpacer_2">
@@ -155,7 +179,7 @@
                 </spacer>
                </item>
                <item row="0" column="1">
-                <widget class="QPushButton" name="pushButton">
+                <widget class="QPushButton" name="pushButton_add_Empresa">
                  <property name="sizePolicy">
                   <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
                    <horstretch>0</horstretch>
@@ -174,28 +198,8 @@
                  </property>
                 </widget>
                </item>
-               <item row="0" column="2">
-                <widget class="QPushButton" name="pushButton_2">
-                 <property name="sizePolicy">
-                  <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
-                   <horstretch>0</horstretch>
-                   <verstretch>0</verstretch>
-                  </sizepolicy>
-                 </property>
-                 <property name="text">
-                  <string>Editar</string>
-                 </property>
-                 <property name="icon">
-                  <iconset resource="Icons/Icons.qrc">
-                   <normaloff>:/Icons/1349716425_doc_edit.png</normaloff>:/Icons/1349716425_doc_edit.png</iconset>
-                 </property>
-                 <property name="flat">
-                  <bool>true</bool>
-                 </property>
-                </widget>
-               </item>
                <item row="0" column="3">
-                <widget class="QPushButton" name="pushButton_3">
+                <widget class="QPushButton" name="pushButton_sup_Empresa">
                  <property name="sizePolicy">
                   <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
                    <horstretch>0</horstretch>
@@ -214,10 +218,27 @@
                  </property>
                 </widget>
                </item>
+               <item row="0" column="2">
+                <widget class="QPushButton" name="pushButton_edit_Empresa">
+                 <property name="sizePolicy">
+                  <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+                   <horstretch>0</horstretch>
+                   <verstretch>0</verstretch>
+                  </sizepolicy>
+                 </property>
+                 <property name="text">
+                  <string>Editar</string>
+                 </property>
+                 <property name="icon">
+                  <iconset resource="Icons/Icons.qrc">
+                   <normaloff>:/Icons/1349716425_doc_edit.png</normaloff>:/Icons/1349716425_doc_edit.png</iconset>
+                 </property>
+                 <property name="flat">
+                  <bool>true</bool>
+                 </property>
+                </widget>
+               </item>
               </layout>
-             </item>
-             <item row="1" column="0">
-              <widget class="QTableView" name="tableView"/>
              </item>
             </layout>
            </item>

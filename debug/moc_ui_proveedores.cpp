@@ -1,7 +1,7 @@
 /****************************************************************************
 ** Meta object code from reading C++ file 'ui_proveedores.h'
 **
-** Created: Fri 30. Nov 13:51:52 2012
+** Created: Tue 18. Dec 22:50:14 2012
 **      by: The Qt Meta Object Compiler version 63 (Qt 4.8.0)
 **
 ** WARNING! All changes made in this file will be lost!
@@ -23,26 +23,42 @@ static const uint qt_meta_data_ui_proveedores[] = {
        6,       // revision
        0,       // classname
        0,    0, // classinfo
-       0,    0, // methods
+       4,   14, // methods
        0,    0, // properties
        0,    0, // enums/sets
        0,    0, // constructors
        0,       // flags
        0,       // signalCount
 
+ // slots: signature, parameters, type, tag, flags
+      16,   15,   15,   15, 0x08,
+      54,   15,   15,   15, 0x08,
+      93,   15,   15,   15, 0x08,
+     136,  131,   15,   15, 0x08,
+
        0        // eod
 };
 
 static const char qt_meta_stringdata_ui_proveedores[] = {
-    "ui_proveedores\0"
+    "ui_proveedores\0\0on_pushButton_add_proveedor_clicked()\0"
+    "on_pushButton_edit_proveedor_clicked()\0"
+    "on_pushButton_sup_proveedor_clicked()\0"
+    "item\0on_tableWidget_itemClicked(QTableWidgetItem*)\0"
 };
 
 void ui_proveedores::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, void **_a)
 {
-    Q_UNUSED(_o);
-    Q_UNUSED(_id);
-    Q_UNUSED(_c);
-    Q_UNUSED(_a);
+    if (_c == QMetaObject::InvokeMetaMethod) {
+        Q_ASSERT(staticMetaObject.cast(_o));
+        ui_proveedores *_t = static_cast<ui_proveedores *>(_o);
+        switch (_id) {
+        case 0: _t->on_pushButton_add_proveedor_clicked(); break;
+        case 1: _t->on_pushButton_edit_proveedor_clicked(); break;
+        case 2: _t->on_pushButton_sup_proveedor_clicked(); break;
+        case 3: _t->on_tableWidget_itemClicked((*reinterpret_cast< QTableWidgetItem*(*)>(_a[1]))); break;
+        default: ;
+        }
+    }
 }
 
 const QMetaObjectExtraData ui_proveedores::staticMetaObjectExtraData = {
@@ -76,6 +92,11 @@ int ui_proveedores::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
     _id = QWidget::qt_metacall(_c, _id, _a);
     if (_id < 0)
         return _id;
+    if (_c == QMetaObject::InvokeMetaMethod) {
+        if (_id < 4)
+            qt_static_metacall(this, _c, _id, _a);
+        _id -= 4;
+    }
     return _id;
 }
 QT_END_MOC_NAMESPACE
