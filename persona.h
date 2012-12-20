@@ -2,6 +2,7 @@
 #define PERSONA_H
 
 #include <objetopersistente.h>
+#include <QSqlQueryModel>
 
 class persona:public ObjetoPersistente
 {
@@ -13,6 +14,7 @@ private:
     QString segundoApellido;
     QString nroDoc;
     QString direccion;
+    QString correo;
     QString sexo;
     QString fechaNacimiento;
     QString telefono;
@@ -27,6 +29,7 @@ public:
     QString getSegundoApellido();
     QString getNroDoc();
     QString getDireccion();
+    QString getCorreo();
     QString getSexo();
     QString getFechaNacimiento();
     QString getTelefono();
@@ -39,6 +42,7 @@ public:
     void setSegundoApellido(QString);
     void setNroDoc(QString);
     void setDireccion(QString);
+    void setCorreo(QString);
     void setSexo(QString);
     void setFechaNacimiento(QString);
     void setTelefono(QString);

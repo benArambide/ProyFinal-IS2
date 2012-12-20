@@ -5,6 +5,7 @@
 #include <persona.h>
 #include <cliente.h>
 #include <tipodoc_ident.h>
+#include <QMessageBox>
 
 namespace Ui {
 class ui_cliente_datos;
@@ -19,12 +20,22 @@ public:
     ~ui_cliente_datos();
     
     void setCliente(persona*);
-
 signals:
     void guarde();
 private slots:
+    bool verificaRestriccionesCliente(QString);
+
     void on_pushButton_Aceptar_clicked();
     void on_pushButton_Cancelar_clicked();
+
+    /*void on_lineEdit_nombres_lostFocus();
+    void on_lineEdit_primerApellido_lostFocus();
+    void on_lineEdit_segundoApellido_lostFocus();
+    void on_lineEdit_nroDoc_lostFocus();
+    void on_lineEdit_correo_lostFocus();
+    void on_lineEdit_direccion_lostFocus();
+    void on_lineEdit_telefono_lostFocus();
+    void on_celular_lostFocus();*/
 
 private:
     Ui::ui_cliente_datos *ui;
