@@ -1,7 +1,7 @@
 #include "montura.h"
 #include <QDebug>
 
-Montura::Montura(int _idmontura,QString _codigo,QString _descripcion, QString _nombre, Marca _marca,int _stock,float _precio,QString _accesorios,float _p_descuento,bool _habilitado,Color _color,Forma _forma, Calidad _calidad, Tamanio _tamanio):Producto(_codigo,_descripcion,_nombre,_marca,_stock,_precio,_accesorios,_p_descuento,_habilitado)
+Montura::Montura(int _idmontura,QString _codigo,QString _descripcion, Marca _marca,int _stock,double _precio_compra,double _precio_venta,double _p_descuento,QString _accesorios,bool _habilitado,Color _color,Forma _forma, Calidad _calidad, Tamanio _tamanio):Producto(_codigo,_descripcion,_marca,_stock,_precio_compra, _precio_venta, _p_descuento,_accesorios,_habilitado)
 {
     idmontura=_idmontura;
     color=_color;
@@ -10,7 +10,7 @@ Montura::Montura(int _idmontura,QString _codigo,QString _descripcion, QString _n
     tamanio=_tamanio;
 }
 
-Montura::Montura(QString _codigo,QString _descripcion, QString _nombre, Marca _marca,int _stock,float _precio,QString _accesorios,float _p_descuento,bool _habilitado,Color _color,Forma _forma, Calidad _calidad, Tamanio _tamanio):Producto(_codigo,_descripcion,_nombre,_marca,_stock,_precio,_accesorios,_p_descuento,_habilitado)
+Montura::Montura(QString _codigo,QString _descripcion, Marca _marca,int _stock,double _precio_compra,double _precio_venta,double _p_descuento,QString _accesorios,bool _habilitado,Color _color,Forma _forma, Calidad _calidad, Tamanio _tamanio):Producto(_codigo,_descripcion,_marca,_stock,_precio_compra, _precio_venta, _p_descuento,_accesorios,_habilitado)
 {
 
     idmontura=0;
@@ -33,13 +33,61 @@ Montura::Montura()
 Montura::Montura(int _id)
 {
     QSqlQuery query;
-    query.prepare("SELECT idproducto FROM luna WHERE idmontura="+QString::number(_id));
+    query.prepare("SELECT idproducto FROM montura WHERE idmontura="+QString::number(_id));
     query.exec();
     query.next();
     id=query.value(0).toInt();
     idmontura=_id;
-
 }
+
+
+void Montura::generarParaEditar(int _id)
+{
+    QSqlQueryModel* model=new QSqlQueryModel();//model de la consulta
+    QString idS=QString::number(_id);
+    idmontura=_id;
+    QString query="select idmontura,codigo,descripcion,stock,precio_compra,precio_venta,p_descuento,accesorios,habilitado,\
+                    idmarca,idtamanio,idforma,idcalidad,idcolor,producto.idproducto\
+                from montura inner join producto\
+                on montura.idproducto= producto.idproducto\
+            where idmontura="+idS;
+
+
+    model->setQuery(query);    
+    if(model->rowCount()>0)
+    {
+        codigo=model->record(0).value(1).toString();
+        descripcion=model->record(0).value(2).toString();
+        stock=model->record(0).value(3).toInt();
+
+        precio_compra=model->record(0).value(4).toDouble();
+        precio_venta=model->record(0).value(5).toDouble();
+        p_descuento=model->record(0).value(6).toDouble();
+        accesorios=model->record(0).value(7).toString();
+        habilitado=model->record(0).value(8).toBool();
+
+        Marca _marca(model->record(0).value(9).toInt());
+        marca=_marca;
+
+        Tamanio _tamanio(model->record(0).value(10).toInt());
+        tamanio=_tamanio;
+
+        Forma _forma(model->record(0).value(11).toInt());
+        forma=_forma;
+
+        Calidad _calidad(model->record(0).value(12).toInt());
+        calidad=_calidad;
+
+        Color _color(model->record(0).value(13).toInt());
+        color=_color;
+
+        id=model->record(0).value(14).toInt();
+
+    }
+}
+
+
+
 
 
 /*--------------------------------------------------------------------
@@ -142,34 +190,35 @@ void Montura::setTamanio(Tamanio _tamanio)
  */
 bool Montura::agregar()
 {
-    if(nombre!="" || codigo!="")
-    {
         QSqlQuery query;
-        query.prepare("INSERT INTO producto (codigo,descripcion,nombre,idmarca,stock,precio,accesorios,p_descuento,habilitado)"
+        query.prepare("INSERT INTO producto (codigo,descripcion,idmarca,stock,precio_compra,precio_venta,p_descuento,accesorios,habilitado)"
                       "VALUES (?,?,?,?,?,?,?,?,?)");
 
-        query.bindValue(0,codigo);
-        query.bindValue(1,descripcion);
-        query.bindValue(2,nombre);
-        query.bindValue(3,marca.getId());
-        query.bindValue(4,stock);
-        query.bindValue(5,precio);
-        query.bindValue(6,accesorios);
-        query.bindValue(7,p_descuento);
-        query.bindValue(8,habilitado);
+        query.bindValue(0,codigo);        
+        query.bindValue(1,descripcion);        
+        query.bindValue(2,marca.getId());        
+        query.bindValue(3,stock);        
+        query.bindValue(4,precio_compra);        
+        query.bindValue(5,precio_venta);        
+        query.bindValue(6,p_descuento);        
+        query.bindValue(7,accesorios);        
+        query.bindValue(8,habilitado);        
+
         if(query.exec()==true)
         {
-            query.prepare("SELECT idproducto FROM producto WHERE codigo='"+codigo+"'");
+            qDebug()<<"debi haber ingresado el producto ";
+            query.prepare("SELECT MAX(idproducto) FROM producto");
             query.exec();
             query.next();
             id=query.value(0).toInt();
 
             query.prepare("INSERT INTO montura (idproducto,idcalidad,idforma,idcolor,idtamanio)"
                           "VALUES (?,?,?,?,?)");
+
             query.bindValue(0,id);
-            query.bindValue(1,calidad.getId());
-            query.bindValue(2,forma.getId());
-            query.bindValue(3,color.getId());;
+            query.bindValue(1,calidad.getId());            
+            query.bindValue(2,forma.getId());            
+            query.bindValue(3,color.getId());            
             query.bindValue(4,tamanio.getId());
             if(query.exec()==true)
             {
@@ -183,10 +232,7 @@ bool Montura::agregar()
             else return false;
         }
         else
-            return false;
-    }
-    else
-        return false;
+            return false;    
 }
 
 
@@ -197,7 +243,15 @@ bool Montura::agregar()
  */
 bool Montura::actualizar()
 {
-  return false;
+    QSqlQuery query;
+    QSqlQuery query2;            
+    query.prepare("UPDATE producto SET  idmarca="+QString::number(marca.getId())+" , stock="+QString::number(stock)+" , codigo='"+codigo+"' , descripcion='"+descripcion+"', precio_compra="+QString::number(precio_compra)+" , precio_venta=" + QString::number(precio_venta)+" , p_descuento="+ QString::number(p_descuento)+" , accesorios='"+accesorios+"'  WHERE idproducto="+QString::number(id));
+    query.exec();
+
+
+    query2.prepare("UPDATE montura SET idtamanio="+QString::number(tamanio.getId())+" , idforma ="+QString::number(forma.getId())+" , idcalidad="+QString::number(calidad.getId())+" , idcolor="+QString::number(color.getId())+" WHERE idmontura="+QString::number(idmontura));
+    query2.exec();
+    return true;
 }
 
 
@@ -210,43 +264,18 @@ bool Montura::actualizar()
 bool Montura::eliminar()
 {
         QSqlQuery query;
+        QSqlQuery query2;
         query.prepare("DELETE FROM montura WHERE idmontura="+ QString::number(idmontura));
-        if(query.exec()==true)
+        if(query.exec()==true)        
         {
-            query.prepare("DELETE FROM producto WHERE idproducto="+ QString::number(id));
+            qDebug()<<"el id del producto a eliminar "<<id;
+            query2.prepare("DELETE FROM producto WHERE idproducto="+ QString::number(id));
+            qDebug()<<"este es el resultado de elimnar"<<query2.exec();
             return query.exec();
         }
         else
             return false;
 }
-
-
-
-QSqlQueryModel* Montura::entregarMonturas()
-{
-
-    QSqlQueryModel *model = new QSqlQueryModel;
-         model->setQuery("select codigo,\
-                         c.nombre as calidad, \
-                         f.nombre as forma, \
-                         t.nombre as tamanio, \
-                         color,descripcion,stock,accesorios,p_descuento,precio \
-                         from montura m \
-                         inner join producto p \
-                         on m.idproducto=p.idproducto \
-                         inner join calidad c \
-                         on m.idcalidad=c.idcalidad \
-                         inner join forma f \
-                         on m.idforma=f.idforma \
-                         inner join color co \
-                         on m.idcolor=co.idcolor \
-                         inner join tamanio t \
-                         on m.idtamanio=t.idtamanio");
-
-    return model;
-}
-
-
 
 
 
@@ -258,7 +287,9 @@ QSqlQueryModel* Montura::buscar(QString _item)
                          c.nombre as calidad, \
                          f.nombre as forma, \
                          t.nombre as tamanio, \
-                         color,descripcion,stock,accesorios,p_descuento,precio \
+                         p.descripcion as Descricion,\
+                         ma.nombre as Marca,\
+                         color,stock,accesorios,precio_compra,precio_venta,p_descuento \
                          from montura m \
                          inner join producto p \
                          on m.idproducto=p.idproducto \
@@ -270,14 +301,16 @@ QSqlQueryModel* Montura::buscar(QString _item)
                          on m.idcolor=co.idcolor \
                          inner join tamanio t \
                          on m.idtamanio=t.idtamanio\
-                         where codigo like '%"+_item+"%' or \
-                         c.nombre like '%"+_item+"%' or \
-                         f.nombre like '%"+_item+"%' or \
+                         inner join marca ma \
+                         on p.idmarca=ma.idmarca \
+                         where codigo like '%"+_item+"%' or\
+                         c.nombre like '%"+_item+"%' or\
+                         f.nombre like '%"+_item+"%' or\
                          t.nombre like '%"+_item+"%' or \
                          co.color like '%"+_item+"%' or \
-                         descripcion like '%"+_item+"%' or \
+                         p.descripcion like '%"+_item+"%' or\
                          stock like '%"+_item+"%' or \
-                         precio like '%"+_item+"%' or \
+                         precio_compra like '%"+_item+"%' or \
                          accesorios like '%"+_item+"%' or \
                          p_descuento like '%"+_item+"%'");
 

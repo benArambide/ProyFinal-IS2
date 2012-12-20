@@ -46,7 +46,7 @@
      <x>20</x>
      <y>50</y>
      <width>681</width>
-     <height>441</height>
+     <height>458</height>
     </rect>
    </property>
    <layout class="QVBoxLayout" name="verticalLayout">
@@ -58,69 +58,25 @@
          <layout class="QHBoxLayout" name="horizontalLayout_12">
           <item>
            <layout class="QGridLayout" name="gridLayout">
-            <item row="7" column="0">
+            <item row="4" column="0">
              <widget class="QLabel" name="label_3">
               <property name="text">
                <string>Descripcion</string>
               </property>
              </widget>
             </item>
-            <item row="6" column="1">
-             <widget class="QLineEdit" name="lineEdit_accesorios"/>
-            </item>
-            <item row="6" column="0">
-             <widget class="QLabel" name="label_6">
-              <property name="text">
-               <string>Accesorios</string>
-              </property>
-             </widget>
-            </item>
-            <item row="5" column="0">
-             <widget class="QLabel" name="label_7">
-              <property name="text">
-               <string>Precio Descuento</string>
-              </property>
-             </widget>
-            </item>
-            <item row="5" column="1">
-             <widget class="QLineEdit" name="lineEdit_p_descuento"/>
-            </item>
-            <item row="2" column="0">
+            <item row="0" column="0">
              <widget class="QLabel" name="label_4">
               <property name="text">
                <string>Stock</string>
               </property>
              </widget>
             </item>
-            <item row="2" column="1">
+            <item row="0" column="1">
              <widget class="QLineEdit" name="lineEdit_stock"/>
             </item>
-            <item row="1" column="0">
-             <widget class="QLabel" name="label_5">
-              <property name="text">
-               <string>Precio</string>
-              </property>
-             </widget>
-            </item>
-            <item row="1" column="1">
-             <widget class="QLineEdit" name="lineEdit_precio">
-              <property name="cursorPosition">
-               <number>0</number>
-              </property>
-             </widget>
-            </item>
-            <item row="0" column="1">
-             <widget class="QLineEdit" name="lineEdit_codigo"/>
-            </item>
-            <item row="0" column="0">
-             <widget class="QLabel" name="label_2">
-              <property name="text">
-               <string>Codigo</string>
-              </property>
-             </widget>
-            </item>
-            <item row="7" column="1">
-             <widget class="QLineEdit" name="descripcion">
+            <item row="4" column="1">
+             <widget class="QLineEdit" name="lineEdit_descripcion">
               <property name="minimumSize">
                <size>
                 <width>190</width>
@@ -129,85 +85,35 @@
               </property>
              </widget>
             </item>
-            <item row="8" column="0">
-             <widget class="QLabel" name="label_17">
-              <property name="text">
-               <string>Indice de Refraccion</string>
-              </property>
-             </widget>
-            </item>
-            <item row="8" column="1">
-             <widget class="QLineEdit" name="descripcion_2">
-              <property name="minimumSize">
-               <size>
-                <width>190</width>
-                <height>0</height>
-               </size>
-              </property>
-              <property name="cursorPosition">
-               <number>0</number>
-              </property>
-             </widget>
-            </item>
-            <item row="9" column="0">
-             <widget class="QLabel" name="label_15">
-              <property name="maximumSize">
-               <size>
-                <width>16777215</width>
-                <height>35</height>
-               </size>
-              </property>
-              <property name="text">
-               <string>Diametro</string>
-              </property>
-             </widget>
-            </item>
-            <item row="9" column="1">
-             <layout class="QHBoxLayout" name="horizontalLayout_3">
-              <item>
-               <widget class="QLineEdit" name="descripcion_6">
-                <property name="minimumSize">
-                 <size>
-                  <width>120</width>
-                  <height>0</height>
-                 </size>
-                </property>
-                <property name="maximumSize">
-                 <size>
-                  <width>80</width>
-                  <height>16777215</height>
-                 </size>
-                </property>
-               </widget>
-              </item>
-              <item>
-               <widget class="QLabel" name="label_18">
-                <property name="text">
-                 <string>mm</string>
-                </property>
-               </widget>
-              </item>
-             </layout>
-            </item>
-            <item row="4" column="0">
+            <item row="2" column="0">
              <widget class="QLabel" name="label_19">
               <property name="text">
                <string>Precio De Venta</string>
               </property>
              </widget>
             </item>
-            <item row="3" column="0">
+            <item row="1" column="0">
              <widget class="QLabel" name="label_20">
               <property name="text">
                <string>Precio de Compra</string>
               </property>
              </widget>
             </item>
-            <item row="3" column="1">
-             <widget class="QLineEdit" name="lineEdit_stock_2"/>
+            <item row="1" column="1">
+             <widget class="QLineEdit" name="lineEdit_precio_compra"/>
             </item>
-            <item row="4" column="1">
-             <widget class="QLineEdit" name="lineEdit_stock_3"/>
+            <item row="2" column="1">
+             <widget class="QLineEdit" name="lineEdit_precio_venta"/>
+            </item>
+            <item row="3" column="0">
+             <widget class="QLabel" name="label_7">
+              <property name="text">
+               <string>Precio Descuento</string>
+              </property>
+             </widget>
+            </item>
+            <item row="3" column="1">
+             <widget class="QLineEdit" name="lineEdit_p_descuento"/>
             </item>
            </layout>
           </item>
@@ -228,75 +134,52 @@
         </property>
        </spacer>
       </item>
+      <item row="2" column="2">
+       <layout class="QHBoxLayout" name="horizontalLayout">
+        <item>
+         <widget class="QPushButton" name="pushButton_5">
+          <property name="text">
+           <string>Agregar</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QPushButton" name="pushButton_cancelar">
+          <property name="text">
+           <string>Cancelar</string>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </item>
+      <item row="0" column="1">
+       <spacer name="horizontalSpacer_2">
+        <property name="orientation">
+         <enum>Qt::Horizontal</enum>
+        </property>
+        <property name="sizeHint" stdset="0">
+         <size>
+          <width>30</width>
+          <height>20</height>
+         </size>
+        </property>
+       </spacer>
+      </item>
+      <item row="1" column="1">
+       <spacer name="verticalSpacer_2">
+        <property name="orientation">
+         <enum>Qt::Vertical</enum>
+        </property>
+        <property name="sizeHint" stdset="0">
+         <size>
+          <width>20</width>
+          <height>40</height>
+         </size>
+        </property>
+       </spacer>
+      </item>
       <item row="0" column="2">
        <layout class="QVBoxLayout" name="verticalLayout_8">
-        <item>
-         <layout class="QVBoxLayout" name="verticalLayout_3">
-          <item>
-           <widget class="QLabel" name="label_8">
-            <property name="sizePolicy">
-             <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
-              <horstretch>0</horstretch>
-              <verstretch>0</verstretch>
-             </sizepolicy>
-            </property>
-            <property name="text">
-             <string>Marca</string>
-            </property>
-           </widget>
-          </item>
-          <item>
-           <layout class="QHBoxLayout" name="horizontalLayout_7">
-            <item>
-             <widget class="MyComboBox" name="comboBox_marca">
-              <property name="sizePolicy">
-               <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
-                <horstretch>0</horstretch>
-                <verstretch>0</verstretch>
-               </sizepolicy>
-              </property>
-             </widget>
-            </item>
-            <item>
-             <widget class="QPushButton" name="pushButton_xmarca">
-              <property name="sizePolicy">
-               <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
-                <horstretch>0</horstretch>
-                <verstretch>0</verstretch>
-               </sizepolicy>
-              </property>
-              <property name="text">
-               <string/>
-              </property>
-              <property name="icon">
-               <iconset resource="Icons/Icons.qrc">
-                <normaloff>:/Icons/1349716373_monotone_close_exit_delete_small.png</normaloff>:/Icons/1349716373_monotone_close_exit_delete_small.png</iconset>
-              </property>
-              <property name="autoDefault">
-               <bool>false</bool>
-              </property>
-              <property name="flat">
-               <bool>true</bool>
-              </property>
-             </widget>
-            </item>
-           </layout>
-          </item>
-         </layout>
-        </item>
-        <item>
-         <spacer name="verticalSpacer_6">
-          <property name="orientation">
-           <enum>Qt::Vertical</enum>
-          </property>
-          <property name="sizeHint" stdset="0">
-           <size>
-            <width>20</width>
-            <height>7</height>
-           </size>
-          </property>
-         </spacer>
-        </item>
         <item>
          <layout class="QVBoxLayout" name="verticalLayout_4">
           <item>
@@ -499,6 +382,81 @@
          </spacer>
         </item>
         <item>
+         <widget class="QLabel" name="label_21">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+          <property name="minimumSize">
+           <size>
+            <width>0</width>
+            <height>10</height>
+           </size>
+          </property>
+          <property name="maximumSize">
+           <size>
+            <width>16777215</width>
+            <height>9</height>
+           </size>
+          </property>
+          <property name="text">
+           <string>Diametro</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <layout class="QHBoxLayout" name="horizontalLayout_14">
+          <item>
+           <widget class="MyComboBox" name="comboBox_diametro">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QPushButton" name="pushButton_xdiametro">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="text">
+             <string/>
+            </property>
+            <property name="icon">
+             <iconset resource="Icons/Icons.qrc">
+              <normaloff>:/Icons/1349716373_monotone_close_exit_delete_small.png</normaloff>:/Icons/1349716373_monotone_close_exit_delete_small.png</iconset>
+            </property>
+            <property name="autoDefault">
+             <bool>false</bool>
+            </property>
+            <property name="flat">
+             <bool>true</bool>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </item>
+        <item>
+         <spacer name="verticalSpacer_3">
+          <property name="orientation">
+           <enum>Qt::Vertical</enum>
+          </property>
+          <property name="sizeHint" stdset="0">
+           <size>
+            <width>20</width>
+            <height>5</height>
+           </size>
+          </property>
+         </spacer>
+        </item>
+        <item>
          <layout class="QVBoxLayout" name="verticalLayout_7">
           <item>
            <widget class="QLabel" name="label_12">
@@ -517,7 +475,7 @@
              </widget>
             </item>
             <item>
-             <widget class="QLineEdit" name="descripcion_3"/>
+             <widget class="QLineEdit" name="descripcion_rango_medida"/>
             </item>
            </layout>
           </item>
@@ -531,7 +489,7 @@
              </widget>
             </item>
             <item>
-             <widget class="QLineEdit" name="descripcion_4">
+             <widget class="QLineEdit" name="lineEdit_vinicial">
               <property name="sizePolicy">
                <sizepolicy hsizetype="Maximum" vsizetype="Fixed">
                 <horstretch>0</horstretch>
@@ -567,7 +525,7 @@
              </widget>
             </item>
             <item>
-             <widget class="QLineEdit" name="descripcion_5">
+             <widget class="QLineEdit" name="lineEdit_vfinal">
               <property name="maximumSize">
                <size>
                 <width>50</width>
@@ -581,50 +539,6 @@
          </layout>
         </item>
        </layout>
-      </item>
-      <item row="2" column="2">
-       <layout class="QHBoxLayout" name="horizontalLayout">
-        <item>
-         <widget class="QPushButton" name="pushButton_5">
-          <property name="text">
-           <string>Agregar</string>
-          </property>
-         </widget>
-        </item>
-        <item>
-         <widget class="QPushButton" name="pushButton_cancelar">
-          <property name="text">
-           <string>Cancelar</string>
-          </property>
-         </widget>
-        </item>
-       </layout>
-      </item>
-      <item row="0" column="1">
-       <spacer name="horizontalSpacer_2">
-        <property name="orientation">
-         <enum>Qt::Horizontal</enum>
-        </property>
-        <property name="sizeHint" stdset="0">
-         <size>
-          <width>30</width>
-          <height>20</height>
-         </size>
-        </property>
-       </spacer>
-      </item>
-      <item row="1" column="1">
-       <spacer name="verticalSpacer_2">
-        <property name="orientation">
-         <enum>Qt::Vertical</enum>
-        </property>
-        <property name="sizeHint" stdset="0">
-         <size>
-          <width>20</width>
-          <height>40</height>
-         </size>
-        </property>
-       </spacer>
       </item>
      </layout>
     </item>
@@ -668,27 +582,24 @@
   </customwidget>
  </customwidgets>
  <tabstops>
-  <tabstop>lineEdit_codigo</tabstop>
-  <tabstop>lineEdit_precio</tabstop>
   <tabstop>lineEdit_stock</tabstop>
+  <tabstop>lineEdit_precio_compra</tabstop>
+  <tabstop>lineEdit_precio_venta</tabstop>
   <tabstop>lineEdit_p_descuento</tabstop>
-  <tabstop>lineEdit_accesorios</tabstop>
-  <tabstop>descripcion</tabstop>
-  <tabstop>descripcion_2</tabstop>
-  <tabstop>descripcion_6</tabstop>
-  <tabstop>comboBox_marca</tabstop>
+  <tabstop>lineEdit_descripcion</tabstop>
+  <tabstop>descripcion_rango_medida</tabstop>
+  <tabstop>lineEdit_vinicial</tabstop>
+  <tabstop>lineEdit_vfinal</tabstop>
   <tabstop>comboBox_tratamiento</tabstop>
   <tabstop>comboBox_tipo_luna</tabstop>
   <tabstop>comboBox_calidad</tabstop>
-  <tabstop>descripcion_3</tabstop>
-  <tabstop>descripcion_4</tabstop>
-  <tabstop>descripcion_5</tabstop>
-  <tabstop>pushButton_5</tabstop>
-  <tabstop>pushButton_cancelar</tabstop>
-  <tabstop>pushButton_xcalidad</tabstop>
+  <tabstop>comboBox_diametro</tabstop>
   <tabstop>pushButton_xindice</tabstop>
-  <tabstop>pushButton_xmarca</tabstop>
   <tabstop>pushButton_xtipo</tabstop>
+  <tabstop>pushButton_xcalidad</tabstop>
+  <tabstop>pushButton_5</tabstop>
+  <tabstop>pushButton_xdiametro</tabstop>
+  <tabstop>pushButton_cancelar</tabstop>
  </tabstops>
  <resources>
   <include location="Icons/Icons.qrc"/>

@@ -1,29 +1,44 @@
 #include "producto.h"
-Producto::Producto(int _id, QString _codigo,QString _descripcion, QString _nombre, Marca _marca,int _stock,float _precio,QString _accesorios,float _p_descuento,bool _habilitado)
+Producto::Producto(int _id, QString _codigo,QString _descripcion, Marca _marca,int _stock,double _precio_compra,double _precio_venta,double _p_descuento,QString _accesorios,bool _habilitado)
 {
     id=_id;
     codigo=_codigo;
-    descripcion=_descripcion;
-    nombre=_nombre;
+    descripcion=_descripcion;    
     marca=_marca;
     stock=_stock;
-    precio=_precio;
+    precio_compra=_precio_compra;
+    precio_venta=_precio_venta;
     accesorios=_accesorios;
     p_descuento=_p_descuento;
     habilitado=_habilitado;
 
 }
 
-Producto::Producto(QString _codigo,QString _descripcion, QString _nombre, Marca _marca,int _stock,float _precio,QString _accesorios,float _p_descuento,bool _habilitado)
+Producto::Producto(QString _codigo,QString _descripcion, Marca _marca,int _stock,double _precio_compra,double _precio_venta,double _p_descuento,QString _accesorios,bool _habilitado)
 {
     id=0;
     codigo=_codigo;
-    descripcion=_descripcion;
-    nombre=_nombre;
+    descripcion=_descripcion;    
     marca=_marca;
     stock=_stock;
-    precio=_precio;
+    precio_compra=_precio_compra;
+    precio_venta=_precio_venta;
     accesorios=_accesorios;
+    p_descuento=_p_descuento;
+    habilitado=_habilitado;
+}
+
+
+
+Producto::Producto(QString _descripcion,int _stock,double _precio_compra,double _precio_venta,double _p_descuento,bool _habilitado)
+{
+    id=0;
+    codigo="";
+    descripcion=_descripcion;
+    stock=_stock;
+    precio_compra=_precio_compra;
+    precio_venta=_precio_venta;
+    accesorios="";
     p_descuento=_p_descuento;
     habilitado=_habilitado;
 }
@@ -60,10 +75,6 @@ QString Producto::getDescripcion()
     return descripcion;
 }
 
-QString Producto::getNombre()
-{
-    return nombre;
-}
 
 Marca Producto::getMarca()
 {
@@ -76,17 +87,23 @@ int Producto::getStock()
     return stock;
 }
 
-float Producto::getPrecio()
+double Producto::getPrecioCompra()
 {
-    return precio;
+    return precio_compra;
 }
+
+double Producto::getPrecioVenta()
+{
+    return precio_venta;
+}
+
 
 QString Producto::getAccesorios()
 {
     return accesorios;
 }
 
-float Producto::getP_descuento()
+double Producto::getP_descuento()
 {
     return p_descuento;
 }
@@ -112,10 +129,6 @@ void Producto::setDescripcion(QString _descripcion)
     descripcion=_descripcion;
 }
 
-void Producto::setNombre(QString _nombre)
-{
-    nombre=_nombre;
-}
 
 void Producto::setMarca(Marca _marca)
 {
@@ -128,17 +141,23 @@ void Producto::setStock(int _stock)
     stock=_stock;
 }
 
-void Producto::setPrecio(float _precio)
+void Producto::setPrecio_compra(double _precioC)
 {
-    precio=_precio;
+    precio_compra=_precioC;
 }
+
+void Producto::setPrecio_venta(double _precioV)
+{
+    precio_venta=_precioV;
+}
+
 
 void Producto::setAccesorios(QString _accesorios)
 {
     accesorios=_accesorios;
 }
 
-void Producto::SetP_descuento(float _p_descuento)
+void Producto::SetP_descuento(double _p_descuento)
 {
     p_descuento=_p_descuento;
 }
@@ -149,3 +168,40 @@ void Producto::SetHabilitado(bool _habilitado)
 }
 
 
+
+
+
+
+bool Producto::validar(QString texto_a_validar, QString tipo_validacion)
+{
+    int contador_resultado=0;
+    if(tipo_validacion=="numerico")
+    {
+        int contador_puntos=0;
+        for(int i=0;i<texto_a_validar.size();i++)
+        {
+            if(texto_a_validar[i] >= '0' && texto_a_validar[i] <= '9' || texto_a_validar[i]=='-' || texto_a_validar[i]=='.')
+            {
+                    if(texto_a_validar[i]=='-')
+                    {
+                        if(i==0)
+                            contador_resultado++;
+                    }
+                    else if(texto_a_validar[i]=='.')
+                    {
+                        contador_puntos++;
+                        if(contador_puntos<2)
+                            contador_resultado++;
+                    }
+                    else
+                        contador_resultado++;
+            }
+        }
+        if(contador_resultado==texto_a_validar.size()) return true;
+        else return false;
+    }
+    else
+    {
+        return false;
+    }
+}

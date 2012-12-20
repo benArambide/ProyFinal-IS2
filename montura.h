@@ -2,6 +2,8 @@
 #define MONTURA_H
 #include <producto.h>
 #include <QSqlQueryModel>
+#include <QSqlRecord>
+#include <QVariant>
 
 /**
  * @author Josue Benjamin Arambide Quispe
@@ -21,10 +23,12 @@ private:
     Tamanio tamanio;
 
 public:
-    Montura(int _id ,QString _codigo,QString _descripcion, QString _nombre, Marca _marca,int _stock,float _precio,QString _accesorios,float _p_descuento,bool _habilitado,Color _color,Forma _forma, Calidad _calidad, Tamanio _tamanio);
-    Montura(QString _codigo,QString _descripcion, QString _nombre, Marca _marca,int _stock,float _precio,QString _accesorios,float _p_descuento,bool _habilitado,Color _color,Forma _forma, Calidad _calidad, Tamanio _tamanio);
+    Montura(int _idmontura,QString _codigo,QString _descripcion, Marca _marca,int _stock,double _precio_compra,double _precio_venta,double _p_descuento,QString _accesorios,bool _habilitado,Color _color,Forma _forma, Calidad _calidad, Tamanio _tamanio);
+    Montura(QString _codigo,QString _descripcion, Marca _marca,int _stock,double _precio_compra,double _precio_venta,double _p_descuento,QString _accesorios,bool _habilitado,Color _color,Forma _forma, Calidad _calidad, Tamanio _tamanio);
     Montura();
     Montura(int _id);
+
+    void generarParaEditar(int _id);
 
     Color getColor();
     Forma getForma();
@@ -37,7 +41,6 @@ public:
     void setCalidad(Calidad _calidad);
     void setTamanio(Tamanio _tamanio);
 
-    QSqlQueryModel* entregarMonturas();
     static QSqlQueryModel* buscar(QString _item);
 
     bool agregar();

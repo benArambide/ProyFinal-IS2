@@ -15,6 +15,8 @@ public:
     explicit ui_producto_agregar_montura(QWidget *parent = 0);
     ~ui_producto_agregar_montura();
 
+    void tipoEditar(Montura & montura_editar);
+
 private slots:
     void on_pushButton_cancelar_clicked();
 
@@ -33,6 +35,11 @@ private slots:
 
 private:
     Ui::ui_producto_agregar_montura *ui;
+    Montura Montura_Editar;
+    bool editar;
+
+signals:
+    void senial();
 };
 
 #endif // UI_PRODUCTO_AGREGAR_MONTURA_H

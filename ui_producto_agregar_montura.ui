@@ -50,31 +50,31 @@
    <layout class="QGridLayout" name="gridLayout_2">
     <item row="0" column="2">
      <layout class="QGridLayout" name="gridLayout">
-      <item row="8" column="0">
+      <item row="7" column="0">
        <widget class="QLabel" name="label_3">
         <property name="text">
          <string>Descripcion</string>
         </property>
        </widget>
       </item>
-      <item row="7" column="0">
+      <item row="6" column="0">
        <widget class="QLabel" name="label_6">
         <property name="text">
          <string>Accesorios</string>
         </property>
        </widget>
       </item>
-      <item row="7" column="1">
+      <item row="6" column="1">
        <widget class="QLineEdit" name="lineEdit_accesorios"/>
       </item>
-      <item row="5" column="0">
+      <item row="4" column="0">
        <widget class="QLabel" name="label_7">
         <property name="text">
          <string>Precio De Descuento</string>
         </property>
        </widget>
       </item>
-      <item row="5" column="1">
+      <item row="4" column="1">
        <widget class="QLineEdit" name="lineEdit_p_descuento">
         <property name="minimumSize">
          <size>
@@ -84,25 +84,15 @@
         </property>
        </widget>
       </item>
-      <item row="2" column="0">
+      <item row="1" column="0">
        <widget class="QLabel" name="label_4">
         <property name="text">
          <string>Stock</string>
         </property>
        </widget>
       </item>
-      <item row="2" column="1">
-       <widget class="QLineEdit" name="lineEdit_stock"/>
-      </item>
-      <item row="1" column="0">
-       <widget class="QLabel" name="label_5">
-        <property name="text">
-         <string>Precio</string>
-        </property>
-       </widget>
-      </item>
       <item row="1" column="1">
-       <widget class="QLineEdit" name="lineEdit_precio"/>
+       <widget class="QLineEdit" name="lineEdit_stock"/>
       </item>
       <item row="0" column="0">
        <widget class="QLabel" name="label_2">
@@ -114,7 +104,7 @@
       <item row="0" column="1">
        <widget class="QLineEdit" name="lineEdit_codigo"/>
       </item>
-      <item row="8" column="2">
+      <item row="7" column="2">
        <spacer name="horizontalSpacer">
         <property name="orientation">
          <enum>Qt::Horizontal</enum>
@@ -127,28 +117,28 @@
         </property>
        </spacer>
       </item>
-      <item row="8" column="1">
-       <widget class="QLineEdit" name="lineEdit_accesorios_2"/>
+      <item row="7" column="1">
+       <widget class="QLineEdit" name="lineEdit_descripcion"/>
       </item>
-      <item row="4" column="0">
+      <item row="3" column="0">
        <widget class="QLabel" name="label_12">
         <property name="text">
          <string>Precio de Venta</string>
         </property>
        </widget>
       </item>
-      <item row="4" column="1">
-       <widget class="QLineEdit" name="lineEdit_accesorios_3"/>
+      <item row="3" column="1">
+       <widget class="QLineEdit" name="lineEdit_precio_venta"/>
       </item>
-      <item row="3" column="0">
+      <item row="2" column="0">
        <widget class="QLabel" name="label_13">
         <property name="text">
          <string>Precio de Compra</string>
         </property>
        </widget>
       </item>
-      <item row="3" column="1">
-       <widget class="QLineEdit" name="lineEdit_accesorios_4"/>
+      <item row="2" column="1">
+       <widget class="QLineEdit" name="lineEdit_precio_compra"/>
       </item>
      </layout>
     </item>
@@ -554,6 +544,27 @@
    </slots>
   </customwidget>
  </customwidgets>
+ <tabstops>
+  <tabstop>lineEdit_codigo</tabstop>
+  <tabstop>lineEdit_stock</tabstop>
+  <tabstop>lineEdit_precio_compra</tabstop>
+  <tabstop>lineEdit_precio_venta</tabstop>
+  <tabstop>lineEdit_p_descuento</tabstop>
+  <tabstop>lineEdit_accesorios</tabstop>
+  <tabstop>lineEdit_descripcion</tabstop>
+  <tabstop>myComboBox_marca</tabstop>
+  <tabstop>comboBox_tamanio</tabstop>
+  <tabstop>comboBox_forma</tabstop>
+  <tabstop>comboBox_calidad</tabstop>
+  <tabstop>comboBox_color</tabstop>
+  <tabstop>pushButton_xmarca</tabstop>
+  <tabstop>pushButton_xtamanio</tabstop>
+  <tabstop>pushButton_xforma</tabstop>
+  <tabstop>pushButton_4</tabstop>
+  <tabstop>pushButton_8</tabstop>
+  <tabstop>pushButton_agregar</tabstop>
+  <tabstop>pushButton_cancelar</tabstop>
+ </tabstops>
  <resources>
   <include location="Icons/Icons.qrc"/>
  </resources>

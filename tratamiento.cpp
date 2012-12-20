@@ -24,7 +24,7 @@ Tratamiento::Tratamiento(QString _nombre)
 Tratamiento::Tratamiento(int _id)
 {
     QSqlQuery query;
-    query.prepare("select * from Tratamiento where idTratamiento="+QString::number(_id));
+    query.prepare("select * from tratamiento where idtratamiento="+QString::number(_id));
     query.exec();
     query.next();
     id=_id;

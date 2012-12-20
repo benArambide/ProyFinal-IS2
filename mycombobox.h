@@ -6,7 +6,6 @@
 #include <calidad.h>
 #include <color.h>
 #include <forma.h>
-#include <indicerefraccion.h>
 #include <marca.h>
 #include <rangomedida.h>
 #include <tamanio.h>
@@ -15,6 +14,7 @@
 #include <ui_agregar_nombre.h>
 #include <ui_agregar_nomdesc.h>
 #include <tratamiento.h>
+#include <diametro.h>
 
 
 

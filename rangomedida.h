@@ -16,12 +16,12 @@ class RangoMedida: public ObjetoPersistente
 {
 private:
     int id;
-    float valorini;
-    float valorfin;
+    double valorini;
+    double valorfin;
     QString descripcion;
 public:
-    RangoMedida(int _id,float _valorIni,float valorFin, QString _descripcion);
-    RangoMedida(float _valorIni,float valorFin, QString _descripcion);
+    RangoMedida(int _id,double _valorIni,double valorFin, QString _descripcion);
+    RangoMedida(double _valorIni,double valorFin, QString _descripcion);
     RangoMedida();
     RangoMedida(int _id);
 
@@ -29,14 +29,14 @@ public:
 
     int getId();
     QString getdescripcion();
-    float getValorInicial();
-    float getValorFinal();
+    double getValorInicial();
+    double getValorFinal();
     void setId(int _id);
     void setdescripcion(QString _descripcion);
-    void setValorIncial(float _valorIncial);
-    void setValorFinal(float _valorFinal);
+    void setValorIncial(double _valorIncial);
+    void setValorFinal(double _valorFinal);
 
-    //bool existente(float _valorini,float _valorfin);
+    //bool existente(double _valorini,double _valorfin);
 
     bool agregar();
     bool actualizar();

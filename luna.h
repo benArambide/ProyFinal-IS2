@@ -3,6 +3,11 @@
 #include <QSqlQueryModel>
 #include <producto.h>
 #include <QDebug>
+#include <tratamiento.h>
+#include <diametro.h>
+#include <QVariant>
+#include <QSqlRecord>
+
 
 /**
  * @author Josue Benjamin Arambide Quispe
@@ -17,29 +22,31 @@ class Luna: public Producto
 private:
     int idluna;
     RangoMedida rangomedida;
-    IndiceRefraccion indicerefraccion;
     TipoLuna tipoluna;
     Calidad calidad;
+    Tratamiento tratamiento;
+    Diametro diametro;
 
 public:
-    Luna(int _id ,QString _codigo,QString _descripcion, QString _nombre, Marca _marca,int _stock,float _precio,QString _accesorios,float _p_descuento,bool _habilitado,RangoMedida _rangomedida,IndiceRefraccion _indicerefraccion, TipoLuna _tipoluna,Calidad _calidad);
-    Luna(QString _codigo,QString _descripcion, QString _nombre, Marca _marca,int _stock,float _precio,QString _accesorios,float _p_descuento,bool _habilitado,RangoMedida _rangomedida,IndiceRefraccion _indicerefraccion, TipoLuna _tipoluna,Calidad _calidad);
+    Luna(int _id ,QString _descripcion, int _stock,double _precio_compra,double _precio_venta,double _p_descuento,bool _habilitado,RangoMedida _rangomedida, TipoLuna _tipoluna,Calidad _calidad,Tratamiento _tratamiento,Diametro _diametro);
+    Luna(QString _descripcion,int _stock,double _precio_compra,double _precio_venta,double _p_descuento,bool _habilitado,RangoMedida _rangomedida,TipoLuna _tipoluna,Calidad _calidad,Tratamiento _tratamiento,Diametro _diametro);
     Luna(int _id);
     Luna();
 
+    void generarParaEditar(int _id);
 
     RangoMedida getRangoMedida();
-    IndiceRefraccion getIndiceRefraccion();
     Calidad getCalidad();
     TipoLuna getTipoLuna();
     int getIdLuna();
+    Tratamiento getTramiento();
+    Diametro getDiametro();
 
     void setRangoMedida(RangoMedida _tipoluna);
-    void setIndiceRefraccion(IndiceRefraccion _forma);
     void setCalidad(Calidad _calidad);
     void setTipoLuna(TipoLuna _tipoluna);
-
-    QSqlQueryModel* entregarLunas();
+    void setTratamiento(Tratamiento _tratamiento);
+    void setDiametro(Diametro _diametro);
 
     static QSqlQueryModel* buscar(QString _item);
 

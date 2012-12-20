@@ -1,8 +1,8 @@
 /********************************************************************************
 ** Form generated from reading UI file 'ui_producto_agregar_montura.ui'
 **
-** Created: Wed 19. Dec 09:28:17 2012
-**      by: Qt User Interface Compiler version 4.8.0
+** Created: Thu Dec 13 18:01:44 2012
+**      by: Qt User Interface Compiler version 4.7.4
 **
 ** WARNING! All changes made in this file will be lost when recompiling UI file!
 ********************************************************************************/
@@ -43,16 +43,14 @@ public:
     QLineEdit *lineEdit_p_descuento;
     QLabel *label_4;
     QLineEdit *lineEdit_stock;
-    QLabel *label_5;
-    QLineEdit *lineEdit_precio;
     QLabel *label_2;
     QLineEdit *lineEdit_codigo;
     QSpacerItem *horizontalSpacer;
-    QLineEdit *lineEdit_accesorios_2;
+    QLineEdit *lineEdit_descripcion;
     QLabel *label_12;
-    QLineEdit *lineEdit_accesorios_3;
+    QLineEdit *lineEdit_precio_venta;
     QLabel *label_13;
-    QLineEdit *lineEdit_accesorios_4;
+    QLineEdit *lineEdit_precio_compra;
     QVBoxLayout *verticalLayout_8;
     QVBoxLayout *verticalLayout_3;
     QLabel *label_8;
@@ -112,48 +110,38 @@ public:
         label_3 = new QLabel(gridLayoutWidget_2);
         label_3->setObjectName(QString::fromUtf8("label_3"));
 
-        gridLayout->addWidget(label_3, 8, 0, 1, 1);
+        gridLayout->addWidget(label_3, 7, 0, 1, 1);
 
         label_6 = new QLabel(gridLayoutWidget_2);
         label_6->setObjectName(QString::fromUtf8("label_6"));
 
-        gridLayout->addWidget(label_6, 7, 0, 1, 1);
+        gridLayout->addWidget(label_6, 6, 0, 1, 1);
 
         lineEdit_accesorios = new QLineEdit(gridLayoutWidget_2);
         lineEdit_accesorios->setObjectName(QString::fromUtf8("lineEdit_accesorios"));
 
-        gridLayout->addWidget(lineEdit_accesorios, 7, 1, 1, 1);
+        gridLayout->addWidget(lineEdit_accesorios, 6, 1, 1, 1);
 
         label_7 = new QLabel(gridLayoutWidget_2);
         label_7->setObjectName(QString::fromUtf8("label_7"));
 
-        gridLayout->addWidget(label_7, 5, 0, 1, 1);
+        gridLayout->addWidget(label_7, 4, 0, 1, 1);
 
         lineEdit_p_descuento = new QLineEdit(gridLayoutWidget_2);
         lineEdit_p_descuento->setObjectName(QString::fromUtf8("lineEdit_p_descuento"));
         lineEdit_p_descuento->setMinimumSize(QSize(170, 0));
 
-        gridLayout->addWidget(lineEdit_p_descuento, 5, 1, 1, 1);
+        gridLayout->addWidget(lineEdit_p_descuento, 4, 1, 1, 1);
 
         label_4 = new QLabel(gridLayoutWidget_2);
         label_4->setObjectName(QString::fromUtf8("label_4"));
 
-        gridLayout->addWidget(label_4, 2, 0, 1, 1);
+        gridLayout->addWidget(label_4, 1, 0, 1, 1);
 
         lineEdit_stock = new QLineEdit(gridLayoutWidget_2);
         lineEdit_stock->setObjectName(QString::fromUtf8("lineEdit_stock"));
 
-        gridLayout->addWidget(lineEdit_stock, 2, 1, 1, 1);
-
-        label_5 = new QLabel(gridLayoutWidget_2);
-        label_5->setObjectName(QString::fromUtf8("label_5"));
-
-        gridLayout->addWidget(label_5, 1, 0, 1, 1);
-
-        lineEdit_precio = new QLineEdit(gridLayoutWidget_2);
-        lineEdit_precio->setObjectName(QString::fromUtf8("lineEdit_precio"));
-
-        gridLayout->addWidget(lineEdit_precio, 1, 1, 1, 1);
+        gridLayout->addWidget(lineEdit_stock, 1, 1, 1, 1);
 
         label_2 = new QLabel(gridLayoutWidget_2);
         label_2->setObjectName(QString::fromUtf8("label_2"));
@@ -167,32 +155,32 @@ public:
 
         horizontalSpacer = new QSpacerItem(20, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
 
-        gridLayout->addItem(horizontalSpacer, 8, 2, 1, 1);
+        gridLayout->addItem(horizontalSpacer, 7, 2, 1, 1);
 
-        lineEdit_accesorios_2 = new QLineEdit(gridLayoutWidget_2);
-        lineEdit_accesorios_2->setObjectName(QString::fromUtf8("lineEdit_accesorios_2"));
+        lineEdit_descripcion = new QLineEdit(gridLayoutWidget_2);
+        lineEdit_descripcion->setObjectName(QString::fromUtf8("lineEdit_descripcion"));
 
-        gridLayout->addWidget(lineEdit_accesorios_2, 8, 1, 1, 1);
+        gridLayout->addWidget(lineEdit_descripcion, 7, 1, 1, 1);
 
         label_12 = new QLabel(gridLayoutWidget_2);
         label_12->setObjectName(QString::fromUtf8("label_12"));
 
-        gridLayout->addWidget(label_12, 4, 0, 1, 1);
+        gridLayout->addWidget(label_12, 3, 0, 1, 1);
 
-        lineEdit_accesorios_3 = new QLineEdit(gridLayoutWidget_2);
-        lineEdit_accesorios_3->setObjectName(QString::fromUtf8("lineEdit_accesorios_3"));
+        lineEdit_precio_venta = new QLineEdit(gridLayoutWidget_2);
+        lineEdit_precio_venta->setObjectName(QString::fromUtf8("lineEdit_precio_venta"));
 
-        gridLayout->addWidget(lineEdit_accesorios_3, 4, 1, 1, 1);
+        gridLayout->addWidget(lineEdit_precio_venta, 3, 1, 1, 1);
 
         label_13 = new QLabel(gridLayoutWidget_2);
         label_13->setObjectName(QString::fromUtf8("label_13"));
 
-        gridLayout->addWidget(label_13, 3, 0, 1, 1);
+        gridLayout->addWidget(label_13, 2, 0, 1, 1);
 
-        lineEdit_accesorios_4 = new QLineEdit(gridLayoutWidget_2);
-        lineEdit_accesorios_4->setObjectName(QString::fromUtf8("lineEdit_accesorios_4"));
+        lineEdit_precio_compra = new QLineEdit(gridLayoutWidget_2);
+        lineEdit_precio_compra->setObjectName(QString::fromUtf8("lineEdit_precio_compra"));
 
-        gridLayout->addWidget(lineEdit_accesorios_4, 3, 1, 1, 1);
+        gridLayout->addWidget(lineEdit_precio_compra, 2, 1, 1, 1);
 
 
         gridLayout_2->addLayout(gridLayout, 0, 2, 1, 1);
@@ -432,6 +420,24 @@ public:
         line->setGeometry(QRect(0, 30, 741, 21));
         line->setFrameShape(QFrame::HLine);
         line->setFrameShadow(QFrame::Sunken);
+        QWidget::setTabOrder(lineEdit_codigo, lineEdit_stock);
+        QWidget::setTabOrder(lineEdit_stock, lineEdit_precio_compra);
+        QWidget::setTabOrder(lineEdit_precio_compra, lineEdit_precio_venta);
+        QWidget::setTabOrder(lineEdit_precio_venta, lineEdit_p_descuento);
+        QWidget::setTabOrder(lineEdit_p_descuento, lineEdit_accesorios);
+        QWidget::setTabOrder(lineEdit_accesorios, lineEdit_descripcion);
+        QWidget::setTabOrder(lineEdit_descripcion, myComboBox_marca);
+        QWidget::setTabOrder(myComboBox_marca, comboBox_tamanio);
+        QWidget::setTabOrder(comboBox_tamanio, comboBox_forma);
+        QWidget::setTabOrder(comboBox_forma, comboBox_calidad);
+        QWidget::setTabOrder(comboBox_calidad, comboBox_color);
+        QWidget::setTabOrder(comboBox_color, pushButton_xmarca);
+        QWidget::setTabOrder(pushButton_xmarca, pushButton_xtamanio);
+        QWidget::setTabOrder(pushButton_xtamanio, pushButton_xforma);
+        QWidget::setTabOrder(pushButton_xforma, pushButton_4);
+        QWidget::setTabOrder(pushButton_4, pushButton_8);
+        QWidget::setTabOrder(pushButton_8, pushButton_agregar);
+        QWidget::setTabOrder(pushButton_agregar, pushButton_cancelar);
 
         retranslateUi(ui_producto_agregar_montura);
 
@@ -446,7 +452,6 @@ public:
         label_6->setText(QApplication::translate("ui_producto_agregar_montura", "Accesorios", 0, QApplication::UnicodeUTF8));
         label_7->setText(QApplication::translate("ui_producto_agregar_montura", "Precio De Descuento", 0, QApplication::UnicodeUTF8));
         label_4->setText(QApplication::translate("ui_producto_agregar_montura", "Stock", 0, QApplication::UnicodeUTF8));
-        label_5->setText(QApplication::translate("ui_producto_agregar_montura", "Precio", 0, QApplication::UnicodeUTF8));
         label_2->setText(QApplication::translate("ui_producto_agregar_montura", "Codigo", 0, QApplication::UnicodeUTF8));
         label_12->setText(QApplication::translate("ui_producto_agregar_montura", "Precio de Venta", 0, QApplication::UnicodeUTF8));
         label_13->setText(QApplication::translate("ui_producto_agregar_montura", "Precio de Compra", 0, QApplication::UnicodeUTF8));

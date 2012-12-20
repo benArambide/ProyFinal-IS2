@@ -17,12 +17,14 @@ public:
     explicit ui_producto_agregar_luna(QWidget *parent = 0);
     ~ui_producto_agregar_luna();
 
-private slots:
+    void tipoEditar(Luna  luna_editar);
+
+private slots:    
+
     void on_pushButton_5_clicked();
 
     void on_pushButton_cancelar_clicked();
 
-    void on_pushButton_xmarca_clicked();
 
     void on_pushButton_xindice_clicked();
 
@@ -30,9 +32,17 @@ private slots:
 
     void on_pushButton_xcalidad_clicked();
 
+    void on_pushButton_xdiametro_clicked();
+
+
 private:
     Ui::ui_producto_agregar_luna *ui;
     QMessageBox* msgBox;
+    Luna Luna_Editar;
+    bool editar;
+
+signals:
+    void senial();
 };
 
 #endif // UI_PRODUCTO_AGREGAR_LUNA_H

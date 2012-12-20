@@ -28,6 +28,7 @@ Calidad::Calidad(int _id)
     query.prepare("select * from calidad where idcalidad="+QString::number(_id));
     query.exec();
     query.next();
+    qDebug()<<"ESTE ES LE ID DE LA CALIDAD"<<_id;
     id=_id;
     nombre=query.value(1).toString();
 }

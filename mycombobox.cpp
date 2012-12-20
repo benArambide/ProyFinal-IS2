@@ -9,7 +9,10 @@ MyComboBox::MyComboBox(QWidget* parent):QComboBox(parent)
 
     ventana_agregar_1=0;
     ventana_agregar_2=0;
+
+
     //Inicializamos los punteros a funcion para poder llenar el combobox
+
     map_funciones["calidad"]=(&(Calidad::listarNombres));
     map_funciones["color"]=(&(Color::listarNombres));
     map_funciones["tratamiento"]=(&(Tratamiento::listarNombres));
@@ -17,6 +20,7 @@ MyComboBox::MyComboBox(QWidget* parent):QComboBox(parent)
     map_funciones["tamanio"]=(&(Tamanio::listarNombres));
     map_funciones["tipoluna"]=(&(TipoLuna::listarNombres));
     map_funciones["forma"]=(&(Forma::listarNombres));
+    map_funciones["diametro"]=(&(Diametro::listarNombres));
 
 
     this->connect(this,SIGNAL(activated(QString)),this,SLOT(Show_Agregar()));
@@ -85,7 +89,11 @@ bool MyComboBox::Eliminar_Item()
         forma.existente(nombre);
         exitoso=forma.eliminar();
     }
-
+    if(tipo=="diametro"){
+        Diametro _diametro;
+        _diametro.existente(nombre);
+        exitoso=_diametro.eliminar();
+    }
     if(exitoso==true)
         this->Actualizar_Items();
     else

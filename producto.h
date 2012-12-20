@@ -6,7 +6,6 @@
 #include <tamanio.h>
 #include <calidad.h>
 #include <forma.h>
-#include <indicerefraccion.h>
 #include <marca.h>
 #include <rangomedida.h>
 #include <tipoluna.h>
@@ -28,19 +27,20 @@ class Producto: public ObjetoPersistente
 protected:
     int id;
     QString codigo;
-    QString descripcion;
-    QString nombre;
+    QString descripcion;    
     Marca marca;
     int stock;
-    float precio;
-    QString accesorios;
-    float p_descuento;
+    double precio_compra;
+    double precio_venta;
+    double p_descuento;
+    QString accesorios;    
     bool habilitado;
 
 public:
-    Producto(int _id, QString _codigo,QString _descripcion, QString _nombre, Marca _marca,int _stock,float _precio,QString _accesorios,float _p_descuento,bool _habilitado);
-    Producto(QString _codigo,QString _descripcion, QString _nombre, Marca _marca,int _stock,float _precio,QString _accesorios,float _p_descuento,bool _habilitado);
+    Producto(int _id, QString _codigo,QString _descripcion, Marca _marca,int _stock,double _precio_compra,double _precio_venta,double _p_descuento,QString _accesorios,bool _habilitado);
+    Producto(QString _codigo,QString _descripcion, Marca _marca,int _stock,double _precio_compra,double _precio_venta,double _p_descuento,QString _accesorios,bool _habilitado);
     Producto();
+    Producto(QString _descripcion,int _stock,double _precio_compra,double _precio_venta,double _p_descuento,bool _habilitado);
 
     int getId();
     QString getCodigo();
@@ -48,9 +48,11 @@ public:
     QString getNombre();
     Marca getMarca();
     int getStock();
-    float getPrecio();
+    double getPrecioCompra();
+    double getPrecioVenta();
+    double getP_descuento();
     QString getAccesorios();
-    float getP_descuento();
+
     bool getHabilitado();
 
 
@@ -60,10 +62,13 @@ public:
     void setNombre(QString _nombre);
     void setMarca(Marca _marca);
     void setStock(int _stock);
-    void setPrecio(float _precio);
-    void setAccesorios(QString _accesorios);
-    void SetP_descuento(float _p_descuento);
+    void setPrecio_compra(double _precio);
+    void setPrecio_venta(double _precio);
+    void SetP_descuento(double _p_descuento);
+    void setAccesorios(QString _accesorios);    
     void SetHabilitado(bool _habilitado);
+
+    static bool validar(QString texto_a_validad, QString tipo_validacion);
 
 };
 

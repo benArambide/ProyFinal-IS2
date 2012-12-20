@@ -4,7 +4,7 @@
 #include <QSqlRecord>
 #include <QSqlError>
 
-RangoMedida::RangoMedida(int _id,float _valorIni,float _valorFin, QString _descripcion)
+RangoMedida::RangoMedida(int _id,double _valorIni,double _valorFin, QString _descripcion)
 {
     id=_id;
     valorini=_valorIni;
@@ -13,7 +13,7 @@ RangoMedida::RangoMedida(int _id,float _valorIni,float _valorFin, QString _descr
 
 }
 
-RangoMedida::RangoMedida(float _valorIni,float _valorFin, QString _descripcion)
+RangoMedida::RangoMedida(double  _valorIni,double _valorFin, QString _descripcion)
 {
     id=0;
     valorini=_valorIni;
@@ -40,9 +40,9 @@ RangoMedida::RangoMedida(int _id)
     query.exec();
     query.next();
     id=_id;
-    valorini=query.value(1).toFloat();
-    valorfin=query.value(2).toFloat();
-    descripcion=query.value(3).toFloat();
+    valorini=query.value(1).toDouble();
+    valorfin=query.value(2).toDouble();
+    descripcion=query.value(3).toString();
 }
 
 
@@ -64,8 +64,8 @@ QList<RangoMedida*> RangoMedida::listar()
     while(query.next())
     {
         int _id=query.value(0).toInt();
-        float _valorini=query.value(1).toFloat();
-        float _valorfin=query.value(2).toFloat();
+        double _valorini=query.value(1).toDouble();
+        double _valorfin=query.value(2).toDouble();
         QString _descripcion=query.value(3).toString();
         RangoMedida* rangomedida=new RangoMedida(_id,_valorini,_valorfin, _descripcion);
         lista_resultado.push_back(rangomedida);
@@ -113,7 +113,7 @@ QString RangoMedida::getdescripcion()
  * @brief Entrega el valor incial de la RangoMedida
  * @return QString nombre
  */
-float RangoMedida::getValorInicial()
+double RangoMedida::getValorInicial()
 {
     return valorini;
 }
@@ -124,7 +124,7 @@ float RangoMedida::getValorInicial()
  * @brief Entrega el valor final de la RangoMedida
  * @return QString nombre
  */
-float RangoMedida::getValorFinal()
+double RangoMedida::getValorFinal()
 {
     return valorfin;
 }
@@ -156,7 +156,7 @@ void RangoMedida::setdescripcion(QString _descripcion)
  * @brief Permitar cambiar el dato del valor Incial
  * @param Int _id que representa al nuevo id
  */
-void RangoMedida::setValorIncial(float _valorIni)
+void RangoMedida::setValorIncial(double _valorIni)
 {
     valorini=_valorIni;
 }
@@ -168,7 +168,7 @@ void RangoMedida::setValorIncial(float _valorIni)
  * @brief Permitar cambiar el dato del valor Final
  * @param Int _id que representa al nuevo id
  */
-void RangoMedida::setValorFinal(float _valorFin)
+void RangoMedida::setValorFinal(double _valorFin)
 {
     valorfin=_valorFin;
 }
@@ -223,8 +223,11 @@ bool RangoMedida::actualizar()
 {
     if(descripcion!="")
     {
+        qDebug()<<"el id a cambiar dentro de rango de  medida es "<<id;
         QSqlQuery query;
-        query.prepare("UPDATE rango_medida SET obs='"+descripcion+"' , val_ini="+QString::number(valorini)+" , "+QString::number(valorfin)+" WHERE idrango_medida="+ QString::number(id));
+        QString que="UPDATE rango_medida SET obs= '"+descripcion+"' , val_ini="+QString::number(valorini)+" , val_fin="+QString::number(valorfin)+" WHERE idrango_medida="+ QString::number(id);
+        qDebug()<<"senetecnia sql "<<que;
+        query.prepare(que);
         return query.exec();
     }
     else
