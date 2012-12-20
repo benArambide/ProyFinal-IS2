@@ -3,6 +3,8 @@
 
 #include <QWidget>
 #include "vitrina.h"
+#include "ui_tienda.h"
+
 
 
 namespace Ui {
@@ -12,12 +14,32 @@ class ui_vitrina_agregar;
 class ui_vitrina_agregar : public QWidget
 {
     Q_OBJECT
-    
+ private:
+
+    bool caso;
+    QString idTienda;
+    ui_tienda * ui_tienda_actual;
+
+public:
+    bool get_caso(){return caso;}
+    QString get_idTienda(){return idTienda;}
+    ui_tienda* get_ui_tienda_actual(){return ui_tienda_actual;}
+
+    void set_caso(bool tmp){caso=tmp;}
+    void set_idTienda(QString tmp){idTienda=tmp;}
+    void set_ui_tienda_actual(ui_tienda* tmp){ui_tienda_actual=tmp;}
+    bool validar_vitrina();
+    void actualizar();
+
+
+
+
+
 public:
     explicit ui_vitrina_agregar(QWidget *parent = 0);
     ~ui_vitrina_agregar();
-    void setVitrina(vitrina*);
-    
+
+
 private slots:
     void on_guardar_clicked();
 

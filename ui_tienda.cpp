@@ -1,28 +1,779 @@
 #include "ui_tienda.h"
 #include "ui_ui_tienda.h"
 #include "ui_tienda_agregar.h"
+#include "ui_vitrina_agregar.h"
+#include "ui_item_posicion.h"
+#include "ui_traspaso_almacen.h"
+#include "sesion.h"
+#include "mainwindow.h"
+#include <QtGui>
 
 ui_tienda::ui_tienda(QWidget *parent) :
     QWidget(parent),
     ui(new Ui::ui_tienda)
 {
     ui->setupUi(this);
-    ui->tableView->setModel(tienda::mostrar());
+    //ui->grilla->setModel(tienda::mostrar());
+    actualizar_combo_empresa();
+    caso=false;
+    habilitar_botones();
 }
 
 ui_tienda::~ui_tienda()
 {
     delete ui;
 }
+void ui_tienda::actualizar_combo_empresa()
+{
+    ui->comboBox_empresa->clear();
+
+    QSqlQuery query;
+    query.prepare("SELECT idempresa,raz_social FROM empresa");
+    query.exec();
+
+    int c = 0;
+
+    while(query.next())
+    {
+        QString idempresa = query.value(0).toString();
+        QString raz_social = query.value(1).toString();
+
+        Empresas[raz_social] = idempresa;
+        ui->comboBox_empresa->insertItem(c,raz_social);
+
+        c++;
+    }
+}
+
+void ui_tienda::actualizar_combo_tienda(QString tienda)
+{
+    ui->comboBox_tienda->clear();
+
+    QSqlQuery query;
+    query.prepare("SELECT idtienda,alias FROM tienda WHERE idempresa=?");
+    query.bindValue(0,tienda);
+    query.exec();
+
+    int c = 0;
+
+    while(query.next())
+    {
+        QString idtienda = query.value(0).toString();
+        QString alias = query.value(1).toString();
+
+        Tiendas[alias] = idtienda;
+
+        ui->comboBox_tienda->insertItem(c,alias);
+
+        c++;
+    }
+
+}
+
+void ui_tienda::actualizar_combo_vitrina(QString vitrin)
+{
+    ui->comboBox_vitrina->clear();
+
+    QSqlQuery query;
+    query.prepare("SELECT idvitrina,alias FROM vitrina WHERE idtienda=?");
+    query.bindValue(0,vitrin);
+    query.exec();
+
+    int c = 0;
+
+    while(query.next())
+    {
+        QString idvitrina = query.value(0).toString();
+        QString alias = query.value(1).toString();
+
+        Vitrinas[alias] = idvitrina;
+
+        ui->comboBox_vitrina->insertItem(c,alias);
+
+        c++;
+    }
+
+}
+
+
+void ui_tienda::actualizar_combo_niveles(QString vitrin)
+{
+    ui->comboBox_niveles->clear();
+
+    QSqlQuery query;
+    query.prepare("SELECT num_niveles FROM vitrina WHERE idvitrina=?");
+    query.bindValue(0,vitrin.toInt());
+    query.exec();
+    query.next();
+
+    int niveles = query.value(0).toInt();
+
+    for(int i=0;i<niveles;i++)
+    {
+       //c=i+1;
+        QString str;
+        ui->comboBox_niveles->insertItem(i,str.append(QString("%1").arg(i+1)));
+    }
+
+
+}
+
+
+
+
+void ui_tienda::limpiar_grilla()
+{
+    for(int i=ui->grilla->rowCount()-1; i>=0;--i)
+        ui->grilla->removeRow(i);
+    for(int i=ui->grilla->columnCount()-1;i>=0;--i)
+        ui->grilla->removeColumn(i);
+}
+
+void ui_tienda::set_dimension_grilla()
+{
+    limpiar_grilla();
+
+    QSqlQuery query;
+    query.prepare("SELECT num_filas,num_columnas FROM vitrina WHERE idvitrina=?");
+    query.bindValue(0,idVitrina);
+    query.exec();
+
+    query.next();
+
+    int fila = query.value(0).toInt();
+    int columna = query.value(1).toInt();
+
+    for(int i = 0;i<columna;i++)
+        ui->grilla->insertColumn(i);
+    for(int i = 0;i<fila;i++)
+        ui->grilla->insertRow(i);
+}
+
+void ui_tienda::actualizar_grilla()
+{
+    Posiciones.clear();
+    QSqlQuery query1;
+    QSqlQuery query;
+    query.prepare("SELECT idproducto,fila,columna,nivel,iditem_posicion FROM item_posicion WHERE idvitrina=? and nivel=?");
+    query.bindValue(0,idVitrina);
+    query.bindValue(1,actual_nivel);
+    query.exec();
+
+    while(query.next())
+    {
+        QString idproducto = query.value(0).toString();
+        int pos_fila = query.value(1).toInt();
+        int pos_columna = query.value(2).toInt();
+        int pos_nivel = query.value(3).toInt();
+        QString iditem_posicion = query.value(4).toString();
+
+        QString key = QString::number(pos_fila)+"-"+QString::number(pos_columna);
+        Posiciones[key] = iditem_posicion;
+
+
+
+        query1.prepare("SELECT codigo, descripcion FROM producto WHERE idproducto=?");
+        query1.bindValue(0,idproducto);
+        query1.exec();
+        query1.next();
+        QString codigo=query1.value(0).toString();
+        QString descripcion=query1.value(1).toString();
+
+
+        ui->grilla->setItem(pos_fila-1,pos_columna-1,new QTableWidgetItem(codigo+"-"+descripcion));
+    }
+}
+
+void ui_tienda::habilitar_botones()
+{
+    if(caso)
+    {
+
+        ui->agregar_tienda->close();
+        ui->agregar_vitrina->close();
+        ui->editar_tienda->close();
+        ui->editar_vitrina->close();
+        ui->deshabilitar_tienda->close();
+        ui->deshabilitar_vitrina->close();
+        ui->imprimir_tienda->close();
+        ui->imprimir_vitrina->close();
+    }
+    //else
+        //ui->pushButton_aceptar_traspaso->close();
+}
+
+
+
+
+
+
+
+
 
 void ui_tienda::on_pushButton_clicked()
 {
-    ui_tienda_agregar* tienda_agregar=new ui_tienda_agregar;
-    tienda_agregar->show();
+
 }
 
 void ui_tienda::on_ver_vitrina_clicked()
 {
-    ui_vitrina * vitrinas=new ui_vitrina();
-    vitrinas->show();
+
+}
+
+
+//ACCION CUANDO CAMBIA LOS COMBOS
+void ui_tienda::on_comboBox_empresa_currentIndexChanged(const QString &arg1)
+{
+    set_idEmpresa(Empresas[arg1]);
+    actualizar_combo_tienda(get_idEmpresa());
+}
+
+void ui_tienda::on_comboBox_tienda_currentIndexChanged(const QString &arg1)
+{
+    set_idTienda(Tiendas[arg1]);
+    actualizar_combo_vitrina(get_idTienda());
+}
+
+void ui_tienda::on_comboBox_vitrina_currentIndexChanged(const QString &arg1)
+{
+    set_idVitrina(Vitrinas[arg1]);
+    actualizar_combo_niveles(get_idVitrina());
+}
+
+
+void ui_tienda::on_comboBox_niveles_currentIndexChanged(int index)
+{
+    set_actual_nivel(index+1);
+    set_dimension_grilla();
+    actualizar_grilla();
+
+}
+void ui_tienda::on_comboBox_niveles_currentIndexChanged(const QString &arg1)
+{
+
+}
+
+
+
+//BOTONES DE TIENDA
+void ui_tienda::on_agregar_tienda_clicked()
+{
+    ui_tienda_agregar* tienda_agregar=new ui_tienda_agregar;
+    tienda_agregar->set_idEmpresa(get_idEmpresa());
+    tienda_agregar->set_ui_tienda_actual(this);
+    tienda_agregar->set_caso(true);
+    tienda_agregar->setWindowTitle("Nueva Tienda");
+    tienda_agregar->show();
+}
+void ui_tienda::on_editar_tienda_clicked()
+{
+    ui_tienda_agregar* tienda_agregar=new ui_tienda_agregar;
+    tienda_agregar->set_idEmpresa(get_idEmpresa());
+    tienda_agregar->set_ui_tienda_actual(this);
+    tienda_agregar->set_caso(false);
+    tienda_agregar->actualizar();
+    tienda_agregar->setWindowTitle("Editar Tienda");
+    tienda_agregar->show();
+
+}
+
+void ui_tienda::on_deshabilitar_tienda_clicked()
+{
+    tienda*del=new tienda(get_idTienda(),"","","","","");
+    del->eliminar();
+    actualizar_combo_tienda(idEmpresa);
+}
+
+void ui_tienda::on_imprimir_tienda_clicked()
+{
+    QPrinter printer;
+    printer.setOrientation(QPrinter::Landscape);
+    printer.setOutputFormat(QPrinter::PdfFormat);
+    printer.setOutputFileName("productos_tienda.pdf");
+    QPainter painter;
+    if (! painter.begin(&printer))
+        qWarning("failed to open file, is it writable?");
+
+
+    QImage logo("fondo.png");
+    painter.drawImage(10,10,logo);
+
+
+    //Sacando el nombre de la Tienda
+    QSqlQuery query;
+    query.prepare("SELECT alias FROM tienda WHERE idtienda=?");
+    query.bindValue(0,idTienda);
+    query.exec();
+    query.next();
+    QString n_tienda=query.value(0).toString();
+
+    painter.setFont(QFont("Times New Roman", 30));
+    painter.drawText(350,30,"Tienda "+n_tienda);
+    painter.setFont(QFont("Times New Roman", 15));
+    painter.drawText(800,20,"Fecha: "+QDate::currentDate().toString());
+    painter.drawText(800,40,"Hora: "+QTime::currentTime().toString());
+    painter.setFont(QFont("Times New Roman", 20));
+    painter.drawText(360,70,"Lista de Productos");
+    painter.setFont(QFont("Times New Roman", 15));
+    painter.drawText(10,120,"N");
+    painter.drawText(50,120,"Codigo");
+    painter.drawText(130,120,"Vitrina");
+    painter.drawText(210,120,"Fila");
+    painter.drawText(260,120,"Columna");
+    painter.drawText(350,120,"Nivel");
+    painter.drawText(420,120,"Descripcion");
+    painter.drawText(810,120,"Precio de Venta");
+    painter.drawText(950,120,"Stock");
+    painter.drawLine(10,130,1000,130);
+
+    //Sacando ids de vitrinas que pertenecen a la tienda
+    QSqlQuery query1;
+    query1.prepare("SELECT idvitrina, codigo FROM vitrina WHERE idtienda=?");
+    query1.bindValue(0,idTienda);
+    query1.exec();
+    int c=1;
+    int tmp=1;
+
+    while(query1.next())
+    {
+        QString id_vitrina=query1.value(0).toString();
+        QString v_codigo= query1.value(1).toString();
+        //Sacando id de los productos
+        QSqlQuery query3;
+        query3.prepare("SELECT idproducto,fila,columna,nivel FROM item_posicion WHERE idvitrina=?");
+        query3.bindValue(0,id_vitrina);
+        query3.exec();
+
+        while(query3.next())
+        {
+            QString i_idproducto = query3.value(0).toString();
+            int i_fila= query3.value(1).toInt();
+            int i_columna= query3.value(2).toInt();
+            int i_nivel= query3.value(3).toInt();
+
+
+            //Sacando lista de productos
+            QSqlQuery query2;
+            query2.prepare("SELECT codigo, descripcion,stock,precio_venta,accesorios FROM producto WHERE idproducto=?");
+            query2.bindValue(0,i_idproducto);
+            query2.exec();
+            query2.next();
+
+            QString p_codigo = query2.value(0).toString();
+            QString p_descripcion= query2.value(1).toString();
+            QString p_stock = query2.value(2).toString();
+            QString p_precio = query2.value(3).toString();
+
+            painter.drawText(10,120+c*30,QString::number(tmp));
+            painter.drawText(50,120+c*30,p_codigo);
+            painter.drawText(130,120+c*30,v_codigo);
+            painter.drawText(210,120+c*30,QString::number(i_fila));
+            painter.drawText(260,120+c*30,QString::number(i_columna));
+            painter.drawText(350,120+c*30,QString::number(i_nivel));
+            painter.drawText(420,120+c*30,p_descripcion);
+            painter.drawText(810,120+c*30,p_precio);
+            painter.drawText(950,120+c*30,p_stock);
+            painter.drawLine(10,120+c*35,1000,120+c*35);
+
+            c++;
+            tmp++;
+            if(tmp%20==0)
+            {
+                printer.newPage();
+                c=1;
+                painter.setFont(QFont("Times New Roman", 30));
+                painter.drawText(350,30,"Tienda "+n_tienda);
+                painter.setFont(QFont("Times New Roman", 15));
+                painter.drawText(800,20,"Fecha: "+QDate::currentDate().toString());
+                painter.drawText(800,40,"Hora: "+QTime::currentTime().toString());
+                painter.setFont(QFont("Times New Roman", 20));
+                painter.drawText(360,70,"Lista de Productos");
+                painter.setFont(QFont("Times New Roman", 15));
+                painter.drawText(10,120,"N");
+                painter.drawText(50,120,"Codigo");
+                painter.drawText(130,120,"Vitrina");
+                painter.drawText(210,120,"Fila");
+                painter.drawText(260,120,"Columna");
+                painter.drawText(350,120,"Nivel");
+                painter.drawText(420,120,"Descripcion");
+                painter.drawText(810,120,"Precio de Venta");
+                painter.drawText(950,120,"Stock");
+                painter.drawLine(10,130,1000,130);
+            }
+        }
+    }
+
+    painter.end();
+
+    QTextEdit parent;
+    //parent.show();
+
+    QString filename ="productos_tienda.pdf";
+    qDebug()<<"Print file name is "<<filename;
+    if(!filename.isEmpty()) {
+        if(QFileInfo(filename).suffix().isEmpty()) {
+            filename.append(".pdf");
+        }
+
+        QPrinter printer(QPrinter::HighResolution);
+        printer.setOutputFormat(QPrinter::PdfFormat);
+        printer.setOutputFileName(filename);
+        QPrintDialog*dlg = new QPrintDialog(&printer,&parent);
+        dlg->setWindowTitle(QObject::tr("Print Document"));
+
+        if(dlg->exec() == QDialog::Accepted) {
+            parent.print(&printer);
+        }
+        delete dlg;
+    }
+
+}
+
+
+//BOTONES DE VITRINA
+void ui_tienda::on_agregar_vitrina_clicked()
+{
+    ui_vitrina_agregar * vitrina_agregar=new ui_vitrina_agregar;
+    vitrina_agregar->set_idTienda(get_idTienda());
+    vitrina_agregar->set_ui_tienda_actual(this);
+    vitrina_agregar->set_caso(true);
+    vitrina_agregar->setWindowTitle("Nueva Vitrina");
+    vitrina_agregar->show();
+
+}
+
+void ui_tienda::on_editar_vitrina_clicked()
+{
+    ui_vitrina_agregar * vitrina_agregar=new ui_vitrina_agregar;
+    vitrina_agregar->set_idTienda(get_idTienda());
+    vitrina_agregar->set_ui_tienda_actual(this);
+    vitrina_agregar->set_caso(false);
+    vitrina_agregar->actualizar();
+    vitrina_agregar->setWindowTitle("Editar Vitrina");
+    vitrina_agregar->show();
+}
+
+void ui_tienda::on_deshabilitar_vitrina_clicked()
+{
+    vitrina*del=new vitrina(get_idVitrina(),"","","",0,0,0);
+    del->eliminar();
+    actualizar_combo_vitrina(idTienda);
+}
+
+void ui_tienda::on_imprimir_vitrina_clicked()
+{
+    QPrinter printer;
+    printer.setOrientation(QPrinter::Landscape);
+    printer.setOutputFormat(QPrinter::PdfFormat);
+    printer.setOutputFileName("productos_vitrina.pdf");
+    QPainter painter;
+    if (! painter.begin(&printer))
+        qWarning("failed to open file, is it writable?");
+
+
+    QImage logo("fondo.png");
+    painter.drawImage(10,10,logo);
+
+
+    //Sacando el nombre de la Tienda
+    QSqlQuery query;
+    query.prepare("SELECT alias FROM tienda WHERE idtienda=?");
+    query.bindValue(0,idTienda);
+    query.exec();
+    query.next();
+    QString n_tienda=query.value(0).toString();
+
+
+    //Sacando nombre de la Vitrina
+
+    query.prepare("SELECT alias, codigo FROM vitrina WHERE idvitrina=?");
+    query.bindValue(0,idVitrina);
+    query.exec();
+    query.next();
+    QString n_vitrina= query.value(0).toString();
+    QString c_vitrina= query.value(1).toString();
+
+
+    painter.setFont(QFont("Times New Roman", 30));
+    painter.drawText(350,30,"Tienda "+n_tienda);
+    painter.setFont(QFont("Times New Roman", 15));
+    painter.drawText(800,20,"Fecha: "+QDate::currentDate().toString());
+    painter.drawText(800,40,"Hora: "+QTime::currentTime().toString());
+    painter.setFont(QFont("Times New Roman", 20));
+    painter.drawText(160,70,"Lista de Productos de la Vitrina "+c_vitrina+":"+n_vitrina);
+    painter.setFont(QFont("Times New Roman", 15));
+    painter.drawText(10,120,"N");
+    painter.drawText(50,120,"Codigo");
+    painter.drawText(130,120,"Fila");
+    painter.drawText(190,120,"Columna");
+    painter.drawText(280,120,"Nivel");
+    painter.drawText(350,120,"Descripcion");
+    painter.drawText(810,120,"Precio de Venta");
+    painter.drawText(950,120,"Stock");
+    painter.drawLine(10,130,1000,130);
+
+
+    int c=1;
+    int tmp=1;
+
+    //Sacando id de los productos
+    QSqlQuery query3;
+    query3.prepare("SELECT idproducto,fila,columna,nivel FROM item_posicion WHERE idvitrina=?");
+    query3.bindValue(0,idVitrina);
+    query3.exec();
+    while(query3.next())
+    {
+        QString i_idproducto = query3.value(0).toString();
+        int i_fila= query3.value(1).toInt();
+        int i_columna= query3.value(2).toInt();
+        int i_nivel= query3.value(3).toInt();
+
+        //Sacando lista de productos
+        QSqlQuery query2;
+        query2.prepare("SELECT codigo, descripcion,stock,precio_venta,accesorios FROM producto WHERE idproducto=?");
+        query2.bindValue(0,i_idproducto);
+        query2.exec();
+        query2.next();
+
+        QString p_codigo = query2.value(0).toString();
+        QString p_descripcion= query2.value(1).toString();
+        QString p_stock = query2.value(2).toString();
+        QString p_precio = query2.value(3).toString();
+        QString p_accesorios= query2.value(4).toString();
+
+
+        painter.drawText(10,120+c*30,QString::number(tmp));
+        painter.drawText(50,120+c*30,p_codigo);
+        painter.drawText(130,120+c*30,QString::number(i_fila));
+        painter.drawText(190,120+c*30,QString::number(i_columna));
+        painter.drawText(280,120+c*30,QString::number(i_nivel));
+        painter.drawText(350,120+c*30,p_descripcion);
+        painter.drawText(810,120+c*30,p_precio);
+        painter.drawText(950,120+c*30,p_stock);
+        painter.drawLine(10,120+c*35,1000,120+c*35);
+
+        c++;
+        tmp++;
+        if(tmp%20==0)
+        {
+            printer.newPage();
+            c=1;
+            painter.setFont(QFont("Times New Roman", 30));
+            painter.drawText(350,30,"Tienda "+n_tienda);
+            painter.setFont(QFont("Times New Roman", 15));
+            painter.drawText(800,20,"Fecha: "+QDate::currentDate().toString());
+            painter.drawText(800,40,"Hora: "+QTime::currentTime().toString());
+            painter.setFont(QFont("Times New Roman", 20));
+            painter.drawText(160,70,"Lista de Productos de la Vitrina "+c_vitrina+":"+n_vitrina);
+            painter.setFont(QFont("Times New Roman", 15));
+            painter.drawText(10,120,"N");
+            painter.drawText(50,120,"Codigo");
+            painter.drawText(130,120,"Fila");
+            painter.drawText(190,120,"Columna");
+            painter.drawText(280,120,"Nivel");
+            painter.drawText(350,120,"Descripcion");
+            painter.drawText(810,120,"Precio de Venta");
+            painter.drawText(950,120,"Stock");
+            painter.drawLine(10,130,1000,130);
+        }
+
+
+    }
+
+    painter.end();
+    QTextEdit parent;
+
+    QString filename ="productos_tienda.pdf";
+    qDebug()<<"Print file name is "<<filename;
+    if(!filename.isEmpty()) {
+        if(QFileInfo(filename).suffix().isEmpty()) {
+            filename.append(".pdf");
+        }
+
+        QPrinter printer(QPrinter::HighResolution);
+        printer.setOutputFormat(QPrinter::PdfFormat);
+        printer.setOutputFileName(filename);
+        QPrintDialog*dlg = new QPrintDialog(&printer,&parent);
+        dlg->setWindowTitle(QObject::tr("Print Document"));
+
+        if(dlg->exec() == QDialog::Accepted) {
+            parent.print(&printer);
+        }
+        delete dlg;
+    }
+
+}
+
+void ui_tienda::on_grilla_cellDoubleClicked(int row, int column)
+{
+    ui_item_posicion* posicion_agregar = new ui_item_posicion;
+    posicion_agregar->set_ui_tienda_actual(this);
+    cout<<"id de item"<<get_idItem().toStdString()<<endl;
+    if(idItem.isEmpty())
+    {
+        posicion_agregar->set_caso(true);
+        posicion_agregar->setWindowTitle("Nueva Posicion");
+        posicion_agregar->set_posicion(row+1,column+1,actual_nivel);
+
+    }else
+    {
+
+        posicion_agregar->set_iditem(get_idItem());
+        posicion_agregar->set_caso(false);
+        posicion_agregar->actualizar();
+        posicion_agregar->setWindowTitle("Editar Posicion");
+        posicion_agregar->set_posicion(row+1,column+1,actual_nivel);
+
+    }
+    posicion_agregar->show();
+}
+
+void ui_tienda::on_grilla_itemSelectionChanged()
+{
+    QString fila = QString::number(ui->grilla->currentRow()+1);
+
+    QString columna = QString::number(ui->grilla->currentColumn()+1);
+
+    QString pos = fila+"-"+columna;
+
+    cout<<"iditem actual slot"<<QString(Posiciones[pos]).toStdString()<<endl;
+
+    set_idItem(Posiciones[pos]);
+
+}
+
+void ui_tienda::on_pushButton_traspaso_clicked()
+{
+    if(!idItem.isEmpty())
+    {
+        ui_tienda * tienda_traspaso=new ui_tienda;
+        tienda_traspaso->set_caso(true);
+        tienda_traspaso->set_idItem_tras(get_idItem());
+        tienda_traspaso->habilitar_botones();
+        tienda_traspaso->set_ui_tienda_traspaso(this);
+        tienda_traspaso->show();
+        actualizar_grilla();
+    }
+    else
+    {
+        QMessageBox msgBox;
+        msgBox.setText("Seleccione un producto");
+        msgBox.exec();
+
+    }
+
+}
+
+void ui_tienda::on_pushButton_aceptar_traspaso_clicked()
+{
+    if(idItem.isEmpty())
+    {
+        int fila=ui->grilla->currentRow()+1;
+        int columna=ui->grilla->currentColumn()+1;
+        int nivel=actual_nivel;
+        QSqlQuery query1;
+        query1.prepare("SELECT idproducto FROM item_posicion WHERE iditem_posicion=?");
+        query1.bindValue(0,idItem_tras);
+        query1.exec();
+        query1.next();
+        QString idpro=query1.value(0).toString();
+        item_posicion *del = new item_posicion(idItem_tras,"","",0,0,0);
+        del->eliminar();
+
+        QSqlQuery query;
+        query.prepare("INSERT INTO item_posicion(idproducto,idvitrina,fila,columna,nivel) VALUES(?,?,?,?,?)");
+        query.bindValue(0,idpro);
+        query.bindValue(1,get_idVitrina());
+        query.bindValue(2,fila);
+        query.bindValue(3,columna);
+        query.bindValue(4,nivel);
+        query.exec();
+        close();
+        ui_tienda_traspaso->limpiar_grilla();
+        ui_tienda_traspaso->set_dimension_grilla();
+        ui_tienda_traspaso->actualizar_grilla();
+        //Generando Guia de Traspaso
+        QPrinter printer;
+        printer.setOrientation(QPrinter::Landscape);
+        printer.setOutputFormat(QPrinter::PdfFormat);
+        printer.setOutputFileName("Guia_Traspaso.pdf");
+        QPainter painter;
+        if (! painter.begin(&printer))
+            qWarning("failed to open file, is it writable?");
+
+
+        painter.setFont(QFont("Times New Roman", 25));
+        painter.drawText(100,30,"Guia de Remision de Traspaso");
+        painter.setFont(QFont("Times New Roman", 15));
+        painter.drawText(550,20,"Fecha: "+QDate::currentDate().toString());
+        painter.drawText(550,40,"Hora: "+QTime::currentTime().toString());
+        painter.setFont(QFont("Times New Roman", 20));
+
+
+
+        painter.drawText(10,90,"Usuario:");
+        painter.setFont(QFont("Times New Roman", 15));
+        painter.drawText(50,120,"Nombre");
+        painter.drawText(210,120,"Apellidos");
+        painter.drawLine(10,130,680,130);
+
+        //painter.drawText(50,120,Sesion::get_Usuario()->get_nombre());
+
+
+
+
+        painter.setFont(QFont("Times New Roman", 20));
+        painter.drawText(10,200,"Posicion Antigua del Producto:");
+        painter.setFont(QFont("Times New Roman", 15));
+        painter.drawText(50,230,"Codigo");
+        painter.drawText(130,230,"Tienda");
+        painter.drawText(280,230,"Vitrina");
+        painter.drawText(350,230,"Fila");
+        painter.drawText(390,230,"Columna");
+        painter.drawText(480,230,"Nivel");
+        painter.drawText(540,230,"Descripcion");
+        painter.drawLine(10,240,680,240);
+
+        painter.setFont(QFont("Times New Roman", 20));
+        painter.drawText(10,310,"Posicion Nueva del Producto:");
+        painter.setFont(QFont("Times New Roman", 15));
+        painter.drawText(50,340,"Codigo");
+        painter.drawText(130,340,"Tienda");
+        painter.drawText(280,340,"Vitrina");
+        painter.drawText(350,340,"Fila");
+        painter.drawText(390,340,"Columna");
+        painter.drawText(480,340,"Nivel");
+        painter.drawText(540,340,"Descripcion");
+        painter.drawLine(10,350,680,350);
+
+    }
+    else
+    {
+        QMessageBox msgBox;
+        msgBox.setText("Seleccione un espacio vacio");
+        msgBox.exec();
+
+    }
+
+}
+
+void ui_tienda::on_button_traspaso_almacen_clicked()
+{
+    if(!idItem.isEmpty())
+    {
+        ui_traspaso_almacen* traspaso_almacen=new ui_traspaso_almacen;
+        traspaso_almacen->set_ui_tienda_traspaso(this);
+        traspaso_almacen->set_idItem_tras(get_idItem());
+        traspaso_almacen->show();
+    }
+    else
+    {
+        QMessageBox msgBox;
+        msgBox.setText("Seleccione un producto");
+        msgBox.exec();
+
+    }
+
+
+
 }

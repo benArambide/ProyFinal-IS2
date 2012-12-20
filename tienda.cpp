@@ -3,6 +3,16 @@
 tienda::tienda()
 {
 }
+tienda::tienda(QString _idtienda, QString _idempresa, QString _alias, QString _direccion, QString _telefono, QString _permisoMunicipal)
+{
+    idTienda=_idtienda;
+    idEmpresa=_idempresa;
+    alias=_alias;
+    direccion=_direccion;
+    telefono=_telefono;
+    permisoMunicipal=_permisoMunicipal;
+}
+
 
 QString tienda::getIdTienda()
 {
@@ -64,10 +74,36 @@ void tienda::setPermisoMunicipal(QString tmp)
     permisoMunicipal=tmp;
 }
 
+bool tienda::validar(QString texto_a_validar, QString tipo_validacion)
+{
+    bool tmp=false;
+    string cadena=texto_a_validar.toStdString();
+    if(tipo_validacion=="numerico")
+    {
+        for (int i = 0; i <texto_a_validar.size() - 1; i++)
+        {
+              if ((isdigit((int)(cadena[i]))))
+              {
+                 tmp=true;
+              }
+              else
+              {
+                  tmp=false;
+              }
+        }
+        return tmp;
+    }
+    else
+    {
+        return false;
+    }
+
+}
+
 bool tienda::agregar()
 {
     QSqlQuery query;
-    query.prepare("INSERT INTO tienda (idEmpresa,alias,direccion,telefono,permiso_municipal) VALUES (?,?,?,?,?)");
+    query.prepare("INSERT INTO tienda (idempresa,alias,direccion,telefono,permiso_municipal) VALUES (?,?,?,?,?)");
 
     query.bindValue(0,idEmpresa);
     query.bindValue(1,alias);
@@ -85,13 +121,14 @@ bool tienda::agregar()
 bool tienda::actualizar()
 {
     QSqlQuery query;
-    query.prepare("INSERT INTO tienda (idEmpresa,alias,direccion,telefono,permiso_municipal) VALUES (?,?,?,?,?)");
+    query.prepare("UPDATE tienda SET idempresa=?,alias=?,direccion=?,telefono=?,permiso_municipal=? where idtienda=?");
 
     query.bindValue(0,idEmpresa);
     query.bindValue(1,alias);
     query.bindValue(2,direccion);
     query.bindValue(3,telefono);
     query.bindValue(4,permisoMunicipal);
+    query.bindValue(5,idTienda);
 
     if(query.exec())
         return true;
@@ -102,7 +139,13 @@ bool tienda::actualizar()
 
 bool tienda::eliminar()
 {
-    return true;
+    QSqlQuery query;
+    query.prepare("DELETE FROM tienda WHERE idtienda='"+idTienda+"'");
+
+    if(query.exec())
+        return true;
+    else
+        return false;
 }
 
 QSqlQueryModel* tienda::mostrar()

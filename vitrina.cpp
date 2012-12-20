@@ -3,6 +3,16 @@
 vitrina::vitrina()
 {
 }
+vitrina::vitrina(QString _idVitrina, QString _idTienda, QString _codigo, QString _alias, int _num_filas, int _num_columnas, int _num_niveles)
+{
+    idVitrina=_idVitrina;
+    idTienda=_idTienda;
+    codigo=_codigo;
+    alias=_alias;
+    num_filas=_num_filas;
+    num_columnas=_num_columnas;
+    num_niveles=_num_niveles;
+}
 
 QString vitrina::getIdVitrina()
 {
@@ -109,7 +119,7 @@ bool vitrina::agregar()
 bool vitrina::actualizar()
 {
     QSqlQuery query;
-    query.prepare("INSERT INTO vitrina (idtienda,codigo,alias,num_filas,num_columnas,num_niveles) VALUES (?,?,?,?,?,?)");
+    query.prepare("UPDATE vitrina SET idtienda=?,codigo=?,alias=?,num_filas=?,num_columnas=?,num_niveles=? where idvitrina=?");
 
     query.bindValue(0,idTienda);
     query.bindValue(1,codigo);
@@ -117,6 +127,7 @@ bool vitrina::actualizar()
     query.bindValue(3,num_filas);
     query.bindValue(4,num_columnas);
     query.bindValue(5,num_niveles);
+    query.bindValue(6,idVitrina);
 
     if(query.exec())
         return true;
@@ -127,7 +138,13 @@ bool vitrina::actualizar()
 
 bool vitrina::eliminar()
 {
-    return true;
+    QSqlQuery query;
+    query.prepare("DELETE FROM vitrina WHERE idvitrina='"+idVitrina+"'");
+
+    if(query.exec())
+        return true;
+    else
+        return false;
 }
 
 QSqlQueryModel* vitrina::mostrar()

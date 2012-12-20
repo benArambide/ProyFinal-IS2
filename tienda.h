@@ -1,9 +1,20 @@
 #ifndef TIENDA_H
 #define TIENDA_H
-
+#include<iostream>
+#include <fstream>
+#include <stdlib.h>
+#include <stdio.h>
+#include <string.h>
+#include <ctype.h>
+#include <QMessageBox>
+#include <QPrinter>
+#include <QPainter>
+#include <QImage>
+#include <QDate>
+#include <QTime>
 #include <objetopersistente.h>
 #include <QSqlQueryModel>
-
+using namespace std;
 class tienda:public ObjetoPersistente
 {
     private:
@@ -16,6 +27,8 @@ class tienda:public ObjetoPersistente
 
     public:
         tienda();
+        tienda(QString,QString,QString,QString,QString,QString);
+
         QString getIdTienda();
         QString getIdEmpresa();
         QString getAlias();
@@ -29,6 +42,7 @@ class tienda:public ObjetoPersistente
         void setDireccion(QString);
         void setTelefono(QString);
         void setPermisoMunicipal(QString);
+        bool validar(QString,QString);
 
         static QSqlQueryModel* mostrar();
         bool agregar();

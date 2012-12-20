@@ -16,6 +16,8 @@ class vitrina:public ObjetoPersistente
         int num_niveles;
     public:
         vitrina();
+        vitrina(QString,QString,QString,QString,int,int,int);
+
         QString getIdVitrina();
         QString getIdTienda();
         QString getCodigo();

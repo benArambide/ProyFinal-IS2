@@ -58,7 +58,6 @@ SOURCES += main.cpp\
     ui_datos_compras.cpp \
     compras.cpp \
     ui_vitrina_agregar.cpp \
-    ui_vitrina.cpp \
     andamio.cpp \
     contenedor.cpp \
     almacen.cpp \
@@ -84,7 +83,10 @@ SOURCES += main.cpp\
     otro.cpp \
     material.cpp \
     diametro.cpp \
-    curvabase.cpp
+    curvabase.cpp \
+    item_posicion.cpp \
+    ui_item_posicion.cpp \
+    ui_traspaso_almacen.cpp
 
 
 HEADERS  += mainwindow.h \
@@ -136,7 +138,6 @@ HEADERS  += mainwindow.h \
     ui_datos_compras.h \
     compras.h \
     ui_vitrina_agregar.h \
-    ui_vitrina.h \
     andamio.h \
     contenedor.h \
     almacen.h \
@@ -164,7 +165,10 @@ HEADERS  += mainwindow.h \
     otro.h \
     material.h \
     diametro.h \
-    curvabase.h
+    curvabase.h \
+    item_posicion.h \
+    ui_item_posicion.h \
+    ui_traspaso_almacen.h
 
 
 FORMS    += mainwindow.ui \
@@ -193,7 +197,6 @@ FORMS    += mainwindow.ui \
     ui_datos_compras.ui \
     compras.ui \
     ui_vitrina_agregar.ui \
-    ui_vitrina.ui \
     ui_venta.ui \
     ui_agregar_venta.ui \
     ui_almacen_datos.ui \
@@ -202,7 +205,9 @@ FORMS    += mainwindow.ui \
     ui_datos_empresa.ui \
     configprogram.ui \
     ui_historial_clinico.ui \
-    ui_producto_agregar_lente_contacto.ui
+    ui_producto_agregar_lente_contacto.ui \
+    ui_item_posicion.ui \
+    ui_traspaso_almacen.ui
 
 RESOURCES += \
     Icons/Icons.qrc \
