@@ -74,7 +74,9 @@ SOURCES += main.cpp\
     ui_datos_empresa.cpp \
     proveedor.cpp \
     configurador.cpp \
-    configprogram.cpp
+    configprogram.cpp \
+    ui_historial_clinico.cpp \
+    medidashistorial.cpp
 
 
 HEADERS  += mainwindow.h \
@@ -144,7 +146,9 @@ HEADERS  += mainwindow.h \
     ui_datos_empresa.h \
     proveedor.h \
     configurador.h \
-    configprogram.h
+    configprogram.h \
+    ui_historial_clinico.h \
+    medidashistorial.h
 
 
 FORMS    += mainwindow.ui \
@@ -180,7 +184,8 @@ FORMS    += mainwindow.ui \
     ui_andamio_datos.ui \
     ui_contenedor_datos.ui \
     ui_datos_empresa.ui \
-    configprogram.ui
+    configprogram.ui \
+    ui_historial_clinico.ui
 
 RESOURCES += \
     Icons/Icons.qrc \

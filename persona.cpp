@@ -39,6 +39,11 @@ QString persona::getDireccion()
     return direccion;
 }
 
+QString persona::getCorreo()
+{
+    return correo;
+}
+
 QString persona::getSexo()
 {
     return sexo;
@@ -94,6 +99,11 @@ void persona::setDireccion(QString n)
     direccion=n;
 }
 
+void persona::setCorreo(QString n)
+{
+    correo=n;
+}
+
 void persona::setSexo(QString n)
 {
     sexo=n;
@@ -117,7 +127,7 @@ void persona::setCelular(QString n)
 bool persona::agregar()
 {
     QSqlQuery query;
-    query.prepare("INSERT INTO persona (idtipodoc_ident,nombres,primer_apellido,segundo_apellido,nro_doc,direccion,sexo,fecha_nacimiento,telefono,celular) VALUES (?,?,?,?,?,?,?,?,?,?)");
+    query.prepare("INSERT INTO persona (idtipodoc_ident,nombres,primer_apellido,segundo_apellido,nro_doc,direccion,correo,sexo,fecha_nacimiento,telefono,celular) VALUES (?,?,?,?,?,?,?,?,?,?,?)");
 
     query.bindValue(0,idTipoDocIdent);
     query.bindValue(1,nombres);
@@ -125,10 +135,11 @@ bool persona::agregar()
     query.bindValue(3,segundoApellido);
     query.bindValue(4,nroDoc);
     query.bindValue(5,direccion);
-    query.bindValue(6,sexo);
-    query.bindValue(7,fechaNacimiento);
-    query.bindValue(8,telefono);
-    query.bindValue(9,celular);
+    query.bindValue(6,correo);
+    query.bindValue(7,sexo);
+    query.bindValue(8,fechaNacimiento);
+    query.bindValue(9,telefono);
+    query.bindValue(10,celular);
 
     if(query.exec())
         return true;
@@ -140,7 +151,7 @@ bool persona::agregar()
 bool persona::actualizar()
 {
     QSqlQuery query;
-    query.prepare("UPDATE persona SET idtipodoc_ident=?,nombres=?,primer_apellido=?,segundo_apellido=?,nro_doc=?,direccion=?,sexo=?,fecha_nacimiento=?,telefono=?,celular=? where idpersona=?");
+    query.prepare("UPDATE persona SET idtipodoc_ident=?,nombres=?,primer_apellido=?,segundo_apellido=?,nro_doc=?,direccion=?,correo=?,sexo=?,fecha_nacimiento=?,telefono=?,celular=? where idpersona=?");
 
     query.bindValue(0,idTipoDocIdent);
     query.bindValue(1,nombres);
@@ -148,11 +159,12 @@ bool persona::actualizar()
     query.bindValue(3,segundoApellido);
     query.bindValue(4,nroDoc);
     query.bindValue(5,direccion);
-    query.bindValue(6,sexo);
-    query.bindValue(7,fechaNacimiento);
-    query.bindValue(8,telefono);
-    query.bindValue(9,celular);
-    query.bindValue(10,idPersona);
+    query.bindValue(6,correo);
+    query.bindValue(7,sexo);
+    query.bindValue(8,fechaNacimiento);
+    query.bindValue(9,telefono);
+    query.bindValue(10,celular);
+    query.bindValue(11,idPersona);
 
     if(query.exec())
         return true;
@@ -186,10 +198,11 @@ bool persona::buscar()
             idTipoDocIdent=query.value(1).toString();
             nroDoc=query.value(5).toString();
             direccion=query.value(6).toString();
-            sexo=query.value(7).toString();
-            fechaNacimiento=query.value(8).toString();
-            telefono=query.value(9).toString();
-            celular=query.value(10).toString();
+            correo=query.value(7).toString();
+            sexo=query.value(8).toString();
+            fechaNacimiento=query.value(9).toString();
+            telefono=query.value(10).toString();
+            celular=query.value(11).toString();
             return true;
         }
         return false;
