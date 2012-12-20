@@ -76,7 +76,15 @@ SOURCES += main.cpp\
     configurador.cpp \
     configprogram.cpp \
     ui_historial_clinico.cpp \
-    medidashistorial.cpp
+    medidashistorial.cpp \
+    ui_producto_agregar_lente_contacto.cpp \
+    tipolente.cpp \
+    tiempouso.cpp \
+    potencia.cpp \
+    otro.cpp \
+    material.cpp \
+    diametro.cpp \
+    curvabase.cpp
 
 
 HEADERS  += mainwindow.h \
@@ -148,7 +156,15 @@ HEADERS  += mainwindow.h \
     configurador.h \
     configprogram.h \
     ui_historial_clinico.h \
-    medidashistorial.h
+    medidashistorial.h \
+    ui_producto_agregar_lente_contacto.h \
+    tipolente.h \
+    tiempouso.h \
+    potencia.h \
+    otro.h \
+    material.h \
+    diametro.h \
+    curvabase.h
 
 
 FORMS    += mainwindow.ui \
@@ -185,7 +201,8 @@ FORMS    += mainwindow.ui \
     ui_contenedor_datos.ui \
     ui_datos_empresa.ui \
     configprogram.ui \
-    ui_historial_clinico.ui
+    ui_historial_clinico.ui \
+    ui_producto_agregar_lente_contacto.ui
 
 RESOURCES += \
     Icons/Icons.qrc \
