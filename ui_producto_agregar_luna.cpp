@@ -36,6 +36,43 @@ ui_producto_agregar_luna::~ui_producto_agregar_luna()
 void ui_producto_agregar_luna::on_pushButton_5_clicked()
 {
 
+    //validacion
+    int numero_campos=8;
+    int resultado=0;
+    QString inval="...Nuevo...";
+
+    QString error="No puede Contunuar, ingrese correctamente los datos en : \n";
+    if(Producto::validar(ui->lineEdit_stock->text(),"numerico_cantidad")==true) resultado++;
+    else{   error=error+ "- Stock \n";  }
+
+    if(Producto::validar(ui->lineEdit_precio_compra->text(),"numerico_precio")==true) resultado++;
+    else{   error=error+ "- Precio de Compra \n";  }
+
+    if(Producto::validar(ui->lineEdit_precio_venta->text(),"numerico_precio")==true) resultado++;
+    else{   error=error+ "- Precio de Venta \n";  }
+
+    if(Producto::validar(ui->lineEdit_p_descuento->text(),"numerico_precio")==true) resultado++;
+    else{   error=error+ "- Precio de Descuento \n";  }
+
+    if(Producto::validar(ui->lineEdit_descripcion->text(),"alfanumerico")==true) resultado++;
+    else{   error=error+ "- Descripción \n";  }
+
+    if(Producto::validar(ui->descripcion_rango_medida->text(),"alfanumerico")==true) resultado++;
+    else{   error=error+ "- Rango de Medida \n";  }
+
+    if(Producto::validar(ui->lineEdit_vinicial->text(),"numerico_rango")==true) resultado++;
+    else{   error=error+ "- Rango de Medida \n";  }
+
+    if(Producto::validar(ui->lineEdit_vfinal->text(),"numerico_rango")==true) resultado++;
+    else{   error=error+ "- Rango de Medida \n";  }
+
+    if(numero_campos!=resultado)
+    {
+        QMessageBox::warning(this,"Cuidado!!",error);
+        return;
+    }
+
+
     //Capturando todos lo datos
     int stock=ui->lineEdit_stock->text().toInt();
     double p_compra=ui->lineEdit_precio_compra->text().toDouble();
@@ -47,6 +84,12 @@ void ui_producto_agregar_luna::on_pushButton_5_clicked()
     QString tipo_luna=ui->comboBox_tipo_luna->currentText();
     QString calidad=ui->comboBox_calidad->currentText();
     QString diametro=ui->comboBox_diametro->currentText();
+
+    if(tratamiento==inval || tipo_luna==inval || calidad==inval || diametro==inval)
+    {
+        QMessageBox::warning(this,"Error"," No puede dejar con 'Nuevo' ningun campo");
+        return;
+    }
 
     QString descrip_rango=ui->descripcion_rango_medida->text();
     double val_ini=ui->lineEdit_vinicial->text().toDouble();
@@ -140,6 +183,9 @@ void ui_producto_agregar_luna::tipoEditar(Luna  luna_editar)
 
     Luna_Editar=luna_editar;
     editar=true;
+
+    ui->pushButton_5->setText("Guardar");
+    ui->label_titulo->setText("Editar Luna");
 
 
 }

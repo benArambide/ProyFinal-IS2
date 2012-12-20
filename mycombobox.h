@@ -15,6 +15,11 @@
 #include <ui_agregar_nomdesc.h>
 #include <tratamiento.h>
 #include <diametro.h>
+#include <tipolente.h>
+#include <potencia.h>
+#include <curvabase.h>
+#include <tiempouso.h>
+#include <material.h>
 
 
 

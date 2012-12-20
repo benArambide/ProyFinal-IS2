@@ -1,8 +1,8 @@
 /********************************************************************************
 ** Form generated from reading UI file 'ui_producto.ui'
 **
-** Created: Thu Dec 20 11:23:03 2012
-**      by: Qt User Interface Compiler version 4.8.1
+** Created: Thu Dec 20 14:21:43 2012
+**      by: Qt User Interface Compiler version 4.7.4
 **
 ** WARNING! All changes made in this file will be lost when recompiling UI file!
 ********************************************************************************/
@@ -173,6 +173,7 @@ public:
         tableView = new QTableView(Tab1);
         tableView->setObjectName(QString::fromUtf8("tableView"));
         tableView->setSelectionBehavior(QAbstractItemView::SelectRows);
+        tableView->horizontalHeader()->setDefaultSectionSize(130);
 
         gridLayout_2->addWidget(tableView, 1, 0, 1, 1);
 
@@ -263,8 +264,8 @@ public:
         Tipo_poroducto_combo->insertItems(0, QStringList()
          << QApplication::translate("ui_producto", "Lunas", 0, QApplication::UnicodeUTF8)
          << QApplication::translate("ui_producto", "Monturas", 0, QApplication::UnicodeUTF8)
-         << QApplication::translate("ui_producto", "Otros", 0, QApplication::UnicodeUTF8)
          << QApplication::translate("ui_producto", "Lentes de Contacto", 0, QApplication::UnicodeUTF8)
+         << QApplication::translate("ui_producto", "Otros", 0, QApplication::UnicodeUTF8)
         );
         label->setText(QApplication::translate("ui_producto", "Tipo de Luna   ", 0, QApplication::UnicodeUTF8));
         label_2->setText(QApplication::translate("ui_producto", "Lista  de Productos", 0, QApplication::UnicodeUTF8));

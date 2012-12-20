@@ -1,6 +1,7 @@
 #include "ui_producto_agregar_montura.h"
 #include "ui_ui_producto_agregar_montura.h"
 #include <QDebug>
+#include <QMessageBox>
 
 ui_producto_agregar_montura::ui_producto_agregar_montura(QWidget *parent) :
     QDialog(parent),
@@ -57,6 +58,8 @@ void ui_producto_agregar_montura::tipoEditar(Montura & montura_editar)
     Montura_Editar=montura_editar;
     editar=true;
 
+    ui->pushButton_agregar->setText("Guardar");
+    ui->label_tiulo->setText("Editar Montura");
 }
 
 
@@ -99,6 +102,42 @@ void ui_producto_agregar_montura::on_pushButton_8_clicked()
 
 void ui_producto_agregar_montura::on_pushButton_agregar_clicked()
 {
+
+
+    //validacion
+    int numero_campos=7;
+    int resultado=0;
+    QString inval="...Nuevo...";
+
+    QString error="No puede Contunuar, ingrese correctamente los datos en : \n";
+    if(Producto::validar(ui->lineEdit_stock->text(),"numerico_cantidad")==true) resultado++;
+    else{   error=error+ "- Stock \n";  }
+
+    if(Producto::validar(ui->lineEdit_precio_compra->text(),"numerico_precio")==true) resultado++;
+    else{   error=error+ "- Precio de Compra \n";  }
+
+    if(Producto::validar(ui->lineEdit_precio_venta->text(),"numerico_precio")==true) resultado++;
+    else{   error=error+ "- Precio de Venta \n";  }
+
+    if(Producto::validar(ui->lineEdit_p_descuento->text(),"numerico_precio")==true) resultado++;
+    else{   error=error+ "- Precio de Descuento \n";  }
+
+    if(Producto::validar(ui->lineEdit_descripcion->text(),"alfanumerico")==true) resultado++;
+    else{   error=error+ "- Descripción \n";  }
+
+    if(Producto::validar(ui->lineEdit_codigo->text(),"alfanumerico")==true) resultado++;
+    else{   error=error+ "- Codigo \n";  }
+
+    if(Producto::validar(ui->lineEdit_accesorios->text(),"alfanumerico")==true) resultado++;
+    else{   error=error+ "- Accesorios \n";  }
+
+    if(numero_campos!=resultado)
+    {
+        QMessageBox::warning(this,"Cuidado!!",error);
+        return;
+    }
+
+
         QString _codigo=ui->lineEdit_codigo->text();
         int _stock=ui->lineEdit_stock->text().toDouble();
         double _precio_compra=ui->lineEdit_precio_compra->text().toDouble();
@@ -107,21 +146,35 @@ void ui_producto_agregar_montura::on_pushButton_agregar_clicked()
         QString _accesorios=ui->lineEdit_accesorios->text();
         QString _descripcion=ui->lineEdit_descripcion->text();
 
+
+        QString marca=ui->myComboBox_marca->currentText();
+        QString tamanio=ui->comboBox_tamanio->currentText();
+        QString forma=ui->comboBox_forma->currentText();
+        QString calidad=ui->comboBox_calidad->currentText();
+        QString color=ui->comboBox_color->currentText();
+
+
+        if(marca==inval || tamanio==inval || forma==inval || calidad==inval || color==inval)
+        {
+            QMessageBox::warning(this,"Error"," No puede dejar con 'Nuevo' ningun campo");
+            return;
+        }
+
+
         Marca nuevamarca;
-        nuevamarca.existente(ui->myComboBox_marca->currentText());
+        nuevamarca.existente(marca);
 
         Tamanio nuevotamanio;
-        nuevotamanio.existente(ui->comboBox_tamanio->currentText());
+        nuevotamanio.existente(tamanio);
 
         Forma nuevaforma;
-        nuevaforma.existente(ui->comboBox_forma->currentText());
+        nuevaforma.existente(forma);
 
         Calidad nuevacalidad;
-        nuevacalidad.existente(ui->comboBox_calidad->currentText());
+        nuevacalidad.existente(calidad);
 
         Color nuevocolor;
-        nuevocolor.existente(ui->comboBox_color->currentText());
-
+        nuevocolor.existente(color);
 
         if(editar==true)
         {            

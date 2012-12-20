@@ -125,12 +125,12 @@
          </item>
          <item>
           <property name="text">
-           <string>Otros</string>
+           <string>Lentes de Contacto</string>
           </property>
          </item>
          <item>
           <property name="text">
-           <string>Lentes de Contacto</string>
+           <string>Otros</string>
           </property>
          </item>
         </widget>
@@ -190,6 +190,9 @@
                    <property name="selectionBehavior">
                     <enum>QAbstractItemView::SelectRows</enum>
                    </property>
+                   <attribute name="horizontalHeaderDefaultSectionSize">
+                    <number>130</number>
+                   </attribute>
                   </widget>
                  </item>
                 </layout>

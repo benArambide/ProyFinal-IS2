@@ -40,8 +40,8 @@ public:
     Producto(int _id, QString _codigo,QString _descripcion, Marca _marca,int _stock,double _precio_compra,double _precio_venta,double _p_descuento,QString _accesorios,bool _habilitado);
     Producto(QString _codigo,QString _descripcion, Marca _marca,int _stock,double _precio_compra,double _precio_venta,double _p_descuento,QString _accesorios,bool _habilitado);
     Producto();
-    Producto(QString _descripcion,int _stock,double _precio_compra,double _precio_venta,double _p_descuento,bool _habilitado);
-
+    Producto(QString _descripcion,int _stock,double _precio_compra,double _precio_venta,double _p_descuento,bool _habilitado);    
+    Producto(Marca _marca,int _stock,double _precio_compra,double _precio_venta,double _p_descuento,bool _habilitado);
     int getId();
     QString getCodigo();
     QString getDescripcion();

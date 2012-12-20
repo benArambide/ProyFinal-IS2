@@ -29,7 +29,7 @@
    <enum>Qt::NoContextMenu</enum>
   </property>
   <property name="windowTitle">
-   <string>Agregar Luna Nueva</string>
+   <string>Luna</string>
   </property>
   <property name="windowFilePath">
    <string notr="true"/>
@@ -544,7 +544,7 @@
     </item>
    </layout>
   </widget>
-  <widget class="QLabel" name="label">
+  <widget class="QLabel" name="label_titulo">
    <property name="geometry">
     <rect>
      <x>20</x>
@@ -575,7 +575,7 @@
   <customwidget>
    <class>MyComboBox</class>
    <extends>QComboBox</extends>
-   <header>mycombobox.h</header>
+   <header location="global">mycombobox.h</header>
    <slots>
     <slot>Eliminar_Item()</slot>
    </slots>

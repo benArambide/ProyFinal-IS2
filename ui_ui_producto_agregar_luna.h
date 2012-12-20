@@ -1,8 +1,8 @@
 /********************************************************************************
 ** Form generated from reading UI file 'ui_producto_agregar_luna.ui'
 **
-** Created: Thu Dec 20 11:23:03 2012
-**      by: Qt User Interface Compiler version 4.8.1
+** Created: Thu Dec 20 14:21:44 2012
+**      by: Qt User Interface Compiler version 4.7.4
 **
 ** WARNING! All changes made in this file will be lost when recompiling UI file!
 ********************************************************************************/
@@ -25,7 +25,7 @@
 #include <QtGui/QSpacerItem>
 #include <QtGui/QVBoxLayout>
 #include <QtGui/QWidget>
-#include "mycombobox.h"
+#include <mycombobox.h>
 
 QT_BEGIN_NAMESPACE
 
@@ -89,7 +89,7 @@ public:
     QSpacerItem *horizontalSpacer;
     QLabel *label_14;
     QLineEdit *lineEdit_vfinal;
-    QLabel *label;
+    QLabel *label_titulo;
     QFrame *line;
 
     void setupUi(QDialog *ui_producto_agregar_luna)
@@ -434,9 +434,9 @@ public:
 
         verticalLayout->addLayout(gridLayout_3);
 
-        label = new QLabel(ui_producto_agregar_luna);
-        label->setObjectName(QString::fromUtf8("label"));
-        label->setGeometry(QRect(20, 0, 131, 31));
+        label_titulo = new QLabel(ui_producto_agregar_luna);
+        label_titulo->setObjectName(QString::fromUtf8("label_titulo"));
+        label_titulo->setGeometry(QRect(20, 0, 131, 31));
         line = new QFrame(ui_producto_agregar_luna);
         line->setObjectName(QString::fromUtf8("line"));
         line->setGeometry(QRect(10, 30, 701, 21));
@@ -467,7 +467,7 @@ public:
 
     void retranslateUi(QDialog *ui_producto_agregar_luna)
     {
-        ui_producto_agregar_luna->setWindowTitle(QApplication::translate("ui_producto_agregar_luna", "Agregar Luna Nueva", 0, QApplication::UnicodeUTF8));
+        ui_producto_agregar_luna->setWindowTitle(QApplication::translate("ui_producto_agregar_luna", "Luna", 0, QApplication::UnicodeUTF8));
         label_3->setText(QApplication::translate("ui_producto_agregar_luna", "Descripcion", 0, QApplication::UnicodeUTF8));
         label_4->setText(QApplication::translate("ui_producto_agregar_luna", "Stock", 0, QApplication::UnicodeUTF8));
         label_19->setText(QApplication::translate("ui_producto_agregar_luna", "Precio De Venta", 0, QApplication::UnicodeUTF8));
@@ -487,7 +487,7 @@ public:
         label_16->setText(QApplication::translate("ui_producto_agregar_luna", "Descripcion", 0, QApplication::UnicodeUTF8));
         label_13->setText(QApplication::translate("ui_producto_agregar_luna", "Valor Inicial", 0, QApplication::UnicodeUTF8));
         label_14->setText(QApplication::translate("ui_producto_agregar_luna", "Valor Final", 0, QApplication::UnicodeUTF8));
-        label->setText(QApplication::translate("ui_producto_agregar_luna", "Agregar Luna", 0, QApplication::UnicodeUTF8));
+        label_titulo->setText(QApplication::translate("ui_producto_agregar_luna", "Agregar Luna", 0, QApplication::UnicodeUTF8));
     } // retranslateUi
 
 };

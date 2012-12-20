@@ -24,12 +24,16 @@ CurvaBase::CurvaBase(QString _nombre)
 //Constructo con solo tener el ID
 CurvaBase::CurvaBase(int _id)
 {
+
+    qDebug()<<"generadado la curva base"<<_id;
     QSqlQuery query;
     query.prepare("select * from curva_base where idcurva_base="+QString::number(_id));
     query.exec();
     query.next();
     id=_id;
+
     nombre=query.value(1).toString();
+    qDebug()<<"el nomrbe que salio es "<<nombre;
 }
 
 

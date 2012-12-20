@@ -23,9 +23,9 @@
    </size>
   </property>
   <property name="windowTitle">
-   <string>Agregar Montura</string>
+   <string>Montura</string>
   </property>
-  <widget class="QLabel" name="label">
+  <widget class="QLabel" name="label_tiulo">
    <property name="geometry">
     <rect>
      <x>10</x>
@@ -538,7 +538,7 @@
   <customwidget>
    <class>MyComboBox</class>
    <extends>QComboBox</extends>
-   <header>mycombobox.h</header>
+   <header location="global">mycombobox.h</header>
    <slots>
     <slot>Eliminar_Item()</slot>
    </slots>

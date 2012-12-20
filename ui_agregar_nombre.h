@@ -4,7 +4,6 @@
 #include <calidad.h>
 #include <color.h>
 #include <forma.h>
-#include <indicerefraccion.h>
 #include <marca.h>
 #include <rangomedida.h>
 #include <tamanio.h>
@@ -12,6 +11,13 @@
 #include <QIcon>
 #include <QDialog>
 #include <tratamiento.h>
+#include <diametro.h>
+#include <tipolente.h>
+#include <potencia.h>
+#include <curvabase.h>
+#include <tiempouso.h>
+#include <material.h>
+
 
 namespace Ui {
     class ui_agregar_nombre;

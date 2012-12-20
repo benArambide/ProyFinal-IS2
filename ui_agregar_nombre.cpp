@@ -15,7 +15,7 @@ ui_agregar_nombre::~ui_agregar_nombre()
 
 void ui_agregar_nombre::on_pushButton_cancelar_clicked()
 {
-
+    this->close();
 }
 
 void ui_agregar_nombre::recibir_tipo(QString _tipo)
@@ -53,7 +53,30 @@ void ui_agregar_nombre::on_pushButton_guardar_clicked()
         Forma forma(nombre);
         forma.agregar();
     }
-
+    if(tipo=="diametro"){
+        Diametro diametro(nombre);
+        diametro.agregar();
+    }
+    if(tipo=="curvabase"){
+        CurvaBase curvabase(nombre);
+        curvabase.agregar();
+    }
+    if(tipo=="material"){
+        Material material(nombre);
+        material.agregar();
+    }
+    if(tipo=="potencia"){
+        Potencia potencia(nombre);
+        potencia.agregar();
+    }
+    if(tipo=="tiempouso"){
+        TiempoUso tiempouso(nombre);
+        tiempouso.agregar();
+    }
+    if(tipo=="tipolente"){
+        TipoLente tipolente(nombre);
+        tipolente.agregar();
+    }
     emit envia_senial(1);
-    this->close();
+    this->close();    
 }

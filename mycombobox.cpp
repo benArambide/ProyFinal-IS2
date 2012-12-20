@@ -21,6 +21,12 @@ MyComboBox::MyComboBox(QWidget* parent):QComboBox(parent)
     map_funciones["tipoluna"]=(&(TipoLuna::listarNombres));
     map_funciones["forma"]=(&(Forma::listarNombres));
     map_funciones["diametro"]=(&(Diametro::listarNombres));
+    map_funciones["tipolente"]=(&(TipoLente::listarNombres));
+    map_funciones["potencia"]=(&(Potencia::listarNombres));
+    map_funciones["curvabase"]=(&(CurvaBase::listarNombres));
+    map_funciones["tiempouso"]=(&(TiempoUso::listarNombres));
+    map_funciones["material"]=(&(Material::listarNombres));
+
 
 
     this->connect(this,SIGNAL(activated(QString)),this,SLOT(Show_Agregar()));
@@ -94,8 +100,36 @@ bool MyComboBox::Eliminar_Item()
         _diametro.existente(nombre);
         exitoso=_diametro.eliminar();
     }
+    if(tipo=="curvabase"){
+        CurvaBase curvabase;
+        curvabase.existente(nombre);
+        exitoso=curvabase.eliminar();
+    }
+    if(tipo=="material"){
+        Material material;
+        material.existente(nombre);
+        exitoso=material.eliminar();
+    }
+    if(tipo=="potencia"){
+        Potencia potencia;
+        potencia.existente(nombre);
+        exitoso=potencia.eliminar();
+    }
+    if(tipo=="tiempouso"){
+        TiempoUso tiempouso;
+        tiempouso.existente(nombre);
+        exitoso=tiempouso.eliminar();
+    }
+    if(tipo=="tipolente"){
+        TipoLente tipolente;
+        tipolente.existente(nombre);
+        exitoso=tipolente.eliminar();
+    }
     if(exitoso==true)
+    {
         this->Actualizar_Items();
+        return true;
+    }
     else
         return false;
 }

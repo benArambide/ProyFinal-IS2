@@ -15,13 +15,14 @@ ui_producto::ui_producto(QWidget *parent) :
     //todos los productos
     vec_funciones.push_back(&(Luna::buscar));
     vec_funciones.push_back(&(Montura::buscar));
-    //aqui va el elnete de contacto
+    vec_funciones.push_back(&(LenteContacto::buscar));
     vec_funciones.push_back(&(Otro::buscar));
 
     //se incializa el puntero a producto seleccionado, el cual guardará
     //el model de cada producto que se selecciones segun la busqueda
     //tambien este model tendra los id de los productos al contrario del que se muestra
     model_actual=new QSqlQueryModel;
+
 
 }
 
@@ -43,22 +44,13 @@ ui_producto::~ui_producto()
 
 void ui_producto::on_pushButton_busqueda_barra_clicked()
 {
-
-    QString tex=ui->lineEdit->text();
-    qDebug()<<"testo a ingresa"<<tex;
-    if(Producto::validar(tex,"numerico")==false)
-        QMessageBox::warning(this,"horro!!","Tas cagado lobasa no es una numero!");
-    else
-        QMessageBox::information(this,"nada","bien ahi!!");
-
-    /*QSqlQueryModel* resultado= (vec_funciones[posicion])(ui->lineEdit->text());
+    QSqlQueryModel* resultado= (vec_funciones[posicion])(ui->lineEdit->text());
     qDebug()<<"la posicion es "<<posicion;
     //se copea el query para que model actual seactualize
     model_actual->setQuery(resultado->query());
     //borramos la columna donde esta el id de la luna(id de la BD)
     resultado->removeColumn(0);//atento en esta parte a a hora del testing
     ui->tableView->setModel(resultado);
-*/
     ui->lineEdit->clear();
 
 }
@@ -88,16 +80,16 @@ void ui_producto::on_pushButton_agregar_clicked()
     }
     else if(posicion==2)
     {
-        qDebug()<<"mostrare la ventande de otro";
-        //se tienen que cambiar de Otro
-        ui_producto_agregar_otro* ventana_agregar=new ui_producto_agregar_otro;
+        ui_producto_agregar_lente_contacto* ventana_agregar=new ui_producto_agregar_lente_contacto;
         this->connect(ventana_agregar,SIGNAL(senial()),this,SLOT(actualizar_view()));
         ventana_agregar->show();
 
     }
     else if(posicion==3)
-    {
-
+    {                
+        ui_producto_agregar_otro* ventana_agregar=new ui_producto_agregar_otro;
+        this->connect(ventana_agregar,SIGNAL(senial()),this,SLOT(actualizar_view()));
+        ventana_agregar->show();
     }
 }
 
@@ -148,6 +140,15 @@ void ui_producto::on_pushButton_aditar_luna_clicked()
             }
             else if(posicion==2)
             {
+               LenteContacto lente_nuevo;
+                lente_nuevo.generarParaEditar(id);
+                ui_producto_agregar_lente_contacto* ventana_editar=new ui_producto_agregar_lente_contacto();
+                this->connect(ventana_editar,SIGNAL(senial()),this,SLOT(actualizar_view()));
+                ventana_editar->tipoEditar(lente_nuevo);
+                ventana_editar->show();
+            }
+            else if(posicion==3)
+            {
                 Otro otro_nuevo;
                 otro_nuevo.generarParaEditar(id);
                 ui_producto_agregar_otro* ventana_editar=new ui_producto_agregar_otro();
@@ -190,6 +191,12 @@ void ui_producto::on_pushButton_eliminar_luna_clicked()
                 }
                 else if(posicion==2)
                 {
+                    LenteContacto lente_nuevo(id);
+                    lente_nuevo.eliminar();
+
+                }
+                else if(posicion==3)
+                {
                     Otro otro_nuevo(id);
                     otro_nuevo.eliminar();
                 }
@@ -208,7 +215,7 @@ void ui_producto::on_pushButton_busqueda_avanzada_clicked()
         ventana_busqueda_avansada=new ui_producto_datos();
         ventana_busqueda_avansada->show();
         this->connect(ventana_busqueda_avansada,SIGNAL(enviar_resultado(QSqlQueryModel*)),this,SLOT(cambiar_model(QSqlQueryModel*)));
-    }
+    }    
 }
 
 
@@ -246,4 +253,6 @@ void ui_producto::on_Tipo_poroducto_combo_activated(int index)
     //borramos la columna donde esta el id de la luna(id de la BD)
     resultado->removeColumn(0);//atento en esta parte a a hora del testing
     ui->tableView->setModel(resultado);
+
+
 }

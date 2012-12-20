@@ -65,7 +65,7 @@ QList<Material*> Material::listar()
 QSqlQueryModel* Material::listarNombres()
 {
     QSqlQueryModel* model=new QSqlQueryModel;
-    model->setQuery("select valor from material");
+    model->setQuery("select nombre from material");
     return model;
 }
 

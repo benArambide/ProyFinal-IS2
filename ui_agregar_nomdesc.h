@@ -4,7 +4,6 @@
 #include <calidad.h>
 #include <color.h>
 #include <forma.h>
-#include <indicerefraccion.h>
 #include <marca.h>
 #include <rangomedida.h>
 #include <tamanio.h>

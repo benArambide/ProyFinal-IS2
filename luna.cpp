@@ -82,9 +82,6 @@ void Luna::generarParaEditar(int _id)
         tipoluna=nuevo_tipo;
         id=model->record(0).value(12).toInt();
     }
-
-
-
 }
 
 /*--------------------------------------------------------------------

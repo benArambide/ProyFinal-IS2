@@ -1,8 +1,8 @@
 /********************************************************************************
 ** Form generated from reading UI file 'ui_producto_agregar_montura.ui'
 **
-** Created: Thu Dec 20 11:23:03 2012
-**      by: Qt User Interface Compiler version 4.8.1
+** Created: Thu Dec 20 14:21:44 2012
+**      by: Qt User Interface Compiler version 4.7.4
 **
 ** WARNING! All changes made in this file will be lost when recompiling UI file!
 ********************************************************************************/
@@ -25,14 +25,14 @@
 #include <QtGui/QSpacerItem>
 #include <QtGui/QVBoxLayout>
 #include <QtGui/QWidget>
-#include "mycombobox.h"
+#include <mycombobox.h>
 
 QT_BEGIN_NAMESPACE
 
 class Ui_ui_producto_agregar_montura
 {
 public:
-    QLabel *label;
+    QLabel *label_tiulo;
     QWidget *gridLayoutWidget_2;
     QGridLayout *gridLayout_2;
     QGridLayout *gridLayout;
@@ -96,9 +96,9 @@ public:
         ui_producto_agregar_montura->resize(663, 508);
         ui_producto_agregar_montura->setMinimumSize(QSize(663, 508));
         ui_producto_agregar_montura->setMaximumSize(QSize(663, 508));
-        label = new QLabel(ui_producto_agregar_montura);
-        label->setObjectName(QString::fromUtf8("label"));
-        label->setGeometry(QRect(10, 0, 121, 41));
+        label_tiulo = new QLabel(ui_producto_agregar_montura);
+        label_tiulo->setObjectName(QString::fromUtf8("label_tiulo"));
+        label_tiulo->setGeometry(QRect(10, 0, 121, 41));
         gridLayoutWidget_2 = new QWidget(ui_producto_agregar_montura);
         gridLayoutWidget_2->setObjectName(QString::fromUtf8("gridLayoutWidget_2"));
         gridLayoutWidget_2->setGeometry(QRect(20, 50, 631, 405));
@@ -446,8 +446,8 @@ public:
 
     void retranslateUi(QDialog *ui_producto_agregar_montura)
     {
-        ui_producto_agregar_montura->setWindowTitle(QApplication::translate("ui_producto_agregar_montura", "Agregar Montura", 0, QApplication::UnicodeUTF8));
-        label->setText(QApplication::translate("ui_producto_agregar_montura", "Agregar Montura", 0, QApplication::UnicodeUTF8));
+        ui_producto_agregar_montura->setWindowTitle(QApplication::translate("ui_producto_agregar_montura", "Montura", 0, QApplication::UnicodeUTF8));
+        label_tiulo->setText(QApplication::translate("ui_producto_agregar_montura", "Agregar Montura", 0, QApplication::UnicodeUTF8));
         label_3->setText(QApplication::translate("ui_producto_agregar_montura", "Descripcion", 0, QApplication::UnicodeUTF8));
         label_6->setText(QApplication::translate("ui_producto_agregar_montura", "Accesorios", 0, QApplication::UnicodeUTF8));
         label_7->setText(QApplication::translate("ui_producto_agregar_montura", "Precio De Descuento", 0, QApplication::UnicodeUTF8));

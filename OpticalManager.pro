@@ -88,7 +88,8 @@ SOURCES += main.cpp\
     ui_item_posicion.cpp \
     ui_traspaso_almacen.cpp \
     historialclinico.cpp \
-    ui_producto_agregar_otro.cpp
+    ui_producto_agregar_otro.cpp \
+    lentecontacto.cpp
 
 
 HEADERS  += mainwindow.h \
@@ -172,7 +173,8 @@ HEADERS  += mainwindow.h \
     ui_item_posicion.h \
     ui_traspaso_almacen.h \
     historialclinico.h \
-    ui_producto_agregar_otro.h
+    ui_producto_agregar_otro.h \
+    lentecontacto.h
 
 
 FORMS    += mainwindow.ui \

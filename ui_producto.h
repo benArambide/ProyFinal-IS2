@@ -11,6 +11,7 @@
 #include <ui_producto_datos.h>
 #include <QMessageBox>
 #include <otro.h>
+#include <lentecontacto.h>
 #include <ui_producto_agregar_lente_contacto.h>
 
 

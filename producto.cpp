@@ -43,6 +43,19 @@ Producto::Producto(QString _descripcion,int _stock,double _precio_compra,double 
     habilitado=_habilitado;
 }
 
+Producto::Producto(Marca _marca,int _stock,double _precio_compra,double _precio_venta,double _p_descuento,bool _habilitado)
+{
+    id=0;
+    codigo="";
+    marca=_marca;
+    stock=_stock;
+    precio_compra=_precio_compra;
+    precio_venta=_precio_venta;
+    accesorios="";
+    p_descuento=_p_descuento;
+    habilitado=_habilitado;
+}
+
 
 
 Producto::Producto()
@@ -175,7 +188,7 @@ void Producto::SetHabilitado(bool _habilitado)
 bool Producto::validar(QString texto_a_validar, QString tipo_validacion)
 {
     int contador_resultado=0;
-    if(tipo_validacion=="numerico")
+    if(tipo_validacion=="numerico_rango" && texto_a_validar.size()>0)
     {
         int contador_puntos=0;
         for(int i=0;i<texto_a_validar.size();i++)
@@ -200,6 +213,51 @@ bool Producto::validar(QString texto_a_validar, QString tipo_validacion)
         if(contador_resultado==texto_a_validar.size()) return true;
         else return false;
     }
+    else if(tipo_validacion=="numerico_precio" && texto_a_validar.size()>0)
+    {
+        int contador_puntos=0;
+        for(int i=0;i<texto_a_validar.size();i++)
+        {
+            if(texto_a_validar[i] >= '0' && texto_a_validar[i] <= '9' || texto_a_validar[i]=='.')
+            {
+
+                    if(texto_a_validar[i]=='.')
+                    {
+                        contador_puntos++;
+                        if(contador_puntos<2)
+                            contador_resultado++;
+                    }
+                    else
+                        contador_resultado++;
+            }
+        }
+        if(contador_resultado==texto_a_validar.size()) return true;
+        else return false;
+    }
+    else if(tipo_validacion=="numerico_cantidad" && texto_a_validar.size()>0)
+    {
+        for(int i=0;i<texto_a_validar.size();i++)
+        {
+            if(texto_a_validar[i] >= '0' && texto_a_validar[i] <= '9')
+            {
+                qDebug()<<"si es numero";
+                contador_resultado++;
+            }
+        }
+        if(contador_resultado==texto_a_validar.size()) return true;
+        else return false;
+    }
+
+    else if(tipo_validacion=="alfanumerico" && texto_a_validar.size()>0)
+    {
+        for(int i=0;i<texto_a_validar.size();i++)
+        {
+                contador_resultado++;
+        }
+        if(contador_resultado==texto_a_validar.size()) return true;
+        else return false;
+    }
+
     else
     {
         return false;

@@ -1,7 +1,7 @@
 /********************************************************************************
 ** Form generated from reading UI file 'ui_producto_agregar_otro.ui'
 **
-** Created: Mon Dec 17 23:56:28 2012
+** Created: Thu Dec 20 14:21:45 2012
 **      by: Qt User Interface Compiler version 4.7.4
 **
 ** WARNING! All changes made in this file will be lost when recompiling UI file!
@@ -23,14 +23,14 @@
 #include <QtGui/QLineEdit>
 #include <QtGui/QPushButton>
 #include <QtGui/QWidget>
-#include "mycombobox.h"
+#include <mycombobox.h>
 
 QT_BEGIN_NAMESPACE
 
 class Ui_ui_producto_agregar_otro
 {
 public:
-    QLabel *label;
+    QLabel *label_titulo;
     QFrame *line;
     QWidget *gridLayoutWidget;
     QGridLayout *gridLayout;
@@ -62,9 +62,9 @@ public:
         ui_producto_agregar_otro->resize(663, 508);
         ui_producto_agregar_otro->setMinimumSize(QSize(663, 508));
         ui_producto_agregar_otro->setMaximumSize(QSize(663, 508));
-        label = new QLabel(ui_producto_agregar_otro);
-        label->setObjectName(QString::fromUtf8("label"));
-        label->setGeometry(QRect(20, 10, 201, 20));
+        label_titulo = new QLabel(ui_producto_agregar_otro);
+        label_titulo->setObjectName(QString::fromUtf8("label_titulo"));
+        label_titulo->setGeometry(QRect(20, 10, 201, 20));
         line = new QFrame(ui_producto_agregar_otro);
         line->setObjectName(QString::fromUtf8("line"));
         line->setGeometry(QRect(0, 30, 661, 16));
@@ -187,8 +187,8 @@ public:
 
     void retranslateUi(QDialog *ui_producto_agregar_otro)
     {
-        ui_producto_agregar_otro->setWindowTitle(QApplication::translate("ui_producto_agregar_otro", "Dialog", 0, QApplication::UnicodeUTF8));
-        label->setText(QApplication::translate("ui_producto_agregar_otro", "Agregar Otro Tipo Producto", 0, QApplication::UnicodeUTF8));
+        ui_producto_agregar_otro->setWindowTitle(QApplication::translate("ui_producto_agregar_otro", "Otros", 0, QApplication::UnicodeUTF8));
+        label_titulo->setText(QApplication::translate("ui_producto_agregar_otro", "Agregar Otro Tipo Producto", 0, QApplication::UnicodeUTF8));
         label_2->setText(QApplication::translate("ui_producto_agregar_otro", "Codigo", 0, QApplication::UnicodeUTF8));
         label_3->setText(QApplication::translate("ui_producto_agregar_otro", "Precio de Compra", 0, QApplication::UnicodeUTF8));
         label_4->setText(QApplication::translate("ui_producto_agregar_otro", "Precio de Venta", 0, QApplication::UnicodeUTF8));
