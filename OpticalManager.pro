@@ -86,7 +86,9 @@ SOURCES += main.cpp\
     curvabase.cpp \
     item_posicion.cpp \
     ui_item_posicion.cpp \
-    ui_traspaso_almacen.cpp
+    ui_traspaso_almacen.cpp \
+    historialclinico.cpp \
+    ui_producto_agregar_otro.cpp
 
 
 HEADERS  += mainwindow.h \
@@ -168,7 +170,9 @@ HEADERS  += mainwindow.h \
     curvabase.h \
     item_posicion.h \
     ui_item_posicion.h \
-    ui_traspaso_almacen.h
+    ui_traspaso_almacen.h \
+    historialclinico.h \
+    ui_producto_agregar_otro.h
 
 
 FORMS    += mainwindow.ui \
@@ -207,7 +211,8 @@ FORMS    += mainwindow.ui \
     ui_historial_clinico.ui \
     ui_producto_agregar_lente_contacto.ui \
     ui_item_posicion.ui \
-    ui_traspaso_almacen.ui
+    ui_traspaso_almacen.ui \
+    ui_producto_agregar_otro.ui
 
 RESOURCES += \
     Icons/Icons.qrc \

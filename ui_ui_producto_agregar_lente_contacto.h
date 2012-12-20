@@ -1,8 +1,8 @@
 /********************************************************************************
 ** Form generated from reading UI file 'ui_producto_agregar_lente_contacto.ui'
 **
-** Created: Tue Dec 18 15:04:52 2012
-**      by: Qt User Interface Compiler version 4.7.4
+** Created: Thu Dec 20 11:23:04 2012
+**      by: Qt User Interface Compiler version 4.8.1
 **
 ** WARNING! All changes made in this file will be lost when recompiling UI file!
 ********************************************************************************/

@@ -1,8 +1,8 @@
 /********************************************************************************
 ** Form generated from reading UI file 'ui_cliente.ui'
 **
-** Created: Wed 19. Dec 09:28:17 2012
-**      by: Qt User Interface Compiler version 4.8.0
+** Created: Thu Dec 20 11:23:03 2012
+**      by: Qt User Interface Compiler version 4.8.1
 **
 ** WARNING! All changes made in this file will be lost when recompiling UI file!
 ********************************************************************************/
@@ -55,15 +55,15 @@ public:
     QTableView *tableView_2;
     QGridLayout *gridLayout_13;
     QSpacerItem *horizontalSpacer_3;
-    QPushButton *pushButton_4;
-    QPushButton *pushButton_7;
-    QPushButton *pushButton_8;
+    QPushButton *NuevoHistorial;
+    QPushButton *EditarHistorial;
+    QPushButton *BorrarHistorial;
     QSpacerItem *horizontalSpacer_7;
     QGridLayout *gridLayout_11;
     QSpacerItem *horizontalSpacer_5;
     QGridLayout *gridLayout_10;
     QLabel *label_3;
-    QLineEdit *lineEdit;
+    QLineEdit *buscar;
     QPushButton *pushButton_5;
     QPushButton *pushButton_6;
     QSpacerItem *horizontalSpacer_6;
@@ -198,32 +198,32 @@ public:
 
         gridLayout_13->addItem(horizontalSpacer_3, 0, 0, 1, 1);
 
-        pushButton_4 = new QPushButton(history);
-        pushButton_4->setObjectName(QString::fromUtf8("pushButton_4"));
-        sizePolicy1.setHeightForWidth(pushButton_4->sizePolicy().hasHeightForWidth());
-        pushButton_4->setSizePolicy(sizePolicy1);
-        pushButton_4->setIcon(icon);
-        pushButton_4->setFlat(true);
+        NuevoHistorial = new QPushButton(history);
+        NuevoHistorial->setObjectName(QString::fromUtf8("NuevoHistorial"));
+        sizePolicy1.setHeightForWidth(NuevoHistorial->sizePolicy().hasHeightForWidth());
+        NuevoHistorial->setSizePolicy(sizePolicy1);
+        NuevoHistorial->setIcon(icon);
+        NuevoHistorial->setFlat(true);
 
-        gridLayout_13->addWidget(pushButton_4, 0, 1, 1, 1);
+        gridLayout_13->addWidget(NuevoHistorial, 0, 1, 1, 1);
 
-        pushButton_7 = new QPushButton(history);
-        pushButton_7->setObjectName(QString::fromUtf8("pushButton_7"));
-        sizePolicy1.setHeightForWidth(pushButton_7->sizePolicy().hasHeightForWidth());
-        pushButton_7->setSizePolicy(sizePolicy1);
-        pushButton_7->setIcon(icon1);
-        pushButton_7->setFlat(true);
+        EditarHistorial = new QPushButton(history);
+        EditarHistorial->setObjectName(QString::fromUtf8("EditarHistorial"));
+        sizePolicy1.setHeightForWidth(EditarHistorial->sizePolicy().hasHeightForWidth());
+        EditarHistorial->setSizePolicy(sizePolicy1);
+        EditarHistorial->setIcon(icon1);
+        EditarHistorial->setFlat(true);
 
-        gridLayout_13->addWidget(pushButton_7, 0, 2, 1, 1);
+        gridLayout_13->addWidget(EditarHistorial, 0, 2, 1, 1);
 
-        pushButton_8 = new QPushButton(history);
-        pushButton_8->setObjectName(QString::fromUtf8("pushButton_8"));
-        sizePolicy1.setHeightForWidth(pushButton_8->sizePolicy().hasHeightForWidth());
-        pushButton_8->setSizePolicy(sizePolicy1);
-        pushButton_8->setIcon(icon2);
-        pushButton_8->setFlat(true);
+        BorrarHistorial = new QPushButton(history);
+        BorrarHistorial->setObjectName(QString::fromUtf8("BorrarHistorial"));
+        sizePolicy1.setHeightForWidth(BorrarHistorial->sizePolicy().hasHeightForWidth());
+        BorrarHistorial->setSizePolicy(sizePolicy1);
+        BorrarHistorial->setIcon(icon2);
+        BorrarHistorial->setFlat(true);
 
-        gridLayout_13->addWidget(pushButton_8, 0, 3, 1, 1);
+        gridLayout_13->addWidget(BorrarHistorial, 0, 3, 1, 1);
 
 
         gridLayout_9->addLayout(gridLayout_13, 1, 0, 1, 1);
@@ -255,12 +255,12 @@ public:
 
         gridLayout_10->addWidget(label_3, 0, 0, 1, 1);
 
-        lineEdit = new QLineEdit(ui_cliente);
-        lineEdit->setObjectName(QString::fromUtf8("lineEdit"));
-        lineEdit->setMinimumSize(QSize(250, 0));
-        lineEdit->setMaximumSize(QSize(250, 16777215));
+        buscar = new QLineEdit(ui_cliente);
+        buscar->setObjectName(QString::fromUtf8("buscar"));
+        buscar->setMinimumSize(QSize(250, 0));
+        buscar->setMaximumSize(QSize(250, 16777215));
 
-        gridLayout_10->addWidget(lineEdit, 0, 1, 1, 1);
+        gridLayout_10->addWidget(buscar, 0, 1, 1, 1);
 
         pushButton_5 = new QPushButton(ui_cliente);
         pushButton_5->setObjectName(QString::fromUtf8("pushButton_5"));
@@ -303,7 +303,7 @@ public:
 
         retranslateUi(ui_cliente);
 
-        tabWidget->setCurrentIndex(0);
+        tabWidget->setCurrentIndex(1);
 
 
         QMetaObject::connectSlotsByName(ui_cliente);
@@ -321,12 +321,12 @@ public:
         pushButton_3->setShortcut(QApplication::translate("ui_cliente", "Del", 0, QApplication::UnicodeUTF8));
         tabWidget->setTabText(tabWidget->indexOf(list), QApplication::translate("ui_cliente", "Lista", 0, QApplication::UnicodeUTF8));
         label_4->setText(QApplication::translate("ui_cliente", "Historia Clinica de Cliente :", 0, QApplication::UnicodeUTF8));
-        pushButton_4->setText(QApplication::translate("ui_cliente", "A\303\261adir", 0, QApplication::UnicodeUTF8));
-        pushButton_4->setShortcut(QApplication::translate("ui_cliente", "Ctrl+N", 0, QApplication::UnicodeUTF8));
-        pushButton_7->setText(QApplication::translate("ui_cliente", "Editar", 0, QApplication::UnicodeUTF8));
-        pushButton_7->setShortcut(QApplication::translate("ui_cliente", "Ctrl+E", 0, QApplication::UnicodeUTF8));
-        pushButton_8->setText(QApplication::translate("ui_cliente", "Eliminar", 0, QApplication::UnicodeUTF8));
-        pushButton_8->setShortcut(QApplication::translate("ui_cliente", "Del", 0, QApplication::UnicodeUTF8));
+        NuevoHistorial->setText(QApplication::translate("ui_cliente", "A\303\261adir", 0, QApplication::UnicodeUTF8));
+        NuevoHistorial->setShortcut(QApplication::translate("ui_cliente", "Ctrl+N", 0, QApplication::UnicodeUTF8));
+        EditarHistorial->setText(QApplication::translate("ui_cliente", "Editar", 0, QApplication::UnicodeUTF8));
+        EditarHistorial->setShortcut(QApplication::translate("ui_cliente", "Ctrl+E", 0, QApplication::UnicodeUTF8));
+        BorrarHistorial->setText(QApplication::translate("ui_cliente", "Eliminar", 0, QApplication::UnicodeUTF8));
+        BorrarHistorial->setShortcut(QApplication::translate("ui_cliente", "Del", 0, QApplication::UnicodeUTF8));
         tabWidget->setTabText(tabWidget->indexOf(history), QApplication::translate("ui_cliente", "Historia Clinica", 0, QApplication::UnicodeUTF8));
         label_3->setText(QApplication::translate("ui_cliente", "Buscar", 0, QApplication::UnicodeUTF8));
         pushButton_5->setText(QString());

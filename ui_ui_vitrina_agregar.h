@@ -1,8 +1,8 @@
 /********************************************************************************
 ** Form generated from reading UI file 'ui_vitrina_agregar.ui'
 **
-** Created: Wed 19. Dec 09:28:17 2012
-**      by: Qt User Interface Compiler version 4.8.0
+** Created: Thu Dec 20 11:23:04 2012
+**      by: Qt User Interface Compiler version 4.8.1
 **
 ** WARNING! All changes made in this file will be lost when recompiling UI file!
 ********************************************************************************/
@@ -57,10 +57,10 @@ public:
     {
         if (ui_vitrina_agregar->objectName().isEmpty())
             ui_vitrina_agregar->setObjectName(QString::fromUtf8("ui_vitrina_agregar"));
-        ui_vitrina_agregar->resize(359, 337);
+        ui_vitrina_agregar->resize(337, 289);
         layoutWidget = new QWidget(ui_vitrina_agregar);
         layoutWidget->setObjectName(QString::fromUtf8("layoutWidget"));
-        layoutWidget->setGeometry(QRect(10, 10, 316, 298));
+        layoutWidget->setGeometry(QRect(10, 10, 316, 271));
         gridLayout_2 = new QGridLayout(layoutWidget);
         gridLayout_2->setObjectName(QString::fromUtf8("gridLayout_2"));
         gridLayout_2->setContentsMargins(0, 0, 0, 0);
@@ -179,11 +179,11 @@ public:
         ui_vitrina_agregar->setWindowTitle(QApplication::translate("ui_vitrina_agregar", "Form", 0, QApplication::UnicodeUTF8));
         guardar->setText(QApplication::translate("ui_vitrina_agregar", "Guardar", 0, QApplication::UnicodeUTF8));
         cancelar->setText(QApplication::translate("ui_vitrina_agregar", "Cancelar", 0, QApplication::UnicodeUTF8));
-        label_23->setText(QApplication::translate("ui_vitrina_agregar", "Niveles", 0, QApplication::UnicodeUTF8));
-        label_22->setText(QApplication::translate("ui_vitrina_agregar", "Columnas", 0, QApplication::UnicodeUTF8));
-        label_28->setText(QApplication::translate("ui_vitrina_agregar", "Filas", 0, QApplication::UnicodeUTF8));
-        label_25->setText(QApplication::translate("ui_vitrina_agregar", "Codigo", 0, QApplication::UnicodeUTF8));
-        label_24->setText(QApplication::translate("ui_vitrina_agregar", "Alias", 0, QApplication::UnicodeUTF8));
+        label_23->setText(QApplication::translate("ui_vitrina_agregar", "Niveles:", 0, QApplication::UnicodeUTF8));
+        label_22->setText(QApplication::translate("ui_vitrina_agregar", "Columnas:", 0, QApplication::UnicodeUTF8));
+        label_28->setText(QApplication::translate("ui_vitrina_agregar", "Filas:", 0, QApplication::UnicodeUTF8));
+        label_25->setText(QApplication::translate("ui_vitrina_agregar", "Codigo:", 0, QApplication::UnicodeUTF8));
+        label_24->setText(QApplication::translate("ui_vitrina_agregar", "Alias:", 0, QApplication::UnicodeUTF8));
     } // retranslateUi
 
 };
