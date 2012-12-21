@@ -101,7 +101,8 @@ SOURCES += main.cpp\
     reporte_vendedor.cpp \
     reporte_tienda.cpp \
     reporte_cliente.cpp \
-    reporte.cpp
+    reporte.cpp \
+    ui_cliente.cpp
 
 
 HEADERS  += mainwindow.h \
@@ -191,7 +192,8 @@ HEADERS  += mainwindow.h \
     reporte_vendedor.h \
     reporte_tienda.h \
     reporte_cliente.h \
-    reporte.h
+    reporte.h \
+    ui_cant_item.h
 
 
 FORMS    += mainwindow.ui \
@@ -232,7 +234,8 @@ FORMS    += mainwindow.ui \
     ui_item_posicion.ui \
     ui_traspaso_almacen.ui \
     ui_producto_agregar_otro.ui \
-    ui_reporte.ui
+    ui_reporte.ui \
+    ui_cant_item.ui
 
 RESOURCES += \
     Icons/Icons.qrc
