@@ -12,6 +12,12 @@
 #include "andamio.h"
 #include "contenedor.h"
 
+#include "ncreport.h"
+#include "ncreportoutput.h"
+#include "ncreportpreviewoutput.h"
+#include "ncreportpreviewwindow.h"
+#include <QFileDialog>
+
 ui_almacen::ui_almacen(QWidget *parent) :
     QWidget(parent),
     ui(new Ui::ui_almacen)
@@ -328,7 +334,7 @@ void ui_almacen::on_pushButton_addAndamio_clicked()
 
 void ui_almacen::on_pushButton_editAndamio_clicked()
 {
-    if(get_currentIdAlmacen().compare("")==0)
+    if(get_currentIdAndamio().compare("")==0)
     {
         QMessageBox *msgBox =new QMessageBox;
         msgBox->setIcon(QMessageBox::Information);
@@ -353,7 +359,7 @@ void ui_almacen::on_pushButton_editAndamio_clicked()
 
 void ui_almacen::on_pushButton_deleteAndamio_clicked()
 {
-    if(get_currentIdAlmacen().compare("")==0)
+    if(get_currentIdAndamio().compare("")==0)
     {
         QMessageBox *msgBox =new QMessageBox;
         msgBox->setIcon(QMessageBox::Information);
@@ -393,6 +399,13 @@ void ui_almacen::on_pushButton_deleteAndamio_clicked()
 
 void ui_almacen::on_tableWidget_griContenedores_cellDoubleClicked(int row, int column)
 {
+    /*QString fila = QString::number(ui->tableWidget_griContenedores->currentRow()+1);
+    QString columna = QString::number(ui->tableWidget_griContenedores->currentColumn()+1);*/
+    QString fila = QString::number(row+1);
+    QString columna = QString::number(column+1);
+    QString pos = fila+"-"+columna;
+    set_currentIdContenedor(Contenedor[pos]);
+
     ui_contenedor_datos* contenedor_form = new ui_contenedor_datos;
     contenedor_form->set_ui_almacen_parent(this);
 
@@ -417,8 +430,48 @@ void ui_almacen::on_tableWidget_griContenedores_cellDoubleClicked(int row, int c
 
 void ui_almacen::on_tableWidget_griContenedores_itemSelectionChanged()
 {
-    QString fila = QString::number(ui->tableWidget_griContenedores->currentRow()+1);
-    QString columna = QString::number(ui->tableWidget_griContenedores->currentColumn()+1);
-    QString pos = fila+"-"+columna;
-    set_currentIdContenedor(Contenedor[pos]);
+
+}
+
+void ui_almacen::on_botonGenerarReporte_clicked()
+{
+    NCReport *report = new NCReport();
+    report->setReportFile( "ReporteContenedores.ncr" );
+    //report->runReportToPDF( "reporteContenedoresProductos.pdf" );
+
+    NCReportOutput *output=0;
+
+    output = new NCReportPreviewOutput();
+    output->setAutoDelete( FALSE );
+    report->setOutput( output );
+
+
+    /*QString fileName = QFileDialog::getSaveFileName(this, tr("Save PDF File"),
+    "report.pdf", tr("Pdf files (*.pdf)"));
+    if ( fileName.isEmpty() )
+        delete report;*/
+
+
+    QApplication::setOverrideCursor(QCursor(Qt::WaitCursor));
+    report->runReport();
+    //report->runReportToPreview();
+    bool error = report->hasError();
+    QString err = report->lastErrorMsg();
+    QApplication::restoreOverrideCursor();
+
+    if ( error )
+        QMessageBox::information( 0, "Riport error", err );
+    else
+    {
+            //-----------------------------
+            // PRINT PREVIEW
+            //-----------------------------
+            NCReportPreviewWindow *pv = new NCReportPreviewWindow();
+            pv->setReport( report );
+            pv->setOutput( (NCReportPreviewOutput*)output );
+            pv->setWindowModality(Qt::ApplicationModal );
+            pv->setAttribute( Qt::WA_DeleteOnClose );
+            pv->show();
+    }
+
 }

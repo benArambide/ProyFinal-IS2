@@ -6,9 +6,16 @@
 
 QT       += core gui
 QT += sql
+QT += network
 TARGET = OpticalManager
 TEMPLATE = app
+DEFINES += NCREPORT_IMPORT
+unix {
+    LIBS += -lncreport -Llib -L/usr/local/bin
+    target.path = /usr/local/bin
+}
 
+INCLUDEPATH += include
 
 SOURCES += main.cpp\
         mainwindow.cpp \
@@ -174,7 +181,74 @@ HEADERS  += mainwindow.h \
     ui_traspaso_almacen.h \
     historialclinico.h \
     ui_producto_agregar_otro.h \
-    lentecontacto.h
+    lentecontacto.h \
+    include/utils.h \
+    include/staticlib.h \
+    include/sharedlib_global.h \
+    include/ncreportxmlwriter.h \
+    include/ncreportxmlreader.h \
+    include/ncreportxmlimfreader.h \
+    include/ncreportxmldefwriter.h \
+    include/ncreportxmldefreader.h \
+    include/ncreportxmldatasource.h \
+    include/ncreportwidgetrenderer.h \
+    include/ncreportvariable.h \
+    include/ncreporttxtdatasource.h \
+    include/ncreporttextoutput.h \
+    include/ncreporttextitem.h \
+    include/ncreportsvgoutput.h \
+    include/ncreportstringlistdatasource.h \
+    include/ncreportsqldatasource.h \
+    include/ncreportsource.h \
+    include/ncreportshapeitem.h \
+    include/ncreportsectiondirector.h \
+    include/ncreportsection.h \
+    include/ncreportscale.h \
+    include/ncreportrectitem.h \
+    include/ncreportqtpreviewoutput.h \
+    include/ncreportprinteroutput.h \
+    include/ncreportpreviewwindow_p.h \
+    include/ncreportpreviewwindow.h \
+    include/ncreportpreviewpagecontainer.h \
+    include/ncreportpreviewpage.h \
+    include/ncreportpreviewoutput.h \
+    include/ncreportpivottablemodel.h \
+    include/ncreportpdfoutput.h \
+    include/ncreportparameter.h \
+    include/ncreportpageoption.h \
+    include/ncreportoutput.h \
+    include/ncreportlineitem.h \
+    include/ncreportlabelitem.h \
+    include/ncreportitemmodeldatasource.h \
+    include/ncreportitem.h \
+    include/ncreportimageoutput.h \
+    include/ncreportimageitem.h \
+    include/ncreporthttpclient.h \
+    include/ncreporthtmloutput.h \
+    include/ncreporthighchartsmanager.h \
+    include/ncreportgroup.h \
+    include/ncreportgraphitemrendering.h \
+    include/ncreportgraphitem.h \
+    include/ncreportfielditem.h \
+    include/ncreportevaluator.h \
+    include/ncreportellipseitem.h \
+    include/ncreportdummydatasourcefactory.h \
+    include/ncreportdirector.h \
+    include/ncreportdef.h \
+    include/ncreportdatasourcefactory.h \
+    include/ncreportdatasource.h \
+    include/ncreportdatafieldinfo.h \
+    include/ncreportdata.h \
+    include/ncreportcustomdsprovider.h \
+    include/ncreportcrosstabitemcell.h \
+    include/ncreportcrosstabitem.h \
+    include/ncreportconditionalformat.h \
+    include/ncreportchartitem.h \
+    include/ncreportbarcoderenderer.h \
+    include/ncreportbarcodeitem.h \
+    include/ncreportabstractitemrendering.h \
+    include/ncreport.h \
+    include/info.h
 
 
 FORMS    += mainwindow.ui \
@@ -217,8 +291,17 @@ FORMS    += mainwindow.ui \
     ui_producto_agregar_otro.ui
 
 RESOURCES += \
-    Icons/Icons.qrc \
     Icons/Icons.qrc
 
 OTHER_FILES += \
-    splash-syllabus.png
+    splash-syllabus.png \
+    lib/libzint.so.2.3.0 \
+    lib/libncreportd.so.2.8.7 \
+    lib/libncreportd.so.2.8 \
+    lib/libncreportd.so.2 \
+    lib/libncreportd.so \
+    lib/libncreport.so.2.8.7 \
+    lib/libncreport.so.2.8 \
+    lib/libncreport.so.2 \
+    lib/libncreport.so \
+    ReporteContenedores.ncr

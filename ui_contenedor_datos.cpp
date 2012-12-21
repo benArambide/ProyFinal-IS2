@@ -185,13 +185,19 @@ void ui_contenedor_datos::on_pushButton_addProducto_clicked()
                 query.prepare("INSERT INTO producto_contenedor(producto_idproducto,contenedor_idcontenedor) VALUES(?,?)");
                 query.bindValue(0,idProducto);
                 query.bindValue(1,idContenedor);
-                query.exec();
+                if(query.exec())
+                {
+                    query.prepare("INSERT INTO historial_almacen(entidad_1,id_1,entidad_2,id_2,operacion,fecha) VALUES('Producto',?,'Contenedor',?,'agregar',now())");
+                    query.bindValue(0,idProducto);
+                    query.bindValue(1,idContenedor);
+                    query.exec();
 
-                qDebug()<<"idproducto : "<<idProducto<<endl;
-                qDebug()<<"idcontendor : "<<idContenedor<<endl;
+                    qDebug()<<"idproducto : "<<idProducto<<endl;
+                    qDebug()<<"idcontendor : "<<idContenedor<<endl;
 
-                clear_widget_list_productos();
-                uptate_widget_list_productos();
+                    clear_widget_list_productos();
+                    uptate_widget_list_productos();
+                }
             }
         }
     }
@@ -233,10 +239,12 @@ void ui_contenedor_datos::on_pushButton_saveContenedor_clicked()
             case 0:
                 contenedor_data = new contenedor("0",idAndamio,nombre,descripcion,pos_fila,pos_columna,capacidad);
                 contenedor_data->agregar();
+                //ui_almacen_parent->set_currentIdContenedor((pos_fila.toInt()-1)+"-"+(pos_columna.toInt()-1));
                 ui_almacen_parent->update_widget_Contenedores();
                 close();
 
                 msgBox->setText("Contenedor creado correctamente.");
+                //ui_almacen_parent->clear_widget_Contenedores();
 
                 break;
             case 1:
@@ -324,6 +332,11 @@ void ui_contenedor_datos::on_pushButton_deleteProducto_clicked()
 
                 query.prepare("DELETE FROM producto_contenedor WHERE producto_idproducto=?");
                 query.bindValue(0,idproducto);
+                query.exec();
+
+                query.prepare("INSERT INTO historial_almacen(entidad_1,id_1,entidad_2,id_2,operacion,fecha) VALUES('Producto',?,'Contenedor',?,'quitar',now())");
+                query.bindValue(0,idproducto);
+                query.bindValue(1,idContenedor);
                 query.exec();
 
                 clear_widget_list_productos();
