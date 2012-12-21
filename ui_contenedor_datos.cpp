@@ -39,7 +39,7 @@ void ui_contenedor_datos::clear_widget_list_productos()
 
 void ui_contenedor_datos::uptate_widget_list_productos()
 {
-    QString s_query = "SELECT idproducto,codigo as Codigo,descripcion as Descripcion,idmarca as Marca,stock,precio,acccesorios,p_descuento,habilitado FROM producto ";
+    QString s_query = "SELECT idproducto,codigo as Codigo,descripcion as Descripcion,idmarca as Marca,stock,precio_venta,accesorios,p_descuento,habilitado FROM producto ";
             s_query+=           "INNER JOIN producto_contenedor ON idproducto = producto_idproducto ";
             s_query+=                   "WHERE contenedor_idcontenedor = "+idContenedor;
 
