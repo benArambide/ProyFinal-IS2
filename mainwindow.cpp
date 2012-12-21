@@ -5,6 +5,7 @@
 #include <montura.h>
 #include "modulousuarios.h"
 #include <luna.h>
+#include "sesion.h"
 
 
 MainWindow::MainWindow(QWidget *parent) :
@@ -14,6 +15,44 @@ MainWindow::MainWindow(QWidget *parent) :
 
     ui->setupUi(this);
 
+    ui->actionEditar->setEnabled(false);
+    ui->actionGuardar->setEnabled(false);
+    ui->actionCancelar->setEnabled(false);
+    ui->actionBuscar->setEnabled(false);
+    ui->actionNuevo->setEnabled(false);
+
+    modulos.push_back(ui->actionProducto);
+    modulos.push_back(ui->actionUsuario);
+    modulos.push_back(ui->actionCliente);
+    modulos.push_back(ui->actionEmpresas);
+    modulos.push_back(ui->actionTiendas);
+    modulos.push_back(ui->actionAlmacen);
+    modulos.push_back(ui->actionProveedores);
+    modulos.push_back(ui->actionCompras);
+    for(size_t i = 0; i<modulos.size();i++)
+      modulos[i]->setEnabled(false);
+    aplicarPermisos();
+
+}
+
+void MainWindow::aplicarPermisos()
+{
+  Sesion * s = Sesion::getSesion();
+  std::vector<bool> v ;
+  v = s->get_Permisos();
+  if(!v.size())
+  {
+    QMessageBox::warning(0,"Error de Permisos","No se definieron permisos para este usuario",0,0);
+    return;
+  }
+  ui->actionProducto->setEnabled(v[0]);
+  ui->actionUsuario->setEnabled(v[1]);
+  ui->actionCliente->setEnabled(v[2]);
+  ui->actionEmpresas->setEnabled(v[3]);
+  ui->actionTiendas->setEnabled(v[4]);
+  ui->actionAlmacen->setEnabled(v[5]);
+  ui->actionProveedores->setEnabled(v[6]);
+  ui->actionCompras->setEnabled(v[7]);
 }
 
 MainWindow::~MainWindow()
@@ -38,6 +77,12 @@ void MainWindow::on_actionUsuario_triggered()
     USER_FORM->showMaximized();*/
   ActiveModule = new ModuloUsuarios(this);
   this->setCentralWidget(ActiveModule);
+  ui->actionEditar->setEnabled(false);
+  ui->actionGuardar->setEnabled(false);
+  ui->actionCancelar->setEnabled(false);
+  ui->actionBuscar->setEnabled(true);
+  ui->actionNuevo->setEnabled(true);
+  connect(ActiveModule,SIGNAL(rowSelected()),this,SLOT(enableEdit()));
   //ActiveModule->showMaximized();
 }
 
@@ -75,4 +120,50 @@ void MainWindow::on_actionAlmacen_triggered()
     ui_almacen* almacen_form;
     almacen_form = new ui_almacen;
     setCentralWidget(almacen_form);
+}
+
+void MainWindow::on_actionNuevo_triggered()
+{
+  ui->actionBuscar->setEnabled(false);
+  ui->actionNuevo->setEnabled(false);
+  ui->actionEditar->setEnabled(false);
+  ui->actionGuardar->setEnabled(true);
+  ui->actionCancelar->setEnabled(true);
+    ActiveModule->Agregar();
+}
+
+void MainWindow::on_actionGuardar_triggered()
+{
+  ui->actionEditar->setEnabled(false);
+  ui->actionGuardar->setEnabled(false);
+  ui->actionCancelar->setEnabled(false);
+  ui->actionBuscar->setEnabled(true);
+  ui->actionNuevo->setEnabled(true);
+
+    ActiveModule->Guardar();
+}
+
+void MainWindow::on_actionEditar_triggered()
+{
+  ui->actionBuscar->setEnabled(false);
+  ui->actionNuevo->setEnabled(false);
+  ui->actionEditar->setEnabled(false);
+  ui->actionGuardar->setEnabled(true);
+  ui->actionCancelar->setEnabled(true);
+  ActiveModule->Editar();
+}
+
+void MainWindow::enableEdit()
+{
+  ui->actionEditar->setEnabled(true);
+}
+
+void MainWindow::on_actionCancelar_triggered()
+{
+  ActiveModule->Cancelar();
+  ui->actionBuscar->setEnabled(true);
+  ui->actionNuevo->setEnabled(true);
+  ui->actionEditar->setEnabled(true);
+  ui->actionGuardar->setEnabled(false);
+  ui->actionCancelar->setEnabled(false);
 }

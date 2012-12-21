@@ -18,6 +18,10 @@ bool configurador::leerConfiguracion()
     QString namefile = nombreArchivo;
     QFile file(namefile);
     file.open(QIODevice::ReadOnly|QIODevice::Text);
+    if(!file.isOpen())
+    {
+      qDebug()<<"Error archivo de configuración";
+    }
     QString str_db;
     QTextStream in(&file);
     str_db = in.readLine();

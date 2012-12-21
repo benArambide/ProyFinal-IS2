@@ -11,6 +11,7 @@
 #include <ui_cliente.h>
 #include "ui_almacen.h"
 #include "moduleinterface.h"
+#include <vector>
 
 namespace Ui {
 class MainWindow;
@@ -28,16 +29,25 @@ private slots:
     void on_actionCliente_triggered();
     void on_actionBuscar_triggered();
 
-
+    void aplicarPermisos();
     void on_actionTiendas_triggered();
 
     void on_actionEmpresas_triggered();
 
     void on_actionAlmacen_triggered();
 
+    void on_actionNuevo_triggered();
+
+    void on_actionGuardar_triggered();
+
+    void on_actionEditar_triggered();
+    void enableEdit();
+    void on_actionCancelar_triggered();
+
 private:
     Ui::MainWindow *ui;
     ModuleInterface* ActiveModule;
+    std::vector<QAction*> modulos;
 };
 
 #endif // MAINWINDOW_H

@@ -4,7 +4,9 @@
 #include <QDataWidgetMapper>
 #include <QStringListModel>
 #include <QAbstractAnimation>
+#include <QItemDelegate>
 
+#include "sesion.h"
 #include "comboboxdelegate.h"
 #include <QDebug>
 #include <QMessageBox>
@@ -64,6 +66,41 @@ ModuloUsuarios::ModuloUsuarios(QWidget *parent) :
   mapper->addMapping(data_ui->lE_telfFam,14);
   mapper->addMapping(data_ui->le_cell,15);
   mapper->addMapping(data_ui->tE_obs,16);
+
+  data_ui->tableView_permisos->setItemDelegateForColumn(3,new QSqlRelationalDelegate);
+  data_ui->tableView_permisos->setItemDelegateForColumn(2,new NoEditItemDelegate);
+  ConfigPermisosModelView();
+  relTableModel->select();
+  if(relTableModel->lastError().isValid())
+    QMessageBox::critical(this,"Error",relTableModel->lastError().text(),0,0);
+  ui->list_tableView->setModel(relTableModel);
+  QItemSelectionModel * sm = ui->list_tableView->selectionModel();
+  connect(sm,SIGNAL(currentRowChanged(QModelIndex,QModelIndex)),this,SLOT(selectionChangedHandle(QModelIndex,QModelIndex)));
+  ui->list_tableView->hideColumn(0);
+  ui->list_tableView->hideColumn(17);
+}
+
+void ModuloUsuarios::ConfigPermisosModelView()
+{
+  permisosModel = new QSqlRelationalTableModel;
+  permisosModel->setTable("sys_acceso");
+  permisosModel->setRelation(2,QSqlRelation("sys_modulos","id","Nombre"));
+  permisosModel->setHeaderData(2,Qt::Horizontal,"Modulo");
+  permisosModel->setRelation(3,QSqlRelation("SiNo","id","value"));
+  permisosModel->setHeaderData(3,Qt::Horizontal,"Acceso");
+  permisosModel->setEditStrategy(QSqlTableModel::OnManualSubmit);
+}
+
+void ModuloUsuarios::mostrar(QSqlRecord rec)
+{
+  permisosModel->setFilter("idcolaborador="+rec.value("idcolaborador").toString());
+  permisosModel->setSort(1,Qt::AscendingOrder);
+  permisosModel->select();
+  Ui::ui_usuario_datos * data_ui = ((ui_usuario_datos*)detalles_tab)->getUI();
+  data_ui->tableView_permisos->setModel(permisosModel);
+  data_ui->tableView_permisos->hideColumn(0);
+  data_ui->tableView_permisos->hideColumn(1);
+  data_ui->tableView_permisos->hideColumn(4);
 }
 
 void ModuloUsuarios::Buscar()
@@ -84,8 +121,7 @@ void ModuloUsuarios::Buscar()
       .arg(b->ui->le_apellido->text())
       .arg(b->ui->le_dni->text());
   relTableModel->setFilter(query);
-  bool ok = relTableModel->select();
-  qDebug()<<ok;
+  relTableModel->select();
   if(relTableModel->lastError().isValid())
     QMessageBox::critical(this,"Error",relTableModel->lastError().text(),0,0);
   ui->list_tableView->setModel(relTableModel);
@@ -100,24 +136,109 @@ void ModuloUsuarios::Guardar()
 {
   mapper->submit();
   relTableModel->submitAll();
+  if(relTableModel->lastError().isValid())
+  {
+    QMessageBox::warning(0,"Error Base de Datos",this->relTableModel->lastError().text(),0,0);
+    return;
+  }
+  int id = relTableModel->query().lastInsertId().toInt();
+  if(id)
+  {
+    int rc = permisosModel->rowCount();
+    for(int i = 0; i<rc;i++)
+      permisosModel->setData(permisosModel->index(i,0),QVariant(id));
+      ui->Module_tabWidget->setCurrentIndex(0);
+  }
+    permisosModel->submitAll();
+    if(permisosModel->lastError().isValid())
+    {
+      QMessageBox::warning(0,"Error Base de Datos",this->permisosModel->lastError().text(),0,0);
+      return;
+    }
+  detalles_tab->setEnabled(false);
+  ui->Module_tabWidget->setTabEnabled(0,true);
+
+}
+
+void ModuloUsuarios::agregarPermisos()
+{
+  ConfigPermisosModelView();
+  Ui::ui_usuario_datos * data_ui = ((ui_usuario_datos*)detalles_tab)->getUI();
+  int idMod, id = Sesion::getSesion()->get_Usuario()->get_id();
+  QSqlQuery q("select * from sys_modulos");
+  q.exec();
+  while(q.next())
+  {
+        idMod = q.record().value(0).toInt();
+        QSqlRecord rec;
+        createPermisoRec(id,idMod,rec);
+        permisosModel->insertRecord(-1,rec);
+  }
+
+  data_ui->tableView_permisos->setModel(permisosModel);
+
+  data_ui->tableView_permisos->hideColumn(0);
+  data_ui->tableView_permisos->hideColumn(1);
+  data_ui->tableView_permisos->hideColumn(4);
+}
+
+void ModuloUsuarios::createPermisoRec(int & idusr, int & idMod,QSqlRecord & rcd)
+{
+  QSqlField f1("idcolaborador", QVariant::Int);
+  QSqlField f2("id_sys_modulo", QVariant::Int);
+  QSqlField f3("id_modulo", QVariant::Int);
+  QSqlField f4("acceso",QVariant::Int);
+  QSqlField f5("fecha",QVariant::DateTime);
+
+  f1.setValue(QVariant(idusr));
+  f2.setValue(QVariant(idMod));
+  f3.setValue(QVariant(idMod));
+  f4.setValue(QVariant(0));
+  f5.clear();
+
+  rcd.append(f1);
+  rcd.append(f2);
+  rcd.append(f3);
+  rcd.append(f4);
+  rcd.append(f5);
 }
 
 void ModuloUsuarios::Agregar()
 {
+  if(!ui->list_tableView->model())
+  {
+    relTableModel->setFilter("idcolaborador=last_insert_id()");
+    relTableModel->select();
+    if(relTableModel->lastError().isValid())
+      QMessageBox::critical(this,"Error",relTableModel->lastError().text(),0,0);
+    ui->list_tableView->setModel(relTableModel);
+  }
   int i = relTableModel->rowCount();
   relTableModel->insertRow(i);
   mapper->setCurrentIndex(i);
   verDetalles();
+  detalles_tab->setEnabled(true);
+  ui->Module_tabWidget->setTabEnabled(0,false);
+  //permisosModel->setFilter("idcolaborador = -1");
+  //permisosModel->select();
+  agregarPermisos();
 }
 
 void ModuloUsuarios::Editar()
 {
   verDetalles();
   detalles_tab->setEnabled(true);
+  ui->Module_tabWidget->setTabEnabled(0,false);
 }
 
-void ModuloUsuarios::mostrar()
+void ModuloUsuarios::Cancelar()
 {
+  detalles_tab->setEnabled(false);
+  ui->Module_tabWidget->setTabEnabled(0,true);
+  ui->Module_tabWidget->setTabEnabled(1,false);
+  ui->Module_tabWidget->setCurrentIndex(0);
+  mapper->revert();
+  relTableModel->revertAll();
 }
 
 void ModuloUsuarios::CambiarPass()

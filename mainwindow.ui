@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>843</width>
-    <height>337</height>
+    <height>304</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -83,8 +83,15 @@
     <bool>true</bool>
    </attribute>
    <addaction name="actionBuscar"/>
+   <addaction name="actionNuevo"/>
+   <addaction name="actionEditar"/>
+   <addaction name="actionGuardar"/>
+   <addaction name="actionCancelar"/>
   </widget>
   <action name="actionProducto">
+   <property name="enabled">
+    <bool>false</bool>
+   </property>
    <property name="icon">
     <iconset resource="Icons/Icons.qrc">
      <normaloff>:/Icons/inventory-maintenance.png</normaloff>:/Icons/inventory-maintenance.png</iconset>
@@ -97,6 +104,9 @@
    </property>
   </action>
   <action name="actionUsuario">
+   <property name="enabled">
+    <bool>false</bool>
+   </property>
    <property name="icon">
     <iconset resource="Icons/Icons.qrc">
      <normaloff>:/Icons/users.png</normaloff>:/Icons/users.png</iconset>
@@ -109,6 +119,9 @@
    </property>
   </action>
   <action name="actionCliente">
+   <property name="enabled">
+    <bool>false</bool>
+   </property>
    <property name="icon">
     <iconset resource="Icons/Icons.qrc">
      <normaloff>:/Icons/clients.png</normaloff>:/Icons/clients.png</iconset>
@@ -121,9 +134,12 @@
    </property>
   </action>
   <action name="actionEditar">
+   <property name="enabled">
+    <bool>false</bool>
+   </property>
    <property name="icon">
     <iconset resource="Icons/Icons.qrc">
-     <normaloff>:/Icons/1348112116_file_edit.png</normaloff>:/Icons/1348112116_file_edit.png</iconset>
+     <normaloff>:/Icons/1349716425_doc_edit.png</normaloff>:/Icons/1349716425_doc_edit.png</iconset>
    </property>
    <property name="text">
     <string>Editar</string>
@@ -136,9 +152,12 @@
    </property>
   </action>
   <action name="actionNuevo">
+   <property name="enabled">
+    <bool>false</bool>
+   </property>
    <property name="icon">
     <iconset resource="Icons/Icons.qrc">
-     <normaloff>:/Icons/1348112114_notification_add.png</normaloff>:/Icons/1348112114_notification_add.png</iconset>
+     <normaloff>:/Icons/1349716386_monotone_add_plus_round.png</normaloff>:/Icons/1349716386_monotone_add_plus_round.png</iconset>
    </property>
    <property name="text">
     <string>Nuevo</string>
@@ -151,6 +170,9 @@
    </property>
   </action>
   <action name="actionBuscar">
+   <property name="enabled">
+    <bool>false</bool>
+   </property>
    <property name="icon">
     <iconset resource="Icons/Icons.qrc">
      <normaloff>:/Icons/1349716430_zoom.png</normaloff>:/Icons/1349716430_zoom.png</iconset>
@@ -163,6 +185,9 @@
    </property>
   </action>
   <action name="actionTiendas">
+   <property name="enabled">
+    <bool>false</bool>
+   </property>
    <property name="icon">
     <iconset resource="Icons/Icons.qrc">
      <normaloff>:/Icons/1354299865_rssshop.png</normaloff>:/Icons/1354299865_rssshop.png</iconset>
@@ -178,6 +203,9 @@
    </property>
   </action>
   <action name="actionEmpresas">
+   <property name="enabled">
+    <bool>false</bool>
+   </property>
    <property name="icon">
     <iconset resource="Icons/Icons.qrc">
      <normaloff>:/Icons/photo.png</normaloff>:/Icons/photo.png</iconset>
@@ -193,6 +221,9 @@
    </property>
   </action>
   <action name="actionAlmacen">
+   <property name="enabled">
+    <bool>false</bool>
+   </property>
    <property name="icon">
     <iconset resource="Icons/Icons.qrc">
      <normaloff>:/Icons/file-roller.png</normaloff>:/Icons/file-roller.png</iconset>
@@ -202,6 +233,9 @@
    </property>
   </action>
   <action name="actionProveedores">
+   <property name="enabled">
+    <bool>false</bool>
+   </property>
    <property name="icon">
     <iconset resource="Icons/Icons.qrc">
      <normaloff>:/Icons/autoship.png</normaloff>:/Icons/autoship.png</iconset>
@@ -214,6 +248,9 @@
    </property>
   </action>
   <action name="actionCompras">
+   <property name="enabled">
+    <bool>false</bool>
+   </property>
    <property name="icon">
     <iconset resource="Icons/Icons.qrc">
      <normaloff>:/Icons/shopping-cart_basic_blue.png</normaloff>:/Icons/shopping-cart_basic_blue.png</iconset>
@@ -223,6 +260,39 @@
    </property>
    <property name="shortcut">
     <string>Ctrl+C</string>
+   </property>
+  </action>
+  <action name="actionGuardar">
+   <property name="enabled">
+    <bool>false</bool>
+   </property>
+   <property name="icon">
+    <iconset resource="Icons/Icons.qrc">
+     <normaloff>:/Icons/1349716356_save.png</normaloff>:/Icons/1349716356_save.png</iconset>
+   </property>
+   <property name="text">
+    <string>Guardar</string>
+   </property>
+   <property name="toolTip">
+    <string>guardar</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+G</string>
+   </property>
+  </action>
+  <action name="actionCancelar">
+   <property name="enabled">
+    <bool>false</bool>
+   </property>
+   <property name="icon">
+    <iconset resource="Icons/Icons.qrc">
+     <normaloff>:/Icons/1349716433_doc_delete.png</normaloff>:/Icons/1349716433_doc_delete.png</iconset>
+   </property>
+   <property name="text">
+    <string>Cancelar</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+X</string>
    </property>
   </action>
  </widget>

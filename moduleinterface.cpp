@@ -49,6 +49,7 @@ ModuleInterface::~ModuleInterface()
 void ModuleInterface::on_list_tableView_activated(const QModelIndex &index)
 {
   mapper->setCurrentModelIndex(index);
+  mostrar(relTableModel->record(index.row()));
   verDetalles();
 }
 

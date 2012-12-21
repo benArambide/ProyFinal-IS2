@@ -19,7 +19,8 @@ public:
   virtual void Editar() = 0;
   virtual void Guardar() = 0;
   virtual void Buscar() = 0;
-  virtual void mostrar() = 0;
+  virtual void Cancelar() = 0;
+  virtual void mostrar(QSqlRecord rec) = 0;
 protected:
   Ui::ModuleInterface *ui;
   QWidget* detallesWidget;
