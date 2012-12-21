@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>956</width>
-    <height>606</height>
+    <height>697</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -19,7 +19,7 @@
      <x>10</x>
      <y>50</y>
      <width>911</width>
-     <height>521</height>
+     <height>621</height>
     </rect>
    </property>
    <property name="currentIndex">
@@ -142,7 +142,17 @@
          </widget>
         </item>
         <item row="10" column="1">
-         <widget class="QDoubleSpinBox" name="sb_odlejos"/>
+         <widget class="QDoubleSpinBox" name="sb_odlejos">
+          <property name="minimum">
+           <double>-10.000000000000000</double>
+          </property>
+          <property name="maximum">
+           <double>10.000000000000000</double>
+          </property>
+          <property name="singleStep">
+           <double>0.010000000000000</double>
+          </property>
+         </widget>
         </item>
         <item row="11" column="0">
          <widget class="QLabel" name="label_30">
@@ -172,13 +182,43 @@
          </widget>
         </item>
         <item row="24" column="1">
-         <widget class="QDoubleSpinBox" name="sb_distpupilar"/>
+         <widget class="QDoubleSpinBox" name="sb_distpupilar">
+          <property name="minimum">
+           <double>-10.000000000000000</double>
+          </property>
+          <property name="maximum">
+           <double>10.000000000000000</double>
+          </property>
+          <property name="singleStep">
+           <double>0.010000000000000</double>
+          </property>
+         </widget>
         </item>
         <item row="19" column="1">
-         <widget class="QDoubleSpinBox" name="sb_oieje"/>
+         <widget class="QDoubleSpinBox" name="sb_oieje">
+          <property name="minimum">
+           <double>-10.000000000000000</double>
+          </property>
+          <property name="maximum">
+           <double>10.000000000000000</double>
+          </property>
+          <property name="singleStep">
+           <double>0.010000000000000</double>
+          </property>
+         </widget>
         </item>
         <item row="19" column="4">
-         <widget class="QDoubleSpinBox" name="sb_odeje"/>
+         <widget class="QDoubleSpinBox" name="sb_odeje">
+          <property name="minimum">
+           <double>-10.000000000000000</double>
+          </property>
+          <property name="maximum">
+           <double>10.000000000000000</double>
+          </property>
+          <property name="singleStep">
+           <double>0.010000000000000</double>
+          </property>
+         </widget>
         </item>
         <item row="5" column="4">
          <widget class="QComboBox" name="cb_tipodoc"/>
@@ -309,7 +349,17 @@
          </widget>
         </item>
         <item row="9" column="1">
-         <widget class="QDoubleSpinBox" name="sb_oilejos"/>
+         <widget class="QDoubleSpinBox" name="sb_oilejos">
+          <property name="minimum">
+           <double>-10.000000000000000</double>
+          </property>
+          <property name="maximum">
+           <double>10.000000000000000</double>
+          </property>
+          <property name="singleStep">
+           <double>0.010000000000000</double>
+          </property>
+         </widget>
         </item>
         <item row="9" column="0">
          <widget class="QLabel" name="label_24">
@@ -317,9 +367,6 @@
            <string>OI Lejos:</string>
           </property>
          </widget>
-        </item>
-        <item row="24" column="4">
-         <widget class="QSpinBox" name="sb_ajuste"/>
         </item>
         <item row="19" column="0">
          <widget class="QLabel" name="label_10">
@@ -373,7 +420,17 @@
          </widget>
         </item>
         <item row="12" column="1">
-         <widget class="QDoubleSpinBox" name="sb_oicerca"/>
+         <widget class="QDoubleSpinBox" name="sb_oicerca">
+          <property name="minimum">
+           <double>-10.000000000000000</double>
+          </property>
+          <property name="maximum">
+           <double>10.000000000000000</double>
+          </property>
+          <property name="singleStep">
+           <double>0.010000000000000</double>
+          </property>
+         </widget>
         </item>
         <item row="8" column="0">
          <widget class="QLabel" name="label_27">
@@ -389,7 +446,17 @@
          </widget>
         </item>
         <item row="13" column="1">
-         <widget class="QDoubleSpinBox" name="sb_odcerca"/>
+         <widget class="QDoubleSpinBox" name="sb_odcerca">
+          <property name="minimum">
+           <double>-10.000000000000000</double>
+          </property>
+          <property name="maximum">
+           <double>10.000000000000000</double>
+          </property>
+          <property name="singleStep">
+           <double>0.010000000000000</double>
+          </property>
+         </widget>
         </item>
         <item row="13" column="0">
          <widget class="QLabel" name="label_7">
@@ -413,10 +480,30 @@
          </widget>
         </item>
         <item row="9" column="4">
-         <widget class="QDoubleSpinBox" name="sb_oiesferico"/>
+         <widget class="QDoubleSpinBox" name="sb_oiesferico">
+          <property name="minimum">
+           <double>-10.000000000000000</double>
+          </property>
+          <property name="maximum">
+           <double>10.000000000000000</double>
+          </property>
+          <property name="singleStep">
+           <double>0.010000000000000</double>
+          </property>
+         </widget>
         </item>
         <item row="10" column="4">
-         <widget class="QDoubleSpinBox" name="sb_oicilindrico"/>
+         <widget class="QDoubleSpinBox" name="sb_oicilindrico">
+          <property name="minimum">
+           <double>-10.000000000000000</double>
+          </property>
+          <property name="maximum">
+           <double>10.000000000000000</double>
+          </property>
+          <property name="singleStep">
+           <double>0.010000000000000</double>
+          </property>
+         </widget>
         </item>
         <item row="12" column="3">
          <widget class="QLabel" name="label_8">
@@ -433,10 +520,49 @@
          </widget>
         </item>
         <item row="12" column="4">
-         <widget class="QDoubleSpinBox" name="sb_odesferico"/>
+         <widget class="QDoubleSpinBox" name="sb_odesferico">
+          <property name="minimum">
+           <double>-10.000000000000000</double>
+          </property>
+          <property name="maximum">
+           <double>10.000000000000000</double>
+          </property>
+          <property name="singleStep">
+           <double>0.010000000000000</double>
+          </property>
+         </widget>
         </item>
         <item row="13" column="4">
-         <widget class="QDoubleSpinBox" name="sb_odcilindrico"/>
+         <widget class="QDoubleSpinBox" name="sb_odcilindrico">
+          <property name="minimum">
+           <double>-10.000000000000000</double>
+          </property>
+          <property name="maximum">
+           <double>10.000000000000000</double>
+          </property>
+          <property name="singleStep">
+           <double>0.010000000000000</double>
+          </property>
+          <property name="value">
+           <double>0.000000000000000</double>
+          </property>
+         </widget>
+        </item>
+        <item row="16" column="0" colspan="5">
+         <widget class="QTableView" name="tableView"/>
+        </item>
+        <item row="24" column="4">
+         <widget class="QDoubleSpinBox" name="doubleSpinBox">
+          <property name="minimum">
+           <double>-10.000000000000000</double>
+          </property>
+          <property name="maximum">
+           <double>10.000000000000000</double>
+          </property>
+          <property name="singleStep">
+           <double>0.010000000000000</double>
+          </property>
+         </widget>
         </item>
        </layout>
       </item>

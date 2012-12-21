@@ -6,7 +6,8 @@
 #include "modulousuarios.h"
 #include <luna.h>
 #include "sesion.h"
-
+#include "ui_venta.h"
+#include "ui_reporte.h"
 
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
@@ -29,6 +30,8 @@ MainWindow::MainWindow(QWidget *parent) :
     modulos.push_back(ui->actionAlmacen);
     modulos.push_back(ui->actionProveedores);
     modulos.push_back(ui->actionCompras);
+    modulos.push_back(ui->actionVentas);
+    modulos.push_back(ui->actionReportes);
     for(size_t i = 0; i<modulos.size();i++)
       modulos[i]->setEnabled(false);
     aplicarPermisos();
@@ -38,21 +41,19 @@ MainWindow::MainWindow(QWidget *parent) :
 void MainWindow::aplicarPermisos()
 {
   Sesion * s = Sesion::getSesion();
-  std::vector<bool> v ;
+  std::map<int,bool> v ;
   v = s->get_Permisos();
+  std::map<int,bool>::iterator it = v.begin();
   if(!v.size())
   {
     QMessageBox::warning(0,"Error de Permisos","No se definieron permisos para este usuario",0,0);
     return;
   }
-  ui->actionProducto->setEnabled(v[0]);
-  ui->actionUsuario->setEnabled(v[1]);
-  ui->actionCliente->setEnabled(v[2]);
-  ui->actionEmpresas->setEnabled(v[3]);
-  ui->actionTiendas->setEnabled(v[4]);
-  ui->actionAlmacen->setEnabled(v[5]);
-  ui->actionProveedores->setEnabled(v[6]);
-  ui->actionCompras->setEnabled(v[7]);
+  for(;it!=v.end();it++)
+  {
+    modulos[(*it).first-1]->setEnabled((*it).second);
+  }
+
 }
 
 MainWindow::~MainWindow()
@@ -166,4 +167,19 @@ void MainWindow::on_actionCancelar_triggered()
   ui->actionEditar->setEnabled(true);
   ui->actionGuardar->setEnabled(false);
   ui->actionCancelar->setEnabled(false);
+}
+
+void MainWindow::on_actionReportes_triggered()
+{
+  ui_reporte* reporte_fom;
+  reporte_fom = new ui_reporte;
+  setCentralWidget(reporte_fom);
+}
+
+void MainWindow::on_actionVentas_triggered()
+{
+  ui_venta* venta_form;
+    venta_form=new ui_venta;
+    setCentralWidget(venta_form);
+    venta_form->showMaximized();
 }

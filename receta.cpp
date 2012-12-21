@@ -1,5 +1,9 @@
 #include "receta.h"
 
+receta::receta()
+{
+
+}
 receta::receta(int _id, QTime _fecha,  QString _tipodoc, QString _nrodoc, QString _nombres, QString _primer_apellido, QString _segundo_apellido, double _oi_lejos, double _oi_cerca, double _od_lejos, double _od_cerca, double _oi_esferico, double _od_esferico, double _oi_cilidrico, double _od_cilindrico, double _oi_eje, double _od_eje, double _dist_pupilar)
 {
 
@@ -224,4 +228,30 @@ void receta::setod_eje(double _od_eje)
 void receta::setdist_pupilar(double _dist_pupilar)
 {
    dist_pupilar=_dist_pupilar;
+}
+
+bool receta::agregar()
+{
+    QSqlQuery query;
+    QString q = "INSERT INTO receta (idreceta,odlejos,odcerca,odcilind,odeje,oilejos,oicerca,oicilind,oieje,distanciapupilar) VALUES (%1,%2,%3,%4,%5,%6,%7,%8,%9,%10)";
+    q.arg(id).arg(od_lejos).arg(od_cerca).arg(od_cilindrico).arg(od_eje).arg(oi_lejos).arg(oi_cerca).arg(oi_cerca).arg(oi_cilidrico).arg(oi_eje).arg(dist_pupilar);
+
+    query.prepare(q);
+
+    query.bindValue(1,id);
+    query.bindValue(2,od_lejos);
+    query.bindValue(3,od_cerca);
+    query.bindValue(4,od_cilindrico);
+    query.bindValue(5,od_eje);
+    query.bindValue(6,oi_lejos);
+    query.bindValue(7,oi_cerca);
+    query.bindValue(8,oi_cilidrico);
+    query.bindValue(9,oi_eje);
+    query.bindValue(10,dist_pupilar);
+
+    if(query.exec(q))
+        return true;
+    else
+        return false;
+    return true;
 }

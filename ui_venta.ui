@@ -6,20 +6,20 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1017</width>
-    <height>580</height>
+    <width>1189</width>
+    <height>687</height>
    </rect>
   </property>
   <property name="windowTitle">
-   <string>Dialog</string>
+   <string>form</string>
   </property>
   <widget class="QTabWidget" name="tabWidget_ventas">
    <property name="geometry">
     <rect>
      <x>10</x>
      <y>10</y>
-     <width>941</width>
-     <height>551</height>
+     <width>1171</width>
+     <height>671</height>
     </rect>
    </property>
    <property name="currentIndex">
@@ -34,8 +34,8 @@
       <rect>
        <x>0</x>
        <y>30</y>
-       <width>931</width>
-       <height>401</height>
+       <width>1161</width>
+       <height>611</height>
       </rect>
      </property>
      <layout class="QGridLayout" name="gridLayout_9">
@@ -105,7 +105,7 @@
                  <string>Añadir</string>
                 </property>
                 <property name="icon">
-                 <iconset resource="../../../romeluko-ProyFinal-IS2/Icons/Icons.qrc">
+                 <iconset resource="Icons/Icons.qrc">
                   <normaloff>:/Icons/1349716423_sq_plus.png</normaloff>:/Icons/1349716423_sq_plus.png</iconset>
                 </property>
                 <property name="flat">
@@ -125,7 +125,7 @@
                  <string>Editar</string>
                 </property>
                 <property name="icon">
-                 <iconset resource="../../../romeluko-ProyFinal-IS2/Icons/Icons.qrc">
+                 <iconset resource="Icons/Icons.qrc">
                   <normaloff>:/Icons/1349716425_doc_edit.png</normaloff>:/Icons/1349716425_doc_edit.png</iconset>
                 </property>
                 <property name="flat">
@@ -145,7 +145,7 @@
                  <string>Deshabilitar</string>
                 </property>
                 <property name="icon">
-                 <iconset resource="../../../romeluko-ProyFinal-IS2/Icons/Icons.qrc">
+                 <iconset resource="Icons/Icons.qrc">
                   <normaloff>:/Icons/1349716432_round_minus.png</normaloff>:/Icons/1349716432_round_minus.png</iconset>
                 </property>
                 <property name="flat">
@@ -168,7 +168,7 @@
       <rect>
        <x>0</x>
        <y>0</y>
-       <width>931</width>
+       <width>1161</width>
        <height>31</height>
       </rect>
      </property>
@@ -217,7 +217,7 @@
            <string/>
           </property>
           <property name="icon">
-           <iconset resource="../../../romeluko-ProyFinal-IS2/Icons/Icons.qrc">
+           <iconset resource="Icons/Icons.qrc">
             <normaloff>:/Icons/1349716430_zoom.png</normaloff>:/Icons/1349716430_zoom.png</iconset>
           </property>
           <property name="flat">
@@ -231,7 +231,7 @@
            <string/>
           </property>
           <property name="icon">
-           <iconset resource="../../../romeluko-ProyFinal-IS2/Icons/Icons.qrc">
+           <iconset resource="Icons/Icons.qrc">
             <normaloff>:/Icons/1349716435_cog.png</normaloff>:/Icons/1349716435_cog.png</iconset>
           </property>
           <property name="flat">
@@ -266,7 +266,7 @@
       <rect>
        <x>0</x>
        <y>0</y>
-       <width>931</width>
+       <width>1171</width>
        <height>31</height>
       </rect>
      </property>
@@ -315,7 +315,7 @@
            <string/>
           </property>
           <property name="icon">
-           <iconset resource="../../../romeluko-ProyFinal-IS2/Icons/Icons.qrc">
+           <iconset resource="Icons/Icons.qrc">
             <normaloff>:/Icons/1349716430_zoom.png</normaloff>:/Icons/1349716430_zoom.png</iconset>
           </property>
           <property name="flat">
@@ -329,7 +329,7 @@
            <string/>
           </property>
           <property name="icon">
-           <iconset resource="../../../romeluko-ProyFinal-IS2/Icons/Icons.qrc">
+           <iconset resource="Icons/Icons.qrc">
             <normaloff>:/Icons/1349716435_cog.png</normaloff>:/Icons/1349716435_cog.png</iconset>
           </property>
           <property name="flat">
@@ -359,8 +359,8 @@
       <rect>
        <x>0</x>
        <y>30</y>
-       <width>931</width>
-       <height>401</height>
+       <width>1161</width>
+       <height>611</height>
       </rect>
      </property>
      <layout class="QGridLayout" name="gridLayout_16">
@@ -430,7 +430,7 @@
                  <string>Añadir</string>
                 </property>
                 <property name="icon">
-                 <iconset resource="../../../romeluko-ProyFinal-IS2/Icons/Icons.qrc">
+                 <iconset resource="Icons/Icons.qrc">
                   <normaloff>:/Icons/1349716423_sq_plus.png</normaloff>:/Icons/1349716423_sq_plus.png</iconset>
                 </property>
                 <property name="flat">
@@ -450,7 +450,7 @@
                  <string>Editar</string>
                 </property>
                 <property name="icon">
-                 <iconset resource="../../../romeluko-ProyFinal-IS2/Icons/Icons.qrc">
+                 <iconset resource="Icons/Icons.qrc">
                   <normaloff>:/Icons/1349716425_doc_edit.png</normaloff>:/Icons/1349716425_doc_edit.png</iconset>
                 </property>
                 <property name="flat">
@@ -470,7 +470,7 @@
                  <string>Deshabilitar</string>
                 </property>
                 <property name="icon">
-                 <iconset resource="../../../romeluko-ProyFinal-IS2/Icons/Icons.qrc">
+                 <iconset resource="Icons/Icons.qrc">
                   <normaloff>:/Icons/1349716432_round_minus.png</normaloff>:/Icons/1349716432_round_minus.png</iconset>
                 </property>
                 <property name="flat">
@@ -498,7 +498,7 @@
       <rect>
        <x>0</x>
        <y>0</y>
-       <width>931</width>
+       <width>1161</width>
        <height>31</height>
       </rect>
      </property>
@@ -534,7 +534,7 @@
            <string/>
           </property>
           <property name="icon">
-           <iconset resource="../../../romeluko-ProyFinal-IS2/Icons/Icons.qrc">
+           <iconset resource="Icons/Icons.qrc">
             <normaloff>:/Icons/1349716430_zoom.png</normaloff>:/Icons/1349716430_zoom.png</iconset>
           </property>
           <property name="flat">
@@ -548,7 +548,7 @@
            <string/>
           </property>
           <property name="icon">
-           <iconset resource="../../../romeluko-ProyFinal-IS2/Icons/Icons.qrc">
+           <iconset resource="Icons/Icons.qrc">
             <normaloff>:/Icons/1349716435_cog.png</normaloff>:/Icons/1349716435_cog.png</iconset>
           </property>
           <property name="flat">
@@ -591,8 +591,8 @@
       <rect>
        <x>0</x>
        <y>30</y>
-       <width>931</width>
-       <height>451</height>
+       <width>1161</width>
+       <height>611</height>
       </rect>
      </property>
      <layout class="QGridLayout" name="gridLayout_37">
@@ -660,7 +660,7 @@
                <string>Añadir</string>
               </property>
               <property name="icon">
-               <iconset resource="../../../romeluko-ProyFinal-IS2/Icons/Icons.qrc">
+               <iconset resource="Icons/Icons.qrc">
                 <normaloff>:/Icons/1349716423_sq_plus.png</normaloff>:/Icons/1349716423_sq_plus.png</iconset>
               </property>
               <property name="flat">
@@ -680,7 +680,7 @@
                <string>Editar</string>
               </property>
               <property name="icon">
-               <iconset resource="../../../romeluko-ProyFinal-IS2/Icons/Icons.qrc">
+               <iconset resource="Icons/Icons.qrc">
                 <normaloff>:/Icons/1349716425_doc_edit.png</normaloff>:/Icons/1349716425_doc_edit.png</iconset>
               </property>
               <property name="flat">
@@ -700,7 +700,7 @@
                <string>Deshabilitar</string>
               </property>
               <property name="icon">
-               <iconset resource="../../../romeluko-ProyFinal-IS2/Icons/Icons.qrc">
+               <iconset resource="Icons/Icons.qrc">
                 <normaloff>:/Icons/1349716432_round_minus.png</normaloff>:/Icons/1349716432_round_minus.png</iconset>
               </property>
               <property name="flat">
@@ -716,9 +716,6 @@
       </item>
      </layout>
     </widget>
-    <zorder>layoutWidget_5</zorder>
-    <zorder>horizontalSpacer_14</zorder>
-    <zorder>layoutWidget_6</zorder>
    </widget>
    <widget class="QWidget" name="tab_4">
     <attribute name="title">
@@ -729,7 +726,7 @@
       <rect>
        <x>0</x>
        <y>0</y>
-       <width>931</width>
+       <width>1161</width>
        <height>31</height>
       </rect>
      </property>
@@ -778,7 +775,7 @@
            <string/>
           </property>
           <property name="icon">
-           <iconset resource="../../../romeluko-ProyFinal-IS2/Icons/Icons.qrc">
+           <iconset resource="Icons/Icons.qrc">
             <normaloff>:/Icons/1349716430_zoom.png</normaloff>:/Icons/1349716430_zoom.png</iconset>
           </property>
           <property name="flat">
@@ -792,7 +789,7 @@
            <string/>
           </property>
           <property name="icon">
-           <iconset resource="../../../romeluko-ProyFinal-IS2/Icons/Icons.qrc">
+           <iconset resource="Icons/Icons.qrc">
             <normaloff>:/Icons/1349716435_cog.png</normaloff>:/Icons/1349716435_cog.png</iconset>
           </property>
           <property name="flat">
@@ -822,8 +819,8 @@
       <rect>
        <x>0</x>
        <y>30</y>
-       <width>931</width>
-       <height>451</height>
+       <width>1161</width>
+       <height>611</height>
       </rect>
      </property>
      <layout class="QGridLayout" name="gridLayout_44">
@@ -891,7 +888,7 @@
                <string>Añadir</string>
               </property>
               <property name="icon">
-               <iconset resource="../../../romeluko-ProyFinal-IS2/Icons/Icons.qrc">
+               <iconset resource="Icons/Icons.qrc">
                 <normaloff>:/Icons/1349716423_sq_plus.png</normaloff>:/Icons/1349716423_sq_plus.png</iconset>
               </property>
               <property name="flat">
@@ -911,7 +908,7 @@
                <string>Editar</string>
               </property>
               <property name="icon">
-               <iconset resource="../../../romeluko-ProyFinal-IS2/Icons/Icons.qrc">
+               <iconset resource="Icons/Icons.qrc">
                 <normaloff>:/Icons/1349716425_doc_edit.png</normaloff>:/Icons/1349716425_doc_edit.png</iconset>
               </property>
               <property name="flat">
@@ -931,7 +928,7 @@
                <string>Deshabilitar</string>
               </property>
               <property name="icon">
-               <iconset resource="../../../romeluko-ProyFinal-IS2/Icons/Icons.qrc">
+               <iconset resource="Icons/Icons.qrc">
                 <normaloff>:/Icons/1349716432_round_minus.png</normaloff>:/Icons/1349716432_round_minus.png</iconset>
               </property>
               <property name="flat">
@@ -951,7 +948,7 @@
   </widget>
  </widget>
  <resources>
-  <include location="../../../romeluko-ProyFinal-IS2/Icons/Icons.qrc"/>
+  <include location="Icons/Icons.qrc"/>
  </resources>
  <connections/>
 </ui>

@@ -287,6 +287,9 @@
         <height>0</height>
        </size>
       </property>
+      <property name="editTriggers">
+       <set>QAbstractItemView::AnyKeyPressed|QAbstractItemView::DoubleClicked|QAbstractItemView::EditKeyPressed|QAbstractItemView::SelectedClicked</set>
+      </property>
      </widget>
     </widget>
    </item>

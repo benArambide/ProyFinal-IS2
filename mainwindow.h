@@ -44,6 +44,10 @@ private slots:
     void enableEdit();
     void on_actionCancelar_triggered();
 
+    void on_actionReportes_triggered();
+
+    void on_actionVentas_triggered();
+
 private:
     Ui::MainWindow *ui;
     ModuleInterface* ActiveModule;

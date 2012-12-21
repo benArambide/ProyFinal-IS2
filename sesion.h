@@ -4,7 +4,7 @@
 #include  <QTime>
 #include <QObject>
 #include "usuario.h"
-#include <vector>
+#include <map>
 
 /**
  * @class Sesion
@@ -25,7 +25,7 @@ public:
     Usuario * get_Usuario(){return s_user;}
     /// @return Retorna el tiempo en milisegundos desde que se inicio la sesion
     int get_time(){return s_time.elapsed();}
-    std::vector<bool> get_Permisos();
+    std::map<int,bool> get_Permisos();
 private:
     Sesion(Usuario * usr = 0);
     static Sesion* mp_instance;  ///<instancia de la clase singletone

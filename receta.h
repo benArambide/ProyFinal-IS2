@@ -2,8 +2,9 @@
 #define RECETA_H
 #include "objetopersistente.h"
 #include "QTime"
+#include <QSqlQueryModel>
 
-class receta: ObjetoPersistente
+class receta: public ObjetoPersistente
 {
 private:
     int id;
@@ -28,6 +29,7 @@ private:
 
 public:
     receta(int _id, QTime _fecha, QString _tipodoc, QString _nrodoc, QString _nombres, QString _primer_apellido, QString _segundo_apellido, double _oi_lejos, double _oi_cerca, double _od_lejos, double _od_cerca, double _oi_esferico, double _od_esferico, double _oi_cilidrico, double _od_cilindrico, double _oi_eje, double _od_eje, double _dist_pupilar);
+    receta();
 
     int getid();
     QTime getfecha();
@@ -68,6 +70,9 @@ public:
     void setod_eje(double);
     void setdist_pupilar(double);
 
+    bool agregar();
+    bool actualizar(){return true;}
+    bool eliminar(){return true;}
 
 
 

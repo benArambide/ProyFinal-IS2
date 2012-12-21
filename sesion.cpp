@@ -90,15 +90,15 @@ Sesion * Sesion::getSesion()
     return mp_instance;
 }
 
-std::vector<bool> Sesion::get_Permisos()
+std::map<int,bool> Sesion::get_Permisos()
 {
-  std::vector<bool> res;
-  QSqlQuery q("select acceso from sys_acceso where idcolaborador = "+QString::number(s_user->get_id())+" order by id_sys_modulo");
+  std::map<int,bool> res;
+  QSqlQuery q("select acceso, id_sys_modulo from sys_acceso where idcolaborador = "+QString::number(s_user->get_id())+" order by id_sys_modulo");
   if(!q.exec())
     QMessageBox::critical(0,"Error",q.lastError().text(),0,0);
   while(q.next())
   {
-    res.push_back(q.value(0).toBool());
+    res[q.value(1).toInt()] = (q.value(0).toBool());
   }
   return res;
 }

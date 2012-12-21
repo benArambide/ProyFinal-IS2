@@ -15,6 +15,15 @@ public:
     explicit ui_venta(QWidget *parent = 0);
     ~ui_venta();
     
+private slots:
+    void on_pushButton_20_clicked();
+
+    void on_pushButton_2_clicked();
+
+    void on_pushButton_3_clicked();
+
+    void on_pushButton_13_clicked();
+
 private:
     Ui::ui_venta *ui;
 };

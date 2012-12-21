@@ -4,6 +4,7 @@
 #include <objetopersistente.h>
 #include "ui_agregar_venta.h"
 #include "receta.h"
+#include <QSqlQueryModel>
 
 class venta:ObjetoPersistente
 {

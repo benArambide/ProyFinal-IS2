@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>843</width>
+    <width>1193</width>
     <height>304</height>
    </rect>
   </property>
@@ -60,6 +60,8 @@
    <addaction name="actionAlmacen"/>
    <addaction name="actionProveedores"/>
    <addaction name="actionCompras"/>
+   <addaction name="actionReportes"/>
+   <addaction name="actionVentas"/>
   </widget>
   <widget class="QStatusBar" name="statusBar">
    <property name="cursor">
@@ -293,6 +295,33 @@
    </property>
    <property name="shortcut">
     <string>Ctrl+X</string>
+   </property>
+  </action>
+  <action name="actionReportes">
+   <property name="enabled">
+    <bool>false</bool>
+   </property>
+   <property name="icon">
+    <iconset resource="Icons/Icons.qrc">
+     <normaloff>:/Icons/abiword.png</normaloff>:/Icons/abiword.png</iconset>
+   </property>
+   <property name="text">
+    <string>Reportes</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+P</string>
+   </property>
+  </action>
+  <action name="actionVentas">
+   <property name="enabled">
+    <bool>false</bool>
+   </property>
+   <property name="icon">
+    <iconset resource="Icons/Icons.qrc">
+     <normaloff>:/Icons/ticket.png</normaloff>:/Icons/ticket.png</iconset>
+   </property>
+   <property name="text">
+    <string>Ventas</string>
    </property>
   </action>
  </widget>
