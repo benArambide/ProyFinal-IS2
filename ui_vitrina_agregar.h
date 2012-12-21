@@ -34,12 +34,12 @@ public:
 
 
 
-
+    
 public:
     explicit ui_vitrina_agregar(QWidget *parent = 0);
     ~ui_vitrina_agregar();
 
-
+    
 private slots:
     void on_guardar_clicked();
 

@@ -1,6 +1,7 @@
 #include "ui_traspaso_almacen.h"
 #include "ui_ui_traspaso_almacen.h"
 #include "ui_item_posicion.h"
+#include <QtGui>
 
 ui_traspaso_almacen::ui_traspaso_almacen(QWidget *parent) :
     QWidget(parent),
@@ -217,16 +218,51 @@ void ui_traspaso_almacen::on_pushButton_aceptar_traspaso_clicked()
 
     if(!currentIdContenedor.isEmpty())
     {
+        int fila = ui->tableWidget_griContenedores->currentRow()+1;
+
+        int columna = ui->tableWidget_griContenedores->currentColumn()+1;
+
         QSqlQuery query1;
-        query1.prepare("SELECT idproducto FROM item_posicion WHERE iditem_posicion=?");
+        query1.prepare("SELECT idproducto, fila ,columna,nivel FROM item_posicion WHERE iditem_posicion=?");
         query1.bindValue(0,idItem_tras);
         query1.exec();
         query1.next();
         QString idpro=query1.value(0).toString();
+        int a_fila=query1.value(1).toInt();
+        int a_columna=query1.value(2).toInt();
+        int a_nivel=query1.value(3).toInt();
         item_posicion *del = new item_posicion(idItem_tras,"","",0,0,0);
         del->eliminar();
 
+
+
         QSqlQuery query;
+        query.prepare("SELECT codigo, descripcion FROM producto WHERE idproducto=?");
+        query.bindValue(0,idpro);
+        query.exec();
+        query.next();
+        QString cpro=query.value(0).toString();
+        QString dpro=query.value(1).toString();
+
+
+        query.prepare("SELECT codigo FROM vitrina WHERE idvitrina=?");
+        query.bindValue(0,ui_tienda_traspaso->get_idVitrina());
+        query.exec();
+        query.next();
+        QString c_vitrina=query.value(0).toString();
+
+
+
+        query.prepare("SELECT alias FROM tienda WHERE idtienda=?");
+        query.bindValue(0,ui_tienda_traspaso->get_idTienda());
+        query.exec();
+        query.next();
+        QString t_alias=query.value(0).toString();
+
+
+
+
+
         query.prepare("INSERT INTO producto_contenedor(producto_idproducto,contenedor_idcontenedor) VALUES(?,?)");
         query.bindValue(0,idpro);
         query.bindValue(1,get_currentIdContenedor());
@@ -235,6 +271,120 @@ void ui_traspaso_almacen::on_pushButton_aceptar_traspaso_clicked()
         ui_tienda_traspaso->set_dimension_grilla();
         ui_tienda_traspaso->actualizar_grilla();
 
+
+        QPrinter printer;
+        printer.setOrientation(QPrinter::Landscape);
+        printer.setOutputFormat(QPrinter::PdfFormat);
+        printer.setOutputFileName("Guia_Traspaso.pdf");
+        QPainter painter;
+        if (! painter.begin(&printer))
+            qWarning("failed to open file, is it writable?");
+
+
+        painter.setFont(QFont("Times New Roman", 25));
+        painter.drawText(100,30,"Guia de Remision de Traspaso");
+        painter.setFont(QFont("Times New Roman", 15));
+        painter.drawText(550,20,"Fecha: "+QDate::currentDate().toString());
+        painter.drawText(550,40,"Hora: "+QTime::currentTime().toString());
+        painter.setFont(QFont("Times New Roman", 20));
+
+
+/*
+        painter.drawText(10,90,"Usuario:");
+        painter.setFont(QFont("Times New Roman", 15));
+        painter.drawText(50,120,"Nombre");
+        painter.drawText(210,120,"Apellidos");
+        painter.drawLine(10,130,680,130);
+
+  */      //painter.drawText(50,120,Sesion::get_Usuario()->get_nombre());
+
+
+
+
+        painter.setFont(QFont("Times New Roman", 20));
+        painter.drawText(10,200,"Posicion Antigua del Producto:");
+        painter.setFont(QFont("Times New Roman", 15));
+        painter.drawText(50,230,"Codigo");
+        painter.drawText(130,230,"Tienda");
+        painter.drawText(280,230,"Vitrina");
+        painter.drawText(350,230,"Fila");
+        painter.drawText(390,230,"Columna");
+        painter.drawText(480,230,"Nivel");
+        painter.drawText(540,230,"Descripcion");
+
+        painter.setFont(QFont("Times New Roman", 15));
+        painter.drawText(50,250,cpro);
+        painter.drawText(130,250,t_alias);
+        painter.drawText(280,250,c_vitrina);
+        painter.drawText(350,250,QString::number(a_fila));
+        painter.drawText(390,250,QString::number(a_columna));
+        painter.drawText(480,250,QString::number(a_nivel));
+        painter.drawText(540,250,dpro);
+
+
+
+        painter.setFont(QFont("Times New Roman", 20));
+        painter.drawText(10,310,"Posicion Nueva del Producto:");
+        painter.setFont(QFont("Times New Roman", 15));
+        painter.drawText(50,340,"Codigo");
+        painter.drawText(130,340,"Tienda");
+        painter.drawText(250,340,"Almacen");
+        painter.drawText(340,340,"Andamio");
+        painter.drawText(430,340,"Contenedor");
+        painter.drawText(540,340,"Fila");
+        painter.drawText(590,340,"Columna");
+        painter.drawText(690,340,"Descripcion");
+        painter.drawLine(10,350,770,350);
+
+
+        query.prepare("SELECT nombre FROM almacen WHERE idalmacen=?");
+        query.bindValue(0,get_currentIdAlmacen());
+        query.exec();
+        query.next();
+        QString al_nombre=query.value(0).toString();
+
+        query.prepare("SELECT nombre FROM andamio WHERE idandamio=?");
+        query.bindValue(0,get_currentIdAndamio());
+        query.exec();
+        query.next();
+        QString an_nombre=query.value(0).toString();
+
+        query.prepare("SELECT nombre FROM contenedor WHERE idcontenedor=?");
+        query.bindValue(0,get_currentIdContenedor());
+        query.exec();
+        query.next();
+        QString c_nombre=query.value(0).toString();
+
+        painter.setFont(QFont("Times New Roman", 15));
+        painter.drawText(50,360,cpro);
+        painter.drawText(130,360,t_alias);
+        painter.drawText(250,360,al_nombre);
+        painter.drawText(340,360,an_nombre);
+        painter.drawText(430,360,c_nombre);
+        painter.drawText(540,360,QString::number(fila));
+        painter.drawText(590,360,QString::number(columna));
+        painter.drawText(690,360,dpro);
+        painter.end();
+
+        QTextEdit parent;
+        QString filename ="Guia_Traspaso.pdf";
+        qDebug()<<"Print file name is "<<filename;
+        if(!filename.isEmpty()) {
+            if(QFileInfo(filename).suffix().isEmpty()) {
+                filename.append(".pdf");
+            }
+
+            QPrinter printer(QPrinter::HighResolution);
+            printer.setOutputFormat(QPrinter::PdfFormat);
+            printer.setOutputFileName(filename);
+            QPrintDialog*dlg = new QPrintDialog(&printer,&parent);
+            dlg->setWindowTitle(QObject::tr("Print Document"));
+
+            if(dlg->exec() == QDialog::Accepted) {
+                parent.print(&printer);
+            }
+            delete dlg;
+        }
     }
     else
     {

@@ -31,7 +31,7 @@ public:
 public:
     explicit ui_tienda_agregar(QWidget *parent = 0);
     ~ui_tienda_agregar();
-
+    
 private slots:
     void on_pushButton_Aceptar_clicked();
 

@@ -39,9 +39,14 @@ void ui_tienda_agregar::actualizar()
 
 bool ui_tienda_agregar::validar_tienda()
 {
+    QRegExp noNumeros("[a-zA-Z]");
+    QRegExp noAlfabeto("[0-9\.\,\@]");
+
+    QMessageBox box;
+    box.setIcon(QMessageBox::Warning);
+    box.setWindowTitle("Error de Escritura");
     QString  alias= ui->textAlias->text();
     QString  telefono= ui->textTelefono->text();
-    tienda *nueva_tienda;
     QSqlQuery query;
     query.prepare("SELECT idtienda FROM tienda WHERE alias=?");
     query.bindValue(0,alias);
@@ -54,7 +59,28 @@ bool ui_tienda_agregar::validar_tienda()
         msgBox.exec();
         return false;
     }
-    else if(query.isValid())
+    else if(ui->textAlias->text().contains(noAlfabeto))
+    {
+        box.setText("El Alias de la Tienda solo puede contener letras");
+        box.exec();
+        ui->textAlias->setFocus();
+        return false;
+    }
+    /*else if(ui->textPermisoMunicipal->text().contains(noAlfabeto))
+    {
+        box.setText("El permiso municipal solo puede contener letras");
+        box.exec();
+        ui->textPermisoMunicipal->setFocus();
+        return false;
+    }*/
+    else if(ui->textDireccion->text().contains(noAlfabeto))
+    {
+        box.setText("La dirección solo puede contener letras o números");
+        box.exec();
+        ui->textDireccion->setFocus();
+        return false;
+    }
+    else if(query.isValid()&&caso==true)
     {
         QMessageBox msgBox;
         msgBox.setText("La tienda ya existe");
@@ -62,12 +88,32 @@ bool ui_tienda_agregar::validar_tienda()
         ui->textAlias->clear();
         return false;
     }
-    else if(!nueva_tienda->validar(telefono,"numerico"))
+    else if(telefono.contains(noNumeros))
     {
-        QMessageBox msgBox;
-        msgBox.setText("El telefono no es valido");
-        msgBox.exec();
-        ui->textTelefono->clear();
+        box.setText("El Telefono debe conterner unicamente digitos");
+        box.exec();
+        ui->textTelefono->setFocus();
+        return false;
+    }
+    else if(telefono.size()<6 &&telefono.size()!=0)
+    {
+        box.setText("El Telefono debe conterner entre 6 y 9 digitos");
+        box.exec();
+        ui->textTelefono->setFocus();
+        return false;
+    }
+    else if((telefono.size()>9 || telefono.size()<6) && telefono.size()!=0)
+    {
+        box.setText("El Celular debe conterner entre 6 y 9 digitos");
+        box.exec();
+        ui->textTelefono->setFocus();
+        return false;
+    }
+    else if(telefono.contains(noNumeros))
+    {
+        box.setText("El Telefono no puede contener letras");
+        box.exec();
+        ui->textTelefono->setFocus();
         return false;
     }
     else
@@ -83,6 +129,16 @@ void ui_tienda_agregar::on_pushButton_Aceptar_clicked()
     QString  permiso= ui->textPermisoMunicipal->text();
 
     tienda *nueva_tienda;
+    QMessageBox *msgBox =new QMessageBox;
+    msgBox->setIcon(QMessageBox::Information);
+    msgBox->setWindowIcon(QIcon(":/Icons/abiword.png"));
+    msgBox->setWindowTitle("Resultado");
+    msgBox->setStandardButtons(QMessageBox::Ok);
+    msgBox->setButtonText(QMessageBox::Ok,"Aceptar");
+
+
+
+
     if(validar_tienda())
     {
 
@@ -90,16 +146,18 @@ void ui_tienda_agregar::on_pushButton_Aceptar_clicked()
         {
             nueva_tienda = new tienda(0,get_idEmpresa(),alias,direccion,telefono,permiso);
             nueva_tienda->agregar();
+            msgBox->setText("La Tienda fue creada correctamente.");
         }
         else//actualizar tienda
         {
             QString idTienda=ui_tienda_actual->get_idTienda();
             nueva_tienda=new tienda(idTienda,idEmpresa,alias,direccion,telefono,permiso);
             nueva_tienda->actualizar();
+            msgBox->setText("Datos actualizados correctamente.");
         }
         close();
         ui_tienda_actual->actualizar_combo_tienda(idEmpresa);
-
+        msgBox->exec();
     }
 
 }

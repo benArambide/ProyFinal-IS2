@@ -15,6 +15,7 @@
 #include <string.h>
 #include <ctype.h>
 #include <QMessageBox>
+#include "ui_almacen.h"
 using namespace std;
 
 namespace Ui {
@@ -30,9 +31,13 @@ private:
     QString idVitrina;
     QString idItem;
     QString idItem_tras;
+    QString idProducto_tras;
     ui_tienda * ui_tienda_traspaso;
+    ui_almacen * ui_almacen_traspaso;
     int actual_nivel;
+    int row_traspaso;
     bool caso;
+    bool caso_traspaso;
 
     map<QString,QString> Empresas;
     map<QString,QString> Tiendas;
@@ -46,18 +51,31 @@ public:
     QString get_idVitrina(){return idVitrina;}
     QString get_idItem(){return idItem;}
     QString get_idItem_tras(){return idItem_tras;}
+    QString get_idProducto_tras(){return idProducto_tras;}
     int get_actual_nivel(){return actual_nivel;}
+    int get_row_traspaso(){return row_traspaso;}
     bool get_caso(){return caso;}
+    bool get_caso_traspaso(){return caso_traspaso;}
     ui_tienda* get_ui_tienda_traspaso(){return ui_tienda_traspaso;}
 
     void set_ui_tienda_traspaso(ui_tienda* tmp){ui_tienda_traspaso=tmp;}
+
+    ui_almacen* get_ui_almacen_traspaso(){return ui_almacen_traspaso;}
+
+    void set_ui_almacen_traspaso(ui_almacen* tmp){ui_almacen_traspaso=tmp;}
+
+
     void set_idEmpresa(QString tmp){idEmpresa=tmp;}
     void set_idTienda(QString tmp){idTienda=tmp;}
     void set_idVitrina(QString tmp){idVitrina=tmp;}
     void set_idItem(QString tmp){idItem=tmp;}
     void set_idItem_tras(QString tmp){idItem_tras=tmp;}
+    void set_idProducto_tras(QString tmp){idProducto_tras=tmp;}
     void set_caso(bool tmp){caso=tmp;}
+    void set_caso_traspaso(bool tmp){caso_traspaso=tmp;}
     void set_actual_nivel(int tmp){actual_nivel=tmp;}
+    void set_row_traspaso(int tmp){row_traspaso=tmp;}
+
 
     void actualizar_combo_empresa();
     void actualizar_combo_tienda(QString);
@@ -74,7 +92,7 @@ public:
 public:
     explicit ui_tienda(QWidget *parent = 0);
     ~ui_tienda();
-
+    
 private slots:
     void on_pushButton_clicked();
 

@@ -102,23 +102,32 @@ void ui_vitrina_agregar::on_guardar_clicked()
     int columnas=ui->spinBoxcolumnas->value();
     int niveles=ui->spinBoxniveles->value();
     vitrina *nueva_vitrina;
+    QMessageBox *msgBox =new QMessageBox;
+    msgBox->setIcon(QMessageBox::Information);
+    msgBox->setWindowIcon(QIcon(":/Icons/abiword.png"));
+    msgBox->setWindowTitle("Resultado");
+    msgBox->setStandardButtons(QMessageBox::Ok);
+    msgBox->setButtonText(QMessageBox::Ok,"Aceptar");
     if(validar_vitrina())
     {
         if(caso)//nueva vitrina
         {
             nueva_vitrina = new vitrina(0,get_idTienda(),codigo,alias,filas,columnas,niveles);
             nueva_vitrina->agregar();
+            msgBox->setText("La Vitrina fue creada correctamente.");
         }
         else//actualizar tienda
         {
             QString idVitrina=ui_tienda_actual->get_idVitrina();
             nueva_vitrina=new vitrina(idVitrina,idTienda,codigo,alias,filas,columnas,niveles);
             nueva_vitrina->actualizar();
+            msgBox->setText("Datos actualizados correctamente.");
         }
 
         close();
         ui_tienda_actual->actualizar_combo_vitrina(idTienda);
         ui_tienda_actual->actualizar_combo_niveles(ui_tienda_actual->get_idVitrina());
+        msgBox->exec();
     }
 
 }
