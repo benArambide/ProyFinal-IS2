@@ -60,40 +60,53 @@ void ui_andamio_datos::on_pushButton_aceptar_clicked()
     QString fila = ui->spinBox_fila->text();
     QString columna = ui->spinBox_columna->text();
 
-    andamio *andamio_data;
-
-    QMessageBox *msgBox =new QMessageBox;
-    msgBox->setIcon(QMessageBox::Information);
-    msgBox->setWindowIcon(QIcon(":/Icons/abiword.png"));
-    msgBox->setWindowTitle("Resultado");
-    msgBox->setStandardButtons(QMessageBox::Ok);
-    msgBox->setButtonText(QMessageBox::Ok,"Aceptar");
-
-    switch(behavior)
+    if(fila.compare("0")==0 || columna.compare("0")==0)
     {
-        case 0:
-
-            andamio_data = new andamio(0,get_idAlmacen(),nombre,descripcion,fila,columna);
-            andamio_data->agregar();
-
-            msgBox->setText("Andamio creado correctamente.");
-
-            break;
-
-        case 1:
-
-            QString idAndamio = ui_almacen_parent->get_currentIdAndamio();
-            andamio_data = new andamio(idAndamio,idAlmacen,nombre,descripcion,fila,columna);
-            andamio_data->actualizar();
-
-            msgBox->setText("Datos actualizados correctamente.");
-
-            break;
+        QMessageBox *msgBox =new QMessageBox;
+        msgBox->setIcon(QMessageBox::Information);
+        msgBox->setWindowIcon(QIcon(":/Icons/abiword.png"));
+        msgBox->setWindowTitle("Información");
+        msgBox->setStandardButtons(QMessageBox::Ok);
+        msgBox->setButtonText(QMessageBox::Ok,"Aceptar");
+        msgBox->setText("Ningún Andamio puede contener alguna dimensión de valor cero!");
+        msgBox->exec();
     }
+    else
+    {
+        andamio *andamio_data;
 
-    close();
-    ui_almacen_parent->update_comboBox_Andamio(idAlmacen);
+        QMessageBox *msgBox =new QMessageBox;
+        msgBox->setIcon(QMessageBox::Information);
+        msgBox->setWindowIcon(QIcon(":/Icons/abiword.png"));
+        msgBox->setWindowTitle("Resultado");
+        msgBox->setStandardButtons(QMessageBox::Ok);
+        msgBox->setButtonText(QMessageBox::Ok,"Aceptar");
 
-    msgBox->exec();
+        switch(behavior)
+        {
+            case 0:
 
+                andamio_data = new andamio(0,get_idAlmacen(),nombre,descripcion,fila,columna);
+                andamio_data->agregar();
+
+                msgBox->setText("Andamio creado correctamente.");
+
+                break;
+
+            case 1:
+
+                QString idAndamio = ui_almacen_parent->get_currentIdAndamio();
+                andamio_data = new andamio(idAndamio,idAlmacen,nombre,descripcion,fila,columna);
+                andamio_data->actualizar();
+
+                msgBox->setText("Datos actualizados correctamente.");
+
+                break;
+        }
+
+        close();
+        ui_almacen_parent->update_comboBox_Andamio(idAlmacen);
+
+        msgBox->exec();
+    }
 }

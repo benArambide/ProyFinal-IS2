@@ -82,6 +82,8 @@ private slots:
 
     void on_tableWidget_griContenedores_itemSelectionChanged();
 
+    void on_botonGenerarReporte_clicked();
+
 private:
     Ui::ui_almacen *ui;
 };
